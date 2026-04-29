@@ -121,6 +121,30 @@
     <Compile Include="SignUpForm.Designer.cs">
       <DependentUpon>SignUpForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ucRoomInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucRoomInfo.Designer.cs">
+      <DependentUpon>ucRoomInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\ucCheckInOut.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl\ucCheckInOut.Designer.cs">
+      <DependentUpon>ucCheckInOut.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\ucDashboard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl\ucDashboard.Designer.cs">
+      <DependentUpon>ucDashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\ucReservation.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl\ucReservation.Designer.cs">
+      <DependentUpon>ucReservation.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserDashboard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -143,6 +167,18 @@
     <EmbeddedResource Include="SignUpForm.resx">
       <DependentUpon>SignUpForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ucRoomInfo.resx">
+      <DependentUpon>ucRoomInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl\ucCheckInOut.resx">
+      <DependentUpon>ucCheckInOut.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl\ucDashboard.resx">
+      <DependentUpon>ucDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl\ucReservation.resx">
+      <DependentUpon>ucReservation.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserDashboard.resx">
       <DependentUpon>UserDashboard.cs</DependentUpon>
     </EmbeddedResource>
@@ -162,6 +198,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="HotelDoor.ico" />
+    <None Include="Resources\vertical-city-hotel.jpg" />
+    <None Include="Resources\icons8-green-circle-501.png" />
+    <None Include="Resources\room-service.png" />
     <None Include="Resources\venus-mars.png" />
     <None Include="Resources\female.png" />
     <None Include="Resources\male.png" />

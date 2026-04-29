@@ -16,7 +16,12 @@ namespace HotelManagementSystem
         public lblUserNameDisplay()
         {
             InitializeComponent();
-            lblTitle.Text = " ";
+        }
+        private void LoadContent(UserControl control)
+        {
+            panelMain.Controls.Clear();   
+            control.Dock = DockStyle.Fill; 
+            panelMain.Controls.Add(control);
         }
 
         // Event and Button click functions
@@ -54,63 +59,63 @@ namespace HotelManagementSystem
         {
             btnOff();
             btnHighlights.FillColor = Color.LightSkyBlue;
-            lblTitle.Text = btnHighlights.Text;
         }
 
         private void btnHome_Click(object sender, EventArgs e)
         {
             btnOff();
             btnHome.FillColor = Color.LightSkyBlue;
-            lblTitle.Text = btnHome.Text;
+            LoadContent(new ucDashboard());
         }
 
         private void btnReservation_Click(object sender, EventArgs e)
         {
             btnOff();
             btnReservation.FillColor = Color.LightSkyBlue;
-            lblTitle.Text = btnReservation.Text;
+            LoadContent(new ucReservation());
         }
 
         private void btnInOut_Click(object sender, EventArgs e)
         {
             btnOff();
             btnInOut.FillColor = Color.LightSkyBlue;
-            lblTitle.Text = btnInOut.Text;
+            LoadContent(new ucCheckInOut());
         }
 
         private void btnMyBill_Click(object sender, EventArgs e)
         {
             btnOff();
             btnMyBill.FillColor = Color.LightSkyBlue;
-            lblTitle.Text = btnMyBill.Text;
         }
 
         private void btnRoomInfo_Click(object sender, EventArgs e)
         {
             btnOff();
             btnRoomInfo.FillColor = Color.LightSkyBlue;
-            lblTitle.Text = btnRoomInfo.Text;
+            LoadContent(new ucRoomInfo());
         }
 
         private void guna2Button1_Click_1(object sender, EventArgs e)
         {
             btnOff();
             btnLogOut.FillColor = Color.IndianRed;
-
         }
 
         private void btnFeedBack_Click(object sender, EventArgs e)
         {
             btnOff();
             btnFeedBack.FillColor = Color.LightSkyBlue;
-            lblTitle.Text = btnFeedBack.Text;
         }
 
         private void btnProfile_Click(object sender, EventArgs e)
         {
             btnOff();
             btnProfile.FillColor = Color.LightSkyBlue;
-            lblTitle.Text = btnProfile.Text;
+        }
+        private void btnRoomServices_Click(object sender, EventArgs e)
+        {
+            btnOff();
+            btnRoomServices.FillColor = Color.LightSkyBlue;
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
@@ -128,6 +133,7 @@ namespace HotelManagementSystem
             btnFeedBack.FillColor = Color.Transparent;
             btnProfile.FillColor = Color.Transparent;
             btnReservation.FillColor = Color.Transparent;
+            btnRoomServices.FillColor = Color.Transparent;
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -179,5 +185,7 @@ namespace HotelManagementSystem
         {
 
         }
+
+
     }
 }

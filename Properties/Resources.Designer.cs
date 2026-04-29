@@ -283,6 +283,16 @@ namespace HotelManagementSystem.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_green_circle_501 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-green-circle-501", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_minimize_16 {
             get {
                 object obj = ResourceManager.GetObject("icons8-minimize-16", resourceCulture);
@@ -363,6 +373,16 @@ namespace HotelManagementSystem.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap room_service {
+            get {
+                object obj = ResourceManager.GetObject("room-service", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap settings {
             get {
                 object obj = ResourceManager.GetObject("settings", resourceCulture);
@@ -426,6 +446,16 @@ namespace HotelManagementSystem.Properties {
         internal static System.Drawing.Bitmap venus_mars {
             get {
                 object obj = ResourceManager.GetObject("venus-mars", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap vertical_city_hotel {
+            get {
+                object obj = ResourceManager.GetObject("vertical-city-hotel", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

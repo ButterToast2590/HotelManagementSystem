@@ -139,6 +139,9 @@
   <data name="sparkles" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\sparkles.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="venus-mars" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\venus-mars.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="calendar" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\calendar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -169,6 +172,9 @@
   <data name="calendar1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\calendar1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="female" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\female.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="bank" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\bank.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -178,8 +184,8 @@
   <data name="comments" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\comments.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="homeWhite" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\homeWhite.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icons8-green-circle-501" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8-green-circle-501.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="key1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\key1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -214,6 +220,9 @@
   <data name="building" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\building.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="ReceptionImage-Photoroom" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ReceptionImage-Photoroom.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="layout-fluid (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\layout-fluid (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -223,16 +232,16 @@
   <data name="sparkles1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\sparkles1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="female" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\female.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="room-service" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\room-service.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ReceptionImage-Photoroom" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ReceptionImage-Photoroom.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="homeWhite" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\homeWhite.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="wallet1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\wallet1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="venus-mars" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\venus-mars.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="vertical-city-hotel" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\vertical-city-hotel.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
