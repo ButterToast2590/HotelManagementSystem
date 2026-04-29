@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace HotelManagementSystem
 {
-    public partial class ucDashboard : UserControl
+    public partial class HighlightCard : UserControl
     {
-        public ucDashboard()
+        public HighlightCard()
         {
             InitializeComponent();
-        }
-
-        private void ucDashboard_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

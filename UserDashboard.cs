@@ -8,8 +8,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Npgsql;
+using HotelManagementSystem.MyControl;
+using HotelManagementSystem.MyControls;
 
-namespace HotelManagementSystem
+namespace HotelManagementSystem 
 {
     public partial class lblUserNameDisplay : Form
     {
@@ -17,7 +19,7 @@ namespace HotelManagementSystem
         {
             InitializeComponent();
         }
-        private void LoadContent(UserControl control)
+        private void LoadContent(System.Windows.Forms.UserControl control)
         {
             panelMain.Controls.Clear();   
             control.Dock = DockStyle.Fill; 
@@ -59,6 +61,7 @@ namespace HotelManagementSystem
         {
             btnOff();
             btnHighlights.FillColor = Color.LightSkyBlue;
+            LoadContent(new ucHighlights());
         }
 
         private void btnHome_Click(object sender, EventArgs e)
@@ -86,6 +89,7 @@ namespace HotelManagementSystem
         {
             btnOff();
             btnMyBill.FillColor = Color.LightSkyBlue;
+            LoadContent(new ucBilling());
         }
 
         private void btnRoomInfo_Click(object sender, EventArgs e)
@@ -105,17 +109,20 @@ namespace HotelManagementSystem
         {
             btnOff();
             btnFeedBack.FillColor = Color.LightSkyBlue;
+            LoadContent(new ucFeedback());
         }
 
         private void btnProfile_Click(object sender, EventArgs e)
         {
             btnOff();
             btnProfile.FillColor = Color.LightSkyBlue;
+            LoadContent(new ucProfile());
         }
         private void btnRoomServices_Click(object sender, EventArgs e)
         {
             btnOff();
             btnRoomServices.FillColor = Color.LightSkyBlue;
+            LoadContent(new ucRoomService());
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
@@ -186,6 +193,9 @@ namespace HotelManagementSystem
 
         }
 
+        private void panelMain_Paint(object sender, PaintEventArgs e)
+        {
 
+        }
     }
 }

@@ -1,6 +1,6 @@
-﻿namespace HotelManagementSystem
+﻿namespace HotelManagementSystem.MyControl
 {
-    partial class ucRoomInfo
+    partial class ucRoomInfo : System.Windows.Forms.UserControl
     {
         /// <summary> 
         /// Required designer variable.

@@ -73,6 +73,16 @@ namespace HotelManagementSystem.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap air_fryer_roast_chicken_27390 {
+            get {
+                object obj = ResourceManager.GetObject("air_fryer_roast_chicken_27390", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap apps {
             get {
                 object obj = ResourceManager.GetObject("apps", resourceCulture);
@@ -363,6 +373,16 @@ namespace HotelManagementSystem.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap pfp_1 {
+            get {
+                object obj = ResourceManager.GetObject("pfp-1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap ReceptionImage_Photoroom {
             get {
                 object obj = ResourceManager.GetObject("ReceptionImage-Photoroom", resourceCulture);
@@ -443,6 +463,16 @@ namespace HotelManagementSystem.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap user_pen {
+            get {
+                object obj = ResourceManager.GetObject("user-pen", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap venus_mars {
             get {
                 object obj = ResourceManager.GetObject("venus-mars", resourceCulture);
@@ -456,6 +486,16 @@ namespace HotelManagementSystem.Properties {
         internal static System.Drawing.Bitmap vertical_city_hotel {
             get {
                 object obj = ResourceManager.GetObject("vertical-city-hotel", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap vertical_city_hotel1 {
+            get {
+                object obj = ResourceManager.GetObject("vertical-city-hotel1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

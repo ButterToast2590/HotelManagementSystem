@@ -38,14 +38,11 @@
     <ApplicationIcon>HotelDoor.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="AMRConnector">
-      <HintPath>..\..\..\Downloads\AMRConnector.dll</HintPath>
-    </Reference>
     <Reference Include="Guna.UI2, Version=2.0.4.7, Culture=neutral, PublicKeyToken=8b9d14aa5142e261, processorArchitecture=MSIL">
       <HintPath>packages\Guna.UI2.WinForms.2.0.4.7\lib\net472\Guna.UI2.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=7.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>packages\Microsoft.Bcl.AsyncInterfaces.7.0.0\lib\net462\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=10.0.0.7, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Bcl.AsyncInterfaces.10.0.7\lib\net462\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Bcl.HashCode, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>packages\Microsoft.Bcl.HashCode.1.1.1\lib\net461\Microsoft.Bcl.HashCode.dll</HintPath>
@@ -59,8 +56,8 @@
     <Reference Include="System">
       <HintPath>..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll</HintPath>
     </Reference>
-    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    <Reference Include="System.Buffers, Version=4.0.5.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Buffers.4.6.1\lib\net462\System.Buffers.dll</HintPath>
     </Reference>
     <Reference Include="System.Collections.Immutable, Version=7.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>packages\System.Collections.Immutable.7.0.0\lib\net462\System.Collections.Immutable.dll</HintPath>
@@ -70,32 +67,33 @@
     <Reference Include="System.Diagnostics.DiagnosticSource, Version=6.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>packages\System.Diagnostics.DiagnosticSource.6.0.0\lib\net461\System.Diagnostics.DiagnosticSource.dll</HintPath>
     </Reference>
+    <Reference Include="System.IO.Pipelines, Version=10.0.0.7, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.IO.Pipelines.10.0.7\lib\net462\System.IO.Pipelines.dll</HintPath>
+    </Reference>
     <Reference Include="System.Management" />
-    <Reference Include="System.Memory, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>packages\System.Memory.4.5.5\lib\net461\System.Memory.dll</HintPath>
+    <Reference Include="System.Memory, Version=4.0.5.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Memory.4.6.3\lib\net462\System.Memory.dll</HintPath>
     </Reference>
     <Reference Include="System.Numerics" />
-    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    <Reference Include="System.Numerics.Vectors, Version=4.1.6.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Numerics.Vectors.4.6.1\lib\net462\System.Numerics.Vectors.dll</HintPath>
     </Reference>
-    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Runtime.CompilerServices.Unsafe.6.1.2\lib\net462\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
     </Reference>
-    <Reference Include="System.Text.Encodings.Web, Version=7.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>packages\System.Text.Encodings.Web.7.0.0\lib\net462\System.Text.Encodings.Web.dll</HintPath>
+    <Reference Include="System.Text.Encodings.Web, Version=10.0.0.7, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Text.Encodings.Web.10.0.7\lib\net462\System.Text.Encodings.Web.dll</HintPath>
     </Reference>
-    <Reference Include="System.Text.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>packages\System.Text.Json.7.0.0\lib\net462\System.Text.Json.dll</HintPath>
+    <Reference Include="System.Text.Json, Version=10.0.0.7, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Text.Json.10.0.7\lib\net462\System.Text.Json.dll</HintPath>
     </Reference>
     <Reference Include="System.Threading.Channels, Version=7.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>packages\System.Threading.Channels.7.0.0\lib\net462\System.Threading.Channels.dll</HintPath>
     </Reference>
-    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.4.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Threading.Tasks.Extensions.4.6.3\lib\net462\System.Threading.Tasks.Extensions.dll</HintPath>
     </Reference>
-    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
-    </Reference>
+    <Reference Include="System.ValueTuple" />
     <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -107,11 +105,53 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdminDashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminDashboard.Designer.cs">
+      <DependentUpon>AdminDashboard.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form\FormLogin.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form\FormLogin.Designer.cs">
       <DependentUpon>FormLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HighlightCard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HighlightCard.Designer.cs">
+      <DependentUpon>HighlightCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuItemCard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MenuItemCard.Designer.cs">
+      <DependentUpon>MenuItemCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyControls\ucBilling.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyControls\ucBilling.Designer.cs">
+      <DependentUpon>ucBilling.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyControls\ucFeedback.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyControls\ucFeedback.Designer.cs">
+      <DependentUpon>ucFeedback.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyControls\ucProfile.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyControls\ucProfile.Designer.cs">
+      <DependentUpon>ucProfile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyControls\ucRoomService.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyControls\ucRoomService.Designer.cs">
+      <DependentUpon>ucRoomService.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -121,28 +161,34 @@
     <Compile Include="SignUpForm.Designer.cs">
       <DependentUpon>SignUpForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="ucRoomInfo.cs">
+    <Compile Include="MyControls\ucRoomInfo.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ucRoomInfo.Designer.cs">
+    <Compile Include="MyControls\ucRoomInfo.Designer.cs">
       <DependentUpon>ucRoomInfo.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControl\ucCheckInOut.cs">
+    <Compile Include="MyControls\ucCheckInOut.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControl\ucCheckInOut.Designer.cs">
+    <Compile Include="MyControls\ucCheckInOut.Designer.cs">
       <DependentUpon>ucCheckInOut.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControl\ucDashboard.cs">
+    <Compile Include="MyControls\ucDashboard.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControl\ucDashboard.Designer.cs">
+    <Compile Include="MyControls\ucDashboard.Designer.cs">
       <DependentUpon>ucDashboard.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControl\ucReservation.cs">
+    <Compile Include="MyControls\ucHighlights.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControl\ucReservation.Designer.cs">
+    <Compile Include="MyControls\ucHighlights.Designer.cs">
+      <DependentUpon>ucHighlights.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyControls\ucReservation.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyControls\ucReservation.Designer.cs">
       <DependentUpon>ucReservation.cs</DependentUpon>
     </Compile>
     <Compile Include="UserDashboard.cs">
@@ -151,8 +197,32 @@
     <Compile Include="UserDashboard.Designer.cs">
       <DependentUpon>UserDashboard.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AdminDashboard.resx">
+      <DependentUpon>AdminDashboard.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form\FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HighlightCard.resx">
+      <DependentUpon>HighlightCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuItemCard.resx">
+      <DependentUpon>MenuItemCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyControls\ucBilling.resx">
+      <DependentUpon>ucBilling.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyControls\ucFeedback.resx">
+      <DependentUpon>ucFeedback.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyControls\ucHighlights.resx">
+      <DependentUpon>ucHighlights.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyControls\ucProfile.resx">
+      <DependentUpon>ucProfile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyControls\ucRoomService.resx">
+      <DependentUpon>ucRoomService.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -167,16 +237,16 @@
     <EmbeddedResource Include="SignUpForm.resx">
       <DependentUpon>SignUpForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ucRoomInfo.resx">
+    <EmbeddedResource Include="MyControls\ucRoomInfo.resx">
       <DependentUpon>ucRoomInfo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControl\ucCheckInOut.resx">
+    <EmbeddedResource Include="MyControls\ucCheckInOut.resx">
       <DependentUpon>ucCheckInOut.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControl\ucDashboard.resx">
+    <EmbeddedResource Include="MyControls\ucDashboard.resx">
       <DependentUpon>ucDashboard.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControl\ucReservation.resx">
+    <EmbeddedResource Include="MyControls\ucReservation.resx">
       <DependentUpon>ucReservation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserDashboard.resx">
@@ -198,6 +268,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="HotelDoor.ico" />
+    <None Include="Resources\pfp-1.jpeg" />
+    <None Include="Resources\user-pen.png" />
+    <None Include="Resources\vertical-city-hotel1.jpg" />
     <None Include="Resources\vertical-city-hotel.jpg" />
     <None Include="Resources\icons8-green-circle-501.png" />
     <None Include="Resources\room-service.png" />
@@ -229,6 +302,7 @@
     <None Include="Resources\calendar1.png" />
     <None Include="Resources\bed1.png" />
     <None Include="Resources\admin-alt.png" />
+    <None Include="Resources\air_fryer_roast_chicken_27390.jpg" />
     <Content Include="Resources\Cinzel-VariableFont_wght.ttf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -249,5 +323,7 @@
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
     <Error Condition="!Exists('packages\Microsoft.Extensions.Logging.Abstractions.6.0.0\build\Microsoft.Extensions.Logging.Abstractions.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Microsoft.Extensions.Logging.Abstractions.6.0.0\build\Microsoft.Extensions.Logging.Abstractions.targets'))" />
+    <Error Condition="!Exists('packages\System.ValueTuple.4.6.2\build\net471\System.ValueTuple.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\System.ValueTuple.4.6.2\build\net471\System.ValueTuple.targets'))" />
   </Target>
+  <Import Project="packages\System.ValueTuple.4.6.2\build\net471\System.ValueTuple.targets" Condition="Exists('packages\System.ValueTuple.4.6.2\build\net471\System.ValueTuple.targets')" />
 </Project>

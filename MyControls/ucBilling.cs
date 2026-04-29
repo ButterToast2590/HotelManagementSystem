@@ -8,22 +8,27 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace HotelManagementSystem
+namespace HotelManagementSystem.MyControls
 {
-    public partial class ucRoomInfo : UserControl
+    public partial class ucBilling : UserControl
     {
-        public ucRoomInfo()
+        public ucBilling()
         {
             InitializeComponent();
             this.AutoScaleMode = AutoScaleMode.None;
         }
 
-        private void guna2PictureBox2_Click(object sender, EventArgs e)
+        private void label1_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void label9_Click(object sender, EventArgs e)
+        private void lblTotalValue_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
         {
 
         }

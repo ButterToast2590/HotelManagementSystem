@@ -33,7 +33,6 @@
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.siguo_lbl = new System.Windows.Forms.Label();
             this.labelCreate = new System.Windows.Forms.Label();
-            this.forgot_lbl = new System.Windows.Forms.Label();
             this.passWord_lbl = new System.Windows.Forms.Label();
             this.userName_lbl = new System.Windows.Forms.Label();
             this.subHeader_lbl = new System.Windows.Forms.Label();
@@ -67,11 +66,11 @@
             this.siguo_lbl.AutoSize = true;
             this.siguo_lbl.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.siguo_lbl.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.siguo_lbl.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.siguo_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.siguo_lbl.ForeColor = System.Drawing.Color.SteelBlue;
             this.siguo_lbl.Location = new System.Drawing.Point(294, 505);
             this.siguo_lbl.Name = "siguo_lbl";
-            this.siguo_lbl.Size = new System.Drawing.Size(57, 20);
+            this.siguo_lbl.Size = new System.Drawing.Size(66, 20);
             this.siguo_lbl.TabIndex = 2;
             this.siguo_lbl.Text = "Sign Up";
             this.siguo_lbl.Click += new System.EventHandler(this.siguo_lbl_Click);
@@ -80,36 +79,23 @@
             // 
             this.labelCreate.AutoSize = true;
             this.labelCreate.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.labelCreate.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCreate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelCreate.ForeColor = System.Drawing.Color.Gray;
             this.labelCreate.Location = new System.Drawing.Point(150, 505);
             this.labelCreate.Name = "labelCreate";
-            this.labelCreate.Size = new System.Drawing.Size(147, 20);
+            this.labelCreate.Size = new System.Drawing.Size(177, 20);
             this.labelCreate.TabIndex = 6;
             this.labelCreate.Text = "Don\'t have an account?";
-            // 
-            // forgot_lbl
-            // 
-            this.forgot_lbl.AutoSize = true;
-            this.forgot_lbl.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.forgot_lbl.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.forgot_lbl.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.forgot_lbl.ForeColor = System.Drawing.Color.Gray;
-            this.forgot_lbl.Location = new System.Drawing.Point(198, 430);
-            this.forgot_lbl.Name = "forgot_lbl";
-            this.forgot_lbl.Size = new System.Drawing.Size(122, 20);
-            this.forgot_lbl.TabIndex = 0;
-            this.forgot_lbl.Text = "Forgot Password?";
             // 
             // passWord_lbl
             // 
             this.passWord_lbl.AutoSize = true;
             this.passWord_lbl.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.passWord_lbl.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.passWord_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.passWord_lbl.ForeColor = System.Drawing.Color.DimGray;
             this.passWord_lbl.Location = new System.Drawing.Point(51, 324);
             this.passWord_lbl.Name = "passWord_lbl";
-            this.passWord_lbl.Size = new System.Drawing.Size(85, 23);
+            this.passWord_lbl.Size = new System.Drawing.Size(100, 24);
             this.passWord_lbl.TabIndex = 3;
             this.passWord_lbl.Text = "Password";
             this.passWord_lbl.Click += new System.EventHandler(this.passWord_lbl_Click);
@@ -118,11 +104,11 @@
             // 
             this.userName_lbl.AutoSize = true;
             this.userName_lbl.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.userName_lbl.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.userName_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.userName_lbl.ForeColor = System.Drawing.Color.DimGray;
             this.userName_lbl.Location = new System.Drawing.Point(51, 228);
             this.userName_lbl.Name = "userName_lbl";
-            this.userName_lbl.Size = new System.Drawing.Size(87, 23);
+            this.userName_lbl.Size = new System.Drawing.Size(105, 24);
             this.userName_lbl.TabIndex = 0;
             this.userName_lbl.Text = "Username";
             this.userName_lbl.Click += new System.EventHandler(this.logInHeader__lbl_Click);
@@ -131,11 +117,11 @@
             // 
             this.subHeader_lbl.AutoSize = true;
             this.subHeader_lbl.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.subHeader_lbl.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.subHeader_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.subHeader_lbl.ForeColor = System.Drawing.Color.Gray;
             this.subHeader_lbl.Location = new System.Drawing.Point(179, 171);
             this.subHeader_lbl.Name = "subHeader_lbl";
-            this.subHeader_lbl.Size = new System.Drawing.Size(141, 20);
+            this.subHeader_lbl.Size = new System.Drawing.Size(165, 20);
             this.subHeader_lbl.TabIndex = 0;
             this.subHeader_lbl.Text = "Secured Guess Portal\r\n";
             this.subHeader_lbl.Click += new System.EventHandler(this.logInHeader__lbl_Click);
@@ -144,11 +130,11 @@
             // 
             this.logInHeader_lbl.AutoSize = true;
             this.logInHeader_lbl.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.logInHeader_lbl.Font = new System.Drawing.Font("Copperplate Gothic Bold", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.logInHeader_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.logInHeader_lbl.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.logInHeader_lbl.Location = new System.Drawing.Point(83, 122);
             this.logInHeader_lbl.Name = "logInHeader_lbl";
-            this.logInHeader_lbl.Size = new System.Drawing.Size(365, 39);
+            this.logInHeader_lbl.Size = new System.Drawing.Size(308, 39);
             this.logInHeader_lbl.TabIndex = 0;
             this.logInHeader_lbl.Text = "ZEDLINK UNIFIED";
             this.logInHeader_lbl.Click += new System.EventHandler(this.logInHeader__lbl_Click);
@@ -188,11 +174,11 @@
             // copyrightMessage
             // 
             this.copyrightMessage.AutoSize = true;
-            this.copyrightMessage.Font = new System.Drawing.Font("Baskerville Old Face", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.copyrightMessage.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.copyrightMessage.ForeColor = System.Drawing.Color.DimGray;
             this.copyrightMessage.Location = new System.Drawing.Point(983, 697);
             this.copyrightMessage.Name = "copyrightMessage";
-            this.copyrightMessage.Size = new System.Drawing.Size(371, 14);
+            this.copyrightMessage.Size = new System.Drawing.Size(419, 15);
             this.copyrightMessage.TabIndex = 7;
             this.copyrightMessage.Text = "Copyright © 2026 Zedlink. All rights reserved. C# Hotel Management System";
             this.copyrightMessage.Click += new System.EventHandler(this.copyrightMessage_Click);
@@ -205,7 +191,6 @@
             this.guna2GroupBox1.Controls.Add(this.labelCreate);
             this.guna2GroupBox1.Controls.Add(this.picEye);
             this.guna2GroupBox1.Controls.Add(this.passWord_txt);
-            this.guna2GroupBox1.Controls.Add(this.forgot_lbl);
             this.guna2GroupBox1.Controls.Add(this.username_txt);
             this.guna2GroupBox1.Controls.Add(this.logInHeader_lbl);
             this.guna2GroupBox1.Controls.Add(this.pictureBox1);
@@ -222,6 +207,7 @@
             this.guna2GroupBox1.Size = new System.Drawing.Size(537, 554);
             this.guna2GroupBox1.TabIndex = 9;
             this.guna2GroupBox1.Text = "Please Login First";
+            this.guna2GroupBox1.Click += new System.EventHandler(this.guna2GroupBox1_Click);
             // 
             // logInBtn
             // 
@@ -231,9 +217,9 @@
             this.logInBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.logInBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.logInBtn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(23)))), ((int)(((byte)(42)))));
-            this.logInBtn.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.logInBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.logInBtn.ForeColor = System.Drawing.Color.White;
-            this.logInBtn.Location = new System.Drawing.Point(46, 453);
+            this.logInBtn.Location = new System.Drawing.Point(46, 450);
             this.logInBtn.Name = "logInBtn";
             this.logInBtn.Size = new System.Drawing.Size(446, 49);
             this.logInBtn.TabIndex = 5;
@@ -300,6 +286,7 @@
             this.username_txt.SelectedText = "";
             this.username_txt.Size = new System.Drawing.Size(446, 50);
             this.username_txt.TabIndex = 4;
+            this.username_txt.TextChanged += new System.EventHandler(this.username_txt_TextChanged_1);
             // 
             // pictureBox1
             // 
@@ -370,7 +357,7 @@
             // 
             // logInForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.ClientSize = new System.Drawing.Size(1366, 720);
@@ -381,7 +368,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.panel2);
-            this.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
@@ -413,7 +400,6 @@
         private System.Windows.Forms.Label userName_lbl;
         private System.Windows.Forms.Label passWord_lbl;
         private System.Windows.Forms.PictureBox picEye;
-        private System.Windows.Forms.Label forgot_lbl;
         private System.Windows.Forms.Label siguo_lbl;
         private System.Windows.Forms.Label labelCreate;
         private System.Windows.Forms.Panel panel2;

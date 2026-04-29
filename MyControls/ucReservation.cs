@@ -8,9 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace HotelManagementSystem
+namespace HotelManagementSystem.MyControl
 {
-    public partial class ucReservation : UserControl
+    public partial class ucReservation : System.Windows.Forms.UserControl
     {
         public ucReservation()
         {

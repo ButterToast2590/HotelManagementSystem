@@ -1,4 +1,5 @@
-﻿namespace HotelManagementSystem { 
+﻿namespace HotelManagementSystem.MyControl
+{ 
 
     partial class ucReservation 
     {

@@ -13,10 +13,11 @@ namespace HotelManagementSystem
         private string connString =
             "Host=dbhotel-14349.jxf.gcp-us-west2.cockroachlabs.cloud;" +
             "Port=26257;" +
-            "Username=DBHotelManagement;" +
-            "Password=iMTxPnyvC50blvD2UcopKA;" +
+            "Username=dbhotelmanagement;" +
+            "Password=fdqYxIcKcPtSZV90PyNTNg;" +
             "Database=hotelmanagement;" +
-            "SslMode=VerifyFull;";
+            "SslMode=require;" +
+            "Trust Server Certificate=true;";
 
         public logInForm()
         {
@@ -52,49 +53,62 @@ namespace HotelManagementSystem
 
         private void logInBtn_Click_1(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(username_txt.Text) || string.IsNullOrWhiteSpace(passWord_txt.Text))
-            {
-                MessageBox.Show("Please enter both username and password.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
+            string user = username_txt.Text.Trim();
+            string pass = passWord_txt.Text.Trim();
 
-            if (IsValidNamePass(username_txt.Text.Trim(), passWord_txt.Text.Trim()))
+            string role = IsValidNamePass(user, pass);
+
+            if (role == "Admin")
             {
-                lblUserNameDisplay dashboard = new lblUserNameDisplay();
-                dashboard.Show();
+                AdminDashboard adminDash = new AdminDashboard();
+                adminDash.Show();
+                this.Hide();
+            }
+            else if (role == "User")
+            {
+                lblUserNameDisplay userDash = new lblUserNameDisplay();
+                userDash.Show();
                 this.Hide();
             }
             else
             {
-                MessageBox.Show("Invalid username or password. Please try again.", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Invalid username or password.", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
 
-        private bool IsValidNamePass(string username, string password)
+        private string IsValidNamePass(string username, string password)
         {
             try
             {
                 using (var conn = new NpgsqlConnection(connString))
                 {
                     conn.Open();
-                    string sql = "SELECT COUNT(*) FROM hotel.users WHERE username=@user AND password=@pass";
 
-                    using (var cmd = new NpgsqlCommand(sql, conn))
+                    string adminSql = "SELECT 'Admin' FROM hotel.admins WHERE admin_name=@user AND password=@pass";
+                    using (var cmd = new NpgsqlCommand(adminSql, conn))
                     {
                         cmd.Parameters.AddWithValue("@user", username);
                         cmd.Parameters.AddWithValue("@pass", password);
+                        object result = cmd.ExecuteScalar();
+                        if (result != null) return "Admin";
+                    }
 
-                        int count = Convert.ToInt32(cmd.ExecuteScalar());
-                        return count > 0;
+                    string userSql = "SELECT 'User' FROM hotel.users WHERE username=@user AND password=@pass";
+                    using (var cmd = new NpgsqlCommand(userSql, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@user", username);
+                        cmd.Parameters.AddWithValue("@pass", password);
+                        object result = cmd.ExecuteScalar();
+                        if (result != null) return "User";
                     }
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Database connection error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return false;
+                MessageBox.Show("Database error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            return null;
         }
 
 
@@ -173,6 +187,16 @@ namespace HotelManagementSystem
             SignUpForm createAccont = new SignUpForm();
             createAccont.Show();
             this.Hide();
+        }
+
+        private void username_txt_TextChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2GroupBox1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 
