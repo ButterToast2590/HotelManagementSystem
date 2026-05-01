@@ -28,9 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
+            this.dgvReviews = new System.Windows.Forms.DataGridView();
+            this.colReviewInfo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colRating = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lblPage = new System.Windows.Forms.Label();
+            this.btnNext = new Guna.UI2.WinForms.Guna2Button();
+            this.btnPrev = new Guna.UI2.WinForms.Guna2Button();
             this.label13 = new System.Windows.Forms.Label();
             this.lblReviewsTitle = new System.Windows.Forms.Label();
             this.panelLeft = new Guna.UI2.WinForms.Guna2Panel();
@@ -58,15 +65,10 @@
             this.lblRateTitle = new System.Windows.Forms.Label();
             this.lblSubtitle = new System.Windows.Forms.Label();
             this.lblTitle = new System.Windows.Forms.Label();
-            this.btnPrev = new Guna.UI2.WinForms.Guna2Button();
-            this.btnNext = new Guna.UI2.WinForms.Guna2Button();
-            this.lblPage = new System.Windows.Forms.Label();
-            this.dgvReviews = new System.Windows.Forms.DataGridView();
-            this.colReviewInfo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colRating = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvReviews)).BeginInit();
             this.panelLeft.SuspendLayout();
             this.guna2Panel7.SuspendLayout();
             this.guna2Panel6.SuspendLayout();
@@ -74,7 +76,6 @@
             this.guna2Panel4.SuspendLayout();
             this.guna2Panel3.SuspendLayout();
             this.guna2Panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvReviews)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -123,16 +124,87 @@
             this.guna2Panel2.Size = new System.Drawing.Size(530, 769);
             this.guna2Panel2.TabIndex = 29;
             // 
+            // dgvReviews
+            // 
+            this.dgvReviews.BackgroundColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Symbol", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvReviews.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvReviews.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvReviews.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colReviewInfo,
+            this.colRating});
+            this.dgvReviews.Location = new System.Drawing.Point(18, 72);
+            this.dgvReviews.Name = "dgvReviews";
+            this.dgvReviews.Size = new System.Drawing.Size(496, 597);
+            this.dgvReviews.TabIndex = 62;
+            // 
+            // colReviewInfo
+            // 
+            this.colReviewInfo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colReviewInfo.HeaderText = "Review";
+            this.colReviewInfo.Name = "colReviewInfo";
+            // 
+            // colRating
+            // 
+            this.colRating.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.colRating.HeaderText = "Rating";
+            this.colRating.Name = "colRating";
+            // 
+            // lblPage
+            // 
+            this.lblPage.AutoSize = true;
+            this.lblPage.Location = new System.Drawing.Point(236, 680);
+            this.lblPage.Name = "lblPage";
+            this.lblPage.Size = new System.Drawing.Size(62, 13);
+            this.lblPage.TabIndex = 61;
+            this.lblPage.Text = "Page 1 of 1";
+            // 
+            // btnNext
+            // 
+            this.btnNext.BorderRadius = 10;
+            this.btnNext.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnNext.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnNext.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnNext.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnNext.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNext.ForeColor = System.Drawing.Color.White;
+            this.btnNext.Location = new System.Drawing.Point(284, 713);
+            this.btnNext.Name = "btnNext";
+            this.btnNext.Size = new System.Drawing.Size(101, 38);
+            this.btnNext.TabIndex = 60;
+            this.btnNext.Text = "Next →";
+            // 
+            // btnPrev
+            // 
+            this.btnPrev.BorderRadius = 10;
+            this.btnPrev.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnPrev.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnPrev.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnPrev.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnPrev.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrev.ForeColor = System.Drawing.Color.White;
+            this.btnPrev.Location = new System.Drawing.Point(148, 713);
+            this.btnPrev.Name = "btnPrev";
+            this.btnPrev.Size = new System.Drawing.Size(101, 38);
+            this.btnPrev.TabIndex = 59;
+            this.btnPrev.Text = "← Prev";
+            // 
             // label13
             // 
             this.label13.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label13.AutoSize = true;
             this.label13.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label13.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.ForeColor = System.Drawing.Color.DimGray;
             this.label13.Location = new System.Drawing.Point(25, 352);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(0, 20);
+            this.label13.Size = new System.Drawing.Size(0, 18);
             this.label13.TabIndex = 57;
             // 
             // lblReviewsTitle
@@ -436,69 +508,6 @@
             this.lblTitle.TabIndex = 29;
             this.lblTitle.Text = "Feedback";
             // 
-            // btnPrev
-            // 
-            this.btnPrev.BorderRadius = 10;
-            this.btnPrev.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnPrev.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnPrev.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnPrev.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnPrev.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPrev.ForeColor = System.Drawing.Color.White;
-            this.btnPrev.Location = new System.Drawing.Point(148, 713);
-            this.btnPrev.Name = "btnPrev";
-            this.btnPrev.Size = new System.Drawing.Size(101, 38);
-            this.btnPrev.TabIndex = 59;
-            this.btnPrev.Text = "← Prev";
-            // 
-            // btnNext
-            // 
-            this.btnNext.BorderRadius = 10;
-            this.btnNext.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnNext.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnNext.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnNext.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnNext.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNext.ForeColor = System.Drawing.Color.White;
-            this.btnNext.Location = new System.Drawing.Point(284, 713);
-            this.btnNext.Name = "btnNext";
-            this.btnNext.Size = new System.Drawing.Size(101, 38);
-            this.btnNext.TabIndex = 60;
-            this.btnNext.Text = "Next →";
-            // 
-            // lblPage
-            // 
-            this.lblPage.AutoSize = true;
-            this.lblPage.Location = new System.Drawing.Point(236, 680);
-            this.lblPage.Name = "lblPage";
-            this.lblPage.Size = new System.Drawing.Size(62, 13);
-            this.lblPage.TabIndex = 61;
-            this.lblPage.Text = "Page 1 of 1";
-            // 
-            // dgvReviews
-            // 
-            this.dgvReviews.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.dgvReviews.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvReviews.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.colReviewInfo,
-            this.colRating});
-            this.dgvReviews.Location = new System.Drawing.Point(18, 72);
-            this.dgvReviews.Name = "dgvReviews";
-            this.dgvReviews.Size = new System.Drawing.Size(496, 597);
-            this.dgvReviews.TabIndex = 62;
-            // 
-            // colReviewInfo
-            // 
-            this.colReviewInfo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colReviewInfo.HeaderText = "Review";
-            this.colReviewInfo.Name = "colReviewInfo";
-            // 
-            // colRating
-            // 
-            this.colRating.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.colRating.HeaderText = "Rating";
-            this.colRating.Name = "colRating";
-            // 
             // ucFeedback
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -511,6 +520,7 @@
             this.tableLayoutPanel1.ResumeLayout(false);
             this.guna2Panel2.ResumeLayout(false);
             this.guna2Panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvReviews)).EndInit();
             this.panelLeft.ResumeLayout(false);
             this.panelLeft.PerformLayout();
             this.guna2Panel7.ResumeLayout(false);
@@ -525,7 +535,6 @@
             this.guna2Panel3.PerformLayout();
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvReviews)).EndInit();
             this.ResumeLayout(false);
 
         }

@@ -18,6 +18,8 @@ namespace HotelManagementSystem
         public lblUserNameDisplay()
         {
             InitializeComponent();
+            LoadContent(new ucDashboard());
+            btnHome.FillColor = Color.LightSkyBlue;
         }
         private void LoadContent(System.Windows.Forms.UserControl control)
         {

@@ -10,17 +10,12 @@ using System.Windows.Forms;
 
 namespace HotelManagementSystem.MyControls
 {
-    public partial class ucProfile : UserControl
+    public partial class ucAdminDash : UserControl
     {
-        public ucProfile()
+        public ucAdminDash()
         {
             InitializeComponent();
             this.AutoScaleMode = AutoScaleMode.None;
-        }
-
-        private void label55_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -28,7 +23,7 @@ namespace HotelManagementSystem.MyControls
 
         }
 
-        private void lblSubtitle_Click(object sender, EventArgs e)
+        private void lblTotalGuest_Click(object sender, EventArgs e)
         {
 
         }

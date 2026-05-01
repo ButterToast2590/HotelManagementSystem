@@ -41,6 +41,18 @@
             this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel4 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel5 = new Guna.UI2.WinForms.Guna2Panel();
+            this.label61 = new System.Windows.Forms.Label();
+            this.guna2Panel10 = new Guna.UI2.WinForms.Guna2Panel();
+            this.label62 = new System.Windows.Forms.Label();
+            this.label59 = new System.Windows.Forms.Label();
+            this.guna2Panel9 = new Guna.UI2.WinForms.Guna2Panel();
+            this.label60 = new System.Windows.Forms.Label();
+            this.label57 = new System.Windows.Forms.Label();
+            this.guna2Panel8 = new Guna.UI2.WinForms.Guna2Panel();
+            this.label58 = new System.Windows.Forms.Label();
+            this.label46 = new System.Windows.Forms.Label();
+            this.guna2Panel7 = new Guna.UI2.WinForms.Guna2Panel();
+            this.label50 = new System.Windows.Forms.Label();
             this.label42 = new System.Windows.Forms.Label();
             this.guna2Panel6 = new Guna.UI2.WinForms.Guna2Panel();
             this.label45 = new System.Windows.Forms.Label();
@@ -48,7 +60,6 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.label53 = new System.Windows.Forms.Label();
             this.label54 = new System.Windows.Forms.Label();
-            this.guna2CirclePictureBox4 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.label27 = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
@@ -64,7 +75,6 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.label39 = new System.Windows.Forms.Label();
             this.label40 = new System.Windows.Forms.Label();
-            this.guna2CirclePictureBox3 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.label25 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
@@ -80,7 +90,6 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.label23 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
-            this.guna2CirclePictureBox2 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -94,54 +103,45 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblMemberSince = new System.Windows.Forms.Label();
             this.lblFullName = new System.Windows.Forms.Label();
-            this.guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.lblSubtitle = new System.Windows.Forms.Label();
-            this.lblTitle = new System.Windows.Forms.Label();
-            this.label46 = new System.Windows.Forms.Label();
-            this.guna2Panel7 = new Guna.UI2.WinForms.Guna2Panel();
-            this.label50 = new System.Windows.Forms.Label();
-            this.label57 = new System.Windows.Forms.Label();
-            this.guna2Panel8 = new Guna.UI2.WinForms.Guna2Panel();
-            this.label58 = new System.Windows.Forms.Label();
-            this.label59 = new System.Windows.Forms.Label();
-            this.guna2Panel9 = new Guna.UI2.WinForms.Guna2Panel();
-            this.label60 = new System.Windows.Forms.Label();
-            this.label61 = new System.Windows.Forms.Label();
-            this.guna2Panel10 = new Guna.UI2.WinForms.Guna2Panel();
-            this.label62 = new System.Windows.Forms.Label();
-            this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
-            this.label41 = new System.Windows.Forms.Label();
-            this.label43 = new System.Windows.Forms.Label();
             this.lblOrderTotal = new System.Windows.Forms.Label();
             this.lblOrderTotalText = new System.Windows.Forms.Label();
             this.dgvOrder = new Guna.UI2.WinForms.Guna2DataGridView();
             this.colItem = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colQty = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label43 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.label41 = new System.Windows.Forms.Label();
+            this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lblSubtitle = new System.Windows.Forms.Label();
+            this.lblTitle = new System.Windows.Forms.Label();
+            this.guna2CirclePictureBox4 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
+            this.guna2CirclePictureBox3 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
+            this.guna2CirclePictureBox2 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
+            this.guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.panelLeft.SuspendLayout();
             this.guna2Panel3.SuspendLayout();
             this.guna2Panel4.SuspendLayout();
             this.guna2Panel5.SuspendLayout();
+            this.guna2Panel10.SuspendLayout();
+            this.guna2Panel9.SuspendLayout();
+            this.guna2Panel8.SuspendLayout();
+            this.guna2Panel7.SuspendLayout();
             this.guna2Panel6.SuspendLayout();
+            this.tableLayoutPanel2.SuspendLayout();
+            this.guna2Panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvOrder)).BeginInit();
+            this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
-            this.tableLayoutPanel2.SuspendLayout();
-            this.guna2Panel2.SuspendLayout();
-            this.guna2Panel1.SuspendLayout();
-            this.guna2Panel7.SuspendLayout();
-            this.guna2Panel8.SuspendLayout();
-            this.guna2Panel9.SuspendLayout();
-            this.guna2Panel10.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvOrder)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -287,6 +287,142 @@
             this.guna2Panel5.Size = new System.Drawing.Size(572, 769);
             this.guna2Panel5.TabIndex = 76;
             // 
+            // label61
+            // 
+            this.label61.AutoSize = true;
+            this.label61.Font = new System.Drawing.Font("Segoe UI Symbol", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label61.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label61.Location = new System.Drawing.Point(75, 582);
+            this.label61.Name = "label61";
+            this.label61.Size = new System.Drawing.Size(87, 30);
+            this.label61.TabIndex = 87;
+            this.label61.Text = "Address";
+            // 
+            // guna2Panel10
+            // 
+            this.guna2Panel10.BorderColor = System.Drawing.Color.Black;
+            this.guna2Panel10.BorderRadius = 10;
+            this.guna2Panel10.BorderThickness = 1;
+            this.guna2Panel10.Controls.Add(this.label62);
+            this.guna2Panel10.FillColor = System.Drawing.Color.Azure;
+            this.guna2Panel10.Location = new System.Drawing.Point(73, 615);
+            this.guna2Panel10.Name = "guna2Panel10";
+            this.guna2Panel10.Size = new System.Drawing.Size(433, 44);
+            this.guna2Panel10.TabIndex = 86;
+            // 
+            // label62
+            // 
+            this.label62.AutoSize = true;
+            this.label62.Font = new System.Drawing.Font("Segoe UI Symbol", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label62.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label62.Location = new System.Drawing.Point(13, 10);
+            this.label62.Name = "label62";
+            this.label62.Size = new System.Drawing.Size(351, 25);
+            this.label62.TabIndex = 61;
+            this.label62.Text = "San Jose Delmonte, Sto.Cristo, Blk 9 lot 3";
+            // 
+            // label59
+            // 
+            this.label59.AutoSize = true;
+            this.label59.Font = new System.Drawing.Font("Segoe UI Symbol", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label59.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label59.Location = new System.Drawing.Point(75, 502);
+            this.label59.Name = "label59";
+            this.label59.Size = new System.Drawing.Size(131, 30);
+            this.label59.TabIndex = 85;
+            this.label59.Text = "Date of Birth";
+            // 
+            // guna2Panel9
+            // 
+            this.guna2Panel9.BorderColor = System.Drawing.Color.Black;
+            this.guna2Panel9.BorderRadius = 10;
+            this.guna2Panel9.BorderThickness = 1;
+            this.guna2Panel9.Controls.Add(this.label60);
+            this.guna2Panel9.FillColor = System.Drawing.Color.Azure;
+            this.guna2Panel9.Location = new System.Drawing.Point(73, 535);
+            this.guna2Panel9.Name = "guna2Panel9";
+            this.guna2Panel9.Size = new System.Drawing.Size(433, 44);
+            this.guna2Panel9.TabIndex = 84;
+            // 
+            // label60
+            // 
+            this.label60.AutoSize = true;
+            this.label60.Font = new System.Drawing.Font("Segoe UI Symbol", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label60.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label60.Location = new System.Drawing.Point(13, 10);
+            this.label60.Name = "label60";
+            this.label60.Size = new System.Drawing.Size(140, 25);
+            this.label60.TabIndex = 61;
+            this.label60.Text = "March 15, 1990";
+            // 
+            // label57
+            // 
+            this.label57.AutoSize = true;
+            this.label57.Font = new System.Drawing.Font("Segoe UI Symbol", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label57.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label57.Location = new System.Drawing.Point(75, 423);
+            this.label57.Name = "label57";
+            this.label57.Size = new System.Drawing.Size(80, 30);
+            this.label57.TabIndex = 83;
+            this.label57.Text = "Gender";
+            // 
+            // guna2Panel8
+            // 
+            this.guna2Panel8.BorderColor = System.Drawing.Color.Black;
+            this.guna2Panel8.BorderRadius = 10;
+            this.guna2Panel8.BorderThickness = 1;
+            this.guna2Panel8.Controls.Add(this.label58);
+            this.guna2Panel8.FillColor = System.Drawing.Color.Azure;
+            this.guna2Panel8.Location = new System.Drawing.Point(73, 456);
+            this.guna2Panel8.Name = "guna2Panel8";
+            this.guna2Panel8.Size = new System.Drawing.Size(433, 44);
+            this.guna2Panel8.TabIndex = 82;
+            // 
+            // label58
+            // 
+            this.label58.AutoSize = true;
+            this.label58.Font = new System.Drawing.Font("Segoe UI Symbol", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label58.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label58.Location = new System.Drawing.Point(13, 10);
+            this.label58.Name = "label58";
+            this.label58.Size = new System.Drawing.Size(54, 25);
+            this.label58.TabIndex = 61;
+            this.label58.Text = "Male";
+            // 
+            // label46
+            // 
+            this.label46.AutoSize = true;
+            this.label46.Font = new System.Drawing.Font("Segoe UI Symbol", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label46.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label46.Location = new System.Drawing.Point(75, 342);
+            this.label46.Name = "label46";
+            this.label46.Size = new System.Drawing.Size(72, 30);
+            this.label46.TabIndex = 81;
+            this.label46.Text = "Phone";
+            // 
+            // guna2Panel7
+            // 
+            this.guna2Panel7.BorderColor = System.Drawing.Color.Black;
+            this.guna2Panel7.BorderRadius = 10;
+            this.guna2Panel7.BorderThickness = 1;
+            this.guna2Panel7.Controls.Add(this.label50);
+            this.guna2Panel7.FillColor = System.Drawing.Color.Azure;
+            this.guna2Panel7.Location = new System.Drawing.Point(73, 375);
+            this.guna2Panel7.Name = "guna2Panel7";
+            this.guna2Panel7.Size = new System.Drawing.Size(433, 44);
+            this.guna2Panel7.TabIndex = 80;
+            // 
+            // label50
+            // 
+            this.label50.AutoSize = true;
+            this.label50.Font = new System.Drawing.Font("Segoe UI Symbol", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label50.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label50.Location = new System.Drawing.Point(13, 10);
+            this.label50.Name = "label50";
+            this.label50.Size = new System.Drawing.Size(160, 25);
+            this.label50.TabIndex = 61;
+            this.label50.Text = "+63 912 345 6789";
+            // 
             // label42
             // 
             this.label42.AutoSize = true;
@@ -368,20 +504,6 @@
             this.label54.Size = new System.Drawing.Size(166, 30);
             this.label54.TabIndex = 60;
             this.label54.Text = "Juan Dela Cruz";
-            // 
-            // guna2CirclePictureBox4
-            // 
-            this.guna2CirclePictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.guna2CirclePictureBox4.FillColor = System.Drawing.Color.Black;
-            this.guna2CirclePictureBox4.Image = global::HotelManagementSystem.Properties.Resources.pfp_1;
-            this.guna2CirclePictureBox4.ImageRotate = 0F;
-            this.guna2CirclePictureBox4.Location = new System.Drawing.Point(207, 50);
-            this.guna2CirclePictureBox4.Name = "guna2CirclePictureBox4";
-            this.guna2CirclePictureBox4.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.guna2CirclePictureBox4.Size = new System.Drawing.Size(166, 152);
-            this.guna2CirclePictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.guna2CirclePictureBox4.TabIndex = 0;
-            this.guna2CirclePictureBox4.TabStop = false;
             // 
             // label27
             // 
@@ -545,20 +667,6 @@
             this.label40.TabIndex = 60;
             this.label40.Text = "Juan Dela Cruz";
             // 
-            // guna2CirclePictureBox3
-            // 
-            this.guna2CirclePictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.guna2CirclePictureBox3.FillColor = System.Drawing.Color.Black;
-            this.guna2CirclePictureBox3.Image = global::HotelManagementSystem.Properties.Resources.pfp_1;
-            this.guna2CirclePictureBox3.ImageRotate = 0F;
-            this.guna2CirclePictureBox3.Location = new System.Drawing.Point(183, 50);
-            this.guna2CirclePictureBox3.Name = "guna2CirclePictureBox3";
-            this.guna2CirclePictureBox3.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.guna2CirclePictureBox3.Size = new System.Drawing.Size(166, 152);
-            this.guna2CirclePictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.guna2CirclePictureBox3.TabIndex = 0;
-            this.guna2CirclePictureBox3.TabStop = false;
-            // 
             // label25
             // 
             this.label25.AutoSize = true;
@@ -721,20 +829,6 @@
             this.label24.TabIndex = 60;
             this.label24.Text = "Juan Dela Cruz";
             // 
-            // guna2CirclePictureBox2
-            // 
-            this.guna2CirclePictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.guna2CirclePictureBox2.FillColor = System.Drawing.Color.Black;
-            this.guna2CirclePictureBox2.Image = global::HotelManagementSystem.Properties.Resources.pfp_1;
-            this.guna2CirclePictureBox2.ImageRotate = 0F;
-            this.guna2CirclePictureBox2.Location = new System.Drawing.Point(183, 50);
-            this.guna2CirclePictureBox2.Name = "guna2CirclePictureBox2";
-            this.guna2CirclePictureBox2.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.guna2CirclePictureBox2.Size = new System.Drawing.Size(166, 152);
-            this.guna2CirclePictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.guna2CirclePictureBox2.TabIndex = 0;
-            this.guna2CirclePictureBox2.TabStop = false;
-            // 
             // label12
             // 
             this.label12.AutoSize = true;
@@ -875,20 +969,6 @@
             this.lblFullName.TabIndex = 60;
             this.lblFullName.Text = "Juan Dela Cruz";
             // 
-            // guna2CirclePictureBox1
-            // 
-            this.guna2CirclePictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.guna2CirclePictureBox1.FillColor = System.Drawing.Color.Black;
-            this.guna2CirclePictureBox1.Image = global::HotelManagementSystem.Properties.Resources.pfp_1;
-            this.guna2CirclePictureBox1.ImageRotate = 0F;
-            this.guna2CirclePictureBox1.Location = new System.Drawing.Point(183, 50);
-            this.guna2CirclePictureBox1.Name = "guna2CirclePictureBox1";
-            this.guna2CirclePictureBox1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.guna2CirclePictureBox1.Size = new System.Drawing.Size(166, 152);
-            this.guna2CirclePictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.guna2CirclePictureBox1.TabIndex = 0;
-            this.guna2CirclePictureBox1.TabStop = false;
-            // 
             // tableLayoutPanel2
             // 
             this.tableLayoutPanel2.ColumnCount = 1;
@@ -915,235 +995,10 @@
             this.guna2Panel2.Controls.Add(this.label2);
             this.guna2Panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.guna2Panel2.FillColor = System.Drawing.Color.White;
-            this.guna2Panel2.Location = new System.Drawing.Point(3, 274);
+            this.guna2Panel2.Location = new System.Drawing.Point(3, 273);
             this.guna2Panel2.Name = "guna2Panel2";
-            this.guna2Panel2.Size = new System.Drawing.Size(482, 492);
+            this.guna2Panel2.Size = new System.Drawing.Size(482, 493);
             this.guna2Panel2.TabIndex = 30;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI Symbol", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label2.Location = new System.Drawing.Point(13, 14);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(166, 30);
-            this.label2.TabIndex = 59;
-            this.label2.Text = "Recent Activity";
-            // 
-            // guna2Panel1
-            // 
-            this.guna2Panel1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2Panel1.BorderRadius = 15;
-            this.guna2Panel1.Controls.Add(this.label41);
-            this.guna2Panel1.Controls.Add(this.monthCalendar1);
-            this.guna2Panel1.Controls.Add(this.label1);
-            this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.guna2Panel1.FillColor = System.Drawing.Color.White;
-            this.guna2Panel1.Location = new System.Drawing.Point(3, 3);
-            this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(482, 265);
-            this.guna2Panel1.TabIndex = 29;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI Symbol", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label1.Location = new System.Drawing.Point(13, 14);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(176, 30);
-            this.label1.TabIndex = 59;
-            this.label1.Text = "Upcoming Stays";
-            // 
-            // lblSubtitle
-            // 
-            this.lblSubtitle.AutoSize = true;
-            this.lblSubtitle.Font = new System.Drawing.Font("Segoe UI Symbol", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSubtitle.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.lblSubtitle.Location = new System.Drawing.Point(15, 60);
-            this.lblSubtitle.Name = "lblSubtitle";
-            this.lblSubtitle.Size = new System.Drawing.Size(295, 20);
-            this.lblSubtitle.TabIndex = 28;
-            this.lblSubtitle.Text = "Your personal information and preferences.";
-            // 
-            // lblTitle
-            // 
-            this.lblTitle.AutoSize = true;
-            this.lblTitle.BackColor = System.Drawing.Color.Transparent;
-            this.lblTitle.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitle.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.lblTitle.Location = new System.Drawing.Point(11, 15);
-            this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(120, 45);
-            this.lblTitle.TabIndex = 29;
-            this.lblTitle.Text = "Profile";
-            // 
-            // label46
-            // 
-            this.label46.AutoSize = true;
-            this.label46.Font = new System.Drawing.Font("Segoe UI Symbol", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label46.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label46.Location = new System.Drawing.Point(75, 342);
-            this.label46.Name = "label46";
-            this.label46.Size = new System.Drawing.Size(72, 30);
-            this.label46.TabIndex = 81;
-            this.label46.Text = "Phone";
-            // 
-            // guna2Panel7
-            // 
-            this.guna2Panel7.BorderColor = System.Drawing.Color.Black;
-            this.guna2Panel7.BorderRadius = 10;
-            this.guna2Panel7.BorderThickness = 1;
-            this.guna2Panel7.Controls.Add(this.label50);
-            this.guna2Panel7.FillColor = System.Drawing.Color.Azure;
-            this.guna2Panel7.Location = new System.Drawing.Point(73, 375);
-            this.guna2Panel7.Name = "guna2Panel7";
-            this.guna2Panel7.Size = new System.Drawing.Size(433, 44);
-            this.guna2Panel7.TabIndex = 80;
-            // 
-            // label50
-            // 
-            this.label50.AutoSize = true;
-            this.label50.Font = new System.Drawing.Font("Segoe UI Symbol", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label50.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label50.Location = new System.Drawing.Point(13, 10);
-            this.label50.Name = "label50";
-            this.label50.Size = new System.Drawing.Size(160, 25);
-            this.label50.TabIndex = 61;
-            this.label50.Text = "+63 912 345 6789";
-            // 
-            // label57
-            // 
-            this.label57.AutoSize = true;
-            this.label57.Font = new System.Drawing.Font("Segoe UI Symbol", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label57.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label57.Location = new System.Drawing.Point(75, 423);
-            this.label57.Name = "label57";
-            this.label57.Size = new System.Drawing.Size(80, 30);
-            this.label57.TabIndex = 83;
-            this.label57.Text = "Gender";
-            // 
-            // guna2Panel8
-            // 
-            this.guna2Panel8.BorderColor = System.Drawing.Color.Black;
-            this.guna2Panel8.BorderRadius = 10;
-            this.guna2Panel8.BorderThickness = 1;
-            this.guna2Panel8.Controls.Add(this.label58);
-            this.guna2Panel8.FillColor = System.Drawing.Color.Azure;
-            this.guna2Panel8.Location = new System.Drawing.Point(73, 456);
-            this.guna2Panel8.Name = "guna2Panel8";
-            this.guna2Panel8.Size = new System.Drawing.Size(433, 44);
-            this.guna2Panel8.TabIndex = 82;
-            // 
-            // label58
-            // 
-            this.label58.AutoSize = true;
-            this.label58.Font = new System.Drawing.Font("Segoe UI Symbol", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label58.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label58.Location = new System.Drawing.Point(13, 10);
-            this.label58.Name = "label58";
-            this.label58.Size = new System.Drawing.Size(54, 25);
-            this.label58.TabIndex = 61;
-            this.label58.Text = "Male";
-            // 
-            // label59
-            // 
-            this.label59.AutoSize = true;
-            this.label59.Font = new System.Drawing.Font("Segoe UI Symbol", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label59.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label59.Location = new System.Drawing.Point(75, 502);
-            this.label59.Name = "label59";
-            this.label59.Size = new System.Drawing.Size(131, 30);
-            this.label59.TabIndex = 85;
-            this.label59.Text = "Date of Birth";
-            // 
-            // guna2Panel9
-            // 
-            this.guna2Panel9.BorderColor = System.Drawing.Color.Black;
-            this.guna2Panel9.BorderRadius = 10;
-            this.guna2Panel9.BorderThickness = 1;
-            this.guna2Panel9.Controls.Add(this.label60);
-            this.guna2Panel9.FillColor = System.Drawing.Color.Azure;
-            this.guna2Panel9.Location = new System.Drawing.Point(73, 535);
-            this.guna2Panel9.Name = "guna2Panel9";
-            this.guna2Panel9.Size = new System.Drawing.Size(433, 44);
-            this.guna2Panel9.TabIndex = 84;
-            // 
-            // label60
-            // 
-            this.label60.AutoSize = true;
-            this.label60.Font = new System.Drawing.Font("Segoe UI Symbol", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label60.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label60.Location = new System.Drawing.Point(13, 10);
-            this.label60.Name = "label60";
-            this.label60.Size = new System.Drawing.Size(140, 25);
-            this.label60.TabIndex = 61;
-            this.label60.Text = "March 15, 1990";
-            // 
-            // label61
-            // 
-            this.label61.AutoSize = true;
-            this.label61.Font = new System.Drawing.Font("Segoe UI Symbol", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label61.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label61.Location = new System.Drawing.Point(75, 582);
-            this.label61.Name = "label61";
-            this.label61.Size = new System.Drawing.Size(87, 30);
-            this.label61.TabIndex = 87;
-            this.label61.Text = "Address";
-            // 
-            // guna2Panel10
-            // 
-            this.guna2Panel10.BorderColor = System.Drawing.Color.Black;
-            this.guna2Panel10.BorderRadius = 10;
-            this.guna2Panel10.BorderThickness = 1;
-            this.guna2Panel10.Controls.Add(this.label62);
-            this.guna2Panel10.FillColor = System.Drawing.Color.Azure;
-            this.guna2Panel10.Location = new System.Drawing.Point(73, 615);
-            this.guna2Panel10.Name = "guna2Panel10";
-            this.guna2Panel10.Size = new System.Drawing.Size(433, 44);
-            this.guna2Panel10.TabIndex = 86;
-            // 
-            // label62
-            // 
-            this.label62.AutoSize = true;
-            this.label62.Font = new System.Drawing.Font("Segoe UI Symbol", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label62.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label62.Location = new System.Drawing.Point(13, 10);
-            this.label62.Name = "label62";
-            this.label62.Size = new System.Drawing.Size(351, 25);
-            this.label62.TabIndex = 61;
-            this.label62.Text = "San Jose Delmonte, Sto.Cristo, Blk 9 lot 3";
-            // 
-            // monthCalendar1
-            // 
-            this.monthCalendar1.CalendarDimensions = new System.Drawing.Size(2, 1);
-            this.monthCalendar1.Font = new System.Drawing.Font("Microsoft Sans Serif", 72F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.monthCalendar1.Location = new System.Drawing.Point(11, 80);
-            this.monthCalendar1.Name = "monthCalendar1";
-            this.monthCalendar1.TabIndex = 60;
-            // 
-            // label41
-            // 
-            this.label41.AutoSize = true;
-            this.label41.Font = new System.Drawing.Font("Segoe UI Symbol", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label41.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label41.Location = new System.Drawing.Point(14, 47);
-            this.label41.Name = "label41";
-            this.label41.Size = new System.Drawing.Size(295, 20);
-            this.label41.TabIndex = 61;
-            this.label41.Text = "Your scheduled check-ins and room details.";
-            // 
-            // label43
-            // 
-            this.label43.AutoSize = true;
-            this.label43.Font = new System.Drawing.Font("Segoe UI Symbol", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label43.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label43.Location = new System.Drawing.Point(14, 45);
-            this.label43.Name = "label43";
-            this.label43.Size = new System.Drawing.Size(289, 20);
-            this.label43.TabIndex = 62;
-            this.label43.Text = "Your latest transactions and room services.";
             // 
             // lblOrderTotal
             // 
@@ -1267,6 +1122,153 @@
             this.colTotal.ReadOnly = true;
             this.colTotal.Width = 80;
             // 
+            // label43
+            // 
+            this.label43.AutoSize = true;
+            this.label43.Font = new System.Drawing.Font("Segoe UI Symbol", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label43.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label43.Location = new System.Drawing.Point(14, 45);
+            this.label43.Name = "label43";
+            this.label43.Size = new System.Drawing.Size(289, 20);
+            this.label43.TabIndex = 62;
+            this.label43.Text = "Your latest transactions and room services.";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI Symbol", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.label2.Location = new System.Drawing.Point(13, 14);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(166, 30);
+            this.label2.TabIndex = 59;
+            this.label2.Text = "Recent Activity";
+            // 
+            // guna2Panel1
+            // 
+            this.guna2Panel1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Panel1.BorderRadius = 15;
+            this.guna2Panel1.Controls.Add(this.label41);
+            this.guna2Panel1.Controls.Add(this.monthCalendar1);
+            this.guna2Panel1.Controls.Add(this.label1);
+            this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.guna2Panel1.FillColor = System.Drawing.Color.White;
+            this.guna2Panel1.Location = new System.Drawing.Point(3, 3);
+            this.guna2Panel1.Name = "guna2Panel1";
+            this.guna2Panel1.Size = new System.Drawing.Size(482, 264);
+            this.guna2Panel1.TabIndex = 29;
+            // 
+            // label41
+            // 
+            this.label41.AutoSize = true;
+            this.label41.Font = new System.Drawing.Font("Segoe UI Symbol", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label41.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label41.Location = new System.Drawing.Point(14, 47);
+            this.label41.Name = "label41";
+            this.label41.Size = new System.Drawing.Size(295, 20);
+            this.label41.TabIndex = 61;
+            this.label41.Text = "Your scheduled check-ins and room details.";
+            // 
+            // monthCalendar1
+            // 
+            this.monthCalendar1.CalendarDimensions = new System.Drawing.Size(2, 1);
+            this.monthCalendar1.Font = new System.Drawing.Font("Microsoft Sans Serif", 72F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.monthCalendar1.Location = new System.Drawing.Point(11, 80);
+            this.monthCalendar1.MinDate = new System.DateTime(2026, 4, 29, 0, 0, 0, 0);
+            this.monthCalendar1.Name = "monthCalendar1";
+            this.monthCalendar1.TabIndex = 60;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI Symbol", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.label1.Location = new System.Drawing.Point(13, 14);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(176, 30);
+            this.label1.TabIndex = 59;
+            this.label1.Text = "Upcoming Stays";
+            // 
+            // lblSubtitle
+            // 
+            this.lblSubtitle.AutoSize = true;
+            this.lblSubtitle.Font = new System.Drawing.Font("Segoe UI Symbol", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSubtitle.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.lblSubtitle.Location = new System.Drawing.Point(15, 60);
+            this.lblSubtitle.Name = "lblSubtitle";
+            this.lblSubtitle.Size = new System.Drawing.Size(295, 20);
+            this.lblSubtitle.TabIndex = 28;
+            this.lblSubtitle.Text = "Your personal information and preferences.";
+            this.lblSubtitle.Click += new System.EventHandler(this.lblSubtitle_Click);
+            // 
+            // lblTitle
+            // 
+            this.lblTitle.AutoSize = true;
+            this.lblTitle.BackColor = System.Drawing.Color.Transparent;
+            this.lblTitle.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitle.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.lblTitle.Location = new System.Drawing.Point(11, 15);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(120, 45);
+            this.lblTitle.TabIndex = 29;
+            this.lblTitle.Text = "Profile";
+            // 
+            // guna2CirclePictureBox4
+            // 
+            this.guna2CirclePictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.guna2CirclePictureBox4.FillColor = System.Drawing.Color.Black;
+            this.guna2CirclePictureBox4.Image = global::HotelManagementSystem.Properties.Resources.pfp_1;
+            this.guna2CirclePictureBox4.ImageRotate = 0F;
+            this.guna2CirclePictureBox4.Location = new System.Drawing.Point(207, 50);
+            this.guna2CirclePictureBox4.Name = "guna2CirclePictureBox4";
+            this.guna2CirclePictureBox4.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.guna2CirclePictureBox4.Size = new System.Drawing.Size(166, 152);
+            this.guna2CirclePictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.guna2CirclePictureBox4.TabIndex = 0;
+            this.guna2CirclePictureBox4.TabStop = false;
+            // 
+            // guna2CirclePictureBox3
+            // 
+            this.guna2CirclePictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.guna2CirclePictureBox3.FillColor = System.Drawing.Color.Black;
+            this.guna2CirclePictureBox3.Image = global::HotelManagementSystem.Properties.Resources.pfp_1;
+            this.guna2CirclePictureBox3.ImageRotate = 0F;
+            this.guna2CirclePictureBox3.Location = new System.Drawing.Point(183, 50);
+            this.guna2CirclePictureBox3.Name = "guna2CirclePictureBox3";
+            this.guna2CirclePictureBox3.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.guna2CirclePictureBox3.Size = new System.Drawing.Size(166, 152);
+            this.guna2CirclePictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.guna2CirclePictureBox3.TabIndex = 0;
+            this.guna2CirclePictureBox3.TabStop = false;
+            // 
+            // guna2CirclePictureBox2
+            // 
+            this.guna2CirclePictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.guna2CirclePictureBox2.FillColor = System.Drawing.Color.Black;
+            this.guna2CirclePictureBox2.Image = global::HotelManagementSystem.Properties.Resources.pfp_1;
+            this.guna2CirclePictureBox2.ImageRotate = 0F;
+            this.guna2CirclePictureBox2.Location = new System.Drawing.Point(183, 50);
+            this.guna2CirclePictureBox2.Name = "guna2CirclePictureBox2";
+            this.guna2CirclePictureBox2.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.guna2CirclePictureBox2.Size = new System.Drawing.Size(166, 152);
+            this.guna2CirclePictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.guna2CirclePictureBox2.TabIndex = 0;
+            this.guna2CirclePictureBox2.TabStop = false;
+            // 
+            // guna2CirclePictureBox1
+            // 
+            this.guna2CirclePictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.guna2CirclePictureBox1.FillColor = System.Drawing.Color.Black;
+            this.guna2CirclePictureBox1.Image = global::HotelManagementSystem.Properties.Resources.pfp_1;
+            this.guna2CirclePictureBox1.ImageRotate = 0F;
+            this.guna2CirclePictureBox1.Location = new System.Drawing.Point(183, 50);
+            this.guna2CirclePictureBox1.Name = "guna2CirclePictureBox1";
+            this.guna2CirclePictureBox1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.guna2CirclePictureBox1.Size = new System.Drawing.Size(166, 152);
+            this.guna2CirclePictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.guna2CirclePictureBox1.TabIndex = 0;
+            this.guna2CirclePictureBox1.TabStop = false;
+            // 
             // ucProfile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1285,26 +1287,26 @@
             this.guna2Panel4.PerformLayout();
             this.guna2Panel5.ResumeLayout(false);
             this.guna2Panel5.PerformLayout();
+            this.guna2Panel10.ResumeLayout(false);
+            this.guna2Panel10.PerformLayout();
+            this.guna2Panel9.ResumeLayout(false);
+            this.guna2Panel9.PerformLayout();
+            this.guna2Panel8.ResumeLayout(false);
+            this.guna2Panel8.PerformLayout();
+            this.guna2Panel7.ResumeLayout(false);
+            this.guna2Panel7.PerformLayout();
             this.guna2Panel6.ResumeLayout(false);
             this.guna2Panel6.PerformLayout();
+            this.tableLayoutPanel2.ResumeLayout(false);
+            this.guna2Panel2.ResumeLayout(false);
+            this.guna2Panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvOrder)).EndInit();
+            this.guna2Panel1.ResumeLayout(false);
+            this.guna2Panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).EndInit();
-            this.tableLayoutPanel2.ResumeLayout(false);
-            this.guna2Panel2.ResumeLayout(false);
-            this.guna2Panel2.PerformLayout();
-            this.guna2Panel1.ResumeLayout(false);
-            this.guna2Panel1.PerformLayout();
-            this.guna2Panel7.ResumeLayout(false);
-            this.guna2Panel7.PerformLayout();
-            this.guna2Panel8.ResumeLayout(false);
-            this.guna2Panel8.PerformLayout();
-            this.guna2Panel9.ResumeLayout(false);
-            this.guna2Panel9.PerformLayout();
-            this.guna2Panel10.ResumeLayout(false);
-            this.guna2Panel10.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvOrder)).EndInit();
             this.ResumeLayout(false);
 
         }

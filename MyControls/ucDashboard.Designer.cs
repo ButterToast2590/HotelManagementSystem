@@ -135,6 +135,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1110, 854);
             this.panel1.TabIndex = 32;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // label12
             // 
@@ -264,6 +265,7 @@
             this.label17.Size = new System.Drawing.Size(36, 32);
             this.label17.TabIndex = 1;
             this.label17.Text = "__";
+            this.label17.Click += new System.EventHandler(this.label17_Click);
             // 
             // label18
             // 
