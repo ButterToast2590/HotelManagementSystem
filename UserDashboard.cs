@@ -15,6 +15,14 @@ namespace HotelManagementSystem
 {
     public partial class lblUserNameDisplay : Form
     {
+        private string connString =
+         "Host=dbhotel-14349.jxf.gcp-us-west2.cockroachlabs.cloud;" +
+         "Port=26257;" +
+         "Username=DBHotelManagement;" +
+         "Password=fdqYxIcKcPtSZV90PyNTNg;" +
+         "Database=hotelmanagement;" +
+         "SslMode=VerifyFull;";
+
         public lblUserNameDisplay()
         {
             InitializeComponent();
@@ -23,12 +31,13 @@ namespace HotelManagementSystem
         }
         private void LoadContent(System.Windows.Forms.UserControl control)
         {
+            lblbottomusername.Text = UserSession.Username1;
+            UpdateCheckInStatus();
             panelMain.Controls.Clear();   
             control.Dock = DockStyle.Fill; 
             panelMain.Controls.Add(control);
         }
 
-        // Event and Button click functions
         private void label1_Click(object sender, EventArgs e)
         {
 
@@ -58,7 +67,41 @@ namespace HotelManagementSystem
         {
 
         }
+        private void UpdateCheckInStatus()
+        {
+            using (var conn = new NpgsqlConnection(connString))
+            {
+                try
+                {
+                    conn.Open();
+                    string sql = @"SELECT COUNT(*) FROM hotel.bookings 
+                           WHERE user_id = @id 
+                           AND status != 'Cancelled'";
 
+                    using (var cmd = new NpgsqlCommand(sql, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@id", UserSession.UserId1);
+
+                        int bookingCount = Convert.ToInt32(cmd.ExecuteScalar());
+
+                        if (bookingCount > 0)
+                        {
+                            statusDot.Image = Properties.Resources.green;
+                            lblStatusInfo.Text = "Active reservation found.";
+                        }
+                        else
+                        {
+                            statusDot.Image = Properties.Resources.gray;
+                            lblStatusInfo.Text = "No active bookings.";
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    lblStatusInfo.Text = "Status unavailable.";
+                }
+            }
+        }
         private void guna2Button1_Click(object sender, EventArgs e)
         {
             btnOff();
@@ -103,8 +146,18 @@ namespace HotelManagementSystem
 
         private void guna2Button1_Click_1(object sender, EventArgs e)
         {
-            btnOff();
-            btnLogOut.FillColor = Color.IndianRed;
+            DialogResult dialogResult = MessageBox.Show("Are you sure you want to log out?", "Logout Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (dialogResult == DialogResult.Yes)
+            {
+                btnOff();
+                btnLogOut.FillColor = Color.IndianRed;
+                this.Hide();
+
+                logInForm loginForm = new logInForm();
+                loginForm.ShowDialog();
+                this.Close();
+            }
         }
 
         private void btnFeedBack_Click(object sender, EventArgs e)

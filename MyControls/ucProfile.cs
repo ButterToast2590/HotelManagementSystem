@@ -12,10 +12,71 @@ namespace HotelManagementSystem.MyControls
 {
     public partial class ucProfile : UserControl
     {
+        private string connString =
+        "Host=dbhotel-14349.jxf.gcp-us-west2.cockroachlabs.cloud;" +
+        "Port=26257;" +
+        "Username=dbhotelmanagement;" +
+        "Password=fdqYxIcKcPtSZV90PyNTNg;" +
+        "Database=hotelmanagement;" +
+        "SslMode=require;" +
+        "Trust Server Certificate=true;";
         public ucProfile()
         {
             InitializeComponent();
             this.AutoScaleMode = AutoScaleMode.None;
+        }
+        private void ucProfile_Load(object sender, EventArgs e)
+        {
+            lblName.Text = $"{UserSession.FirstName1} {UserSession.LastName1}";
+            lblFullName.Left = (this.Width - lblFullName.Width) / 2;
+
+            email1txt.Text = UserSession.Email1;
+            phone1txt.Text = UserSession.Phone1;
+            gendert1xt.Text = UserSession.Gender1;
+            address1txt.Text = UserSession.Address1;
+
+            birthdate1txt.Text = UserSession.BirthDate1.ToString("MMMM dd, yyyy");
+            lblMemSince.Text = $"Member since {UserSession.DateJoined1.ToString("MMMM yyyy")}";
+
+            LoadUpcomingStays();
+        }
+        private void LoadUpcomingStays()
+        {
+            using (var conn = new Npgsql.NpgsqlConnection(connString))
+            {
+                conn.Open();
+                string sql = "SELECT check_in_date, check_out_date FROM hotel.bookings WHERE user_id = @id AND status != 'Cancelled' LIMIT 1";
+
+                using (var cmd = new Npgsql.NpgsqlCommand(sql, conn))
+                {
+                    cmd.Parameters.AddWithValue("@id", UserSession.UserId1);
+                    using (var reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            lbl1NoBookings.Visible = false;
+
+                            DateTime start = reader.GetDateTime(0);
+                            DateTime end = reader.GetDateTime(1);
+                            List<DateTime> range = new List<DateTime>();
+
+                            for (DateTime dt = start; dt <= end; dt = dt.AddDays(1))
+                            {
+                                range.Add(dt);
+                            }
+
+                            monthCalendar1.BoldedDates = range.ToArray();
+                        }
+                        else
+                        {
+                            lbl1NoBookings.Visible = true;
+                            lbl1NoBookings.BringToFront();
+                            monthCalendar1.BoldedDates = new DateTime[] { };
+                        }
+                    }
+                }
+            }
+            monthCalendar1.UpdateBoldedDates();
         }
 
         private void label55_Click(object sender, EventArgs e)
@@ -29,6 +90,16 @@ namespace HotelManagementSystem.MyControls
         }
 
         private void lblSubtitle_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnDownload_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2CirclePictureBox4_Click(object sender, EventArgs e)
         {
 
         }

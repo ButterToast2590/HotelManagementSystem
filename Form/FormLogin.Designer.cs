@@ -43,7 +43,6 @@
             this.copyrightMessage = new System.Windows.Forms.Label();
             this.guna2GroupBox1 = new Guna.UI2.WinForms.Guna2GroupBox();
             this.logInBtn = new Guna.UI2.WinForms.Guna2Button();
-            this.picEye = new System.Windows.Forms.PictureBox();
             this.passWord_txt = new Guna.UI2.WinForms.Guna2TextBox();
             this.username_txt = new Guna.UI2.WinForms.Guna2TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -53,7 +52,6 @@
             this.pnlTitleBarInLogIn = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
             this.guna2GroupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picEye)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMinimize)).BeginInit();
@@ -68,7 +66,7 @@
             this.siguo_lbl.Cursor = System.Windows.Forms.Cursors.Hand;
             this.siguo_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.siguo_lbl.ForeColor = System.Drawing.Color.SteelBlue;
-            this.siguo_lbl.Location = new System.Drawing.Point(294, 505);
+            this.siguo_lbl.Location = new System.Drawing.Point(333, 505);
             this.siguo_lbl.Name = "siguo_lbl";
             this.siguo_lbl.Size = new System.Drawing.Size(66, 20);
             this.siguo_lbl.TabIndex = 2;
@@ -189,7 +187,6 @@
             this.guna2GroupBox1.Controls.Add(this.siguo_lbl);
             this.guna2GroupBox1.Controls.Add(this.logInBtn);
             this.guna2GroupBox1.Controls.Add(this.labelCreate);
-            this.guna2GroupBox1.Controls.Add(this.picEye);
             this.guna2GroupBox1.Controls.Add(this.passWord_txt);
             this.guna2GroupBox1.Controls.Add(this.username_txt);
             this.guna2GroupBox1.Controls.Add(this.logInHeader_lbl);
@@ -226,20 +223,6 @@
             this.logInBtn.Text = "Access Portal";
             this.logInBtn.Click += new System.EventHandler(this.logInBtn_Click_1);
             // 
-            // picEye
-            // 
-            this.picEye.BackgroundImage = global::HotelManagementSystem.Properties.Resources.show;
-            this.picEye.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picEye.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.picEye.Image = global::HotelManagementSystem.Properties.Resources.show;
-            this.picEye.Location = new System.Drawing.Point(453, 363);
-            this.picEye.Name = "picEye";
-            this.picEye.Size = new System.Drawing.Size(26, 26);
-            this.picEye.TabIndex = 2;
-            this.picEye.TabStop = false;
-            this.picEye.Click += new System.EventHandler(this.eyeShow_Click);
-            this.picEye.MouseHover += new System.EventHandler(this.pictureBoxEye_MouseHover);
-            // 
             // passWord_txt
             // 
             this.passWord_txt.BackColor = System.Drawing.SystemColors.ButtonHighlight;
@@ -255,6 +238,9 @@
             this.passWord_txt.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.passWord_txt.ForeColor = System.Drawing.Color.Black;
             this.passWord_txt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.passWord_txt.IconRight = global::HotelManagementSystem.Properties.Resources.show;
+            this.passWord_txt.IconRightOffset = new System.Drawing.Point(5, 0);
+            this.passWord_txt.IconRightSize = new System.Drawing.Size(30, 30);
             this.passWord_txt.Location = new System.Drawing.Point(46, 351);
             this.passWord_txt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.passWord_txt.Name = "passWord_txt";
@@ -262,6 +248,8 @@
             this.passWord_txt.SelectedText = "";
             this.passWord_txt.Size = new System.Drawing.Size(446, 50);
             this.passWord_txt.TabIndex = 4;
+            this.passWord_txt.UseSystemPasswordChar = true;
+            this.passWord_txt.IconRightClick += new System.EventHandler(this.passWord_txt_IconRightClick);
             this.passWord_txt.TextChanged += new System.EventHandler(this.passWord_txt_TextChanged);
             // 
             // username_txt
@@ -378,7 +366,6 @@
             this.Load += new System.EventHandler(this.logInForm_Load);
             this.guna2GroupBox1.ResumeLayout(false);
             this.guna2GroupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picEye)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMinimize)).EndInit();
@@ -399,7 +386,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label userName_lbl;
         private System.Windows.Forms.Label passWord_lbl;
-        private System.Windows.Forms.PictureBox picEye;
         private System.Windows.Forms.Label siguo_lbl;
         private System.Windows.Forms.Label labelCreate;
         private System.Windows.Forms.Panel panel2;

@@ -1,13 +1,11 @@
 ﻿using System;
 using System.Data;
 using System.Drawing;
-using System.Drawing.Text;
 using System.Windows.Forms;
 using Npgsql;
 
 namespace HotelManagementSystem
 {
-
     public partial class logInForm : Form
     {
         private string connString =
@@ -27,28 +25,10 @@ namespace HotelManagementSystem
         private void logInForm_Load(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Normal;
-            try
-            {
-                picEye.BackgroundImage = null;
-                picEye.SizeMode = PictureBoxSizeMode.Zoom;
-                picEye.Visible = true;
-                picEye.BringToFront();
-                passWord_txt.UseSystemPasswordChar = true;
 
-                if (passWord_txt != null && picEye != null)
-                {
-                    int margin = 15; 
-                    picEye.Location = new Point(
-                        passWord_txt.Right - picEye.Width - margin,
-                        passWord_txt.Top + (passWord_txt.Height - picEye.Height) / 2
-                    );
-                    picEye.BringToFront();
-                }
-
-                if (passWord_txt != null)
-                    picEye.Image = passWord_txt.UseSystemPasswordChar ? Properties.Resources.eye : Properties.Resources.show;
-            }
-            catch { }
+            passWord_txt.UseSystemPasswordChar = true;
+            passWord_txt.IconRight = Properties.Resources.show;
+            passWord_txt.IconRightCursor = Cursors.Hand;
         }
 
         private void logInBtn_Click_1(object sender, EventArgs e)
@@ -56,26 +36,59 @@ namespace HotelManagementSystem
             string user = username_txt.Text.Trim();
             string pass = passWord_txt.Text.Trim();
 
-            string role = IsValidNamePass(user, pass);
+            using (var conn = new Npgsql.NpgsqlConnection(connString))
+            {
+                conn.Open();
 
-            if (role == "Admin")
-            {
-                AdminDashboard adminDash = new AdminDashboard();
-                adminDash.Show();
-                this.Hide();
-            }
-            else if (role == "User")
-            {
-                lblUserNameDisplay userDash = new lblUserNameDisplay();
-                userDash.Show();
-                this.Hide();
-            }
-            else
-            {
-                MessageBox.Show("Invalid username or password.", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                string adminSql = "SELECT * FROM hotel.admins WHERE admin_name = @u AND password = @p";
+                using (var cmdAdmin = new Npgsql.NpgsqlCommand(adminSql, conn))
+                {
+                    cmdAdmin.Parameters.AddWithValue("@u", user);
+                    cmdAdmin.Parameters.AddWithValue("@p", pass);
+                    using (var reader = cmdAdmin.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            UserSession.Username1 = reader["admin_name"].ToString();
+                            new AdminDashboard().Show();
+                            this.Hide();
+                            return;
+                        }
+                    }
+                }
+
+                string userSql = "SELECT * FROM hotel.users WHERE username = @u AND password = @p";
+                using (var cmdUser = new Npgsql.NpgsqlCommand(userSql, conn))
+                {
+                    cmdUser.Parameters.AddWithValue("@u", user);
+                    cmdUser.Parameters.AddWithValue("@p", pass);
+                    using (var reader = cmdUser.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            UserSession.UserId1 = Convert.ToInt64(reader["user_id"]);
+                            UserSession.Username1 = reader["username"].ToString();
+                            UserSession.FirstName1 = reader["first_name"].ToString();
+                            UserSession.LastName1 = reader["last_name"].ToString();
+                            UserSession.Email1 = reader["email"].ToString();
+                            UserSession.Phone1 = reader["phone_number"].ToString();
+                            UserSession.Gender1 = reader["gender"].ToString();
+                            UserSession.Address1 = reader["address"].ToString();
+                            UserSession.BirthDate1 = Convert.ToDateTime(reader["birthday"]);
+                            UserSession.DateJoined1 = Convert.ToDateTime(reader["created_at"]);
+
+                            new lblUserNameDisplay().Show();
+                            this.Hide();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Invalid username or password.", "Login Failed",
+                                            MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                }
             }
         }
-
 
         private string IsValidNamePass(string username, string password)
         {
@@ -111,75 +124,12 @@ namespace HotelManagementSystem
             return null;
         }
 
-
-
-        private void pictureBoxEye_MouseHover(object sender, EventArgs e)
+        private void passWord_txt_IconRightClick(object sender, EventArgs e)
         {
-            try
-            {
-                if (toolTip1 == null || picEye == null || passWord_txt == null) return;
-                string tip = passWord_txt.UseSystemPasswordChar ? "Show password" : "Hide password";
-                toolTip1.SetToolTip(picEye, tip);
-            }
-            catch { }
-        }
-
-        private void eyeShow_Click(object sender, EventArgs e)
-        {
-            if (passWord_txt == null || picEye == null) return;
             passWord_txt.UseSystemPasswordChar = !passWord_txt.UseSystemPasswordChar;
-            picEye.Image = passWord_txt.UseSystemPasswordChar ? Properties.Resources.eye : Properties.Resources.show;
-            picEye.Refresh();
-        }
 
-        private void copyrightMessage_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void username_txt_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-
-        // Mouse Hover Section Click Functions
-        private void pictureBoxClose_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
-        private void pictureBoxClose_MouseHover(object sender, EventArgs e)
-        {
-            toolTip1.SetToolTip(pictureBoxClose, "Close");
-        }
-        private void pictureBoxMinimize_MouseHover(object sender, EventArgs e)
-        {
-            toolTip1.SetToolTip(pictureBoxMinimize, "Minimize");
-        }
-
-        private void pictureBoxMinimize_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Minimized;
-        }
-        private void logInHeader__lbl_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void passWord_txt_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void passWord_lbl_Click(object sender, EventArgs e)
-        {
-
+            passWord_txt.IconRight = passWord_txt.UseSystemPasswordChar ? Properties.Resources.show : Properties.Resources.eye;
+            passWord_txt.Refresh();
         }
 
         private void siguo_lbl_Click(object sender, EventArgs e)
@@ -189,15 +139,52 @@ namespace HotelManagementSystem
             this.Hide();
         }
 
-        private void username_txt_TextChanged_1(object sender, EventArgs e)
+        private void pictureBoxClose_Click(object sender, EventArgs e)
         {
-
+            Application.Exit();
         }
 
-        private void guna2GroupBox1_Click(object sender, EventArgs e)
+        private void pictureBoxMinimize_Click(object sender, EventArgs e)
         {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void pictureBoxClose_MouseHover(object sender, EventArgs e) {
+            toolTip1.SetToolTip(pictureBoxClose, "Close");
+        }
+
+        private void pictureBoxMinimize_MouseHover(object sender, EventArgs e) {
+            toolTip1.SetToolTip(pictureBoxMinimize, "Minimize");
+        } 
+        private void copyrightMessage_Click(object sender, EventArgs e) {
+        
+        }
+        private void username_txt_TextChanged(object sender, EventArgs e) { 
+        
+        }
+        private void logInHeader__lbl_Click(object sender, EventArgs e) {
+        
+        }
+        private void panel1_Paint(object sender, PaintEventArgs e) {
+        
+        }
+        private void passWord_txt_TextChanged(object sender, EventArgs e) {
+        
+        }
+        private void passWord_lbl_Click(object sender, EventArgs e) {
+        
+        }
+        private void username_txt_TextChanged_1(object sender, EventArgs e) {
+        
+        }
+        private void guna2GroupBox1_Click(object sender, EventArgs e) { 
+        
+        }
+        private void pictureBoxEye_MouseHover(object sender, EventArgs e) {
+        
+        }
+        private void eyeShow_Click(object sender, EventArgs e) {
 
         }
     }
-
 }

@@ -39,9 +39,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.SignupGroupBox = new Guna.UI2.WinForms.Guna2GroupBox();
-            this.guna2TextBox2 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.streettxt = new Guna.UI2.WinForms.Guna2TextBox();
             this.label13 = new System.Windows.Forms.Label();
-            this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.barangaytxt = new Guna.UI2.WinForms.Guna2TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.otherRbtn = new Guna.UI2.WinForms.Guna2RadioButton();
             this.femaleRbtn = new Guna.UI2.WinForms.Guna2RadioButton();
@@ -56,8 +56,7 @@
             this.lastNametxt = new Guna.UI2.WinForms.Guna2TextBox();
             this.contactNumtxt = new Guna.UI2.WinForms.Guna2TextBox();
             this.usernametxt = new Guna.UI2.WinForms.Guna2TextBox();
-            this.passwordtxt = new Guna.UI2.WinForms.Guna2TextBox();
-            this.addresstxt = new Guna.UI2.WinForms.Guna2TextBox();
+            this.citytxt = new Guna.UI2.WinForms.Guna2TextBox();
             this.firstNametxt = new Guna.UI2.WinForms.Guna2TextBox();
             this.logInHeader_lbl = new System.Windows.Forms.Label();
             this.subHeader_lbl = new System.Windows.Forms.Label();
@@ -74,6 +73,7 @@
             this.userName_lbl = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.passwordtxt = new Guna.UI2.WinForms.Guna2TextBox();
             this.pnlTitleBarInSignUp.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxClose)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMinimize)).BeginInit();
@@ -173,9 +173,9 @@
             // SignupGroupBox
             // 
             this.SignupGroupBox.BorderRadius = 10;
-            this.SignupGroupBox.Controls.Add(this.guna2TextBox2);
+            this.SignupGroupBox.Controls.Add(this.streettxt);
             this.SignupGroupBox.Controls.Add(this.label13);
-            this.SignupGroupBox.Controls.Add(this.guna2TextBox1);
+            this.SignupGroupBox.Controls.Add(this.barangaytxt);
             this.SignupGroupBox.Controls.Add(this.label12);
             this.SignupGroupBox.Controls.Add(this.otherRbtn);
             this.SignupGroupBox.Controls.Add(this.femaleRbtn);
@@ -191,7 +191,7 @@
             this.SignupGroupBox.Controls.Add(this.contactNumtxt);
             this.SignupGroupBox.Controls.Add(this.usernametxt);
             this.SignupGroupBox.Controls.Add(this.passwordtxt);
-            this.SignupGroupBox.Controls.Add(this.addresstxt);
+            this.SignupGroupBox.Controls.Add(this.citytxt);
             this.SignupGroupBox.Controls.Add(this.firstNametxt);
             this.SignupGroupBox.Controls.Add(this.logInHeader_lbl);
             this.SignupGroupBox.Controls.Add(this.subHeader_lbl);
@@ -217,28 +217,28 @@
             this.SignupGroupBox.Size = new System.Drawing.Size(537, 641);
             this.SignupGroupBox.TabIndex = 18;
             // 
-            // guna2TextBox2
+            // streettxt
             // 
-            this.guna2TextBox2.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.guna2TextBox2.BorderRadius = 10;
-            this.guna2TextBox2.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.guna2TextBox2.DefaultText = "";
-            this.guna2TextBox2.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.guna2TextBox2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.guna2TextBox2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox2.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox2.FillColor = System.Drawing.Color.Azure;
-            this.guna2TextBox2.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2TextBox2.ForeColor = System.Drawing.Color.Black;
-            this.guna2TextBox2.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox2.Location = new System.Drawing.Point(351, 464);
-            this.guna2TextBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.guna2TextBox2.Name = "guna2TextBox2";
-            this.guna2TextBox2.PlaceholderText = "";
-            this.guna2TextBox2.SelectedText = "";
-            this.guna2TextBox2.Size = new System.Drawing.Size(141, 41);
-            this.guna2TextBox2.TabIndex = 18;
+            this.streettxt.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.streettxt.BorderRadius = 10;
+            this.streettxt.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.streettxt.DefaultText = "";
+            this.streettxt.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.streettxt.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.streettxt.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.streettxt.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.streettxt.FillColor = System.Drawing.Color.Azure;
+            this.streettxt.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.streettxt.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.streettxt.ForeColor = System.Drawing.Color.Black;
+            this.streettxt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.streettxt.Location = new System.Drawing.Point(351, 464);
+            this.streettxt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.streettxt.Name = "streettxt";
+            this.streettxt.PlaceholderText = "";
+            this.streettxt.SelectedText = "";
+            this.streettxt.Size = new System.Drawing.Size(141, 41);
+            this.streettxt.TabIndex = 18;
             // 
             // label13
             // 
@@ -252,28 +252,28 @@
             this.label13.TabIndex = 17;
             this.label13.Text = "Street";
             // 
-            // guna2TextBox1
+            // barangaytxt
             // 
-            this.guna2TextBox1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.guna2TextBox1.BorderRadius = 10;
-            this.guna2TextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.guna2TextBox1.DefaultText = "";
-            this.guna2TextBox1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.guna2TextBox1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.guna2TextBox1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox1.FillColor = System.Drawing.Color.Azure;
-            this.guna2TextBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2TextBox1.ForeColor = System.Drawing.Color.Black;
-            this.guna2TextBox1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox1.Location = new System.Drawing.Point(192, 464);
-            this.guna2TextBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.guna2TextBox1.Name = "guna2TextBox1";
-            this.guna2TextBox1.PlaceholderText = "";
-            this.guna2TextBox1.SelectedText = "";
-            this.guna2TextBox1.Size = new System.Drawing.Size(141, 41);
-            this.guna2TextBox1.TabIndex = 16;
+            this.barangaytxt.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.barangaytxt.BorderRadius = 10;
+            this.barangaytxt.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.barangaytxt.DefaultText = "";
+            this.barangaytxt.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.barangaytxt.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.barangaytxt.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.barangaytxt.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.barangaytxt.FillColor = System.Drawing.Color.Azure;
+            this.barangaytxt.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.barangaytxt.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.barangaytxt.ForeColor = System.Drawing.Color.Black;
+            this.barangaytxt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.barangaytxt.Location = new System.Drawing.Point(192, 464);
+            this.barangaytxt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.barangaytxt.Name = "barangaytxt";
+            this.barangaytxt.PlaceholderText = "";
+            this.barangaytxt.SelectedText = "";
+            this.barangaytxt.Size = new System.Drawing.Size(141, 41);
+            this.barangaytxt.TabIndex = 16;
             // 
             // label12
             // 
@@ -375,7 +375,7 @@
             this.logIntxt.Cursor = System.Windows.Forms.Cursors.Hand;
             this.logIntxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.logIntxt.ForeColor = System.Drawing.Color.SteelBlue;
-            this.logIntxt.Location = new System.Drawing.Point(297, 612);
+            this.logIntxt.Location = new System.Drawing.Point(326, 612);
             this.logIntxt.Name = "logIntxt";
             this.logIntxt.Size = new System.Drawing.Size(54, 20);
             this.logIntxt.TabIndex = 8;
@@ -421,12 +421,12 @@
             this.birthdatePicker.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.birthdatePicker.Format = System.Windows.Forms.DateTimePickerFormat.Long;
             this.birthdatePicker.Location = new System.Drawing.Point(269, 304);
-            this.birthdatePicker.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.birthdatePicker.MaxDate = new System.DateTime(2099, 12, 31, 0, 0, 0, 0);
             this.birthdatePicker.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.birthdatePicker.Name = "birthdatePicker";
             this.birthdatePicker.Size = new System.Drawing.Size(223, 41);
             this.birthdatePicker.TabIndex = 7;
-            this.birthdatePicker.Value = new System.DateTime(2026, 4, 9, 13, 24, 27, 844);
+            this.birthdatePicker.Value = new System.DateTime(2008, 5, 8, 0, 0, 0, 0);
             this.birthdatePicker.ValueChanged += new System.EventHandler(this.birthdatePicker_ValueChanged);
             // 
             // emailAddtxt
@@ -467,6 +467,9 @@
             this.confirmPasswordtxt.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.confirmPasswordtxt.ForeColor = System.Drawing.Color.Black;
             this.confirmPasswordtxt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.confirmPasswordtxt.IconRight = global::HotelManagementSystem.Properties.Resources.show;
+            this.confirmPasswordtxt.IconRightCursor = System.Windows.Forms.Cursors.Hand;
+            this.confirmPasswordtxt.IconRightOffset = new System.Drawing.Point(5, 0);
             this.confirmPasswordtxt.Location = new System.Drawing.Point(269, 224);
             this.confirmPasswordtxt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.confirmPasswordtxt.Name = "confirmPasswordtxt";
@@ -474,6 +477,8 @@
             this.confirmPasswordtxt.SelectedText = "";
             this.confirmPasswordtxt.Size = new System.Drawing.Size(223, 41);
             this.confirmPasswordtxt.TabIndex = 4;
+            this.confirmPasswordtxt.UseSystemPasswordChar = true;
+            this.confirmPasswordtxt.IconRightClick += new System.EventHandler(this.confirmPasswordtxt_IconRightClick);
             // 
             // lastNametxt
             // 
@@ -544,51 +549,28 @@
             this.usernametxt.Size = new System.Drawing.Size(223, 41);
             this.usernametxt.TabIndex = 4;
             // 
-            // passwordtxt
+            // citytxt
             // 
-            this.passwordtxt.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.passwordtxt.BorderRadius = 10;
-            this.passwordtxt.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.passwordtxt.DefaultText = "";
-            this.passwordtxt.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.passwordtxt.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.passwordtxt.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.passwordtxt.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.passwordtxt.FillColor = System.Drawing.Color.Azure;
-            this.passwordtxt.FocusedState.BorderColor = System.Drawing.Color.IndianRed;
-            this.passwordtxt.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.passwordtxt.ForeColor = System.Drawing.Color.Black;
-            this.passwordtxt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.passwordtxt.Location = new System.Drawing.Point(33, 224);
-            this.passwordtxt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.passwordtxt.Name = "passwordtxt";
-            this.passwordtxt.PlaceholderText = "";
-            this.passwordtxt.SelectedText = "";
-            this.passwordtxt.Size = new System.Drawing.Size(223, 41);
-            this.passwordtxt.TabIndex = 4;
-            // 
-            // addresstxt
-            // 
-            this.addresstxt.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.addresstxt.BorderRadius = 10;
-            this.addresstxt.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.addresstxt.DefaultText = "";
-            this.addresstxt.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.addresstxt.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.addresstxt.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.addresstxt.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.addresstxt.FillColor = System.Drawing.Color.Azure;
-            this.addresstxt.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.addresstxt.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addresstxt.ForeColor = System.Drawing.Color.Black;
-            this.addresstxt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.addresstxt.Location = new System.Drawing.Point(33, 464);
-            this.addresstxt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.addresstxt.Name = "addresstxt";
-            this.addresstxt.PlaceholderText = "";
-            this.addresstxt.SelectedText = "";
-            this.addresstxt.Size = new System.Drawing.Size(141, 41);
-            this.addresstxt.TabIndex = 4;
+            this.citytxt.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.citytxt.BorderRadius = 10;
+            this.citytxt.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.citytxt.DefaultText = "";
+            this.citytxt.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.citytxt.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.citytxt.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.citytxt.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.citytxt.FillColor = System.Drawing.Color.Azure;
+            this.citytxt.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.citytxt.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.citytxt.ForeColor = System.Drawing.Color.Black;
+            this.citytxt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.citytxt.Location = new System.Drawing.Point(33, 464);
+            this.citytxt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.citytxt.Name = "citytxt";
+            this.citytxt.PlaceholderText = "";
+            this.citytxt.SelectedText = "";
+            this.citytxt.Size = new System.Drawing.Size(141, 41);
+            this.citytxt.TabIndex = 4;
             // 
             // firstNametxt
             // 
@@ -790,6 +772,35 @@
             this.pictureBox2.TabIndex = 13;
             this.pictureBox2.TabStop = false;
             // 
+            // passwordtxt
+            // 
+            this.passwordtxt.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.passwordtxt.BorderRadius = 10;
+            this.passwordtxt.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.passwordtxt.DefaultText = "";
+            this.passwordtxt.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.passwordtxt.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.passwordtxt.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.passwordtxt.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.passwordtxt.FillColor = System.Drawing.Color.Azure;
+            this.passwordtxt.FocusedState.BorderColor = System.Drawing.Color.IndianRed;
+            this.passwordtxt.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.passwordtxt.ForeColor = System.Drawing.Color.Black;
+            this.passwordtxt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.passwordtxt.IconRight = global::HotelManagementSystem.Properties.Resources.show;
+            this.passwordtxt.IconRightCursor = System.Windows.Forms.Cursors.Hand;
+            this.passwordtxt.IconRightOffset = new System.Drawing.Point(5, 0);
+            this.passwordtxt.Location = new System.Drawing.Point(33, 224);
+            this.passwordtxt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.passwordtxt.Name = "passwordtxt";
+            this.passwordtxt.PlaceholderText = "";
+            this.passwordtxt.SelectedText = "";
+            this.passwordtxt.Size = new System.Drawing.Size(223, 41);
+            this.passwordtxt.TabIndex = 4;
+            this.passwordtxt.UseSystemPasswordChar = true;
+            this.passwordtxt.IconRightClick += new System.EventHandler(this.passwordtxt_IconRightClick);
+            this.passwordtxt.TextChanged += new System.EventHandler(this.passwordtxt_TextChanged);
+            // 
             // SignUpForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -840,14 +851,13 @@
         private System.Windows.Forms.Label userName_lbl;
         private Guna.UI2.WinForms.Guna2TextBox lastNametxt;
         private System.Windows.Forms.Label label4;
-        private Guna.UI2.WinForms.Guna2TextBox addresstxt;
+        private Guna.UI2.WinForms.Guna2TextBox citytxt;
         private System.Windows.Forms.Label label5;
         private Guna.UI2.WinForms.Guna2DateTimePicker birthdatePicker;
         private Guna.UI2.WinForms.Guna2TextBox usernametxt;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private Guna.UI2.WinForms.Guna2TextBox confirmPasswordtxt;
-        private Guna.UI2.WinForms.Guna2TextBox passwordtxt;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label3;
         private Guna.UI2.WinForms.Guna2TextBox emailAddtxt;
@@ -864,9 +874,10 @@
         private Guna.UI2.WinForms.Guna2RadioButton femaleRbtn;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox pictureBox3;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox2;
+        private Guna.UI2.WinForms.Guna2TextBox streettxt;
         private System.Windows.Forms.Label label13;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox1;
+        private Guna.UI2.WinForms.Guna2TextBox barangaytxt;
         private System.Windows.Forms.Label label12;
+        private Guna.UI2.WinForms.Guna2TextBox passwordtxt;
     }
 }

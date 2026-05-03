@@ -213,6 +213,26 @@ namespace HotelManagementSystem.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap gray {
+            get {
+                object obj = ResourceManager.GetObject("gray", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap green {
+            get {
+                object obj = ResourceManager.GetObject("green", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap home {
             get {
                 object obj = ResourceManager.GetObject("home", resourceCulture);
@@ -276,26 +296,6 @@ namespace HotelManagementSystem.Properties {
         internal static System.Drawing.Bitmap icons8_close_window_50 {
             get {
                 object obj = ResourceManager.GetObject("icons8-close-window-50", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap icons8_green_circle_50 {
-            get {
-                object obj = ResourceManager.GetObject("icons8-green-circle-50", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap icons8_green_circle_501 {
-            get {
-                object obj = ResourceManager.GetObject("icons8-green-circle-501", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

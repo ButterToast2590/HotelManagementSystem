@@ -33,8 +33,17 @@ namespace HotelManagementSystem.MyControls
 
         private void createRoombtn_Click(object sender, EventArgs e)
         {
-            CreateRoom createRoomForm = new CreateRoom();
-            createRoomForm.Show();
+            Form open = Application.OpenForms["CreateRoom"];
+
+            if (open != null)
+            {
+                open.BringToFront();
+                open.WindowState = FormWindowState.Normal;
+            }
+            else
+            {
+                new CreateRoom().Show();
+            }
         }
 
         private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)

@@ -31,36 +31,31 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminDashboard));
             this.userTitlepanel = new System.Windows.Forms.Panel();
+            this.btnMinimize = new Guna.UI2.WinForms.Guna2Button();
+            this.btnClose = new Guna.UI2.WinForms.Guna2Button();
             this.slideMenuPanel = new Guna.UI2.WinForms.Guna2Panel();
+            this.lblManagement = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.lblServices = new System.Windows.Forms.Label();
+            this.btnAdminRoomServices = new Guna.UI2.WinForms.Guna2Button();
             this.lblExplore = new System.Windows.Forms.Label();
             this.lblOverview = new System.Windows.Forms.Label();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
-            this.lblChecker = new System.Windows.Forms.Label();
-            this.lblUsrDisplay = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.adminPanelMain = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
-            this.lblManagement = new System.Windows.Forms.Label();
-            this.btnAdminRoomServices = new Guna.UI2.WinForms.Guna2Button();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btnLogOut = new Guna.UI2.WinForms.Guna2Button();
             this.btnFeedBack = new Guna.UI2.WinForms.Guna2Button();
-            this.btnSettings = new Guna.UI2.WinForms.Guna2Button();
             this.btnGuests = new Guna.UI2.WinForms.Guna2Button();
             this.btnRoom = new Guna.UI2.WinForms.Guna2Button();
             this.btnBilling = new Guna.UI2.WinForms.Guna2Button();
             this.btnReservation = new Guna.UI2.WinForms.Guna2Button();
             this.btnInOut = new Guna.UI2.WinForms.Guna2Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.btnHome = new Guna.UI2.WinForms.Guna2Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnMinimize = new Guna.UI2.WinForms.Guna2Button();
-            this.btnClose = new Guna.UI2.WinForms.Guna2Button();
+            this.adminPanelMain = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
             this.userTitlepanel.SuspendLayout();
             this.slideMenuPanel.SuspendLayout();
             this.guna2Panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -73,6 +68,54 @@
             this.userTitlepanel.Name = "userTitlepanel";
             this.userTitlepanel.Size = new System.Drawing.Size(1387, 31);
             this.userTitlepanel.TabIndex = 21;
+            // 
+            // btnMinimize
+            // 
+            this.btnMinimize.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnMinimize.Animated = true;
+            this.btnMinimize.AutoRoundedCorners = true;
+            this.btnMinimize.BackColor = System.Drawing.Color.Transparent;
+            this.btnMinimize.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnMinimize.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnMinimize.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnMinimize.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnMinimize.FillColor = System.Drawing.Color.Transparent;
+            this.btnMinimize.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnMinimize.ForeColor = System.Drawing.Color.White;
+            this.btnMinimize.HoverState.FillColor = System.Drawing.Color.IndianRed;
+            this.btnMinimize.Image = global::HotelManagementSystem.Properties.Resources.minus;
+            this.btnMinimize.ImageSize = new System.Drawing.Size(15, 15);
+            this.btnMinimize.Location = new System.Drawing.Point(1319, 5);
+            this.btnMinimize.Name = "btnMinimize";
+            this.btnMinimize.PressedColor = System.Drawing.Color.IndianRed;
+            this.btnMinimize.Size = new System.Drawing.Size(18, 20);
+            this.btnMinimize.TabIndex = 1;
+            this.btnMinimize.Click += new System.EventHandler(this.btnMinimize_Click);
+            // 
+            // btnClose
+            // 
+            this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnClose.Animated = true;
+            this.btnClose.AutoRoundedCorners = true;
+            this.btnClose.BackColor = System.Drawing.Color.Transparent;
+            this.btnClose.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnClose.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnClose.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnClose.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnClose.FillColor = System.Drawing.Color.Transparent;
+            this.btnClose.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnClose.ForeColor = System.Drawing.Color.White;
+            this.btnClose.HoverState.FillColor = System.Drawing.Color.IndianRed;
+            this.btnClose.Image = global::HotelManagementSystem.Properties.Resources.cross;
+            this.btnClose.ImageSize = new System.Drawing.Size(15, 15);
+            this.btnClose.Location = new System.Drawing.Point(1350, 5);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.PressedColor = System.Drawing.Color.IndianRed;
+            this.btnClose.Size = new System.Drawing.Size(25, 20);
+            this.btnClose.TabIndex = 0;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // slideMenuPanel
             // 
@@ -88,7 +131,6 @@
             this.slideMenuPanel.Controls.Add(this.lblOverview);
             this.slideMenuPanel.Controls.Add(this.guna2Panel1);
             this.slideMenuPanel.Controls.Add(this.btnFeedBack);
-            this.slideMenuPanel.Controls.Add(this.btnSettings);
             this.slideMenuPanel.Controls.Add(this.btnGuests);
             this.slideMenuPanel.Controls.Add(this.btnRoom);
             this.slideMenuPanel.Controls.Add(this.btnBilling);
@@ -103,6 +145,17 @@
             this.slideMenuPanel.Name = "slideMenuPanel";
             this.slideMenuPanel.Size = new System.Drawing.Size(247, 876);
             this.slideMenuPanel.TabIndex = 22;
+            // 
+            // lblManagement
+            // 
+            this.lblManagement.AutoSize = true;
+            this.lblManagement.Font = new System.Drawing.Font("Segoe UI Symbol", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblManagement.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.lblManagement.Location = new System.Drawing.Point(7, 177);
+            this.lblManagement.Name = "lblManagement";
+            this.lblManagement.Size = new System.Drawing.Size(107, 20);
+            this.lblManagement.TabIndex = 22;
+            this.lblManagement.Text = "Management";
             // 
             // label2
             // 
@@ -125,6 +178,28 @@
             this.lblServices.Size = new System.Drawing.Size(70, 20);
             this.lblServices.TabIndex = 20;
             this.lblServices.Text = "Services";
+            // 
+            // btnAdminRoomServices
+            // 
+            this.btnAdminRoomServices.BorderRadius = 15;
+            this.btnAdminRoomServices.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAdminRoomServices.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnAdminRoomServices.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnAdminRoomServices.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnAdminRoomServices.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnAdminRoomServices.FillColor = System.Drawing.Color.Transparent;
+            this.btnAdminRoomServices.FocusedColor = System.Drawing.Color.White;
+            this.btnAdminRoomServices.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdminRoomServices.ForeColor = System.Drawing.Color.Black;
+            this.btnAdminRoomServices.Image = global::HotelManagementSystem.Properties.Resources.room_service;
+            this.btnAdminRoomServices.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnAdminRoomServices.ImageSize = new System.Drawing.Size(25, 25);
+            this.btnAdminRoomServices.Location = new System.Drawing.Point(11, 434);
+            this.btnAdminRoomServices.Name = "btnAdminRoomServices";
+            this.btnAdminRoomServices.Size = new System.Drawing.Size(226, 47);
+            this.btnAdminRoomServices.TabIndex = 19;
+            this.btnAdminRoomServices.Text = "Room Service";
+            this.btnAdminRoomServices.Click += new System.EventHandler(this.btnAdminRoomServices_Click);
             // 
             // lblExplore
             // 
@@ -153,106 +228,11 @@
             this.guna2Panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.guna2Panel1.BackColor = System.Drawing.Color.AliceBlue;
-            this.guna2Panel1.Controls.Add(this.pictureBox2);
-            this.guna2Panel1.Controls.Add(this.lblChecker);
-            this.guna2Panel1.Controls.Add(this.lblUsrDisplay);
             this.guna2Panel1.Controls.Add(this.btnLogOut);
-            this.guna2Panel1.Location = new System.Drawing.Point(11, 764);
+            this.guna2Panel1.Location = new System.Drawing.Point(11, 819);
             this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(226, 100);
+            this.guna2Panel1.Size = new System.Drawing.Size(226, 45);
             this.guna2Panel1.TabIndex = 17;
-            // 
-            // lblChecker
-            // 
-            this.lblChecker.AutoSize = true;
-            this.lblChecker.Font = new System.Drawing.Font("Segoe UI Symbol", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblChecker.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.lblChecker.Location = new System.Drawing.Point(12, 34);
-            this.lblChecker.Name = "lblChecker";
-            this.lblChecker.Size = new System.Drawing.Size(184, 13);
-            this.lblChecker.TabIndex = 2;
-            this.lblChecker.Text = "Check if the user is check in or not";
-            // 
-            // lblUsrDisplay
-            // 
-            this.lblUsrDisplay.AutoSize = true;
-            this.lblUsrDisplay.BackColor = System.Drawing.Color.Transparent;
-            this.lblUsrDisplay.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUsrDisplay.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.lblUsrDisplay.Location = new System.Drawing.Point(10, 9);
-            this.lblUsrDisplay.Name = "lblUsrDisplay";
-            this.lblUsrDisplay.Size = new System.Drawing.Size(150, 20);
-            this.lblUsrDisplay.TabIndex = 18;
-            this.lblUsrDisplay.Text = "User Name Example";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label1.Location = new System.Drawing.Point(78, 29);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(159, 30);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Zedlink United";
-            // 
-            // adminPanelMain
-            // 
-            this.adminPanelMain.Location = new System.Drawing.Point(265, 37);
-            this.adminPanelMain.Name = "adminPanelMain";
-            this.adminPanelMain.Size = new System.Drawing.Size(1110, 851);
-            this.adminPanelMain.TabIndex = 23;
-            this.adminPanelMain.Paint += new System.Windows.Forms.PaintEventHandler(this.panelMain_Paint);
-            // 
-            // guna2DragControl1
-            // 
-            this.guna2DragControl1.DockIndicatorTransparencyValue = 0.6D;
-            this.guna2DragControl1.TargetControl = this;
-            this.guna2DragControl1.UseTransparentDrag = true;
-            // 
-            // lblManagement
-            // 
-            this.lblManagement.AutoSize = true;
-            this.lblManagement.Font = new System.Drawing.Font("Segoe UI Symbol", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblManagement.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.lblManagement.Location = new System.Drawing.Point(7, 177);
-            this.lblManagement.Name = "lblManagement";
-            this.lblManagement.Size = new System.Drawing.Size(107, 20);
-            this.lblManagement.TabIndex = 22;
-            this.lblManagement.Text = "Management";
-            // 
-            // btnAdminRoomServices
-            // 
-            this.btnAdminRoomServices.BorderRadius = 15;
-            this.btnAdminRoomServices.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAdminRoomServices.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnAdminRoomServices.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnAdminRoomServices.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnAdminRoomServices.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnAdminRoomServices.FillColor = System.Drawing.Color.Transparent;
-            this.btnAdminRoomServices.FocusedColor = System.Drawing.Color.White;
-            this.btnAdminRoomServices.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdminRoomServices.ForeColor = System.Drawing.Color.Black;
-            this.btnAdminRoomServices.Image = global::HotelManagementSystem.Properties.Resources.room_service;
-            this.btnAdminRoomServices.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnAdminRoomServices.ImageSize = new System.Drawing.Size(25, 25);
-            this.btnAdminRoomServices.Location = new System.Drawing.Point(11, 434);
-            this.btnAdminRoomServices.Name = "btnAdminRoomServices";
-            this.btnAdminRoomServices.Size = new System.Drawing.Size(226, 47);
-            this.btnAdminRoomServices.TabIndex = 19;
-            this.btnAdminRoomServices.Text = "Room Service";
-            this.btnAdminRoomServices.Click += new System.EventHandler(this.btnAdminRoomServices_Click);
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::HotelManagementSystem.Properties.Resources.icons8_green_circle_50;
-            this.pictureBox2.Location = new System.Drawing.Point(176, 9);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(20, 22);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 19;
-            this.pictureBox2.TabStop = false;
             // 
             // btnLogOut
             // 
@@ -263,6 +243,7 @@
             this.btnLogOut.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnLogOut.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnLogOut.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnLogOut.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnLogOut.FillColor = System.Drawing.Color.Transparent;
             this.btnLogOut.FocusedColor = System.Drawing.Color.White;
             this.btnLogOut.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -270,11 +251,13 @@
             this.btnLogOut.Image = global::HotelManagementSystem.Properties.Resources.sign_out_alt;
             this.btnLogOut.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnLogOut.ImageSize = new System.Drawing.Size(25, 25);
-            this.btnLogOut.Location = new System.Drawing.Point(15, 53);
+            this.btnLogOut.Location = new System.Drawing.Point(0, 0);
             this.btnLogOut.Name = "btnLogOut";
-            this.btnLogOut.Size = new System.Drawing.Size(195, 35);
+            this.btnLogOut.PressedColor = System.Drawing.Color.IndianRed;
+            this.btnLogOut.Size = new System.Drawing.Size(226, 45);
             this.btnLogOut.TabIndex = 18;
             this.btnLogOut.Text = "LogOut";
+            this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
             // 
             // btnFeedBack
             // 
@@ -297,28 +280,6 @@
             this.btnFeedBack.TabIndex = 15;
             this.btnFeedBack.Text = "Feedback";
             this.btnFeedBack.Click += new System.EventHandler(this.btnFeedBack_Click);
-            // 
-            // btnSettings
-            // 
-            this.btnSettings.BorderRadius = 15;
-            this.btnSettings.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSettings.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnSettings.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnSettings.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnSettings.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnSettings.FillColor = System.Drawing.Color.Transparent;
-            this.btnSettings.FocusedColor = System.Drawing.Color.White;
-            this.btnSettings.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSettings.ForeColor = System.Drawing.Color.Black;
-            this.btnSettings.Image = global::HotelManagementSystem.Properties.Resources.admin_alt;
-            this.btnSettings.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnSettings.ImageSize = new System.Drawing.Size(25, 25);
-            this.btnSettings.Location = new System.Drawing.Point(11, 616);
-            this.btnSettings.Name = "btnSettings";
-            this.btnSettings.Size = new System.Drawing.Size(226, 47);
-            this.btnSettings.TabIndex = 14;
-            this.btnSettings.Text = "Settings";
-            this.btnSettings.Click += new System.EventHandler(this.btnSettings_Click);
             // 
             // btnGuests
             // 
@@ -430,6 +391,18 @@
             this.btnInOut.Text = "Check-In/Out";
             this.btnInOut.Click += new System.EventHandler(this.btnInOut_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.label1.Location = new System.Drawing.Point(78, 29);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(159, 30);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Zedlink United";
+            // 
             // btnHome
             // 
             this.btnHome.BorderRadius = 15;
@@ -463,53 +436,19 @@
             this.pictureBox1.TabIndex = 8;
             this.pictureBox1.TabStop = false;
             // 
-            // btnMinimize
+            // adminPanelMain
             // 
-            this.btnMinimize.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnMinimize.Animated = true;
-            this.btnMinimize.AutoRoundedCorners = true;
-            this.btnMinimize.BackColor = System.Drawing.Color.Transparent;
-            this.btnMinimize.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnMinimize.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnMinimize.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnMinimize.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnMinimize.FillColor = System.Drawing.Color.Transparent;
-            this.btnMinimize.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnMinimize.ForeColor = System.Drawing.Color.White;
-            this.btnMinimize.HoverState.FillColor = System.Drawing.Color.IndianRed;
-            this.btnMinimize.Image = global::HotelManagementSystem.Properties.Resources.minus;
-            this.btnMinimize.ImageSize = new System.Drawing.Size(15, 15);
-            this.btnMinimize.Location = new System.Drawing.Point(1319, 5);
-            this.btnMinimize.Name = "btnMinimize";
-            this.btnMinimize.PressedColor = System.Drawing.Color.IndianRed;
-            this.btnMinimize.Size = new System.Drawing.Size(18, 20);
-            this.btnMinimize.TabIndex = 1;
-            this.btnMinimize.Click += new System.EventHandler(this.btnMinimize_Click);
+            this.adminPanelMain.Location = new System.Drawing.Point(265, 37);
+            this.adminPanelMain.Name = "adminPanelMain";
+            this.adminPanelMain.Size = new System.Drawing.Size(1110, 851);
+            this.adminPanelMain.TabIndex = 23;
+            this.adminPanelMain.Paint += new System.Windows.Forms.PaintEventHandler(this.panelMain_Paint);
             // 
-            // btnClose
+            // guna2DragControl1
             // 
-            this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnClose.Animated = true;
-            this.btnClose.AutoRoundedCorners = true;
-            this.btnClose.BackColor = System.Drawing.Color.Transparent;
-            this.btnClose.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnClose.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnClose.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnClose.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnClose.FillColor = System.Drawing.Color.Transparent;
-            this.btnClose.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnClose.ForeColor = System.Drawing.Color.White;
-            this.btnClose.HoverState.FillColor = System.Drawing.Color.IndianRed;
-            this.btnClose.Image = global::HotelManagementSystem.Properties.Resources.cross;
-            this.btnClose.ImageSize = new System.Drawing.Size(15, 15);
-            this.btnClose.Location = new System.Drawing.Point(1350, 5);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.PressedColor = System.Drawing.Color.IndianRed;
-            this.btnClose.Size = new System.Drawing.Size(25, 20);
-            this.btnClose.TabIndex = 0;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            this.guna2DragControl1.DockIndicatorTransparencyValue = 0.6D;
+            this.guna2DragControl1.TargetControl = this;
+            this.guna2DragControl1.UseTransparentDrag = true;
             // 
             // AdminDashboard
             // 
@@ -531,8 +470,6 @@
             this.slideMenuPanel.ResumeLayout(false);
             this.slideMenuPanel.PerformLayout();
             this.guna2Panel1.ResumeLayout(false);
-            this.guna2Panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
@@ -549,12 +486,8 @@
         private System.Windows.Forms.Label lblExplore;
         private System.Windows.Forms.Label lblOverview;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Label lblChecker;
-        private System.Windows.Forms.Label lblUsrDisplay;
         private Guna.UI2.WinForms.Guna2Button btnLogOut;
         private Guna.UI2.WinForms.Guna2Button btnFeedBack;
-        private Guna.UI2.WinForms.Guna2Button btnSettings;
         private Guna.UI2.WinForms.Guna2Button btnGuests;
         private Guna.UI2.WinForms.Guna2Button btnRoom;
         private Guna.UI2.WinForms.Guna2Button btnBilling;

@@ -111,6 +111,12 @@
     <Compile Include="AdminDashboard.Designer.cs">
       <DependentUpon>AdminDashboard.cs</DependentUpon>
     </Compile>
+    <Compile Include="CreateMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreateMenu.Designer.cs">
+      <DependentUpon>CreateMenu.cs</DependentUpon>
+    </Compile>
     <Compile Include="CreateRoom.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -135,6 +141,12 @@
     <Compile Include="MenuItemCard.Designer.cs">
       <DependentUpon>MenuItemCard.cs</DependentUpon>
     </Compile>
+    <Compile Include="MyControls\ucAdminBilling.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyControls\ucAdminBilling.Designer.cs">
+      <DependentUpon>ucAdminBilling.cs</DependentUpon>
+    </Compile>
     <Compile Include="MyControls\ucAdminChechINOUT.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -146,6 +158,12 @@
     </Compile>
     <Compile Include="MyControls\ucAdminDash.Designer.cs">
       <DependentUpon>ucAdminDash.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyControls\ucAdminFeedback.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyControls\ucAdminFeedback.Designer.cs">
+      <DependentUpon>ucAdminFeedback.cs</DependentUpon>
     </Compile>
     <Compile Include="MyControls\ucAdminGuest.cs">
       <SubType>UserControl</SubType>
@@ -164,6 +182,12 @@
     </Compile>
     <Compile Include="MyControls\ucAdminRoomControl.Designer.cs">
       <DependentUpon>ucAdminRoomControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyControls\ucAdminRoomService.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyControls\ucAdminRoomService.Designer.cs">
+      <DependentUpon>ucAdminRoomService.cs</DependentUpon>
     </Compile>
     <Compile Include="MyControls\ucBilling.cs">
       <SubType>UserControl</SubType>
@@ -191,6 +215,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="SignUpForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -233,8 +262,12 @@
     <Compile Include="UserDashboard.Designer.cs">
       <DependentUpon>UserDashboard.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserSession.cs" />
     <EmbeddedResource Include="AdminDashboard.resx">
       <DependentUpon>AdminDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreateMenu.resx">
+      <DependentUpon>CreateMenu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CreateRoom.resx">
       <DependentUpon>CreateRoom.cs</DependentUpon>
@@ -248,11 +281,17 @@
     <EmbeddedResource Include="MenuItemCard.resx">
       <DependentUpon>MenuItemCard.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MyControls\ucAdminBilling.resx">
+      <DependentUpon>ucAdminBilling.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MyControls\ucAdminChechINOUT.resx">
       <DependentUpon>ucAdminChechINOUT.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MyControls\ucAdminDash.resx">
       <DependentUpon>ucAdminDash.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyControls\ucAdminFeedback.resx">
+      <DependentUpon>ucAdminFeedback.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MyControls\ucAdminGuest.resx">
       <DependentUpon>ucAdminGuest.cs</DependentUpon>
@@ -262,6 +301,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MyControls\ucAdminRoomControl.resx">
       <DependentUpon>ucAdminRoomControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyControls\ucAdminRoomService.resx">
+      <DependentUpon>ucAdminRoomService.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MyControls\ucBilling.resx">
       <DependentUpon>ucBilling.cs</DependentUpon>
@@ -280,14 +322,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <EmbeddedResource Include="SignUpForm.resx">
       <DependentUpon>SignUpForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -322,6 +359,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="HotelDoor.ico" />
+    <None Include="Resources\green.png" />
+    <None Include="Resources\gray.png" />
     <None Include="Resources\picture %283%29.png" />
     <None Include="Resources\picture %282%29.png" />
     <None Include="Resources\picture %281%29.png" />
@@ -330,12 +369,10 @@
     <None Include="Resources\user-pen.png" />
     <None Include="Resources\vertical-city-hotel1.jpg" />
     <None Include="Resources\vertical-city-hotel.jpg" />
-    <None Include="Resources\icons8-green-circle-501.png" />
     <None Include="Resources\room-service.png" />
     <None Include="Resources\venus-mars.png" />
     <None Include="Resources\female.png" />
     <None Include="Resources\male.png" />
-    <None Include="Resources\icons8-green-circle-50.png" />
     <None Include="Resources\sign-out-alt.png" />
     <None Include="Resources\comments.png" />
     <None Include="Resources\sparkles1.png" />

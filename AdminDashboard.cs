@@ -58,7 +58,6 @@ namespace HotelManagementSystem
             btnAdminRoomServices.FillColor = Color.Transparent;
             btnBilling.FillColor = Color.Transparent;
             btnFeedBack.FillColor = Color.Transparent;
-            btnSettings.FillColor = Color.Transparent;
         }
         private void btnHome_Click(object sender, EventArgs e)
         {
@@ -99,24 +98,37 @@ namespace HotelManagementSystem
         {
             btnOff();
             btnAdminRoomServices.FillColor = Color.LightSkyBlue;
+            LoadContent(new ucAdminRoomService());
         }
 
         private void btnBilling_Click(object sender, EventArgs e)
         {
             btnOff();
             btnBilling.FillColor = Color.LightSkyBlue;
+            LoadContent(new ucAdminBilling());
         }
 
         private void btnFeedBack_Click(object sender, EventArgs e)
         {
             btnOff();
             btnFeedBack.FillColor = Color.LightSkyBlue;
+            LoadContent(new ucAdminFeedback());
         }
 
-        private void btnSettings_Click(object sender, EventArgs e)
+        private void btnLogOut_Click(object sender, EventArgs e)
         {
-            btnOff();
-            btnSettings.FillColor = Color.LightSkyBlue;
+            DialogResult dialogResult = MessageBox.Show("Are you sure you want to log out?", "Logout Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (dialogResult == DialogResult.Yes)
+            {
+                btnOff();
+                btnLogOut.FillColor = Color.IndianRed;
+                this.Hide();
+
+                logInForm loginForm = new logInForm();
+                loginForm.ShowDialog();
+                this.Close();
+            }
         }
     }
 }
