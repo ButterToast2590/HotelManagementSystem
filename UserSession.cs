@@ -18,5 +18,7 @@ namespace HotelManagementSystem
         public static long UserId1 { get; set; } 
         public static DateTime BirthDate1 { get; set; }
         public static DateTime DateJoined1 { get; set; }
+        public static byte[] ProfilePictureData1 { get; set; }
+        public static string ProfilePicturePath1 { get; set; }
     }
 }
