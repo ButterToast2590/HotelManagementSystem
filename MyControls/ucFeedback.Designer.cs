@@ -32,17 +32,15 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
-            this.dgvReviews = new System.Windows.Forms.DataGridView();
-            this.colReviewInfo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.reviewsDataGridView = new System.Windows.Forms.DataGridView();
+            this.colReview = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colRating = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lblPage = new System.Windows.Forms.Label();
-            this.btnNext = new Guna.UI2.WinForms.Guna2Button();
-            this.btnPrev = new Guna.UI2.WinForms.Guna2Button();
+            this.colDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label13 = new System.Windows.Forms.Label();
             this.lblReviewsTitle = new System.Windows.Forms.Label();
             this.panelLeft = new Guna.UI2.WinForms.Guna2Panel();
             this.btnPlaceOrder = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.commentBox = new Guna.UI2.WinForms.Guna2TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.guna2Panel7 = new Guna.UI2.WinForms.Guna2Panel();
             this.starCat6 = new Guna.UI2.WinForms.Guna2RatingStar();
@@ -68,7 +66,7 @@
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvReviews)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.reviewsDataGridView)).BeginInit();
             this.panelLeft.SuspendLayout();
             this.guna2Panel7.SuspendLayout();
             this.guna2Panel6.SuspendLayout();
@@ -111,10 +109,7 @@
             // 
             this.guna2Panel2.BackColor = System.Drawing.Color.Transparent;
             this.guna2Panel2.BorderRadius = 15;
-            this.guna2Panel2.Controls.Add(this.dgvReviews);
-            this.guna2Panel2.Controls.Add(this.lblPage);
-            this.guna2Panel2.Controls.Add(this.btnNext);
-            this.guna2Panel2.Controls.Add(this.btnPrev);
+            this.guna2Panel2.Controls.Add(this.reviewsDataGridView);
             this.guna2Panel2.Controls.Add(this.label13);
             this.guna2Panel2.Controls.Add(this.lblReviewsTitle);
             this.guna2Panel2.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -124,9 +119,9 @@
             this.guna2Panel2.Size = new System.Drawing.Size(530, 769);
             this.guna2Panel2.TabIndex = 29;
             // 
-            // dgvReviews
+            // reviewsDataGridView
             // 
-            this.dgvReviews.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.reviewsDataGridView.BackgroundColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Symbol", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -134,66 +129,35 @@
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvReviews.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvReviews.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvReviews.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.colReviewInfo,
-            this.colRating});
-            this.dgvReviews.Location = new System.Drawing.Point(18, 72);
-            this.dgvReviews.Name = "dgvReviews";
-            this.dgvReviews.Size = new System.Drawing.Size(496, 597);
-            this.dgvReviews.TabIndex = 62;
+            this.reviewsDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.reviewsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.reviewsDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colReview,
+            this.colRating,
+            this.colDate});
+            this.reviewsDataGridView.Location = new System.Drawing.Point(18, 72);
+            this.reviewsDataGridView.Name = "reviewsDataGridView";
+            this.reviewsDataGridView.Size = new System.Drawing.Size(496, 597);
+            this.reviewsDataGridView.TabIndex = 62;
             // 
-            // colReviewInfo
+            // colReview
             // 
-            this.colReviewInfo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colReviewInfo.HeaderText = "Review";
-            this.colReviewInfo.Name = "colReviewInfo";
+            this.colReview.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colReview.HeaderText = "Review";
+            this.colReview.Name = "colReview";
+            this.colReview.ReadOnly = true;
             // 
             // colRating
             // 
-            this.colRating.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.colRating.HeaderText = "Rating";
             this.colRating.Name = "colRating";
+            this.colRating.ReadOnly = true;
             // 
-            // lblPage
+            // colDate
             // 
-            this.lblPage.AutoSize = true;
-            this.lblPage.Location = new System.Drawing.Point(236, 680);
-            this.lblPage.Name = "lblPage";
-            this.lblPage.Size = new System.Drawing.Size(62, 13);
-            this.lblPage.TabIndex = 61;
-            this.lblPage.Text = "Page 1 of 1";
-            // 
-            // btnNext
-            // 
-            this.btnNext.BorderRadius = 10;
-            this.btnNext.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnNext.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnNext.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnNext.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnNext.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNext.ForeColor = System.Drawing.Color.White;
-            this.btnNext.Location = new System.Drawing.Point(284, 713);
-            this.btnNext.Name = "btnNext";
-            this.btnNext.Size = new System.Drawing.Size(101, 38);
-            this.btnNext.TabIndex = 60;
-            this.btnNext.Text = "Next →";
-            // 
-            // btnPrev
-            // 
-            this.btnPrev.BorderRadius = 10;
-            this.btnPrev.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnPrev.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnPrev.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnPrev.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnPrev.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPrev.ForeColor = System.Drawing.Color.White;
-            this.btnPrev.Location = new System.Drawing.Point(148, 713);
-            this.btnPrev.Name = "btnPrev";
-            this.btnPrev.Size = new System.Drawing.Size(101, 38);
-            this.btnPrev.TabIndex = 59;
-            this.btnPrev.Text = "← Prev";
+            this.colDate.HeaderText = "Date";
+            this.colDate.Name = "colDate";
+            this.colDate.ReadOnly = true;
             // 
             // label13
             // 
@@ -224,7 +188,7 @@
             this.panelLeft.BackColor = System.Drawing.Color.Transparent;
             this.panelLeft.BorderRadius = 15;
             this.panelLeft.Controls.Add(this.btnPlaceOrder);
-            this.panelLeft.Controls.Add(this.guna2TextBox1);
+            this.panelLeft.Controls.Add(this.commentBox);
             this.panelLeft.Controls.Add(this.label1);
             this.panelLeft.Controls.Add(this.guna2Panel7);
             this.panelLeft.Controls.Add(this.guna2Panel6);
@@ -249,32 +213,33 @@
             this.btnPlaceOrder.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnPlaceOrder.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPlaceOrder.ForeColor = System.Drawing.Color.White;
-            this.btnPlaceOrder.Location = new System.Drawing.Point(18, 624);
+            this.btnPlaceOrder.Location = new System.Drawing.Point(18, 697);
             this.btnPlaceOrder.Name = "btnPlaceOrder";
             this.btnPlaceOrder.Size = new System.Drawing.Size(496, 45);
             this.btnPlaceOrder.TabIndex = 69;
-            this.btnPlaceOrder.Text = "Place Order";
+            this.btnPlaceOrder.Text = "Submit";
+            this.btnPlaceOrder.Click += new System.EventHandler(this.btnPlaceOrder_Click);
             // 
-            // guna2TextBox1
+            // commentBox
             // 
-            this.guna2TextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.guna2TextBox1.DefaultText = "";
-            this.guna2TextBox1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.guna2TextBox1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.guna2TextBox1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2TextBox1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox1.Location = new System.Drawing.Point(18, 421);
-            this.guna2TextBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.guna2TextBox1.Multiline = true;
-            this.guna2TextBox1.Name = "guna2TextBox1";
-            this.guna2TextBox1.PlaceholderText = "";
-            this.guna2TextBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.guna2TextBox1.SelectedText = "";
-            this.guna2TextBox1.Size = new System.Drawing.Size(496, 158);
-            this.guna2TextBox1.TabIndex = 68;
+            this.commentBox.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.commentBox.DefaultText = "";
+            this.commentBox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.commentBox.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.commentBox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.commentBox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.commentBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.commentBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.commentBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.commentBox.Location = new System.Drawing.Point(18, 421);
+            this.commentBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.commentBox.Multiline = true;
+            this.commentBox.Name = "commentBox";
+            this.commentBox.PlaceholderText = "";
+            this.commentBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.commentBox.SelectedText = "";
+            this.commentBox.Size = new System.Drawing.Size(496, 248);
+            this.commentBox.TabIndex = 68;
             // 
             // label1
             // 
@@ -515,12 +480,13 @@
             this.Controls.Add(this.panel1);
             this.Name = "ucFeedback";
             this.Size = new System.Drawing.Size(1110, 854);
+            this.Load += new System.EventHandler(this.ucFeedback_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.guna2Panel2.ResumeLayout(false);
             this.guna2Panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvReviews)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.reviewsDataGridView)).EndInit();
             this.panelLeft.ResumeLayout(false);
             this.panelLeft.PerformLayout();
             this.guna2Panel7.ResumeLayout(false);
@@ -568,14 +534,12 @@
         private Guna.UI2.WinForms.Guna2Panel guna2Panel6;
         private Guna.UI2.WinForms.Guna2RatingStar starCat5;
         private System.Windows.Forms.Label lblCat5;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox1;
+        private Guna.UI2.WinForms.Guna2TextBox commentBox;
         private System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2Button btnPlaceOrder;
-        private Guna.UI2.WinForms.Guna2Button btnPrev;
-        private Guna.UI2.WinForms.Guna2Button btnNext;
-        private System.Windows.Forms.Label lblPage;
-        private System.Windows.Forms.DataGridView dgvReviews;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colReviewInfo;
+        private System.Windows.Forms.DataGridView reviewsDataGridView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colReview;
         private System.Windows.Forms.DataGridViewTextBoxColumn colRating;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colDate;
     }
 }

@@ -31,6 +31,8 @@
             this.components = new System.ComponentModel.Container();
             this.guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
             this.userTitlepanel = new System.Windows.Forms.Panel();
+            this.btnMinimize = new Guna.UI2.WinForms.Guna2Button();
+            this.btnClose = new Guna.UI2.WinForms.Guna2Button();
             this.label23 = new System.Windows.Forms.Label();
             this.guna2TextBox3 = new Guna.UI2.WinForms.Guna2TextBox();
             this.layoutFname = new System.Windows.Forms.TableLayoutPanel();
@@ -58,8 +60,6 @@
             this.label7 = new System.Windows.Forms.Label();
             this.guna2ComboBox2 = new Guna.UI2.WinForms.Guna2ComboBox();
             this.guna2Panel10 = new Guna.UI2.WinForms.Guna2Panel();
-            this.btnMinimize = new Guna.UI2.WinForms.Guna2Button();
-            this.btnClose = new Guna.UI2.WinForms.Guna2Button();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.userTitlepanel.SuspendLayout();
             this.layoutFname.SuspendLayout();
@@ -91,6 +91,54 @@
             this.userTitlepanel.Name = "userTitlepanel";
             this.userTitlepanel.Size = new System.Drawing.Size(504, 35);
             this.userTitlepanel.TabIndex = 88;
+            // 
+            // btnMinimize
+            // 
+            this.btnMinimize.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnMinimize.Animated = true;
+            this.btnMinimize.AutoRoundedCorners = true;
+            this.btnMinimize.BackColor = System.Drawing.Color.Transparent;
+            this.btnMinimize.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnMinimize.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnMinimize.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnMinimize.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnMinimize.FillColor = System.Drawing.Color.Transparent;
+            this.btnMinimize.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnMinimize.ForeColor = System.Drawing.Color.White;
+            this.btnMinimize.HoverState.FillColor = System.Drawing.Color.IndianRed;
+            this.btnMinimize.Image = global::HotelManagementSystem.Properties.Resources.minus;
+            this.btnMinimize.ImageSize = new System.Drawing.Size(15, 15);
+            this.btnMinimize.Location = new System.Drawing.Point(434, 5);
+            this.btnMinimize.Name = "btnMinimize";
+            this.btnMinimize.PressedColor = System.Drawing.Color.IndianRed;
+            this.btnMinimize.Size = new System.Drawing.Size(18, 22);
+            this.btnMinimize.TabIndex = 1;
+            this.btnMinimize.Click += new System.EventHandler(this.btnMinimize_Click);
+            // 
+            // btnClose
+            // 
+            this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnClose.Animated = true;
+            this.btnClose.AutoRoundedCorners = true;
+            this.btnClose.BackColor = System.Drawing.Color.Transparent;
+            this.btnClose.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnClose.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnClose.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnClose.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnClose.FillColor = System.Drawing.Color.Transparent;
+            this.btnClose.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnClose.ForeColor = System.Drawing.Color.White;
+            this.btnClose.HoverState.FillColor = System.Drawing.Color.IndianRed;
+            this.btnClose.Image = global::HotelManagementSystem.Properties.Resources.cross;
+            this.btnClose.ImageSize = new System.Drawing.Size(15, 15);
+            this.btnClose.Location = new System.Drawing.Point(465, 5);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.PressedColor = System.Drawing.Color.IndianRed;
+            this.btnClose.Size = new System.Drawing.Size(25, 22);
+            this.btnClose.TabIndex = 0;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // label23
             // 
@@ -564,54 +612,6 @@
             this.guna2Panel10.Name = "guna2Panel10";
             this.guna2Panel10.Size = new System.Drawing.Size(504, 702);
             this.guna2Panel10.TabIndex = 32;
-            // 
-            // btnMinimize
-            // 
-            this.btnMinimize.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnMinimize.Animated = true;
-            this.btnMinimize.AutoRoundedCorners = true;
-            this.btnMinimize.BackColor = System.Drawing.Color.Transparent;
-            this.btnMinimize.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnMinimize.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnMinimize.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnMinimize.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnMinimize.FillColor = System.Drawing.Color.Transparent;
-            this.btnMinimize.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnMinimize.ForeColor = System.Drawing.Color.White;
-            this.btnMinimize.HoverState.FillColor = System.Drawing.Color.IndianRed;
-            this.btnMinimize.Image = global::HotelManagementSystem.Properties.Resources.minus;
-            this.btnMinimize.ImageSize = new System.Drawing.Size(15, 15);
-            this.btnMinimize.Location = new System.Drawing.Point(434, 5);
-            this.btnMinimize.Name = "btnMinimize";
-            this.btnMinimize.PressedColor = System.Drawing.Color.IndianRed;
-            this.btnMinimize.Size = new System.Drawing.Size(18, 22);
-            this.btnMinimize.TabIndex = 1;
-            this.btnMinimize.Click += new System.EventHandler(this.btnMinimize_Click);
-            // 
-            // btnClose
-            // 
-            this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnClose.Animated = true;
-            this.btnClose.AutoRoundedCorners = true;
-            this.btnClose.BackColor = System.Drawing.Color.Transparent;
-            this.btnClose.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnClose.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnClose.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnClose.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnClose.FillColor = System.Drawing.Color.Transparent;
-            this.btnClose.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnClose.ForeColor = System.Drawing.Color.White;
-            this.btnClose.HoverState.FillColor = System.Drawing.Color.IndianRed;
-            this.btnClose.Image = global::HotelManagementSystem.Properties.Resources.cross;
-            this.btnClose.ImageSize = new System.Drawing.Size(15, 15);
-            this.btnClose.Location = new System.Drawing.Point(465, 5);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.PressedColor = System.Drawing.Color.IndianRed;
-            this.btnClose.Size = new System.Drawing.Size(25, 22);
-            this.btnClose.TabIndex = 0;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // guna2PictureBox1
             // 
