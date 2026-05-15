@@ -28,12 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2ComboBox1 = new Guna.UI2.WinForms.Guna2ComboBox();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.colGuestName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colRoom = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colRoomCharge = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColServiceCharge = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTotalCharge = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label2 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
@@ -50,12 +56,6 @@
             this.lblTotalRooms = new System.Windows.Forms.Label();
             this.totalRoom = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
-            this.colGuestName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colRoom = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colRoomCharge = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColServiceCharge = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTotalCharge = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.guna2Panel1.SuspendLayout();
@@ -138,14 +138,14 @@
             // dataGridView2
             // 
             this.dataGridView2.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI Symbol", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Symbol", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colGuestName,
@@ -159,6 +159,44 @@
             this.dataGridView2.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dataGridView2.Size = new System.Drawing.Size(1039, 582);
             this.dataGridView2.TabIndex = 2;
+            // 
+            // colGuestName
+            // 
+            this.colGuestName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colGuestName.HeaderText = "Guest";
+            this.colGuestName.Name = "colGuestName";
+            this.colGuestName.ReadOnly = true;
+            // 
+            // colRoom
+            // 
+            this.colRoom.HeaderText = "Room";
+            this.colRoom.Name = "colRoom";
+            this.colRoom.ReadOnly = true;
+            // 
+            // colRoomCharge
+            // 
+            this.colRoomCharge.HeaderText = "Room Charge";
+            this.colRoomCharge.Name = "colRoomCharge";
+            this.colRoomCharge.ReadOnly = true;
+            // 
+            // ColServiceCharge
+            // 
+            this.ColServiceCharge.HeaderText = "Services";
+            this.ColServiceCharge.Name = "ColServiceCharge";
+            this.ColServiceCharge.ReadOnly = true;
+            // 
+            // colTotalCharge
+            // 
+            this.colTotalCharge.HeaderText = "Total Bill";
+            this.colTotalCharge.Name = "colTotalCharge";
+            this.colTotalCharge.ReadOnly = true;
+            // 
+            // colStatus
+            // 
+            this.colStatus.HeaderText = "Status";
+            this.colStatus.Name = "colStatus";
+            this.colStatus.ReadOnly = true;
+            this.colStatus.Width = 200;
             // 
             // label2
             // 
@@ -334,6 +372,7 @@
             this.lblTotalRooms.Size = new System.Drawing.Size(36, 32);
             this.lblTotalRooms.TabIndex = 1;
             this.lblTotalRooms.Text = "__";
+            this.lblTotalRooms.Click += new System.EventHandler(this.lblTotalRooms_Click);
             // 
             // totalRoom
             // 
@@ -357,44 +396,6 @@
             this.label21.Size = new System.Drawing.Size(116, 45);
             this.label21.TabIndex = 27;
             this.label21.Text = "Billing";
-            // 
-            // colGuestName
-            // 
-            this.colGuestName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colGuestName.HeaderText = "Guest";
-            this.colGuestName.Name = "colGuestName";
-            this.colGuestName.ReadOnly = true;
-            // 
-            // colRoom
-            // 
-            this.colRoom.HeaderText = "Room";
-            this.colRoom.Name = "colRoom";
-            this.colRoom.ReadOnly = true;
-            // 
-            // colRoomCharge
-            // 
-            this.colRoomCharge.HeaderText = "Room Charge";
-            this.colRoomCharge.Name = "colRoomCharge";
-            this.colRoomCharge.ReadOnly = true;
-            // 
-            // ColServiceCharge
-            // 
-            this.ColServiceCharge.HeaderText = "Services";
-            this.ColServiceCharge.Name = "ColServiceCharge";
-            this.ColServiceCharge.ReadOnly = true;
-            // 
-            // colTotalCharge
-            // 
-            this.colTotalCharge.HeaderText = "Total Bill";
-            this.colTotalCharge.Name = "colTotalCharge";
-            this.colTotalCharge.ReadOnly = true;
-            // 
-            // colStatus
-            // 
-            this.colStatus.HeaderText = "Status";
-            this.colStatus.Name = "colStatus";
-            this.colStatus.ReadOnly = true;
-            this.colStatus.Width = 200;
             // 
             // ucAdminBilling
             // 

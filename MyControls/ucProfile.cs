@@ -89,14 +89,53 @@ namespace HotelManagementSystem.MyControls
             }
 
             LoadUpcomingStays();
+            LoadRecentActivity();
         }
+        private void LoadRecentActivity()
+        {
+            try
+            {
+                recentActivityProfileGrid.Rows.Clear();
 
+                string sql =
+                    "SELECT r.room_type, " +
+                    "       (b.check_out_date::date - b.check_in_date::date) AS nights, " +
+                    "       r.price_per_night * " +
+                    "       (b.check_out_date::date - b.check_in_date::date) AS total_bill " +
+                    "FROM hotel.bookings b " +
+                    "JOIN rooms r ON b.room_id = r.room_id " +
+                    "WHERE b.user_id = @userId " +
+                    "ORDER BY b.check_in_date DESC;";
+
+                using (var conn = new Npgsql.NpgsqlConnection(connString))
+                {
+                    conn.Open();
+                    var cmd = new Npgsql.NpgsqlCommand(sql, conn);
+                    cmd.Parameters.AddWithValue("@userId", UserSession.UserId1);
+                    var reader = cmd.ExecuteReader();
+
+                    while (reader.Read())
+                    {
+                        recentActivityProfileGrid.Rows.Add(
+                            reader["room_type"].ToString(),          
+                            reader["nights"].ToString() + " night(s)",
+                            "₱" + Convert.ToDecimal(reader["total_bill"]).ToString("N2")
+                        );
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error loading recent activity: " + ex.Message);
+            }
+        }
         private void LoadUpcomingStays()
         {
             using (var conn = new Npgsql.NpgsqlConnection(connString))
             {
                 conn.Open();
-                string sql = "SELECT check_in_date, check_out_date FROM hotel.bookings WHERE user_id = @id AND status != 'Cancelled' LIMIT 1";
+                string sql = "SELECT check_in_date, check_out_date FROM hotel.bookings " +
+                             "WHERE user_id = @id AND status = 'Approved' LIMIT 1";
 
                 using (var cmd = new Npgsql.NpgsqlCommand(sql, conn))
                 {
@@ -128,21 +167,6 @@ namespace HotelManagementSystem.MyControls
             monthCalendar1.UpdateBoldedDates();
         }
 
-        private void label55_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void lblSubtitle_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnDownload_Click(object sender, EventArgs e)
         {
             Form open = Application.OpenForms["EditProfile"];
@@ -158,6 +182,23 @@ namespace HotelManagementSystem.MyControls
             }
         }
 
+
+
+
+        private void label55_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void lblSubtitle_Click(object sender, EventArgs e)
+        {
+
+        }
         private void guna2CirclePictureBox4_Click(object sender, EventArgs e)
         {
 

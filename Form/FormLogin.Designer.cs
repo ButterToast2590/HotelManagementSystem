@@ -174,7 +174,7 @@
             this.copyrightMessage.AutoSize = true;
             this.copyrightMessage.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.copyrightMessage.ForeColor = System.Drawing.Color.DimGray;
-            this.copyrightMessage.Location = new System.Drawing.Point(983, 697);
+            this.copyrightMessage.Location = new System.Drawing.Point(940, 697);
             this.copyrightMessage.Name = "copyrightMessage";
             this.copyrightMessage.Size = new System.Drawing.Size(419, 15);
             this.copyrightMessage.TabIndex = 7;
@@ -358,7 +358,7 @@
             this.Controls.Add(this.panel2);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("₱this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.Name = "logInForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

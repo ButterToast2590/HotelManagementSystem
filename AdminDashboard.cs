@@ -115,6 +115,12 @@ namespace HotelManagementSystem
             LoadContent(new ucAdminFeedback());
         }
 
+        private void btnHighlights_Click(object sender, EventArgs e)
+        {
+            btnOff();
+            btnHighlights.FillColor = Color.LightSkyBlue;
+            LoadContent(new ucAdminHighlights());
+        }
         private void btnLogOut_Click(object sender, EventArgs e)
         {
             DialogResult dialogResult = MessageBox.Show("Are you sure you want to log out?", "Logout Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);

@@ -502,7 +502,7 @@
             this.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("₱this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "lblUserNameDisplay";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -523,10 +523,7 @@
         private Guna.UI2.WinForms.Guna2Button btnHome;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private Guna.UI2.WinForms.Guna2Button btnReservation;
         private Guna.UI2.WinForms.Guna2Button btnInOut;
-        private Guna.UI2.WinForms.Guna2Button btnMyBill;
-        private Guna.UI2.WinForms.Guna2Button btnRoomInfo;
         private Guna.UI2.WinForms.Guna2Button btnHighlights;
         private Guna.UI2.WinForms.Guna2Button btnFeedBack;
         private Guna.UI2.WinForms.Guna2Button btnProfile;
@@ -544,5 +541,8 @@
         private Guna.UI2.WinForms.Guna2Panel panelMain;
         private System.Windows.Forms.Label lblbottomusername;
         private System.Windows.Forms.PictureBox statusDot;
+        public Guna.UI2.WinForms.Guna2Button btnReservation;
+        public Guna.UI2.WinForms.Guna2Button btnRoomInfo;
+        public Guna.UI2.WinForms.Guna2Button btnMyBill;
     }
 }

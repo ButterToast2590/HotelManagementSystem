@@ -28,27 +28,35 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.chechINOutGrid = new System.Windows.Forms.DataGridView();
+            this.colName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colRoom = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCheckIn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCheckOut = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colBill = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label16 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
+            this.btnEarlyOut = new Guna.UI2.WinForms.Guna2Button();
             this.btnExtendStay = new Guna.UI2.WinForms.Guna2Button();
-            this.label14 = new System.Windows.Forms.Label();
+            this.lblTime = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
+            this.lblCheckoutSched = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.guna2Panel9 = new Guna.UI2.WinForms.Guna2Panel();
-            this.label7 = new System.Windows.Forms.Label();
+            this.lblAssignedRoom = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.lblMaxOccupancy = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.lblCheckInSched = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.bookingStatsContainer = new Guna.UI2.WinForms.Guna2Panel();
             this.lblChangeBookingStats = new System.Windows.Forms.Label();
@@ -58,6 +66,7 @@
             this.panel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.guna2Panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chechINOutGrid)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
             this.guna2Panel9.SuspendLayout();
@@ -95,6 +104,7 @@
             // 
             this.guna2Panel1.BackColor = System.Drawing.Color.Transparent;
             this.guna2Panel1.BorderRadius = 15;
+            this.guna2Panel1.Controls.Add(this.chechINOutGrid);
             this.guna2Panel1.Controls.Add(this.label16);
             this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.guna2Panel1.FillColor = System.Drawing.SystemColors.ButtonHighlight;
@@ -102,6 +112,79 @@
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.Size = new System.Drawing.Size(1066, 500);
             this.guna2Panel1.TabIndex = 0;
+            // 
+            // chechINOutGrid
+            // 
+            this.chechINOutGrid.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Symbol", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.chechINOutGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.chechINOutGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.chechINOutGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colName,
+            this.colRoom,
+            this.colCheckIn,
+            this.colCheckOut,
+            this.colStatus,
+            this.colBill});
+            this.chechINOutGrid.Location = new System.Drawing.Point(19, 46);
+            this.chechINOutGrid.Name = "chechINOutGrid";
+            this.chechINOutGrid.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.chechINOutGrid.Size = new System.Drawing.Size(1031, 443);
+            this.chechINOutGrid.TabIndex = 33;
+            // 
+            // colName
+            // 
+            this.colName.HeaderText = "Name";
+            this.colName.Name = "colName";
+            this.colName.ReadOnly = true;
+            this.colName.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.colName.Width = 300;
+            // 
+            // colRoom
+            // 
+            this.colRoom.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colRoom.HeaderText = "Room";
+            this.colRoom.Name = "colRoom";
+            this.colRoom.ReadOnly = true;
+            this.colRoom.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // colCheckIn
+            // 
+            this.colCheckIn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colCheckIn.HeaderText = "Check-In";
+            this.colCheckIn.Name = "colCheckIn";
+            this.colCheckIn.ReadOnly = true;
+            this.colCheckIn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // colCheckOut
+            // 
+            this.colCheckOut.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colCheckOut.HeaderText = "Check-Out";
+            this.colCheckOut.Name = "colCheckOut";
+            this.colCheckOut.ReadOnly = true;
+            this.colCheckOut.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // colStatus
+            // 
+            this.colStatus.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colStatus.HeaderText = "Status";
+            this.colStatus.Name = "colStatus";
+            this.colStatus.ReadOnly = true;
+            this.colStatus.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // colBill
+            // 
+            this.colBill.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colBill.HeaderText = "Bill";
+            this.colBill.Name = "colBill";
+            this.colBill.ReadOnly = true;
+            this.colBill.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
             // label16
             // 
@@ -136,11 +219,11 @@
             // 
             this.guna2Panel2.BackColor = System.Drawing.Color.Transparent;
             this.guna2Panel2.BorderRadius = 15;
-            this.guna2Panel2.Controls.Add(this.guna2Button1);
+            this.guna2Panel2.Controls.Add(this.btnEarlyOut);
             this.guna2Panel2.Controls.Add(this.btnExtendStay);
-            this.guna2Panel2.Controls.Add(this.label14);
+            this.guna2Panel2.Controls.Add(this.lblTime);
             this.guna2Panel2.Controls.Add(this.label15);
-            this.guna2Panel2.Controls.Add(this.label9);
+            this.guna2Panel2.Controls.Add(this.lblCheckoutSched);
             this.guna2Panel2.Controls.Add(this.label10);
             this.guna2Panel2.Controls.Add(this.label11);
             this.guna2Panel2.Controls.Add(this.label13);
@@ -152,25 +235,26 @@
             this.guna2Panel2.Size = new System.Drawing.Size(530, 259);
             this.guna2Panel2.TabIndex = 29;
             // 
-            // guna2Button1
+            // btnEarlyOut
             // 
-            this.guna2Button1.BorderColor = System.Drawing.Color.DimGray;
-            this.guna2Button1.BorderRadius = 15;
-            this.guna2Button1.BorderThickness = 1;
-            this.guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button1.FillColor = System.Drawing.Color.Transparent;
-            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI Symbol", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2Button1.ForeColor = System.Drawing.Color.Black;
-            this.guna2Button1.Location = new System.Drawing.Point(274, 188);
-            this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.PressedColor = System.Drawing.Color.IndianRed;
-            this.guna2Button1.PressedDepth = 70;
-            this.guna2Button1.Size = new System.Drawing.Size(193, 45);
-            this.guna2Button1.TabIndex = 66;
-            this.guna2Button1.Text = "Early Check-Out";
+            this.btnEarlyOut.BorderColor = System.Drawing.Color.DimGray;
+            this.btnEarlyOut.BorderRadius = 15;
+            this.btnEarlyOut.BorderThickness = 1;
+            this.btnEarlyOut.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnEarlyOut.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnEarlyOut.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnEarlyOut.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnEarlyOut.FillColor = System.Drawing.Color.Transparent;
+            this.btnEarlyOut.Font = new System.Drawing.Font("Segoe UI Symbol", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEarlyOut.ForeColor = System.Drawing.Color.Black;
+            this.btnEarlyOut.Location = new System.Drawing.Point(274, 188);
+            this.btnEarlyOut.Name = "btnEarlyOut";
+            this.btnEarlyOut.PressedColor = System.Drawing.Color.IndianRed;
+            this.btnEarlyOut.PressedDepth = 70;
+            this.btnEarlyOut.Size = new System.Drawing.Size(193, 45);
+            this.btnEarlyOut.TabIndex = 66;
+            this.btnEarlyOut.Text = "Early Check-Out";
+            this.btnEarlyOut.Click += new System.EventHandler(this.btnEarlyOut_Click_1);
             // 
             // btnExtendStay
             // 
@@ -191,17 +275,18 @@
             this.btnExtendStay.Size = new System.Drawing.Size(193, 45);
             this.btnExtendStay.TabIndex = 66;
             this.btnExtendStay.Text = "Extend Stay";
+            this.btnExtendStay.Click += new System.EventHandler(this.btnExtendStay_Click);
             // 
-            // label14
+            // lblTime
             // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Segoe UI Symbol", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.label14.Location = new System.Drawing.Point(24, 127);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(139, 25);
-            this.label14.TabIndex = 65;
-            this.label14.Text = "3 days, 14 hrs";
+            this.lblTime.AutoSize = true;
+            this.lblTime.Font = new System.Drawing.Font("Segoe UI Symbol", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTime.ForeColor = System.Drawing.SystemColors.InfoText;
+            this.lblTime.Location = new System.Drawing.Point(24, 127);
+            this.lblTime.Name = "lblTime";
+            this.lblTime.Size = new System.Drawing.Size(139, 25);
+            this.lblTime.TabIndex = 65;
+            this.lblTime.Text = "3 days, 14 hrs";
             // 
             // label15
             // 
@@ -214,16 +299,16 @@
             this.label15.TabIndex = 64;
             this.label15.Text = "Time Remaining";
             // 
-            // label9
+            // lblCheckoutSched
             // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Segoe UI Symbol", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.label9.Location = new System.Drawing.Point(24, 72);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(245, 25);
-            this.label9.TabIndex = 63;
-            this.label9.Text = "Apr 18, 2026 — 12:00 PM";
+            this.lblCheckoutSched.AutoSize = true;
+            this.lblCheckoutSched.Font = new System.Drawing.Font("Segoe UI Symbol", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCheckoutSched.ForeColor = System.Drawing.SystemColors.InfoText;
+            this.lblCheckoutSched.Location = new System.Drawing.Point(24, 72);
+            this.lblCheckoutSched.Name = "lblCheckoutSched";
+            this.lblCheckoutSched.Size = new System.Drawing.Size(245, 25);
+            this.lblCheckoutSched.TabIndex = 63;
+            this.lblCheckoutSched.Text = "Apr 18, 2026 — 12:00 PM";
             // 
             // label10
             // 
@@ -275,11 +360,11 @@
             // 
             this.guna2Panel9.BackColor = System.Drawing.Color.Transparent;
             this.guna2Panel9.BorderRadius = 10;
-            this.guna2Panel9.Controls.Add(this.label7);
+            this.guna2Panel9.Controls.Add(this.lblAssignedRoom);
             this.guna2Panel9.Controls.Add(this.label8);
-            this.guna2Panel9.Controls.Add(this.label5);
+            this.guna2Panel9.Controls.Add(this.lblMaxOccupancy);
             this.guna2Panel9.Controls.Add(this.label6);
-            this.guna2Panel9.Controls.Add(this.label4);
+            this.guna2Panel9.Controls.Add(this.lblCheckInSched);
             this.guna2Panel9.Controls.Add(this.label3);
             this.guna2Panel9.Controls.Add(this.bookingStatsContainer);
             this.guna2Panel9.Controls.Add(this.label1);
@@ -289,60 +374,60 @@
             this.guna2Panel9.Size = new System.Drawing.Size(530, 259);
             this.guna2Panel9.TabIndex = 28;
             // 
-            // label7
+            // lblAssignedRoom
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Segoe UI Symbol", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.label7.Location = new System.Drawing.Point(22, 224);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(180, 25);
-            this.label7.TabIndex = 65;
-            this.label7.Text = "Room 412, Floor 4";
+            this.lblAssignedRoom.AutoSize = true;
+            this.lblAssignedRoom.Font = new System.Drawing.Font("Segoe UI Symbol", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAssignedRoom.ForeColor = System.Drawing.SystemColors.InfoText;
+            this.lblAssignedRoom.Location = new System.Drawing.Point(22, 172);
+            this.lblAssignedRoom.Name = "lblAssignedRoom";
+            this.lblAssignedRoom.Size = new System.Drawing.Size(180, 25);
+            this.lblAssignedRoom.TabIndex = 65;
+            this.lblAssignedRoom.Text = "Room 412, Floor 4";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Segoe UI Symbol", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label8.Location = new System.Drawing.Point(23, 204);
+            this.label8.Location = new System.Drawing.Point(23, 152);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(113, 20);
             this.label8.TabIndex = 64;
             this.label8.Text = "Assigned Room";
             // 
-            // label5
+            // lblMaxOccupancy
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI Symbol", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.label5.Location = new System.Drawing.Point(22, 172);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(79, 25);
-            this.label5.TabIndex = 63;
-            this.label5.Text = "2 cards";
+            this.lblMaxOccupancy.AutoSize = true;
+            this.lblMaxOccupancy.Font = new System.Drawing.Font("Segoe UI Symbol", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMaxOccupancy.ForeColor = System.Drawing.SystemColors.InfoText;
+            this.lblMaxOccupancy.Location = new System.Drawing.Point(22, 226);
+            this.lblMaxOccupancy.Name = "lblMaxOccupancy";
+            this.lblMaxOccupancy.Size = new System.Drawing.Size(23, 25);
+            this.lblMaxOccupancy.TabIndex = 63;
+            this.lblMaxOccupancy.Text = "2";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI Symbol", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label6.Location = new System.Drawing.Point(23, 152);
+            this.label6.Location = new System.Drawing.Point(23, 206);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(119, 20);
+            this.label6.Size = new System.Drawing.Size(113, 20);
             this.label6.TabIndex = 62;
-            this.label6.Text = "Key Cards Issued";
+            this.label6.Text = "Max Occupancy";
             // 
-            // label4
+            // lblCheckInSched
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI Symbol", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.label4.Location = new System.Drawing.Point(22, 117);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(235, 25);
-            this.label4.TabIndex = 61;
-            this.label4.Text = "Apr 14, 2026 — 8:10 AM";
+            this.lblCheckInSched.AutoSize = true;
+            this.lblCheckInSched.Font = new System.Drawing.Font("Segoe UI Symbol", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCheckInSched.ForeColor = System.Drawing.SystemColors.InfoText;
+            this.lblCheckInSched.Location = new System.Drawing.Point(22, 117);
+            this.lblCheckInSched.Name = "lblCheckInSched";
+            this.lblCheckInSched.Size = new System.Drawing.Size(235, 25);
+            this.lblCheckInSched.TabIndex = 61;
+            this.lblCheckInSched.Text = "Apr 14, 2026 — 8:10 AM";
             // 
             // label3
             // 
@@ -351,9 +436,9 @@
             this.label3.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.label3.Location = new System.Drawing.Point(23, 97);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(140, 20);
+            this.label3.Size = new System.Drawing.Size(78, 20);
             this.label3.TabIndex = 59;
-            this.label3.Text = "No bookings found.";
+            this.label3.Text = "Scheduled";
             // 
             // bookingStatsContainer
             // 
@@ -363,7 +448,7 @@
             this.bookingStatsContainer.FillColor = System.Drawing.Color.MediumSeaGreen;
             this.bookingStatsContainer.Location = new System.Drawing.Point(22, 51);
             this.bookingStatsContainer.Name = "bookingStatsContainer";
-            this.bookingStatsContainer.Size = new System.Drawing.Size(114, 33);
+            this.bookingStatsContainer.Size = new System.Drawing.Size(146, 33);
             this.bookingStatsContainer.TabIndex = 60;
             // 
             // lblChangeBookingStats
@@ -420,11 +505,13 @@
             this.MaximumSize = new System.Drawing.Size(1110, 854);
             this.Name = "ucCheckInOut";
             this.Size = new System.Drawing.Size(1110, 854);
+            this.Load += new System.EventHandler(this.ucCheckInOut_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chechINOutGrid)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.guna2Panel2.ResumeLayout(false);
             this.guna2Panel2.PerformLayout();
@@ -453,17 +540,24 @@
         private Guna.UI2.WinForms.Guna2Panel bookingStatsContainer;
         private System.Windows.Forms.Label lblChangeBookingStats;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label lblAssignedRoom;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lblMaxOccupancy;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lblCheckInSched;
         private Guna.UI2.WinForms.Guna2Button btnExtendStay;
-        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label lblTime;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label lblCheckoutSched;
         private System.Windows.Forms.Label label10;
-        private Guna.UI2.WinForms.Guna2Button guna2Button1;
+        private Guna.UI2.WinForms.Guna2Button btnEarlyOut;
         private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.DataGridView chechINOutGrid;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colRoom;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colCheckIn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colCheckOut;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colStatus;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colBill;
     }
 }

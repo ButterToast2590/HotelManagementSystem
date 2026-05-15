@@ -35,14 +35,6 @@
             this.createRoombtn = new Guna.UI2.WinForms.Guna2Button();
             this.guna2ComboBox1 = new Guna.UI2.WinForms.Guna2ComboBox();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.floorNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.coolRoomNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colRoomType = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colPricePerNight = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colMaxOccupancy = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colSmokinPolicy = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colRoomImage = new System.Windows.Forms.DataGridViewImageColumn();
-            this.colRoomDesc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label2 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
@@ -59,6 +51,17 @@
             this.lblTotalRooms = new System.Windows.Forms.Label();
             this.totalRoom = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
+            this.btnDeleteRoom = new Guna.UI2.WinForms.Guna2Button();
+            this.colRoomId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colfloorNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colRoomNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colRoomType = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colPricePerNight = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colMaxOccupancy = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colSmokingPolicy = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colRoomImage = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colRoomDesc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.guna2Panel1.SuspendLayout();
@@ -104,6 +107,7 @@
             this.guna2Panel1.AutoSize = true;
             this.guna2Panel1.BackColor = System.Drawing.Color.Transparent;
             this.guna2Panel1.BorderRadius = 15;
+            this.guna2Panel1.Controls.Add(this.btnDeleteRoom);
             this.guna2Panel1.Controls.Add(this.createRoombtn);
             this.guna2Panel1.Controls.Add(this.guna2ComboBox1);
             this.guna2Panel1.Controls.Add(this.dataGridView2);
@@ -126,9 +130,9 @@
             this.createRoombtn.FillColor = System.Drawing.SystemColors.HotTrack;
             this.createRoombtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.createRoombtn.ForeColor = System.Drawing.Color.White;
-            this.createRoombtn.Location = new System.Drawing.Point(925, 10);
+            this.createRoombtn.Location = new System.Drawing.Point(788, 10);
             this.createRoombtn.Name = "createRoombtn";
-            this.createRoombtn.Size = new System.Drawing.Size(129, 41);
+            this.createRoombtn.Size = new System.Drawing.Size(130, 41);
             this.createRoombtn.TabIndex = 77;
             this.createRoombtn.Text = "Add Room";
             this.createRoombtn.Click += new System.EventHandler(this.createRoombtn_Click);
@@ -150,6 +154,7 @@
             this.guna2ComboBox1.ItemHeight = 35;
             this.guna2ComboBox1.Items.AddRange(new object[] {
             "Select Room Type",
+            "View All Room",
             "Single",
             "Double",
             "Twin",
@@ -169,7 +174,7 @@
             this.dataGridView2.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Symbol", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Symbol", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -177,67 +182,23 @@
             this.dataGridView2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.floorNum,
-            this.coolRoomNum,
+            this.colRoomId,
+            this.colfloorNum,
+            this.colRoomNum,
             this.colRoomType,
             this.colPricePerNight,
             this.colMaxOccupancy,
-            this.colSmokinPolicy,
+            this.colSmokingPolicy,
             this.colRoomImage,
-            this.colRoomDesc});
+            this.colRoomDesc,
+            this.colStatus});
             this.dataGridView2.Location = new System.Drawing.Point(15, 61);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dataGridView2.Size = new System.Drawing.Size(1039, 582);
             this.dataGridView2.TabIndex = 2;
             this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
-            // 
-            // floorNum
-            // 
-            this.floorNum.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.floorNum.HeaderText = "Floor Number";
-            this.floorNum.Name = "floorNum";
-            // 
-            // coolRoomNum
-            // 
-            this.coolRoomNum.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.coolRoomNum.HeaderText = "Room Number";
-            this.coolRoomNum.Name = "coolRoomNum";
-            // 
-            // colRoomType
-            // 
-            this.colRoomType.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colRoomType.HeaderText = "Room Type";
-            this.colRoomType.Name = "colRoomType";
-            // 
-            // colPricePerNight
-            // 
-            this.colPricePerNight.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colPricePerNight.HeaderText = "Price Per Night";
-            this.colPricePerNight.Name = "colPricePerNight";
-            // 
-            // colMaxOccupancy
-            // 
-            this.colMaxOccupancy.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colMaxOccupancy.HeaderText = "Max Occupancy";
-            this.colMaxOccupancy.Name = "colMaxOccupancy";
-            // 
-            // colSmokinPolicy
-            // 
-            this.colSmokinPolicy.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colSmokinPolicy.HeaderText = "Smoking Policy";
-            this.colSmokinPolicy.Name = "colSmokinPolicy";
-            // 
-            // colRoomImage
-            // 
-            this.colRoomImage.HeaderText = "Room Image";
-            this.colRoomImage.Name = "colRoomImage";
-            // 
-            // colRoomDesc
-            // 
-            this.colRoomDesc.HeaderText = "Description";
-            this.colRoomDesc.Name = "colRoomDesc";
-            this.colRoomDesc.Width = 120;
+            this.dataGridView2.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridView2_CellFormatting);
             // 
             // label2
             // 
@@ -413,6 +374,7 @@
             this.lblTotalRooms.Size = new System.Drawing.Size(36, 32);
             this.lblTotalRooms.TabIndex = 1;
             this.lblTotalRooms.Text = "__";
+            this.lblTotalRooms.Click += new System.EventHandler(this.lblTotalRooms_Click);
             // 
             // totalRoom
             // 
@@ -436,6 +398,89 @@
             this.label21.Size = new System.Drawing.Size(123, 45);
             this.label21.TabIndex = 27;
             this.label21.Text = "Rooms";
+            // 
+            // btnDeleteRoom
+            // 
+            this.btnDeleteRoom.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnDeleteRoom.BorderRadius = 10;
+            this.btnDeleteRoom.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnDeleteRoom.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnDeleteRoom.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnDeleteRoom.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnDeleteRoom.FillColor = System.Drawing.Color.IndianRed;
+            this.btnDeleteRoom.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDeleteRoom.ForeColor = System.Drawing.Color.White;
+            this.btnDeleteRoom.Location = new System.Drawing.Point(924, 10);
+            this.btnDeleteRoom.Name = "btnDeleteRoom";
+            this.btnDeleteRoom.Size = new System.Drawing.Size(130, 41);
+            this.btnDeleteRoom.TabIndex = 78;
+            this.btnDeleteRoom.Text = "Delete";
+            this.btnDeleteRoom.Click += new System.EventHandler(this.btnDeleteRoom_Click);
+            // 
+            // colRoomId
+            // 
+            this.colRoomId.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colRoomId.HeaderText = "Room ID";
+            this.colRoomId.Name = "colRoomId";
+            this.colRoomId.ReadOnly = true;
+            // 
+            // colfloorNum
+            // 
+            this.colfloorNum.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colfloorNum.HeaderText = "Floor Number";
+            this.colfloorNum.Name = "colfloorNum";
+            // 
+            // colRoomNum
+            // 
+            this.colRoomNum.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colRoomNum.HeaderText = "Room Number";
+            this.colRoomNum.Name = "colRoomNum";
+            // 
+            // colRoomType
+            // 
+            this.colRoomType.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colRoomType.HeaderText = "Room Type";
+            this.colRoomType.Name = "colRoomType";
+            // 
+            // colPricePerNight
+            // 
+            this.colPricePerNight.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colPricePerNight.HeaderText = "Price Per Night";
+            this.colPricePerNight.Name = "colPricePerNight";
+            // 
+            // colMaxOccupancy
+            // 
+            this.colMaxOccupancy.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colMaxOccupancy.HeaderText = "Max Occupancy";
+            this.colMaxOccupancy.Name = "colMaxOccupancy";
+            // 
+            // colSmokingPolicy
+            // 
+            this.colSmokingPolicy.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colSmokingPolicy.HeaderText = "Smoking Policy";
+            this.colSmokingPolicy.Name = "colSmokingPolicy";
+            // 
+            // colRoomImage
+            // 
+            this.colRoomImage.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colRoomImage.HeaderText = "Room Image";
+            this.colRoomImage.Name = "colRoomImage";
+            this.colRoomImage.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colRoomImage.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // colRoomDesc
+            // 
+            this.colRoomDesc.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colRoomDesc.HeaderText = "Description";
+            this.colRoomDesc.Name = "colRoomDesc";
+            // 
+            // colStatus
+            // 
+            this.colStatus.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colStatus.HeaderText = "Status";
+            this.colStatus.Name = "colStatus";
+            this.colStatus.ReadOnly = true;
             // 
             // ucAdminRoomControl
             // 
@@ -486,15 +531,18 @@
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
         private Guna.UI2.WinForms.Guna2ComboBox guna2ComboBox1;
         private System.Windows.Forms.DataGridView dataGridView2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn floorNum;
-        private System.Windows.Forms.DataGridViewTextBoxColumn coolRoomNum;
+        private System.Windows.Forms.Label label2;
+        private Guna.UI2.WinForms.Guna2Button createRoombtn;
+        private Guna.UI2.WinForms.Guna2Button btnDeleteRoom;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colRoomId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colfloorNum;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colRoomNum;
         private System.Windows.Forms.DataGridViewTextBoxColumn colRoomType;
         private System.Windows.Forms.DataGridViewTextBoxColumn colPricePerNight;
         private System.Windows.Forms.DataGridViewTextBoxColumn colMaxOccupancy;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colSmokinPolicy;
-        private System.Windows.Forms.DataGridViewImageColumn colRoomImage;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colSmokingPolicy;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colRoomImage;
         private System.Windows.Forms.DataGridViewTextBoxColumn colRoomDesc;
-        private System.Windows.Forms.Label label2;
-        private Guna.UI2.WinForms.Guna2Button createRoombtn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colStatus;
     }
 }

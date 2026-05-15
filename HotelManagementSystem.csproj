@@ -105,6 +105,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="addHighlights.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="addHighlights.Designer.cs">
+      <DependentUpon>addHighlights.cs</DependentUpon>
+    </Compile>
     <Compile Include="AdminDashboard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -123,11 +129,35 @@
     <Compile Include="CreateRoom.Designer.cs">
       <DependentUpon>CreateRoom.cs</DependentUpon>
     </Compile>
+    <Compile Include="DeleteHighlights.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DeleteHighlights.Designer.cs">
+      <DependentUpon>DeleteHighlights.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DeleteRoom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DeleteRoom.Designer.cs">
+      <DependentUpon>DeleteRoom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="editHighlights.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="editHighlights.Designer.cs">
+      <DependentUpon>editHighlights.cs</DependentUpon>
+    </Compile>
     <Compile Include="EditProfile.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="EditProfile.Designer.cs">
       <DependentUpon>EditProfile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ExtendStay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ExtendStay.Designer.cs">
+      <DependentUpon>ExtendStay.cs</DependentUpon>
     </Compile>
     <Compile Include="Form\FormLogin.cs">
       <SubType>Form</SubType>
@@ -176,6 +206,12 @@
     </Compile>
     <Compile Include="MyControls\ucAdminGuest.Designer.cs">
       <DependentUpon>ucAdminGuest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyControls\ucAdminHighlights.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyControls\ucAdminHighlights.Designer.cs">
+      <DependentUpon>ucAdminHighlights.cs</DependentUpon>
     </Compile>
     <Compile Include="MyControls\ucAdminReservations.cs">
       <SubType>UserControl</SubType>
@@ -269,8 +305,12 @@
       <DependentUpon>UserDashboard.cs</DependentUpon>
     </Compile>
     <Compile Include="UserSession.cs" />
+    <EmbeddedResource Include="addHighlights.resx">
+      <DependentUpon>addHighlights.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AdminDashboard.resx">
       <DependentUpon>AdminDashboard.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="CreateMenu.resx">
       <DependentUpon>CreateMenu.cs</DependentUpon>
@@ -278,8 +318,20 @@
     <EmbeddedResource Include="CreateRoom.resx">
       <DependentUpon>CreateRoom.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DeleteHighlights.resx">
+      <DependentUpon>DeleteHighlights.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DeleteRoom.resx">
+      <DependentUpon>DeleteRoom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="editHighlights.resx">
+      <DependentUpon>editHighlights.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="EditProfile.resx">
       <DependentUpon>EditProfile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExtendStay.resx">
+      <DependentUpon>ExtendStay.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form\FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
@@ -304,6 +356,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MyControls\ucAdminGuest.resx">
       <DependentUpon>ucAdminGuest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyControls\ucAdminHighlights.resx">
+      <DependentUpon>ucAdminHighlights.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MyControls\ucAdminReservations.resx">
       <DependentUpon>ucAdminReservations.cs</DependentUpon>
@@ -336,6 +391,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SignUpForm.resx">
       <DependentUpon>SignUpForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="MyControls\ucRoomInfo.resx">
       <DependentUpon>ucRoomInfo.cs</DependentUpon>
@@ -368,6 +424,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="HotelDoor.ico" />
+    <Content Include="Resources\yellow.png" />
+    <None Include="Resources\yellow1.png" />
     <None Include="Resources\green.png" />
     <None Include="Resources\gray.png" />
     <None Include="Resources\picture %283%29.png" />

@@ -56,6 +56,7 @@
             this.lastNametxt = new Guna.UI2.WinForms.Guna2TextBox();
             this.contactNumtxt = new Guna.UI2.WinForms.Guna2TextBox();
             this.usernametxt = new Guna.UI2.WinForms.Guna2TextBox();
+            this.passwordtxt = new Guna.UI2.WinForms.Guna2TextBox();
             this.citytxt = new Guna.UI2.WinForms.Guna2TextBox();
             this.firstNametxt = new Guna.UI2.WinForms.Guna2TextBox();
             this.logInHeader_lbl = new System.Windows.Forms.Label();
@@ -73,7 +74,6 @@
             this.userName_lbl = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.passwordtxt = new Guna.UI2.WinForms.Guna2TextBox();
             this.pnlTitleBarInSignUp.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxClose)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMinimize)).BeginInit();
@@ -132,7 +132,7 @@
             this.copyrightMessage1.AutoSize = true;
             this.copyrightMessage1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.copyrightMessage1.ForeColor = System.Drawing.Color.DimGray;
-            this.copyrightMessage1.Location = new System.Drawing.Point(958, 697);
+            this.copyrightMessage1.Location = new System.Drawing.Point(938, 697);
             this.copyrightMessage1.Name = "copyrightMessage1";
             this.copyrightMessage1.Size = new System.Drawing.Size(419, 15);
             this.copyrightMessage1.TabIndex = 14;
@@ -549,6 +549,35 @@
             this.usernametxt.Size = new System.Drawing.Size(223, 41);
             this.usernametxt.TabIndex = 4;
             // 
+            // passwordtxt
+            // 
+            this.passwordtxt.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.passwordtxt.BorderRadius = 10;
+            this.passwordtxt.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.passwordtxt.DefaultText = "";
+            this.passwordtxt.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.passwordtxt.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.passwordtxt.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.passwordtxt.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.passwordtxt.FillColor = System.Drawing.Color.Azure;
+            this.passwordtxt.FocusedState.BorderColor = System.Drawing.Color.IndianRed;
+            this.passwordtxt.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.passwordtxt.ForeColor = System.Drawing.Color.Black;
+            this.passwordtxt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.passwordtxt.IconRight = global::HotelManagementSystem.Properties.Resources.show;
+            this.passwordtxt.IconRightCursor = System.Windows.Forms.Cursors.Hand;
+            this.passwordtxt.IconRightOffset = new System.Drawing.Point(5, 0);
+            this.passwordtxt.Location = new System.Drawing.Point(33, 224);
+            this.passwordtxt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.passwordtxt.Name = "passwordtxt";
+            this.passwordtxt.PlaceholderText = "";
+            this.passwordtxt.SelectedText = "";
+            this.passwordtxt.Size = new System.Drawing.Size(223, 41);
+            this.passwordtxt.TabIndex = 4;
+            this.passwordtxt.UseSystemPasswordChar = true;
+            this.passwordtxt.IconRightClick += new System.EventHandler(this.passwordtxt_IconRightClick);
+            this.passwordtxt.TextChanged += new System.EventHandler(this.passwordtxt_TextChanged);
+            // 
             // citytxt
             // 
             this.citytxt.BackColor = System.Drawing.SystemColors.ButtonHighlight;
@@ -772,35 +801,6 @@
             this.pictureBox2.TabIndex = 13;
             this.pictureBox2.TabStop = false;
             // 
-            // passwordtxt
-            // 
-            this.passwordtxt.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.passwordtxt.BorderRadius = 10;
-            this.passwordtxt.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.passwordtxt.DefaultText = "";
-            this.passwordtxt.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.passwordtxt.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.passwordtxt.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.passwordtxt.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.passwordtxt.FillColor = System.Drawing.Color.Azure;
-            this.passwordtxt.FocusedState.BorderColor = System.Drawing.Color.IndianRed;
-            this.passwordtxt.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.passwordtxt.ForeColor = System.Drawing.Color.Black;
-            this.passwordtxt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.passwordtxt.IconRight = global::HotelManagementSystem.Properties.Resources.show;
-            this.passwordtxt.IconRightCursor = System.Windows.Forms.Cursors.Hand;
-            this.passwordtxt.IconRightOffset = new System.Drawing.Point(5, 0);
-            this.passwordtxt.Location = new System.Drawing.Point(33, 224);
-            this.passwordtxt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.passwordtxt.Name = "passwordtxt";
-            this.passwordtxt.PlaceholderText = "";
-            this.passwordtxt.SelectedText = "";
-            this.passwordtxt.Size = new System.Drawing.Size(223, 41);
-            this.passwordtxt.TabIndex = 4;
-            this.passwordtxt.UseSystemPasswordChar = true;
-            this.passwordtxt.IconRightClick += new System.EventHandler(this.passwordtxt_IconRightClick);
-            this.passwordtxt.TextChanged += new System.EventHandler(this.passwordtxt_TextChanged);
-            // 
             // SignUpForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -815,7 +815,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.pnlTitleBarInSignUp);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("₱this.Icon")));
             this.Name = "SignUpForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SignUpForm";

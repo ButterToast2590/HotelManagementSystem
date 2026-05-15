@@ -17,7 +17,7 @@ namespace HotelManagementSystem
     public partial class EditProfile : Form
     {
         private string newImagePath = "";
-        private bool imageChanged = false; // FLAG: track if user picked a new image
+        private bool imageChanged = false;
 
         public EditProfile()
         {
@@ -26,23 +26,18 @@ namespace HotelManagementSystem
 
         private void EditProfile_Load(object sender, EventArgs e)
         {
-            // Pre-fill all fields with current session data
             firstNametxt.Text = UserSession.FirstName1;
             lastNametxt.Text = UserSession.LastName1;
             contactNumtxt.Text = UserSession.Phone1;
             emailAddtxt.Text = UserSession.Email1;
 
-            // Pre-fill gender combo
             if (!string.IsNullOrEmpty(UserSession.Gender1))
                 guna2ComboBox1.SelectedItem = UserSession.Gender1;
 
-            // Pre-fill address parts
             string[] addrParts = (UserSession.Address1 ?? "").Split(',');
             streettxt.Text = addrParts.Length > 0 ? addrParts[0].Trim() : "";
             barangaytxt.Text = addrParts.Length > 1 ? addrParts[1].Trim() : "";
             citytxt.Text = addrParts.Length > 2 ? addrParts[2].Trim() : "";
-
-            // KEY FIX: Load existing profile picture so it doesnt go blank
             if (UserSession.ProfilePictureData1 != null && UserSession.ProfilePictureData1.Length > 0)
             {
                 try
@@ -66,7 +61,7 @@ namespace HotelManagementSystem
                 }
             }
 
-            imageChanged = false; // Reset flag after loading
+            imageChanged = false;
         }
 
         private void btnMinimize_Click(object sender, EventArgs e)
@@ -105,7 +100,7 @@ namespace HotelManagementSystem
                     guna2CirclePictureBox4.Region = new Region(gp);
 
                     newImagePath = Path.Combine("HotelImages", fileName);
-                    imageChanged = true; // Mark that user picked a new image
+                    imageChanged = true;
                 }
             }
         }
@@ -124,8 +119,6 @@ namespace HotelManagementSystem
                                 "Database=hotelmanagement;" +
                                 "SslMode=require;" +
                                 "Trust Server Certificate=true;";
-
-            // KEY FIX: Only convert image if user actually picked a new one
             byte[] imageBytes = null;
             if (imageChanged && guna2CirclePictureBox4.Image != null)
             {
@@ -156,8 +149,6 @@ namespace HotelManagementSystem
                 try
                 {
                     conn.Open();
-
-                    // KEY FIX: Only update profile_picture_data if a new image was selected
                     string sql;
                     if (imageChanged && imageBytes != null)
                     {
@@ -169,7 +160,6 @@ namespace HotelManagementSystem
                     }
                     else
                     {
-                        // Don't touch profile_picture_data column at all
                         sql = @"UPDATE hotel.users SET 
                                 first_name = @fName, last_name = @lName, gender = @gender, 
                                 phone_number = @phone, email = @email, address = @addr
@@ -198,7 +188,6 @@ namespace HotelManagementSystem
                             UserSession.Email1 = email;
                             UserSession.Address1 = fullAddress;
 
-                            // Only update session image if a new one was chosen
                             if (imageChanged && imageBytes != null)
                             {
                                 UserSession.ProfilePictureData1 = imageBytes;

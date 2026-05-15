@@ -26,10 +26,13 @@ namespace HotelManagementSystem
         public lblUserNameDisplay()
         {
             InitializeComponent();
-            LoadContent(new ucDashboard());
+            var dashboard = new ucDashboard();
+            dashboard.LoggedInUserId = UserSession.UserId1;
+            LoadContent(dashboard);
+
             btnHome.FillColor = Color.LightSkyBlue;
         }
-        private void LoadContent(System.Windows.Forms.UserControl control)
+        public void LoadContent(System.Windows.Forms.UserControl control)
         {
             lblbottomusername.Text = UserSession.Username1;
             UpdateCheckInStatus();
@@ -38,34 +41,9 @@ namespace HotelManagementSystem
             panelMain.Controls.Add(control);
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void guna2Panel6_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void copyrightMessage_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void label1_Click_1(object sender, EventArgs e)
         {
             btnOff();
-        }
-
-        private void btnLogo_Click(object sender, EventArgs e)
-        {
-
         }
         private void UpdateCheckInStatus()
         {
@@ -74,20 +52,30 @@ namespace HotelManagementSystem
                 try
                 {
                     conn.Open();
-                    string sql = @"SELECT COUNT(*) FROM hotel.bookings 
+                    string sql = @"SELECT status FROM hotel.bookings 
                            WHERE user_id = @id 
-                           AND status != 'Cancelled'";
+                           AND status IN ('Pending', 'Approved')
+                           ORDER BY created_at DESC
+                           LIMIT 1";
 
                     using (var cmd = new NpgsqlCommand(sql, conn))
                     {
                         cmd.Parameters.AddWithValue("@id", UserSession.UserId1);
+                        var result = cmd.ExecuteScalar();
 
-                        int bookingCount = Convert.ToInt32(cmd.ExecuteScalar());
-
-                        if (bookingCount > 0)
+                        if (result != null)
                         {
-                            statusDot.Image = Properties.Resources.green;
-                            lblStatusInfo.Text = "Active reservation found.";
+                            string status = result.ToString();
+                            if (status == "Approved")
+                            {
+                                statusDot.Image = Properties.Resources.green;
+                                lblStatusInfo.Text = "Active reservation found.";
+                            }
+                            else
+                            {
+                                statusDot.Image = Properties.Resources.yellow;
+                                lblStatusInfo.Text = "Reservation pending approval.";
+                            }
                         }
                         else
                         {
@@ -113,14 +101,19 @@ namespace HotelManagementSystem
         {
             btnOff();
             btnHome.FillColor = Color.LightSkyBlue;
-            LoadContent(new ucDashboard());
+            var dashboard = new ucDashboard();
+            dashboard.LoggedInUserId = UserSession.UserId1;
+            LoadContent(dashboard);
         }
 
         private void btnReservation_Click(object sender, EventArgs e)
         {
             btnOff();
             btnReservation.FillColor = Color.LightSkyBlue;
-            LoadContent(new ucReservation());
+
+            ucReservation reservation = new ucReservation();
+            reservation.LoggedInUserId = UserSession.UserId1;
+            LoadContent(reservation);
         }
 
         private void btnInOut_Click(object sender, EventArgs e)
@@ -179,12 +172,7 @@ namespace HotelManagementSystem
             btnRoomServices.FillColor = Color.LightSkyBlue;
             LoadContent(new ucRoomService());
         }
-
-        private void pictureBox2_Click(object sender, EventArgs e)
-        {
-
-        }
-        private void btnOff()
+        public void btnOff()
         {
             btnHighlights.FillColor = Color.Transparent;
             btnHome.FillColor = Color.Transparent;
@@ -202,12 +190,6 @@ namespace HotelManagementSystem
         {
             btnOff();
         }
-
-        private void lblUserNameDisplay_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnClose_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -218,7 +200,43 @@ namespace HotelManagementSystem
             this.WindowState = FormWindowState.Minimized;
         }
 
+
+
+
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblUserNameDisplay_Load(object sender, EventArgs e)
+        {
+
+        }
         private void guna2Panel4_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void btnLogo_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2Panel6_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void copyrightMessage_Click(object sender, EventArgs e)
         {
 
         }

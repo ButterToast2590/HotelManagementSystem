@@ -37,10 +37,10 @@ namespace HotelManagementSystem.MyControls
             LoadPreviousReviews();
         }
 
-        private void btnSubmit_Click(object sender, EventArgs e)
+        private void btnPlaceOrder_Click(object sender, EventArgs e) 
         {
             if (starCat1.Value == 0 || starCat2.Value == 0 || starCat3.Value == 0 ||
-                starCat4.Value == 0 || starCat5.Value == 0 || starCat6.Value == 0)
+        starCat4.Value == 0 || starCat5.Value == 0 || starCat6.Value == 0)
             {
                 MessageBox.Show("Please rate all categories before submitting.", "Zedlink United",
                                 MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -147,6 +147,5 @@ namespace HotelManagementSystem.MyControls
 
         private void lblOrderTitle_Click(object sender, EventArgs e) { }
         private void lblRateTitle_Click(object sender, EventArgs e) { }
-        private void btnPlaceOrder_Click(object sender, EventArgs e) { }
     }
 }

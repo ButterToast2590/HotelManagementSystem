@@ -597,9 +597,10 @@
             this.label12.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.label12.Location = new System.Drawing.Point(12, 45);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(283, 20);
+            this.label12.Size = new System.Drawing.Size(278, 20);
             this.label12.TabIndex = 24;
-            this.label12.Text = "Incoming and upcoming booking request\r\n";
+            this.label12.Text = "Monitor customer feedback and  reviews";
+            this.label12.Click += new System.EventHandler(this.label12_Click);
             // 
             // label21
             // 
@@ -609,9 +610,9 @@
             this.label21.ForeColor = System.Drawing.SystemColors.Desktop;
             this.label21.Location = new System.Drawing.Point(8, 0);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(210, 45);
+            this.label21.Size = new System.Drawing.Size(161, 45);
             this.label21.TabIndex = 27;
-            this.label21.Text = "Reservations";
+            this.label21.Text = "Feedback";
             // 
             // ucAdminFeedback
             // 

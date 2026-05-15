@@ -16,5 +16,10 @@ namespace HotelManagementSystem.MyControls
         {
             InitializeComponent();
         }
+
+        private void lblTotalRooms_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

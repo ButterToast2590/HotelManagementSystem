@@ -29,36 +29,30 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.GroupBox groupBox1;
-            this.lblRoomLoc = new System.Windows.Forms.Label();
+            this.lblRoomFloor = new System.Windows.Forms.Label();
             this.lblRoomNumTypeChange = new System.Windows.Forms.Label();
             this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.txtCountryRegion = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.comboboxAvailabeRoom = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label21 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
-            this.submitRegistrationbtn = new Guna.UI2.WinForms.Guna2Button();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.guna2Panel5 = new Guna.UI2.WinForms.Guna2Panel();
-            this.label7 = new System.Windows.Forms.Label();
+            this.lblPolicy = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.guna2Panel4 = new Guna.UI2.WinForms.Guna2Panel();
-            this.label5 = new System.Windows.Forms.Label();
+            this.lblFloorCard = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lblOccupancy = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.guna2Panel8 = new Guna.UI2.WinForms.Guna2Panel();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblBedType = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -81,27 +75,28 @@
             // 
             groupBox1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             groupBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            groupBox1.Controls.Add(this.lblRoomLoc);
+            groupBox1.Controls.Add(this.lblRoomFloor);
             groupBox1.Controls.Add(this.lblRoomNumTypeChange);
             groupBox1.Controls.Add(this.guna2PictureBox2);
             groupBox1.Controls.Add(this.guna2PictureBox1);
-            groupBox1.Controls.Add(this.txtCountryRegion);
+            groupBox1.Controls.Add(this.comboboxAvailabeRoom);
             groupBox1.Location = new System.Drawing.Point(22, 97);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new System.Drawing.Size(514, 754);
             groupBox1.TabIndex = 34;
             groupBox1.TabStop = false;
             // 
-            // lblRoomLoc
+            // lblRoomFloor
             // 
-            this.lblRoomLoc.AutoSize = true;
-            this.lblRoomLoc.Font = new System.Drawing.Font("Segoe UI Symbol", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRoomLoc.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.lblRoomLoc.Location = new System.Drawing.Point(8, 721);
-            this.lblRoomLoc.Name = "lblRoomLoc";
-            this.lblRoomLoc.Size = new System.Drawing.Size(209, 20);
-            this.lblRoomLoc.TabIndex = 42;
-            this.lblRoomLoc.Text = "Floor 4 · Garden View · 38 sqm";
+            this.lblRoomFloor.AutoSize = true;
+            this.lblRoomFloor.Font = new System.Drawing.Font("Segoe UI Symbol", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRoomFloor.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.lblRoomFloor.Location = new System.Drawing.Point(8, 721);
+            this.lblRoomFloor.Name = "lblRoomFloor";
+            this.lblRoomFloor.Size = new System.Drawing.Size(53, 20);
+            this.lblRoomFloor.TabIndex = 42;
+            this.lblRoomFloor.Text = "floor 4";
+            this.lblRoomFloor.Click += new System.EventHandler(this.lblRoomFloor_Click);
             // 
             // lblRoomNumTypeChange
             // 
@@ -119,7 +114,7 @@
             this.guna2PictureBox2.BackColor = System.Drawing.Color.Transparent;
             this.guna2PictureBox2.BorderRadius = 1;
             this.guna2PictureBox2.FillColor = System.Drawing.Color.Transparent;
-            this.guna2PictureBox2.Image = global::HotelManagementSystem.Properties.Resources.vertical_city_hotel;
+            this.guna2PictureBox2.Image = global::HotelManagementSystem.Properties.Resources.picture__2_;
             this.guna2PictureBox2.ImageRotate = 0F;
             this.guna2PictureBox2.Location = new System.Drawing.Point(6, 67);
             this.guna2PictureBox2.Name = "guna2PictureBox2";
@@ -140,32 +135,28 @@
             this.guna2PictureBox1.TabIndex = 39;
             this.guna2PictureBox1.TabStop = false;
             // 
-            // txtCountryRegion
+            // comboboxAvailabeRoom
             // 
-            this.txtCountryRegion.BackColor = System.Drawing.Color.Transparent;
-            this.txtCountryRegion.BorderColor = System.Drawing.SystemColors.ControlLight;
-            this.txtCountryRegion.BorderRadius = 5;
-            this.txtCountryRegion.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtCountryRegion.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.txtCountryRegion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.txtCountryRegion.FillColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.txtCountryRegion.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtCountryRegion.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtCountryRegion.Font = new System.Drawing.Font("Arial", 12F);
-            this.txtCountryRegion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.txtCountryRegion.ItemHeight = 42;
-            this.txtCountryRegion.Items.AddRange(new object[] {
-            "Standard Single",
-            "Standard Double",
-            "Deluxe Double",
-            "Deluxe King",
-            "Family Suite",
-            "Junior Suite",
-            "Executive Suite"});
-            this.txtCountryRegion.Location = new System.Drawing.Point(3, 16);
-            this.txtCountryRegion.Name = "txtCountryRegion";
-            this.txtCountryRegion.Size = new System.Drawing.Size(508, 48);
-            this.txtCountryRegion.TabIndex = 38;
+            this.comboboxAvailabeRoom.BackColor = System.Drawing.Color.Transparent;
+            this.comboboxAvailabeRoom.BorderColor = System.Drawing.SystemColors.ControlLight;
+            this.comboboxAvailabeRoom.BorderRadius = 5;
+            this.comboboxAvailabeRoom.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.comboboxAvailabeRoom.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.comboboxAvailabeRoom.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboboxAvailabeRoom.FillColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.comboboxAvailabeRoom.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.comboboxAvailabeRoom.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.comboboxAvailabeRoom.Font = new System.Drawing.Font("Arial", 12F);
+            this.comboboxAvailabeRoom.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.comboboxAvailabeRoom.ItemHeight = 42;
+            this.comboboxAvailabeRoom.Items.AddRange(new object[] {
+            "Show Available room only"});
+            this.comboboxAvailabeRoom.Location = new System.Drawing.Point(3, 16);
+            this.comboboxAvailabeRoom.Name = "comboboxAvailabeRoom";
+            this.comboboxAvailabeRoom.Size = new System.Drawing.Size(508, 48);
+            this.comboboxAvailabeRoom.StartIndex = 0;
+            this.comboboxAvailabeRoom.TabIndex = 38;
+            this.comboboxAvailabeRoom.SelectedIndexChanged += new System.EventHandler(this.comboboxAvailabeRoom_SelectedIndexChanged);
             // 
             // label21
             // 
@@ -186,9 +177,9 @@
             this.label12.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.label12.Location = new System.Drawing.Point(18, 57);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(321, 20);
+            this.label12.Size = new System.Drawing.Size(221, 20);
             this.label12.TabIndex = 32;
-            this.label12.Text = "Details about your current room and amenities.";
+            this.label12.Text = "Details about your current room";
             // 
             // tableLayoutPanel1
             // 
@@ -208,14 +199,8 @@
             // 
             this.guna2Panel2.BackColor = System.Drawing.Color.Transparent;
             this.guna2Panel2.BorderRadius = 10;
-            this.guna2Panel2.Controls.Add(this.submitRegistrationbtn);
-            this.guna2Panel2.Controls.Add(this.label14);
-            this.guna2Panel2.Controls.Add(this.label16);
-            this.guna2Panel2.Controls.Add(this.label13);
-            this.guna2Panel2.Controls.Add(this.monthCalendar1);
-            this.guna2Panel2.Controls.Add(this.label10);
-            this.guna2Panel2.Controls.Add(this.label11);
-            this.guna2Panel2.Controls.Add(this.label9);
+            this.guna2Panel2.Controls.Add(this.label1);
+            this.guna2Panel2.Controls.Add(this.guna2TextBox1);
             this.guna2Panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.guna2Panel2.FillColor = System.Drawing.Color.White;
             this.guna2Panel2.Location = new System.Drawing.Point(3, 381);
@@ -223,95 +208,41 @@
             this.guna2Panel2.Size = new System.Drawing.Size(542, 373);
             this.guna2Panel2.TabIndex = 1;
             // 
-            // submitRegistrationbtn
+            // label1
             // 
-            this.submitRegistrationbtn.BorderRadius = 10;
-            this.submitRegistrationbtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.submitRegistrationbtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.submitRegistrationbtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.submitRegistrationbtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.submitRegistrationbtn.FillColor = System.Drawing.SystemColors.HotTrack;
-            this.submitRegistrationbtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.submitRegistrationbtn.ForeColor = System.Drawing.Color.White;
-            this.submitRegistrationbtn.Location = new System.Drawing.Point(44, 310);
-            this.submitRegistrationbtn.Name = "submitRegistrationbtn";
-            this.submitRegistrationbtn.Size = new System.Drawing.Size(459, 49);
-            this.submitRegistrationbtn.TabIndex = 22;
-            this.submitRegistrationbtn.Text = "Request Cleaning";
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI Symbol", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.label1.Location = new System.Drawing.Point(23, 24);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(221, 32);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Room Description";
             // 
-            // label14
+            // guna2TextBox1
             // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Segoe UI Symbol", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
-            this.label14.Location = new System.Drawing.Point(25, 246);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(204, 30);
-            this.label14.TabIndex = 21;
-            this.label14.Text = "Cleaning Duration:";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Segoe UI Symbol", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label16.Location = new System.Drawing.Point(25, 212);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(166, 25);
-            this.label16.TabIndex = 20;
-            this.label16.Text = "Cleaning Duration";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Segoe UI Symbol", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label13.Location = new System.Drawing.Point(266, 83);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(194, 25);
-            this.label13.TabIndex = 19;
-            this.label13.Text = "Set Date For Cleaning";
-            // 
-            // monthCalendar1
-            // 
-            this.monthCalendar1.Location = new System.Drawing.Point(266, 117);
-            this.monthCalendar1.MinDate = new System.DateTime(2026, 4, 29, 0, 0, 0, 0);
-            this.monthCalendar1.Name = "monthCalendar1";
-            this.monthCalendar1.TabIndex = 18;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Segoe UI Symbol", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
-            this.label10.Location = new System.Drawing.Point(25, 122);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(183, 30);
-            this.label10.TabIndex = 17;
-            this.label10.Text = "Today, 11:00 AM";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Segoe UI Symbol", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label11.Location = new System.Drawing.Point(25, 88);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(119, 25);
-            this.label11.TabIndex = 16;
-            this.label11.Text = "Last Cleaned";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Segoe UI Symbol", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label9.Location = new System.Drawing.Point(23, 25);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(180, 32);
-            this.label9.TabIndex = 4;
-            this.label9.Text = "Housekeeping";
-            this.label9.Click += new System.EventHandler(this.label9_Click);
+            this.guna2TextBox1.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2TextBox1.BorderRadius = 10;
+            this.guna2TextBox1.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.guna2TextBox1.DefaultText = "fdsfd\r\n";
+            this.guna2TextBox1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.guna2TextBox1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.guna2TextBox1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guna2TextBox1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guna2TextBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2TextBox1.Font = new System.Drawing.Font("Segoe UI Symbol", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2TextBox1.ForeColor = System.Drawing.Color.DimGray;
+            this.guna2TextBox1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2TextBox1.Location = new System.Drawing.Point(29, 65);
+            this.guna2TextBox1.Margin = new System.Windows.Forms.Padding(8, 9, 8, 9);
+            this.guna2TextBox1.Multiline = true;
+            this.guna2TextBox1.Name = "guna2TextBox1";
+            this.guna2TextBox1.Padding = new System.Windows.Forms.Padding(15);
+            this.guna2TextBox1.PlaceholderText = "";
+            this.guna2TextBox1.ReadOnly = true;
+            this.guna2TextBox1.SelectedText = "";
+            this.guna2TextBox1.Size = new System.Drawing.Size(491, 295);
+            this.guna2TextBox1.TabIndex = 0;
             // 
             // guna2Panel1
             // 
@@ -347,7 +278,7 @@
             // 
             this.guna2Panel5.BackColor = System.Drawing.Color.Transparent;
             this.guna2Panel5.BorderRadius = 15;
-            this.guna2Panel5.Controls.Add(this.label7);
+            this.guna2Panel5.Controls.Add(this.lblPolicy);
             this.guna2Panel5.Controls.Add(this.label8);
             this.guna2Panel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.guna2Panel5.FillColor = System.Drawing.Color.AliceBlue;
@@ -356,16 +287,16 @@
             this.guna2Panel5.Size = new System.Drawing.Size(219, 117);
             this.guna2Panel5.TabIndex = 32;
             // 
-            // label7
+            // lblPolicy
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Segoe UI Symbol", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
-            this.label7.Location = new System.Drawing.Point(41, 60);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(137, 30);
-            this.label7.TabIndex = 21;
-            this.label7.Text = "No Smoking";
+            this.lblPolicy.AutoSize = true;
+            this.lblPolicy.Font = new System.Drawing.Font("Segoe UI Symbol", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPolicy.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
+            this.lblPolicy.Location = new System.Drawing.Point(41, 60);
+            this.lblPolicy.Name = "lblPolicy";
+            this.lblPolicy.Size = new System.Drawing.Size(137, 30);
+            this.lblPolicy.TabIndex = 21;
+            this.lblPolicy.Text = "No Smoking";
             // 
             // label8
             // 
@@ -382,7 +313,7 @@
             // 
             this.guna2Panel4.BackColor = System.Drawing.Color.Transparent;
             this.guna2Panel4.BorderRadius = 15;
-            this.guna2Panel4.Controls.Add(this.label5);
+            this.guna2Panel4.Controls.Add(this.lblFloorCard);
             this.guna2Panel4.Controls.Add(this.label6);
             this.guna2Panel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.guna2Panel4.FillColor = System.Drawing.Color.AliceBlue;
@@ -391,16 +322,16 @@
             this.guna2Panel4.Size = new System.Drawing.Size(218, 117);
             this.guna2Panel4.TabIndex = 31;
             // 
-            // label5
+            // lblFloorCard
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI Symbol", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
-            this.label5.Location = new System.Drawing.Point(57, 60);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(104, 30);
-            this.label5.TabIndex = 19;
-            this.label5.Text = "4th Floor";
+            this.lblFloorCard.AutoSize = true;
+            this.lblFloorCard.Font = new System.Drawing.Font("Segoe UI Symbol", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFloorCard.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
+            this.lblFloorCard.Location = new System.Drawing.Point(57, 60);
+            this.lblFloorCard.Name = "lblFloorCard";
+            this.lblFloorCard.Size = new System.Drawing.Size(104, 30);
+            this.lblFloorCard.TabIndex = 19;
+            this.lblFloorCard.Text = "4th Floor";
             // 
             // label6
             // 
@@ -417,7 +348,7 @@
             // 
             this.guna2Panel3.BackColor = System.Drawing.Color.Transparent;
             this.guna2Panel3.BorderRadius = 15;
-            this.guna2Panel3.Controls.Add(this.label3);
+            this.guna2Panel3.Controls.Add(this.lblOccupancy);
             this.guna2Panel3.Controls.Add(this.label4);
             this.guna2Panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.guna2Panel3.FillColor = System.Drawing.Color.AliceBlue;
@@ -426,16 +357,16 @@
             this.guna2Panel3.Size = new System.Drawing.Size(219, 116);
             this.guna2Panel3.TabIndex = 30;
             // 
-            // label3
+            // lblOccupancy
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI Symbol", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
-            this.label3.Location = new System.Drawing.Point(36, 60);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(100, 30);
-            this.label3.TabIndex = 17;
-            this.label3.Text = "3 Guests";
+            this.lblOccupancy.AutoSize = true;
+            this.lblOccupancy.Font = new System.Drawing.Font("Segoe UI Symbol", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblOccupancy.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
+            this.lblOccupancy.Location = new System.Drawing.Point(36, 60);
+            this.lblOccupancy.Name = "lblOccupancy";
+            this.lblOccupancy.Size = new System.Drawing.Size(100, 30);
+            this.lblOccupancy.TabIndex = 17;
+            this.lblOccupancy.Text = "3 Guests";
             // 
             // label4
             // 
@@ -452,7 +383,7 @@
             // 
             this.guna2Panel8.BackColor = System.Drawing.Color.Transparent;
             this.guna2Panel8.BorderRadius = 15;
-            this.guna2Panel8.Controls.Add(this.label1);
+            this.guna2Panel8.Controls.Add(this.lblBedType);
             this.guna2Panel8.Controls.Add(this.label15);
             this.guna2Panel8.Dock = System.Windows.Forms.DockStyle.Fill;
             this.guna2Panel8.FillColor = System.Drawing.Color.AliceBlue;
@@ -461,16 +392,17 @@
             this.guna2Panel8.Size = new System.Drawing.Size(218, 116);
             this.guna2Panel8.TabIndex = 29;
             // 
-            // label1
+            // lblBedType
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI Symbol", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
-            this.label1.Location = new System.Drawing.Point(32, 60);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(154, 30);
-            this.label1.TabIndex = 15;
-            this.label1.Text = "2 Queen Beds";
+            this.lblBedType.AutoSize = true;
+            this.lblBedType.Font = new System.Drawing.Font("Segoe UI Symbol", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBedType.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
+            this.lblBedType.Location = new System.Drawing.Point(32, 60);
+            this.lblBedType.Name = "lblBedType";
+            this.lblBedType.Size = new System.Drawing.Size(154, 30);
+            this.lblBedType.TabIndex = 15;
+            this.lblBedType.Text = "2 Queen Beds";
+            this.lblBedType.Click += new System.EventHandler(this.lblBedType_Click);
             // 
             // label15
             // 
@@ -542,11 +474,11 @@
 
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label lblRoomLoc;
+        private System.Windows.Forms.Label lblRoomFloor;
         private System.Windows.Forms.Label lblRoomNumTypeChange;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox2;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
-        private Guna.UI2.WinForms.Guna2ComboBox txtCountryRegion;
+        private Guna.UI2.WinForms.Guna2ComboBox comboboxAvailabeRoom;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
@@ -554,24 +486,18 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel1;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel5;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label lblPolicy;
         private System.Windows.Forms.Label label8;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel4;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lblFloorCard;
         private System.Windows.Forms.Label label6;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel3;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblOccupancy;
         private System.Windows.Forms.Label label4;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel8;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblBedType;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.MonthCalendar monthCalendar1;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label16;
-        private Guna.UI2.WinForms.Guna2Button submitRegistrationbtn;
+        private System.Windows.Forms.Label label1;
+        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox1;
     }
 }

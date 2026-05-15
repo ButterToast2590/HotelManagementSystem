@@ -32,6 +32,12 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.guna2Panel9 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2GroupBox1 = new Guna.UI2.WinForms.Guna2GroupBox();
+            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
+            this.label4 = new System.Windows.Forms.Label();
+            this.comboRoom = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.comboFloor = new Guna.UI2.WinForms.Guna2ComboBox();
             this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.layoutRoomType = new System.Windows.Forms.TableLayoutPanel();
@@ -62,18 +68,21 @@
             this.submitRegistrationbtn = new Guna.UI2.WinForms.Guna2Button();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewHistory = new System.Windows.Forms.DataGridView();
             this.colName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colCheckIn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colCheckOut = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colRoomType = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label23 = new System.Windows.Forms.Label();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.btnGoToRoomDetails = new Guna.UI2.WinForms.Guna2Button();
+            this.dataGridViewRoomAvail = new System.Windows.Forms.DataGridView();
+            this.colRoomId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colFloorNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colNumberOfRoom = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colPricePerDay = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colMaxOccupancy = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label2 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
@@ -81,6 +90,8 @@
             this.tableLayoutPanel1.SuspendLayout();
             this.guna2Panel9.SuspendLayout();
             this.guna2GroupBox1.SuspendLayout();
+            this.tableLayoutPanel4.SuspendLayout();
+            this.tableLayoutPanel3.SuspendLayout();
             this.layoutRoomType.SuspendLayout();
             this.tableLayoutPanel14.SuspendLayout();
             this.layoutCheckIn.SuspendLayout();
@@ -93,9 +104,9 @@
             this.layoutRequests.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewHistory)).BeginInit();
             this.guna2Panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewRoomAvail)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -130,6 +141,8 @@
             // guna2GroupBox1
             // 
             this.guna2GroupBox1.BorderColor = System.Drawing.Color.Transparent;
+            this.guna2GroupBox1.Controls.Add(this.tableLayoutPanel4);
+            this.guna2GroupBox1.Controls.Add(this.tableLayoutPanel3);
             this.guna2GroupBox1.Controls.Add(this.guna2TextBox1);
             this.guna2GroupBox1.Controls.Add(this.label1);
             this.guna2GroupBox1.Controls.Add(this.layoutRoomType);
@@ -149,6 +162,107 @@
             this.guna2GroupBox1.Size = new System.Drawing.Size(524, 663);
             this.guna2GroupBox1.TabIndex = 59;
             // 
+            // tableLayoutPanel4
+            // 
+            this.tableLayoutPanel4.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.tableLayoutPanel4.ColumnCount = 1;
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel4.Controls.Add(this.label4, 0, 0);
+            this.tableLayoutPanel4.Controls.Add(this.comboRoom, 0, 1);
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(271, 324);
+            this.tableLayoutPanel4.MaximumSize = new System.Drawing.Size(475, 80);
+            this.tableLayoutPanel4.Name = "tableLayoutPanel4";
+            this.tableLayoutPanel4.RowCount = 2;
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 26.25F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 73.75F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(230, 70);
+            this.tableLayoutPanel4.TabIndex = 71;
+            // 
+            // label4
+            // 
+            this.label4.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.DimGray;
+            this.label4.Location = new System.Drawing.Point(3, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(224, 18);
+            this.label4.TabIndex = 6;
+            this.label4.Text = "Room Number";
+            // 
+            // comboRoom
+            // 
+            this.comboRoom.BackColor = System.Drawing.Color.Transparent;
+            this.comboRoom.BorderRadius = 10;
+            this.comboRoom.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.comboRoom.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.comboRoom.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboRoom.FillColor = System.Drawing.Color.Azure;
+            this.comboRoom.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.comboRoom.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.comboRoom.Font = new System.Drawing.Font("Arial", 12F);
+            this.comboRoom.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.comboRoom.ItemHeight = 42;
+            this.comboRoom.Items.AddRange(new object[] {
+            ""});
+            this.comboRoom.Location = new System.Drawing.Point(3, 21);
+            this.comboRoom.Name = "comboRoom";
+            this.comboRoom.Size = new System.Drawing.Size(224, 48);
+            this.comboRoom.StartIndex = 0;
+            this.comboRoom.TabIndex = 37;
+            // 
+            // tableLayoutPanel3
+            // 
+            this.tableLayoutPanel3.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.tableLayoutPanel3.ColumnCount = 1;
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel3.Controls.Add(this.label3, 0, 0);
+            this.tableLayoutPanel3.Controls.Add(this.comboFloor, 0, 1);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(26, 325);
+            this.tableLayoutPanel3.MaximumSize = new System.Drawing.Size(475, 80);
+            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
+            this.tableLayoutPanel3.RowCount = 2;
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 26.25F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 73.75F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(230, 70);
+            this.tableLayoutPanel3.TabIndex = 70;
+            // 
+            // label3
+            // 
+            this.label3.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.DimGray;
+            this.label3.Location = new System.Drawing.Point(3, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(224, 18);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "Floor Number";
+            // 
+            // comboFloor
+            // 
+            this.comboFloor.BackColor = System.Drawing.Color.Transparent;
+            this.comboFloor.BorderRadius = 10;
+            this.comboFloor.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.comboFloor.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.comboFloor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboFloor.FillColor = System.Drawing.Color.Azure;
+            this.comboFloor.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.comboFloor.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.comboFloor.Font = new System.Drawing.Font("Arial", 12F);
+            this.comboFloor.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.comboFloor.ItemHeight = 42;
+            this.comboFloor.Items.AddRange(new object[] {
+            ""});
+            this.comboFloor.Location = new System.Drawing.Point(3, 21);
+            this.comboFloor.Name = "comboFloor";
+            this.comboFloor.Size = new System.Drawing.Size(224, 48);
+            this.comboFloor.StartIndex = 0;
+            this.comboFloor.TabIndex = 37;
+            this.comboFloor.SelectedIndexChanged += new System.EventHandler(this.comboFloorNumber_SelectedIndexChanged);
+            // 
             // guna2TextBox1
             // 
             this.guna2TextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
@@ -161,14 +275,14 @@
             this.guna2TextBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.guna2TextBox1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2TextBox1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox1.Location = new System.Drawing.Point(26, 442);
+            this.guna2TextBox1.Location = new System.Drawing.Point(26, 514);
             this.guna2TextBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.guna2TextBox1.Multiline = true;
             this.guna2TextBox1.Name = "guna2TextBox1";
             this.guna2TextBox1.PlaceholderText = "";
             this.guna2TextBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.guna2TextBox1.SelectedText = "";
-            this.guna2TextBox1.Size = new System.Drawing.Size(475, 186);
+            this.guna2TextBox1.Size = new System.Drawing.Size(475, 114);
             this.guna2TextBox1.TabIndex = 69;
             // 
             // label1
@@ -176,7 +290,7 @@
             this.label1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.DimGray;
-            this.label1.Location = new System.Drawing.Point(26, 415);
+            this.label1.Location = new System.Drawing.Point(26, 490);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(135, 20);
             this.label1.TabIndex = 12;
@@ -225,9 +339,19 @@
             this.comboRoomType.Font = new System.Drawing.Font("Arial", 12F);
             this.comboRoomType.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.comboRoomType.ItemHeight = 42;
+            this.comboRoomType.Items.AddRange(new object[] {
+            "Select Room Type",
+            "Single",
+            "Double",
+            "Twin",
+            "Triple",
+            "Suite",
+            "Deluxe",
+            "Executive"});
             this.comboRoomType.Location = new System.Drawing.Point(3, 21);
             this.comboRoomType.Name = "comboRoomType";
             this.comboRoomType.Size = new System.Drawing.Size(224, 48);
+            this.comboRoomType.StartIndex = 0;
             this.comboRoomType.TabIndex = 37;
             this.comboRoomType.SelectedIndexChanged += new System.EventHandler(this.comboRoomType_SelectedIndexChanged);
             // 
@@ -370,7 +494,6 @@
             this.txtLastname.SelectedText = "";
             this.txtLastname.Size = new System.Drawing.Size(222, 42);
             this.txtLastname.TabIndex = 17;
-            this.txtLastname.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // lblLastname
             // 
@@ -391,7 +514,7 @@
             this.layoutChildren.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.layoutChildren.Controls.Add(this.lblChildren, 0, 0);
             this.layoutChildren.Controls.Add(this.numberChildren, 0, 1);
-            this.layoutChildren.Location = new System.Drawing.Point(271, 329);
+            this.layoutChildren.Location = new System.Drawing.Point(271, 411);
             this.layoutChildren.MaximumSize = new System.Drawing.Size(230, 70);
             this.layoutChildren.Name = "layoutChildren";
             this.layoutChildren.RowCount = 2;
@@ -435,7 +558,7 @@
             this.layoutAdults.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.layoutAdults.Controls.Add(this.lblAdults, 0, 0);
             this.layoutAdults.Controls.Add(this.numberAdults, 0, 1);
-            this.layoutAdults.Location = new System.Drawing.Point(26, 329);
+            this.layoutAdults.Location = new System.Drawing.Point(26, 411);
             this.layoutAdults.MaximumSize = new System.Drawing.Size(230, 70);
             this.layoutAdults.Name = "layoutAdults";
             this.layoutAdults.RowCount = 2;
@@ -596,6 +719,7 @@
             this.submitRegistrationbtn.Size = new System.Drawing.Size(472, 54);
             this.submitRegistrationbtn.TabIndex = 31;
             this.submitRegistrationbtn.Text = "Submit Registration";
+            this.submitRegistrationbtn.Click += new System.EventHandler(this.submitRegistrationbtn_Click);
             // 
             // tableLayoutPanel2
             // 
@@ -616,7 +740,7 @@
             // 
             this.guna2Panel2.BackColor = System.Drawing.Color.Transparent;
             this.guna2Panel2.BorderRadius = 10;
-            this.guna2Panel2.Controls.Add(this.dataGridView1);
+            this.guna2Panel2.Controls.Add(this.dataGridViewHistory);
             this.guna2Panel2.Controls.Add(this.label23);
             this.guna2Panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.guna2Panel2.FillColor = System.Drawing.Color.White;
@@ -625,47 +749,62 @@
             this.guna2Panel2.Size = new System.Drawing.Size(524, 285);
             this.guna2Panel2.TabIndex = 2;
             // 
-            // dataGridView1
+            // dataGridViewHistory
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewHistory.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dataGridViewHistory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewHistory.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colName,
             this.colCheckIn,
             this.colCheckOut,
-            this.colRoomType});
-            this.dataGridView1.Location = new System.Drawing.Point(27, 62);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(471, 205);
-            this.dataGridView1.TabIndex = 4;
+            this.colRoomType,
+            this.colStatus});
+            this.dataGridViewHistory.Location = new System.Drawing.Point(9, 62);
+            this.dataGridViewHistory.Name = "dataGridViewHistory";
+            this.dataGridViewHistory.Size = new System.Drawing.Size(507, 205);
+            this.dataGridViewHistory.TabIndex = 4;
             // 
             // colName
             // 
             this.colName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.colName.HeaderText = "Name";
             this.colName.Name = "colName";
+            this.colName.ReadOnly = true;
             // 
             // colCheckIn
             // 
+            this.colCheckIn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.colCheckIn.HeaderText = "Check-In Date";
             this.colCheckIn.Name = "colCheckIn";
+            this.colCheckIn.ReadOnly = true;
             // 
             // colCheckOut
             // 
+            this.colCheckOut.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.colCheckOut.HeaderText = "Check-Out Date";
             this.colCheckOut.Name = "colCheckOut";
+            this.colCheckOut.ReadOnly = true;
             // 
             // colRoomType
             // 
+            this.colRoomType.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.colRoomType.HeaderText = "Room Type";
             this.colRoomType.Name = "colRoomType";
+            this.colRoomType.ReadOnly = true;
+            // 
+            // colStatus
+            // 
+            this.colStatus.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colStatus.HeaderText = "Status";
+            this.colStatus.Name = "colStatus";
+            this.colStatus.ReadOnly = true;
             // 
             // label23
             // 
             this.label23.AutoSize = true;
             this.label23.Font = new System.Drawing.Font("Segoe UI Symbol", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label23.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label23.Location = new System.Drawing.Point(21, 18);
+            this.label23.Location = new System.Drawing.Point(12, 18);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(239, 32);
             this.label23.TabIndex = 3;
@@ -675,8 +814,8 @@
             // 
             this.guna2Panel1.BackColor = System.Drawing.Color.Transparent;
             this.guna2Panel1.BorderRadius = 10;
-            this.guna2Panel1.Controls.Add(this.guna2Button1);
-            this.guna2Panel1.Controls.Add(this.dataGridView2);
+            this.guna2Panel1.Controls.Add(this.btnGoToRoomDetails);
+            this.guna2Panel1.Controls.Add(this.dataGridViewRoomAvail);
             this.guna2Panel1.Controls.Add(this.label2);
             this.guna2Panel1.Controls.Add(this.label9);
             this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -686,34 +825,43 @@
             this.guna2Panel1.Size = new System.Drawing.Size(524, 472);
             this.guna2Panel1.TabIndex = 1;
             // 
-            // guna2Button1
+            // btnGoToRoomDetails
             // 
-            this.guna2Button1.BorderRadius = 10;
-            this.guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button1.FillColor = System.Drawing.SystemColors.HotTrack;
-            this.guna2Button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2Button1.ForeColor = System.Drawing.Color.White;
-            this.guna2Button1.Location = new System.Drawing.Point(359, 421);
-            this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.Size = new System.Drawing.Size(139, 43);
-            this.guna2Button1.TabIndex = 31;
-            this.guna2Button1.Text = "Room Details";
+            this.btnGoToRoomDetails.BorderRadius = 10;
+            this.btnGoToRoomDetails.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnGoToRoomDetails.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnGoToRoomDetails.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnGoToRoomDetails.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnGoToRoomDetails.FillColor = System.Drawing.SystemColors.HotTrack;
+            this.btnGoToRoomDetails.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGoToRoomDetails.ForeColor = System.Drawing.Color.White;
+            this.btnGoToRoomDetails.Location = new System.Drawing.Point(359, 421);
+            this.btnGoToRoomDetails.Name = "btnGoToRoomDetails";
+            this.btnGoToRoomDetails.Size = new System.Drawing.Size(139, 43);
+            this.btnGoToRoomDetails.TabIndex = 31;
+            this.btnGoToRoomDetails.Text = "Room Details";
+            this.btnGoToRoomDetails.Click += new System.EventHandler(this.btnGoToRoomDetails_Click);
             // 
-            // dataGridView2
+            // dataGridViewRoomAvail
             // 
-            this.dataGridView2.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewRoomAvail.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dataGridViewRoomAvail.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewRoomAvail.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colRoomId,
             this.colFloorNum,
             this.colNumberOfRoom,
-            this.colPricePerDay});
-            this.dataGridView2.Location = new System.Drawing.Point(27, 73);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(471, 341);
-            this.dataGridView2.TabIndex = 30;
+            this.colPricePerDay,
+            this.colMaxOccupancy});
+            this.dataGridViewRoomAvail.Location = new System.Drawing.Point(9, 73);
+            this.dataGridViewRoomAvail.Name = "dataGridViewRoomAvail";
+            this.dataGridViewRoomAvail.Size = new System.Drawing.Size(507, 341);
+            this.dataGridViewRoomAvail.TabIndex = 30;
+            // 
+            // colRoomId
+            // 
+            this.colRoomId.HeaderText = "Column1";
+            this.colRoomId.Name = "colRoomId";
+            this.colRoomId.Visible = false;
             // 
             // colFloorNum
             // 
@@ -733,12 +881,18 @@
             this.colPricePerDay.HeaderText = "Price Per Stay";
             this.colPricePerDay.Name = "colPricePerDay";
             // 
+            // colMaxOccupancy
+            // 
+            this.colMaxOccupancy.HeaderText = "Column1";
+            this.colMaxOccupancy.Name = "colMaxOccupancy";
+            this.colMaxOccupancy.Visible = false;
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI Symbol", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label2.Location = new System.Drawing.Point(23, 50);
+            this.label2.Location = new System.Drawing.Point(11, 50);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(391, 20);
             this.label2.TabIndex = 29;
@@ -749,7 +903,7 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Segoe UI Symbol", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label9.Location = new System.Drawing.Point(21, 18);
+            this.label9.Location = new System.Drawing.Point(9, 18);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(209, 32);
             this.label9.TabIndex = 3;
@@ -794,6 +948,8 @@
             this.guna2Panel9.ResumeLayout(false);
             this.guna2GroupBox1.ResumeLayout(false);
             this.guna2GroupBox1.PerformLayout();
+            this.tableLayoutPanel4.ResumeLayout(false);
+            this.tableLayoutPanel3.ResumeLayout(false);
             this.layoutRoomType.ResumeLayout(false);
             this.tableLayoutPanel14.ResumeLayout(false);
             this.layoutCheckIn.ResumeLayout(false);
@@ -807,10 +963,10 @@
             this.tableLayoutPanel2.ResumeLayout(false);
             this.guna2Panel2.ResumeLayout(false);
             this.guna2Panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewHistory)).EndInit();
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewRoomAvail)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -855,17 +1011,26 @@
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridViewHistory;
+        private System.Windows.Forms.DataGridView dataGridViewRoomAvail;
+        private System.Windows.Forms.Label label2;
+        private Guna.UI2.WinForms.Guna2Button btnGoToRoomDetails;
+        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox1;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
+        private System.Windows.Forms.Label label4;
+        private Guna.UI2.WinForms.Guna2ComboBox comboRoom;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
+        private System.Windows.Forms.Label label3;
+        private Guna.UI2.WinForms.Guna2ComboBox comboFloor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colRoomId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colFloorNum;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colNumberOfRoom;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colPricePerDay;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colMaxOccupancy;
         private System.Windows.Forms.DataGridViewTextBoxColumn colName;
         private System.Windows.Forms.DataGridViewTextBoxColumn colCheckIn;
         private System.Windows.Forms.DataGridViewTextBoxColumn colCheckOut;
         private System.Windows.Forms.DataGridViewTextBoxColumn colRoomType;
-        private System.Windows.Forms.DataGridView dataGridView2;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colFloorNum;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colNumberOfRoom;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colPricePerDay;
-        private Guna.UI2.WinForms.Guna2Button guna2Button1;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colStatus;
     }
 }

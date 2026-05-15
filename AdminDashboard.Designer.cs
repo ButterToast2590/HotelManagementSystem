@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminDashboard));
             this.userTitlepanel = new System.Windows.Forms.Panel();
             this.btnMinimize = new Guna.UI2.WinForms.Guna2Button();
             this.btnClose = new Guna.UI2.WinForms.Guna2Button();
@@ -53,6 +52,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.adminPanelMain = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
+            this.btnHighlights = new Guna.UI2.WinForms.Guna2Button();
             this.userTitlepanel.SuspendLayout();
             this.slideMenuPanel.SuspendLayout();
             this.guna2Panel1.SuspendLayout();
@@ -123,6 +123,7 @@
             | System.Windows.Forms.AnchorStyles.Left)));
             this.slideMenuPanel.BackColor = System.Drawing.Color.Transparent;
             this.slideMenuPanel.BorderRadius = 15;
+            this.slideMenuPanel.Controls.Add(this.btnHighlights);
             this.slideMenuPanel.Controls.Add(this.lblManagement);
             this.slideMenuPanel.Controls.Add(this.label2);
             this.slideMenuPanel.Controls.Add(this.lblServices);
@@ -173,7 +174,7 @@
             this.lblServices.AutoSize = true;
             this.lblServices.Font = new System.Drawing.Font("Segoe UI Symbol", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblServices.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.lblServices.Location = new System.Drawing.Point(7, 411);
+            this.lblServices.Location = new System.Drawing.Point(7, 470);
             this.lblServices.Name = "lblServices";
             this.lblServices.Size = new System.Drawing.Size(70, 20);
             this.lblServices.TabIndex = 20;
@@ -194,7 +195,7 @@
             this.btnAdminRoomServices.Image = global::HotelManagementSystem.Properties.Resources.room_service;
             this.btnAdminRoomServices.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnAdminRoomServices.ImageSize = new System.Drawing.Size(25, 25);
-            this.btnAdminRoomServices.Location = new System.Drawing.Point(11, 434);
+            this.btnAdminRoomServices.Location = new System.Drawing.Point(11, 493);
             this.btnAdminRoomServices.Name = "btnAdminRoomServices";
             this.btnAdminRoomServices.Size = new System.Drawing.Size(226, 47);
             this.btnAdminRoomServices.TabIndex = 19;
@@ -206,7 +207,7 @@
             this.lblExplore.AutoSize = true;
             this.lblExplore.Font = new System.Drawing.Font("Segoe UI Symbol", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblExplore.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.lblExplore.Location = new System.Drawing.Point(7, 540);
+            this.lblExplore.Location = new System.Drawing.Point(7, 599);
             this.lblExplore.Name = "lblExplore";
             this.lblExplore.Size = new System.Drawing.Size(66, 20);
             this.lblExplore.TabIndex = 18;
@@ -274,7 +275,7 @@
             this.btnFeedBack.Image = global::HotelManagementSystem.Properties.Resources.comments;
             this.btnFeedBack.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnFeedBack.ImageSize = new System.Drawing.Size(25, 25);
-            this.btnFeedBack.Location = new System.Drawing.Point(11, 563);
+            this.btnFeedBack.Location = new System.Drawing.Point(11, 622);
             this.btnFeedBack.Name = "btnFeedBack";
             this.btnFeedBack.Size = new System.Drawing.Size(226, 47);
             this.btnFeedBack.TabIndex = 15;
@@ -340,7 +341,7 @@
             this.btnBilling.Image = global::HotelManagementSystem.Properties.Resources.wallet1;
             this.btnBilling.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnBilling.ImageSize = new System.Drawing.Size(25, 25);
-            this.btnBilling.Location = new System.Drawing.Point(11, 487);
+            this.btnBilling.Location = new System.Drawing.Point(11, 546);
             this.btnBilling.Name = "btnBilling";
             this.btnBilling.Size = new System.Drawing.Size(226, 47);
             this.btnBilling.TabIndex = 11;
@@ -381,7 +382,7 @@
             this.btnInOut.FocusedColor = System.Drawing.Color.White;
             this.btnInOut.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnInOut.ForeColor = System.Drawing.Color.Black;
-            this.btnInOut.Image = global::HotelManagementSystem.Properties.Resources.sparkles1;
+            this.btnInOut.Image = global::HotelManagementSystem.Properties.Resources.calendar1;
             this.btnInOut.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnInOut.ImageSize = new System.Drawing.Size(25, 25);
             this.btnInOut.Location = new System.Drawing.Point(11, 358);
@@ -450,6 +451,28 @@
             this.guna2DragControl1.TargetControl = this;
             this.guna2DragControl1.UseTransparentDrag = true;
             // 
+            // btnHighlights
+            // 
+            this.btnHighlights.BorderRadius = 15;
+            this.btnHighlights.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnHighlights.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnHighlights.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnHighlights.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnHighlights.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnHighlights.FillColor = System.Drawing.Color.Transparent;
+            this.btnHighlights.FocusedColor = System.Drawing.Color.White;
+            this.btnHighlights.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHighlights.ForeColor = System.Drawing.Color.Black;
+            this.btnHighlights.Image = global::HotelManagementSystem.Properties.Resources.sparkles1;
+            this.btnHighlights.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnHighlights.ImageSize = new System.Drawing.Size(25, 25);
+            this.btnHighlights.Location = new System.Drawing.Point(10, 415);
+            this.btnHighlights.Name = "btnHighlights";
+            this.btnHighlights.Size = new System.Drawing.Size(226, 47);
+            this.btnHighlights.TabIndex = 23;
+            this.btnHighlights.Text = "Highlights";
+            this.btnHighlights.Click += new System.EventHandler(this.btnHighlights_Click);
+            // 
             // AdminDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -460,7 +483,6 @@
             this.Controls.Add(this.slideMenuPanel);
             this.Controls.Add(this.userTitlepanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximumSize = new System.Drawing.Size(1387, 900);
             this.Name = "AdminDashboard";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -500,5 +522,6 @@
         private System.Windows.Forms.Label label2;
         private Guna.UI2.WinForms.Guna2DragControl guna2DragControl1;
         private System.Windows.Forms.Label lblManagement;
+        private Guna.UI2.WinForms.Guna2Button btnHighlights;
     }
 }

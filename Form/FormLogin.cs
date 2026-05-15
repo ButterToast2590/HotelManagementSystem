@@ -39,7 +39,6 @@ namespace HotelManagementSystem
             {
                 conn.Open();
 
-                // Check admin first
                 string adminSql = "SELECT * FROM hotel.admins WHERE admin_name = @u AND password = @p";
                 using (var cmdAdmin = new Npgsql.NpgsqlCommand(adminSql, conn))
                 {
@@ -57,7 +56,6 @@ namespace HotelManagementSystem
                     }
                 }
 
-                // KEY FIX: Explicitly select profile_picture_data instead of SELECT *
                 string userSql = @"SELECT user_id, username, first_name, last_name, email, 
                                    phone_number, gender, address, birthday, created_at,
                                    profile_picture_data
@@ -98,8 +96,7 @@ namespace HotelManagementSystem
                         }
                         else
                         {
-                            MessageBox.Show("Invalid username or password.", "Login Failed",
-                                            MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            MessageBox.Show("Invalid username or password.", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     }
                 }

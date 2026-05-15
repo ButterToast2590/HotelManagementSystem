@@ -125,17 +125,15 @@ namespace HotelManagementSystem.MyControls
                 using (var conn = new NpgsqlConnection(connString))
                 {
                     conn.Open();
-
                     string sql = @"SELECT 
-                                    u.first_name || ' ' || u.last_name AS guest_name,
-                                    COALESCE(b.room_number::text, 'N/A') AS room_number,
-                                    f.comments,
-                                    f.created_at
-                                   FROM hotel.feedback f
-                                   JOIN hotel.users u ON f.user_id = u.user_id
-                                   LEFT JOIN hotel.bookings b ON f.user_id = b.user_id
-                                   ORDER BY f.created_at DESC
-                                   LIMIT 50";
+                                u.first_name || ' ' || u.last_name AS guest_name,
+                                'N/A' AS room_number,
+                                f.comments,
+                                f.created_at
+                                FROM hotel.feedback f
+                                JOIN hotel.users u ON f.user_id = u.user_id
+                                ORDER BY f.created_at DESC
+                                LIMIT 50";
 
                     using (var cmd = new NpgsqlCommand(sql, conn))
                     {
@@ -163,10 +161,16 @@ namespace HotelManagementSystem.MyControls
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error loading reviews: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Error loading reviews: " + ex.Message, "Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         private void lblAvgRating_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label12_Click(object sender, EventArgs e)
         {
 
         }
