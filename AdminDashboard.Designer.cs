@@ -33,6 +33,7 @@
             this.btnMinimize = new Guna.UI2.WinForms.Guna2Button();
             this.btnClose = new Guna.UI2.WinForms.Guna2Button();
             this.slideMenuPanel = new Guna.UI2.WinForms.Guna2Panel();
+            this.btnHighlights = new Guna.UI2.WinForms.Guna2Button();
             this.lblManagement = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.lblServices = new System.Windows.Forms.Label();
@@ -52,7 +53,6 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.adminPanelMain = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
-            this.btnHighlights = new Guna.UI2.WinForms.Guna2Button();
             this.userTitlepanel.SuspendLayout();
             this.slideMenuPanel.SuspendLayout();
             this.guna2Panel1.SuspendLayout();
@@ -146,6 +146,28 @@
             this.slideMenuPanel.Name = "slideMenuPanel";
             this.slideMenuPanel.Size = new System.Drawing.Size(247, 876);
             this.slideMenuPanel.TabIndex = 22;
+            // 
+            // btnHighlights
+            // 
+            this.btnHighlights.BorderRadius = 15;
+            this.btnHighlights.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnHighlights.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnHighlights.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnHighlights.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnHighlights.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnHighlights.FillColor = System.Drawing.Color.Transparent;
+            this.btnHighlights.FocusedColor = System.Drawing.Color.White;
+            this.btnHighlights.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHighlights.ForeColor = System.Drawing.Color.Black;
+            this.btnHighlights.Image = global::HotelManagementSystem.Properties.Resources.sparkles1;
+            this.btnHighlights.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnHighlights.ImageSize = new System.Drawing.Size(25, 25);
+            this.btnHighlights.Location = new System.Drawing.Point(10, 415);
+            this.btnHighlights.Name = "btnHighlights";
+            this.btnHighlights.Size = new System.Drawing.Size(226, 47);
+            this.btnHighlights.TabIndex = 23;
+            this.btnHighlights.Text = "Highlights";
+            this.btnHighlights.Click += new System.EventHandler(this.btnHighlights_Click);
             // 
             // lblManagement
             // 
@@ -450,28 +472,6 @@
             this.guna2DragControl1.DockIndicatorTransparencyValue = 0.6D;
             this.guna2DragControl1.TargetControl = this;
             this.guna2DragControl1.UseTransparentDrag = true;
-            // 
-            // btnHighlights
-            // 
-            this.btnHighlights.BorderRadius = 15;
-            this.btnHighlights.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnHighlights.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnHighlights.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnHighlights.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnHighlights.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnHighlights.FillColor = System.Drawing.Color.Transparent;
-            this.btnHighlights.FocusedColor = System.Drawing.Color.White;
-            this.btnHighlights.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHighlights.ForeColor = System.Drawing.Color.Black;
-            this.btnHighlights.Image = global::HotelManagementSystem.Properties.Resources.sparkles1;
-            this.btnHighlights.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnHighlights.ImageSize = new System.Drawing.Size(25, 25);
-            this.btnHighlights.Location = new System.Drawing.Point(10, 415);
-            this.btnHighlights.Name = "btnHighlights";
-            this.btnHighlights.Size = new System.Drawing.Size(226, 47);
-            this.btnHighlights.TabIndex = 23;
-            this.btnHighlights.Text = "Highlights";
-            this.btnHighlights.Click += new System.EventHandler(this.btnHighlights_Click);
             // 
             // AdminDashboard
             // 

@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2ComboBox1 = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.statusCombo = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.guestListGrid = new System.Windows.Forms.DataGridView();
             this.colGuestName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colRoom = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colRoomCharge = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -44,22 +44,22 @@
             this.label12 = new System.Windows.Forms.Label();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.guna2Panel4 = new Guna.UI2.WinForms.Guna2Panel();
-            this.lblUnderMaintenance = new System.Windows.Forms.Label();
+            this.lblTotalEarning = new System.Windows.Forms.Label();
             this.roomUnderMaintenance = new System.Windows.Forms.Label();
             this.guna2Panel7 = new Guna.UI2.WinForms.Guna2Panel();
-            this.lblTotalRoomAvailable = new System.Windows.Forms.Label();
+            this.lblCompleted = new System.Windows.Forms.Label();
             this.todaysAvailable = new System.Windows.Forms.Label();
             this.guna2Panel8 = new Guna.UI2.WinForms.Guna2Panel();
-            this.lbltotalRoomOccupied = new System.Windows.Forms.Label();
+            this.lblPending = new System.Windows.Forms.Label();
             this.roomOccupied = new System.Windows.Forms.Label();
             this.guna2Panel9 = new Guna.UI2.WinForms.Guna2Panel();
-            this.lblTotalRooms = new System.Windows.Forms.Label();
+            this.lblEstimatedRevToday = new System.Windows.Forms.Label();
             this.totalRoom = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.guna2Panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guestListGrid)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
             this.guna2Panel4.SuspendLayout();
             this.guna2Panel7.SuspendLayout();
@@ -101,8 +101,8 @@
             this.guna2Panel1.AutoSize = true;
             this.guna2Panel1.BackColor = System.Drawing.Color.Transparent;
             this.guna2Panel1.BorderRadius = 15;
-            this.guna2Panel1.Controls.Add(this.guna2ComboBox1);
-            this.guna2Panel1.Controls.Add(this.dataGridView2);
+            this.guna2Panel1.Controls.Add(this.statusCombo);
+            this.guna2Panel1.Controls.Add(this.guestListGrid);
             this.guna2Panel1.Controls.Add(this.label2);
             this.guna2Panel1.FillColor = System.Drawing.Color.White;
             this.guna2Panel1.Location = new System.Drawing.Point(3, 3);
@@ -110,55 +110,55 @@
             this.guna2Panel1.Size = new System.Drawing.Size(1070, 655);
             this.guna2Panel1.TabIndex = 32;
             // 
-            // guna2ComboBox1
+            // statusCombo
             // 
-            this.guna2ComboBox1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2ComboBox1.BorderColor = System.Drawing.Color.Black;
-            this.guna2ComboBox1.BorderRadius = 10;
-            this.guna2ComboBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.guna2ComboBox1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.guna2ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.guna2ComboBox1.FillColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.guna2ComboBox1.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2ComboBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2ComboBox1.FocusedState.ForeColor = System.Drawing.Color.Black;
-            this.guna2ComboBox1.Font = new System.Drawing.Font("Segoe UI Symbol", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2ComboBox1.ForeColor = System.Drawing.Color.DimGray;
-            this.guna2ComboBox1.ItemHeight = 35;
-            this.guna2ComboBox1.Items.AddRange(new object[] {
+            this.statusCombo.BackColor = System.Drawing.Color.Transparent;
+            this.statusCombo.BorderColor = System.Drawing.Color.Black;
+            this.statusCombo.BorderRadius = 10;
+            this.statusCombo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.statusCombo.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.statusCombo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.statusCombo.FillColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.statusCombo.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.statusCombo.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.statusCombo.FocusedState.ForeColor = System.Drawing.Color.Black;
+            this.statusCombo.Font = new System.Drawing.Font("Segoe UI Symbol", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.statusCombo.ForeColor = System.Drawing.Color.DimGray;
+            this.statusCombo.ItemHeight = 35;
+            this.statusCombo.Items.AddRange(new object[] {
             "Filter By Status",
             "Paid",
             "Unpaid"});
-            this.guna2ComboBox1.Location = new System.Drawing.Point(293, 10);
-            this.guna2ComboBox1.Name = "guna2ComboBox1";
-            this.guna2ComboBox1.Size = new System.Drawing.Size(289, 41);
-            this.guna2ComboBox1.StartIndex = 0;
-            this.guna2ComboBox1.TabIndex = 3;
+            this.statusCombo.Location = new System.Drawing.Point(293, 10);
+            this.statusCombo.Name = "statusCombo";
+            this.statusCombo.Size = new System.Drawing.Size(289, 41);
+            this.statusCombo.StartIndex = 0;
+            this.statusCombo.TabIndex = 3;
             // 
-            // dataGridView2
+            // guestListGrid
             // 
-            this.dataGridView2.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Symbol", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.guestListGrid.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Symbol", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.guestListGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.guestListGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.guestListGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colGuestName,
             this.colRoom,
             this.colRoomCharge,
             this.ColServiceCharge,
             this.colTotalCharge,
             this.colStatus});
-            this.dataGridView2.Location = new System.Drawing.Point(15, 61);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dataGridView2.Size = new System.Drawing.Size(1039, 582);
-            this.dataGridView2.TabIndex = 2;
+            this.guestListGrid.Location = new System.Drawing.Point(15, 61);
+            this.guestListGrid.Name = "guestListGrid";
+            this.guestListGrid.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.guestListGrid.Size = new System.Drawing.Size(1039, 582);
+            this.guestListGrid.TabIndex = 2;
             // 
             // colGuestName
             // 
@@ -246,7 +246,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.guna2Panel4.BackColor = System.Drawing.Color.Transparent;
             this.guna2Panel4.BorderRadius = 15;
-            this.guna2Panel4.Controls.Add(this.lblUnderMaintenance);
+            this.guna2Panel4.Controls.Add(this.lblTotalEarning);
             this.guna2Panel4.Controls.Add(this.roomUnderMaintenance);
             this.guna2Panel4.FillColor = System.Drawing.Color.White;
             this.guna2Panel4.Location = new System.Drawing.Point(810, 3);
@@ -254,16 +254,16 @@
             this.guna2Panel4.Size = new System.Drawing.Size(263, 97);
             this.guna2Panel4.TabIndex = 30;
             // 
-            // lblUnderMaintenance
+            // lblTotalEarning
             // 
-            this.lblUnderMaintenance.AutoSize = true;
-            this.lblUnderMaintenance.Font = new System.Drawing.Font("Segoe UI Symbol", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUnderMaintenance.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblUnderMaintenance.Location = new System.Drawing.Point(18, 48);
-            this.lblUnderMaintenance.Name = "lblUnderMaintenance";
-            this.lblUnderMaintenance.Size = new System.Drawing.Size(36, 32);
-            this.lblUnderMaintenance.TabIndex = 1;
-            this.lblUnderMaintenance.Text = "__";
+            this.lblTotalEarning.AutoSize = true;
+            this.lblTotalEarning.Font = new System.Drawing.Font("Segoe UI Symbol", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalEarning.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.lblTotalEarning.Location = new System.Drawing.Point(18, 48);
+            this.lblTotalEarning.Name = "lblTotalEarning";
+            this.lblTotalEarning.Size = new System.Drawing.Size(36, 32);
+            this.lblTotalEarning.TabIndex = 1;
+            this.lblTotalEarning.Text = "__";
             // 
             // roomUnderMaintenance
             // 
@@ -272,9 +272,9 @@
             this.roomUnderMaintenance.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.roomUnderMaintenance.Location = new System.Drawing.Point(10, 18);
             this.roomUnderMaintenance.Name = "roomUnderMaintenance";
-            this.roomUnderMaintenance.Size = new System.Drawing.Size(179, 30);
+            this.roomUnderMaintenance.Size = new System.Drawing.Size(158, 30);
             this.roomUnderMaintenance.TabIndex = 0;
-            this.roomUnderMaintenance.Text = "Overall Revenue";
+            this.roomUnderMaintenance.Text = "Total Earnings";
             // 
             // guna2Panel7
             // 
@@ -282,7 +282,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.guna2Panel7.BackColor = System.Drawing.Color.Transparent;
             this.guna2Panel7.BorderRadius = 15;
-            this.guna2Panel7.Controls.Add(this.lblTotalRoomAvailable);
+            this.guna2Panel7.Controls.Add(this.lblCompleted);
             this.guna2Panel7.Controls.Add(this.todaysAvailable);
             this.guna2Panel7.FillColor = System.Drawing.Color.White;
             this.guna2Panel7.Location = new System.Drawing.Point(541, 3);
@@ -290,16 +290,16 @@
             this.guna2Panel7.Size = new System.Drawing.Size(263, 97);
             this.guna2Panel7.TabIndex = 29;
             // 
-            // lblTotalRoomAvailable
+            // lblCompleted
             // 
-            this.lblTotalRoomAvailable.AutoSize = true;
-            this.lblTotalRoomAvailable.Font = new System.Drawing.Font("Segoe UI Symbol", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalRoomAvailable.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblTotalRoomAvailable.Location = new System.Drawing.Point(18, 48);
-            this.lblTotalRoomAvailable.Name = "lblTotalRoomAvailable";
-            this.lblTotalRoomAvailable.Size = new System.Drawing.Size(36, 32);
-            this.lblTotalRoomAvailable.TabIndex = 1;
-            this.lblTotalRoomAvailable.Text = "__";
+            this.lblCompleted.AutoSize = true;
+            this.lblCompleted.Font = new System.Drawing.Font("Segoe UI Symbol", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCompleted.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.lblCompleted.Location = new System.Drawing.Point(18, 48);
+            this.lblCompleted.Name = "lblCompleted";
+            this.lblCompleted.Size = new System.Drawing.Size(36, 32);
+            this.lblCompleted.TabIndex = 1;
+            this.lblCompleted.Text = "__";
             // 
             // todaysAvailable
             // 
@@ -308,9 +308,9 @@
             this.todaysAvailable.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.todaysAvailable.Location = new System.Drawing.Point(10, 18);
             this.todaysAvailable.Name = "todaysAvailable";
-            this.todaysAvailable.Size = new System.Drawing.Size(125, 30);
+            this.todaysAvailable.Size = new System.Drawing.Size(228, 30);
             this.todaysAvailable.TabIndex = 0;
-            this.todaysAvailable.Text = "Paid Today";
+            this.todaysAvailable.Text = "Completed Payments";
             // 
             // guna2Panel8
             // 
@@ -318,7 +318,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.guna2Panel8.BackColor = System.Drawing.Color.Transparent;
             this.guna2Panel8.BorderRadius = 15;
-            this.guna2Panel8.Controls.Add(this.lbltotalRoomOccupied);
+            this.guna2Panel8.Controls.Add(this.lblPending);
             this.guna2Panel8.Controls.Add(this.roomOccupied);
             this.guna2Panel8.FillColor = System.Drawing.Color.White;
             this.guna2Panel8.Location = new System.Drawing.Point(272, 3);
@@ -326,16 +326,16 @@
             this.guna2Panel8.Size = new System.Drawing.Size(263, 97);
             this.guna2Panel8.TabIndex = 28;
             // 
-            // lbltotalRoomOccupied
+            // lblPending
             // 
-            this.lbltotalRoomOccupied.AutoSize = true;
-            this.lbltotalRoomOccupied.Font = new System.Drawing.Font("Segoe UI Symbol", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbltotalRoomOccupied.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lbltotalRoomOccupied.Location = new System.Drawing.Point(18, 48);
-            this.lbltotalRoomOccupied.Name = "lbltotalRoomOccupied";
-            this.lbltotalRoomOccupied.Size = new System.Drawing.Size(36, 32);
-            this.lbltotalRoomOccupied.TabIndex = 1;
-            this.lbltotalRoomOccupied.Text = "__";
+            this.lblPending.AutoSize = true;
+            this.lblPending.Font = new System.Drawing.Font("Segoe UI Symbol", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPending.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.lblPending.Location = new System.Drawing.Point(18, 48);
+            this.lblPending.Name = "lblPending";
+            this.lblPending.Size = new System.Drawing.Size(36, 32);
+            this.lblPending.TabIndex = 1;
+            this.lblPending.Text = "__";
             // 
             // roomOccupied
             // 
@@ -344,9 +344,9 @@
             this.roomOccupied.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.roomOccupied.Location = new System.Drawing.Point(10, 18);
             this.roomOccupied.Name = "roomOccupied";
-            this.roomOccupied.Size = new System.Drawing.Size(133, 30);
+            this.roomOccupied.Size = new System.Drawing.Size(201, 30);
             this.roomOccupied.TabIndex = 0;
-            this.roomOccupied.Text = "Unpaid Bills";
+            this.roomOccupied.Text = "Pending Payments";
             // 
             // guna2Panel9
             // 
@@ -354,7 +354,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.guna2Panel9.BackColor = System.Drawing.Color.Transparent;
             this.guna2Panel9.BorderRadius = 15;
-            this.guna2Panel9.Controls.Add(this.lblTotalRooms);
+            this.guna2Panel9.Controls.Add(this.lblEstimatedRevToday);
             this.guna2Panel9.Controls.Add(this.totalRoom);
             this.guna2Panel9.FillColor = System.Drawing.Color.White;
             this.guna2Panel9.Location = new System.Drawing.Point(3, 3);
@@ -362,17 +362,17 @@
             this.guna2Panel9.Size = new System.Drawing.Size(263, 97);
             this.guna2Panel9.TabIndex = 27;
             // 
-            // lblTotalRooms
+            // lblEstimatedRevToday
             // 
-            this.lblTotalRooms.AutoSize = true;
-            this.lblTotalRooms.Font = new System.Drawing.Font("Segoe UI Symbol", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalRooms.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblTotalRooms.Location = new System.Drawing.Point(18, 48);
-            this.lblTotalRooms.Name = "lblTotalRooms";
-            this.lblTotalRooms.Size = new System.Drawing.Size(36, 32);
-            this.lblTotalRooms.TabIndex = 1;
-            this.lblTotalRooms.Text = "__";
-            this.lblTotalRooms.Click += new System.EventHandler(this.lblTotalRooms_Click);
+            this.lblEstimatedRevToday.AutoSize = true;
+            this.lblEstimatedRevToday.Font = new System.Drawing.Font("Segoe UI Symbol", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEstimatedRevToday.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.lblEstimatedRevToday.Location = new System.Drawing.Point(18, 48);
+            this.lblEstimatedRevToday.Name = "lblEstimatedRevToday";
+            this.lblEstimatedRevToday.Size = new System.Drawing.Size(36, 32);
+            this.lblEstimatedRevToday.TabIndex = 1;
+            this.lblEstimatedRevToday.Text = "__";
+            this.lblEstimatedRevToday.Click += new System.EventHandler(this.lblTotalRooms_Click);
             // 
             // totalRoom
             // 
@@ -404,13 +404,14 @@
             this.Controls.Add(this.panel1);
             this.Name = "ucAdminBilling";
             this.Size = new System.Drawing.Size(1110, 854);
+            this.Load += new System.EventHandler(this.ucAdminBilling_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guestListGrid)).EndInit();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.guna2Panel4.ResumeLayout(false);
             this.guna2Panel4.PerformLayout();
@@ -429,22 +430,22 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
-        private Guna.UI2.WinForms.Guna2ComboBox guna2ComboBox1;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private Guna.UI2.WinForms.Guna2ComboBox statusCombo;
+        private System.Windows.Forms.DataGridView guestListGrid;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel4;
-        private System.Windows.Forms.Label lblUnderMaintenance;
+        private System.Windows.Forms.Label lblTotalEarning;
         private System.Windows.Forms.Label roomUnderMaintenance;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel7;
-        private System.Windows.Forms.Label lblTotalRoomAvailable;
+        private System.Windows.Forms.Label lblCompleted;
         private System.Windows.Forms.Label todaysAvailable;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel8;
-        private System.Windows.Forms.Label lbltotalRoomOccupied;
+        private System.Windows.Forms.Label lblPending;
         private System.Windows.Forms.Label roomOccupied;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel9;
-        private System.Windows.Forms.Label lblTotalRooms;
+        private System.Windows.Forms.Label lblEstimatedRevToday;
         private System.Windows.Forms.Label totalRoom;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.DataGridViewTextBoxColumn colGuestName;

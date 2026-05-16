@@ -1,12 +1,6 @@
 ﻿using Npgsql;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace HotelManagementSystem.MyControls
@@ -19,13 +13,14 @@ namespace HotelManagementSystem.MyControls
             "Username=dbhotelmanagement;" +
             "Password=fdqYxIcKcPtSZV90PyNTNg;" +
             "Database=hotelmanagement;" +
-            "Search Path=public,hotel;" +
+            "SearchPath=public,hotel;" +
             "SslMode=require;" +
             "Trust Server Certificate=true;";
 
         public ucAdminReservations()
         {
             InitializeComponent();
+            this.AutoScaleMode = AutoScaleMode.None;
         }
 
         private void ucAdminReservations_Load(object sender, EventArgs e)
@@ -42,6 +37,7 @@ namespace HotelManagementSystem.MyControls
                 using (NpgsqlConnection conn = new NpgsqlConnection(connString))
                 {
                     conn.Open();
+
                     string pendingSql =
                         "SELECT COUNT(*) FROM hotel.bookings WHERE status = 'Pending';";
                     NpgsqlCommand pendingCmd = new NpgsqlCommand(pendingSql, conn);
@@ -49,9 +45,9 @@ namespace HotelManagementSystem.MyControls
 
                     string weekSql =
                         "SELECT COUNT(*) FROM hotel.bookings " +
-                        "WHERE status = 'Approved' " +
+                        "WHERE status IN ('Approved', 'Completed') " +
                         "AND check_in_date >= date_trunc('week', CURRENT_DATE) " +
-                        "AND check_in_date <  date_trunc('week', CURRENT_DATE) + INTERVAL '7 days';";
+                        "AND check_in_date < date_trunc('week', CURRENT_DATE) + INTERVAL '7 days';";
                     NpgsqlCommand weekCmd = new NpgsqlCommand(weekSql, conn);
                     lblWeeklyConfirmation.Text = weekCmd.ExecuteScalar().ToString();
 
@@ -72,6 +68,7 @@ namespace HotelManagementSystem.MyControls
             try
             {
                 queueGrid.Rows.Clear();
+
                 string sql =
                     "SELECT b.booking_id, " +
                     "       b.first_name || ' ' || b.last_name AS guest_name, " +
@@ -81,7 +78,7 @@ namespace HotelManagementSystem.MyControls
                     "       r.price_per_night, " +
                     "       b.status " +
                     "FROM hotel.bookings b " +
-                    "JOIN rooms r ON b.room_id = r.room_id " +
+                    "JOIN hotel.rooms r ON b.room_id = r.room_id " +
                     "WHERE b.status IN ('Pending', 'Approved') " +
                     "ORDER BY b.check_in_date ASC;";
 
@@ -96,8 +93,13 @@ namespace HotelManagementSystem.MyControls
                         DateTime checkIn = Convert.ToDateTime(reader["check_in_date"]);
                         DateTime checkOut = Convert.ToDateTime(reader["check_out_date"]);
                         int nights = (checkOut - checkIn).Days;
+                        if (nights <= 0) nights = 1;
                         decimal pricePerNight = Convert.ToDecimal(reader["price_per_night"]);
-                        decimal totalBill = pricePerNight * nights;
+                        decimal subtotal = pricePerNight * nights;
+                        decimal tax = Math.Round(subtotal * 0.12m, 2);
+                        decimal totalBill = subtotal + tax;
+
+                        string status = reader["status"].ToString();
 
                         int rowIdx = queueGrid.Rows.Add(
                             reader["booking_id"].ToString(),
@@ -106,10 +108,9 @@ namespace HotelManagementSystem.MyControls
                             checkIn.ToString("MMM dd, yyyy"),
                             checkOut.ToString("MMM dd, yyyy"),
                             "₱" + totalBill.ToString("N2"),
-                            reader["status"].ToString()
+                            status
                         );
 
-                        string status = reader["status"].ToString();
                         if (status == "Pending")
                             queueGrid.Rows[rowIdx].DefaultCellStyle.BackColor = Color.LightYellow;
                         else if (status == "Approved")
@@ -138,7 +139,7 @@ namespace HotelManagementSystem.MyControls
                     "       b.check_out_date, " +
                     "       b.status " +
                     "FROM hotel.bookings b " +
-                    "JOIN rooms r ON b.room_id = r.room_id " +
+                    "JOIN hotel.rooms r ON b.room_id = r.room_id " +
                     "ORDER BY b.check_in_date DESC;";
 
                 using (NpgsqlConnection conn = new NpgsqlConnection(connString))
@@ -149,15 +150,24 @@ namespace HotelManagementSystem.MyControls
 
                     while (reader.Read())
                     {
-                        bookingHistoryGrid.Rows.Add(
+                        string status = reader["status"].ToString();
+
+                        int rowIdx = bookingHistoryGrid.Rows.Add(
                             reader["booking_id"].ToString(),
                             reader["guest_name"].ToString(),
                             reader["total_guests"].ToString(),
                             "Room " + reader["room_number"].ToString(),
                             Convert.ToDateTime(reader["check_in_date"]).ToString("MMM dd, yyyy"),
                             Convert.ToDateTime(reader["check_out_date"]).ToString("MMM dd, yyyy"),
-                            reader["status"].ToString()
+                            status
                         );
+
+                        if (status == "Completed")
+                            bookingHistoryGrid.Rows[rowIdx].DefaultCellStyle.ForeColor = Color.SeaGreen;
+                        else if (status == "Cancelled")
+                            bookingHistoryGrid.Rows[rowIdx].DefaultCellStyle.ForeColor = Color.Red;
+                        else if (status == "Approved")
+                            bookingHistoryGrid.Rows[rowIdx].DefaultCellStyle.ForeColor = Color.DodgerBlue;
                     }
                 }
             }

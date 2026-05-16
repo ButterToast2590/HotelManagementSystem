@@ -58,6 +58,7 @@ namespace HotelManagementSystem
             btnAdminRoomServices.FillColor = Color.Transparent;
             btnBilling.FillColor = Color.Transparent;
             btnFeedBack.FillColor = Color.Transparent;
+            btnHighlights.FillColor = Color.Transparent;
         }
         private void btnHome_Click(object sender, EventArgs e)
         {

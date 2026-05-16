@@ -19,6 +19,7 @@ namespace HotelManagementSystem.MyControls
         "Username=dbhotelmanagement;" +
         "Password=fdqYxIcKcPtSZV90PyNTNg;" +
         "Database=hotelmanagement;" +
+        "SearchPath=public,hotel;" +
         "SslMode=require;" +
         "Trust Server Certificate=true;";
         public ucProfile()
@@ -99,11 +100,11 @@ namespace HotelManagementSystem.MyControls
 
                 string sql =
                     "SELECT r.room_type, " +
-                    "       (b.check_out_date::date - b.check_in_date::date) AS nights, " +
-                    "       r.price_per_night * " +
-                    "       (b.check_out_date::date - b.check_in_date::date) AS total_bill " +
+                    "       GREATEST((b.check_out_date::date - b.check_in_date::date), 1) AS nights, " +
+                    "       GREATEST((b.check_out_date::date - b.check_in_date::date), 1) " +
+                    "           * r.price_per_night AS room_bill " +
                     "FROM hotel.bookings b " +
-                    "JOIN rooms r ON b.room_id = r.room_id " +
+                    "JOIN hotel.rooms r ON b.room_id = r.room_id " +
                     "WHERE b.user_id = @userId " +
                     "ORDER BY b.check_in_date DESC;";
 
@@ -116,10 +117,15 @@ namespace HotelManagementSystem.MyControls
 
                     while (reader.Read())
                     {
+                        int nights = Convert.ToInt32(reader["nights"]);
+                        decimal roomBill = Convert.ToDecimal(reader["room_bill"]);
+                        decimal tax = Math.Round(roomBill * 0.12m, 2);
+                        decimal totalBill = roomBill + tax; 
+
                         recentActivityProfileGrid.Rows.Add(
-                            reader["room_type"].ToString(),          
-                            reader["nights"].ToString() + " night(s)",
-                            "₱" + Convert.ToDecimal(reader["total_bill"]).ToString("N2")
+                            reader["room_type"].ToString(),
+                            nights + " night(s)",
+                            "₱" + totalBill.ToString("N2")
                         );
                     }
                 }

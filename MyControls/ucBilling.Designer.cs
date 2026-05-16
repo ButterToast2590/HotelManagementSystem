@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.tlpMain = new System.Windows.Forms.TableLayoutPanel();
             this.panelRight = new Guna.UI2.WinForms.Guna2Panel();
@@ -189,7 +189,7 @@
             this.lblTotalValue.BackColor = System.Drawing.Color.Transparent;
             this.lblTotalValue.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTotalValue.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.lblTotalValue.Location = new System.Drawing.Point(364, 9);
+            this.lblTotalValue.Location = new System.Drawing.Point(361, 9);
             this.lblTotalValue.Name = "lblTotalValue";
             this.lblTotalValue.Size = new System.Drawing.Size(24, 32);
             this.lblTotalValue.TabIndex = 33;
@@ -234,7 +234,7 @@
             this.lblTaxValue.AutoSize = true;
             this.lblTaxValue.Font = new System.Drawing.Font("Segoe UI Symbol", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTaxValue.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblTaxValue.Location = new System.Drawing.Point(401, 80);
+            this.lblTaxValue.Location = new System.Drawing.Point(386, 80);
             this.lblTaxValue.Name = "lblTaxValue";
             this.lblTaxValue.Size = new System.Drawing.Size(20, 25);
             this.lblTaxValue.TabIndex = 43;
@@ -261,7 +261,7 @@
             this.lblSubtotalValue.AutoSize = true;
             this.lblSubtotalValue.Font = new System.Drawing.Font("Segoe UI Symbol", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSubtotalValue.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblSubtotalValue.Location = new System.Drawing.Point(398, 37);
+            this.lblSubtotalValue.Location = new System.Drawing.Point(386, 37);
             this.lblSubtotalValue.Name = "lblSubtotalValue";
             this.lblSubtotalValue.Size = new System.Drawing.Size(20, 25);
             this.lblSubtotalValue.TabIndex = 41;
@@ -307,7 +307,7 @@
             this.lblServicesValue.AutoSize = true;
             this.lblServicesValue.Font = new System.Drawing.Font("Segoe UI Symbol", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblServicesValue.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblServicesValue.Location = new System.Drawing.Point(394, 114);
+            this.lblServicesValue.Location = new System.Drawing.Point(390, 114);
             this.lblServicesValue.Name = "lblServicesValue";
             this.lblServicesValue.Size = new System.Drawing.Size(20, 25);
             this.lblServicesValue.TabIndex = 39;
@@ -362,7 +362,7 @@
             this.lblRoomValue.AutoSize = true;
             this.lblRoomValue.Font = new System.Drawing.Font("Segoe UI Symbol", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRoomValue.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblRoomValue.Location = new System.Drawing.Point(391, 30);
+            this.lblRoomValue.Location = new System.Drawing.Point(390, 30);
             this.lblRoomValue.Name = "lblRoomValue";
             this.lblRoomValue.Size = new System.Drawing.Size(20, 25);
             this.lblRoomValue.TabIndex = 35;
@@ -425,14 +425,14 @@
             this.dgvCharges.AllowUserToDeleteRows = false;
             this.dgvCharges.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvCharges.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvCharges.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvCharges.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvCharges.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCharges.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colDate,
@@ -478,8 +478,8 @@
             // colAmount
             // 
             this.colAmount.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.colAmount.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.colAmount.DefaultCellStyle = dataGridViewCellStyle2;
             this.colAmount.FillWeight = 80F;
             this.colAmount.HeaderText = "AMOUNT";
             this.colAmount.Name = "colAmount";

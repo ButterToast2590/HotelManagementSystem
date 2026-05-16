@@ -20,7 +20,7 @@ namespace HotelManagementSystem.MyControls
             "Username=dbhotelmanagement;" +
             "Password=fdqYxIcKcPtSZV90PyNTNg;" +
             "Database=hotelmanagement;" +
-            "Search Path=public,hotel;" +
+            "SearchPath=public,hotel;" +
             "SslMode=require;" +
             "Trust Server Certificate=true;";
 
@@ -146,29 +146,43 @@ namespace HotelManagementSystem.MyControls
         }
         private void createRoombtn_Click(object sender, EventArgs e)
         {
-            Form open = Application.OpenForms["CreateRoom"];
-            if (open != null)
+            if (Application.OpenForms["CreateRoom"] != null)
             {
-                open.BringToFront();
+                Application.OpenForms["CreateRoom"].BringToFront();
                 return;
             }
+            if (Application.OpenForms["DeleteRoom"] != null)
+            {
+                MessageBox.Show("Please close the Delete Room window first.",
+                    "Window Open", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                Application.OpenForms["DeleteRoom"].BringToFront();
+                return;
+            }
+
             CreateRoom form = new CreateRoom();
             form.FormClosed += (s, args) =>
             {
                 LoadStats();
                 LoadRooms();
             };
-
             form.Show();
         }
+
         private void btnDeleteRoom_Click(object sender, EventArgs e)
         {
-            Form open = Application.OpenForms["DeleteRoom"];
-            if (open != null)
+            if (Application.OpenForms["DeleteRoom"] != null)
             {
-                open.BringToFront();
+                Application.OpenForms["DeleteRoom"].BringToFront();
                 return;
             }
+            if (Application.OpenForms["CreateRoom"] != null)
+            {
+                MessageBox.Show("Please close the Add Room window first.",
+                    "Window Open", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                Application.OpenForms["CreateRoom"].BringToFront();
+                return;
+            }
+
             DeleteRoom form = new DeleteRoom();
             form.Show();
         }

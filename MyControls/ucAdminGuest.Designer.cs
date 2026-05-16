@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label12 = new System.Windows.Forms.Label();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.lblNumOfCheckoutToday = new Guna.UI2.WinForms.Guna2Panel();
-            this.label15 = new System.Windows.Forms.Label();
+            this.lblCheckingOutToday = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.guna2Panel8 = new Guna.UI2.WinForms.Guna2Panel();
             this.lblCurrentGuest = new System.Windows.Forms.Label();
@@ -43,21 +43,21 @@
             this.totalGuest = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.guna2Panel10 = new Guna.UI2.WinForms.Guna2Panel();
-            this.label23 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.guestList = new System.Windows.Forms.DataGridView();
             this.colName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colRoom = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colCheckIn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colCheckOut = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colBill = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label23 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.lblNumOfCheckoutToday.SuspendLayout();
             this.guna2Panel8.SuspendLayout();
             this.guna2Panel9.SuspendLayout();
             this.guna2Panel10.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guestList)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -109,7 +109,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblNumOfCheckoutToday.BackColor = System.Drawing.Color.Transparent;
             this.lblNumOfCheckoutToday.BorderRadius = 15;
-            this.lblNumOfCheckoutToday.Controls.Add(this.label15);
+            this.lblNumOfCheckoutToday.Controls.Add(this.lblCheckingOutToday);
             this.lblNumOfCheckoutToday.Controls.Add(this.label16);
             this.lblNumOfCheckoutToday.FillColor = System.Drawing.Color.White;
             this.lblNumOfCheckoutToday.Location = new System.Drawing.Point(719, 3);
@@ -117,16 +117,16 @@
             this.lblNumOfCheckoutToday.Size = new System.Drawing.Size(354, 97);
             this.lblNumOfCheckoutToday.TabIndex = 29;
             // 
-            // label15
+            // lblCheckingOutToday
             // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Segoe UI Symbol", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label15.Location = new System.Drawing.Point(18, 48);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(36, 32);
-            this.label15.TabIndex = 1;
-            this.label15.Text = "__";
+            this.lblCheckingOutToday.AutoSize = true;
+            this.lblCheckingOutToday.Font = new System.Drawing.Font("Segoe UI Symbol", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCheckingOutToday.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.lblCheckingOutToday.Location = new System.Drawing.Point(18, 48);
+            this.lblCheckingOutToday.Name = "lblCheckingOutToday";
+            this.lblCheckingOutToday.Size = new System.Drawing.Size(36, 32);
+            this.lblCheckingOutToday.TabIndex = 1;
+            this.lblCheckingOutToday.Text = "__";
             // 
             // label16
             // 
@@ -199,6 +199,7 @@
             this.lblNumOfGuest.Size = new System.Drawing.Size(36, 32);
             this.lblNumOfGuest.TabIndex = 1;
             this.lblNumOfGuest.Text = "__";
+            this.lblNumOfGuest.Click += new System.EventHandler(this.lblNumOfGuest_Click);
             // 
             // totalGuest
             // 
@@ -231,7 +232,7 @@
             this.guna2Panel10.AutoSize = true;
             this.guna2Panel10.BackColor = System.Drawing.Color.Transparent;
             this.guna2Panel10.BorderRadius = 15;
-            this.guna2Panel10.Controls.Add(this.dataGridView1);
+            this.guna2Panel10.Controls.Add(this.guestList);
             this.guna2Panel10.Controls.Add(this.label23);
             this.guna2Panel10.FillColor = System.Drawing.Color.White;
             this.guna2Panel10.Location = new System.Drawing.Point(16, 188);
@@ -239,40 +240,29 @@
             this.guna2Panel10.Size = new System.Drawing.Size(1076, 663);
             this.guna2Panel10.TabIndex = 30;
             // 
-            // label23
+            // guestList
             // 
-            this.label23.AutoSize = true;
-            this.label23.Font = new System.Drawing.Font("Segoe UI Symbol", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label23.Location = new System.Drawing.Point(10, 18);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(113, 30);
-            this.label23.TabIndex = 0;
-            this.label23.Text = "Guest List";
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Symbol", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.guestList.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Symbol", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.guestList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.guestList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.guestList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colName,
             this.colRoom,
             this.colCheckIn,
             this.colCheckOut,
             this.colStatus,
             this.colBill});
-            this.dataGridView1.Location = new System.Drawing.Point(16, 78);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(1045, 571);
-            this.dataGridView1.TabIndex = 1;
+            this.guestList.Location = new System.Drawing.Point(16, 78);
+            this.guestList.Name = "guestList";
+            this.guestList.Size = new System.Drawing.Size(1045, 571);
+            this.guestList.TabIndex = 1;
             // 
             // colName
             // 
@@ -310,6 +300,17 @@
             this.colBill.Name = "colBill";
             this.colBill.Width = 140;
             // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("Segoe UI Symbol", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label23.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.label23.Location = new System.Drawing.Point(10, 18);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(113, 30);
+            this.label23.TabIndex = 0;
+            this.label23.Text = "Guest List";
+            // 
             // ucAdminGuest
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -317,6 +318,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "ucAdminGuest";
             this.Size = new System.Drawing.Size(1110, 854);
+            this.Load += new System.EventHandler(this.ucAdminGuest_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
@@ -328,7 +330,7 @@
             this.guna2Panel9.PerformLayout();
             this.guna2Panel10.ResumeLayout(false);
             this.guna2Panel10.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guestList)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -339,7 +341,7 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private Guna.UI2.WinForms.Guna2Panel lblNumOfCheckoutToday;
-        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label lblCheckingOutToday;
         private System.Windows.Forms.Label label16;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel8;
         private System.Windows.Forms.Label lblCurrentGuest;
@@ -350,7 +352,7 @@
         private System.Windows.Forms.Label label21;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel10;
         private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView guestList;
         private System.Windows.Forms.DataGridViewTextBoxColumn colName;
         private System.Windows.Forms.DataGridViewTextBoxColumn colRoom;
         private System.Windows.Forms.DataGridViewTextBoxColumn colCheckIn;

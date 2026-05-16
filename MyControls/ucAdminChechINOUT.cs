@@ -13,7 +13,7 @@ namespace HotelManagementSystem.MyControls
             "Username=dbhotelmanagement;" +
             "Password=fdqYxIcKcPtSZV90PyNTNg;" +
             "Database=hotelmanagement;" +
-            "Search Path=public,hotel;" +
+            "SearchPath=public,hotel;" +
             "SslMode=require;" +
             "Trust Server Certificate=true;";
         public ucAdminChechINOUT()
@@ -173,10 +173,11 @@ namespace HotelManagementSystem.MyControls
                 if (statusFilter == "All")
                 {
                     sql =
-                        "SELECT b.check_in_date AS timestamp, " +
-                        "       b.first_name || ' ' || b.last_name AS guest_name, " +
-                        "       r.room_number, " +
-                        "       b.status " +
+                        "SELECT CASE WHEN b.status = 'Completed' THEN b.check_out_date ELSE b.check_in_date END AS timestamp, " +
+                        "b.first_name || ' ' || b.last_name AS guest_name, " +
+                        "r.room_number, " +
+                        "b.status, " +
+                        "b.processed_by " +
                         "FROM hotel.bookings b " +
                         "JOIN hotel.rooms r ON b.room_id = r.room_id " +
                         "ORDER BY b.check_in_date DESC " +
@@ -185,10 +186,11 @@ namespace HotelManagementSystem.MyControls
                 else
                 {
                     sql =
-                        "SELECT b.check_in_date AS timestamp, " +
-                        "       b.first_name || ' ' || b.last_name AS guest_name, " +
-                        "       r.room_number, " +
-                        "       b.status " +
+                        "SELECT CASE WHEN b.status = 'Completed' THEN b.check_out_date ELSE b.check_in_date END AS timestamp, " +
+                        "b.first_name || ' ' || b.last_name AS guest_name, " +
+                        "r.room_number, " +
+                        "b.status, " +
+                        "b.processed_by " +
                         "FROM hotel.bookings b " +
                         "JOIN hotel.rooms r ON b.room_id = r.room_id " +
                         "WHERE b.status = @status " +
@@ -212,11 +214,11 @@ namespace HotelManagementSystem.MyControls
                         DateTime ts = Convert.ToDateTime(reader["timestamp"]);
 
                         overallLogGrid.Rows.Add(
-                            ts.ToString("MMM dd, yyyy hh:mm tt"), 
-                            reader["guest_name"].ToString(),       
-                            "Room " + reader["room_number"],      
-                            reader["status"].ToString(),          
-                            "Admin"                             
+                            ts.ToString("MMM dd, yyyy hh:mm tt"),
+                            reader["guest_name"].ToString(),
+                            "Room " + reader["room_number"],
+                            reader["status"].ToString(),
+                            reader["processed_by"].ToString()
                         );
                     }
 

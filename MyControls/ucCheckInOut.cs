@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace HotelManagementSystem
 {
@@ -46,8 +47,8 @@ namespace HotelManagementSystem
                     "FROM hotel.bookings b " +
                     "JOIN hotel.rooms r ON b.room_id = r.room_id " +
                     "WHERE b.user_id = @userId " +
-                    "AND b.status IN ('Approved', 'Completed') " + 
-                    "ORDER BY b.check_in_date DESC " +
+                    "AND b.status IN ('Approved', 'Completed') " +
+                    "ORDER BY CASE WHEN b.status = 'Approved' THEN 0 ELSE 1 END, b.check_in_date DESC " +
                     "LIMIT 1;";
 
                 using (NpgsqlConnection conn = new NpgsqlConnection(connString))
@@ -150,8 +151,11 @@ namespace HotelManagementSystem
                 while (reader.Read())
                 {
                     int nights = Convert.ToInt32(reader["nights"]);
+                    if (nights <= 0) nights = 1;
                     decimal rate = Convert.ToDecimal(reader["price_per_night"]);
-                    decimal bill = rate * nights;
+                    decimal subtotal = rate * nights;
+                    decimal tax = Math.Round(subtotal * 0.12m, 2);
+                    decimal bill = subtotal + tax;
                     string status = reader["status"].ToString();
 
                     int rowIdx = chechINOutGrid.Rows.Add(
@@ -189,17 +193,32 @@ namespace HotelManagementSystem
 
             try
             {
-                string sql =
-                    "UPDATE hotel.bookings " +
-                    "SET check_out_date = @today, status = 'Completed' " +
-                    "WHERE user_id = @userId AND status = 'Approved';";
-
                 using (NpgsqlConnection conn = new NpgsqlConnection(connString))
                 {
                     conn.Open();
+
+                    string calcSql =
+                        "SELECT GREATEST((CURRENT_DATE - b.check_in_date::date), 1) * r.price_per_night " +
+                        "FROM hotel.bookings b " +
+                        "JOIN hotel.rooms r ON b.room_id = r.room_id " +
+                        "WHERE b.user_id = @userId AND b.status = 'Approved';";
+                    NpgsqlCommand calcCmd = new NpgsqlCommand(calcSql, conn);
+                    calcCmd.Parameters.AddWithValue("@userId", UserSession.UserId1);
+                    decimal roomAmount = Convert.ToDecimal(calcCmd.ExecuteScalar() ?? 0);
+                    decimal tax = Math.Round(roomAmount * 0.12m, 2);
+                    decimal totalPaid = roomAmount + tax;
+
+                    string sql =
+                        "UPDATE hotel.bookings " +
+                        "SET check_out_date = @today, status = 'Completed', " +
+                        "paid_at = NOW(), total_paid = @totalPaid, " +
+                        "processed_by = @processedBy " +
+                        "WHERE user_id = @userId AND status = 'Approved';";
                     NpgsqlCommand cmd = new NpgsqlCommand(sql, conn);
                     cmd.Parameters.AddWithValue("@today", DateTime.Today);
                     cmd.Parameters.AddWithValue("@userId", UserSession.UserId1);
+                    cmd.Parameters.AddWithValue("@totalPaid", totalPaid);
+                    cmd.Parameters.AddWithValue("@processedBy", UserSession.Username1);
                     cmd.ExecuteNonQuery();
                 }
 

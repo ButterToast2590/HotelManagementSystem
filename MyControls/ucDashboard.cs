@@ -65,7 +65,7 @@ namespace HotelManagementSystem.MyControl
                     "JOIN hotel.rooms r ON b.room_id = r.room_id " +
                     "WHERE b.user_id = @userId " +
                     "AND b.status IN ('Approved', 'Completed') " +
-                    "ORDER BY b.check_in_date DESC " +
+                    "ORDER BY CASE WHEN b.status = 'Approved' THEN 0 ELSE 1 END, b.booking_id DESC " +
                     "LIMIT 1;";
 
                 using (NpgsqlConnection conn = new NpgsqlConnection(connString))
@@ -81,6 +81,7 @@ namespace HotelManagementSystem.MyControl
                         DateTime checkIn = Convert.ToDateTime(reader["check_in_date"]);
                         DateTime checkOut = Convert.ToDateTime(reader["check_out_date"]);
                         int nights = (checkOut - checkIn).Days;
+                        if (nights <= 0) nights = 1;
                         decimal rate = Convert.ToDecimal(reader["price_per_night"]);
                         decimal roomBill = rate * nights;
                         string status = reader["status"].ToString();
@@ -168,7 +169,7 @@ namespace HotelManagementSystem.MyControl
                     "FROM hotel.bookings b " +
                     "JOIN hotel.rooms r ON b.room_id = r.room_id " +
                     "WHERE b.user_id = @userId " +
-                    "ORDER BY b.check_in_date DESC;";
+                    "ORDER BY b.check_in_date DESC, b.booking_id DESC;";
 
                 using (NpgsqlConnection conn = new NpgsqlConnection(connString))
                 {
@@ -182,8 +183,11 @@ namespace HotelManagementSystem.MyControl
                         DateTime checkIn = Convert.ToDateTime(reader["check_in_date"]);
                         DateTime checkOut = Convert.ToDateTime(reader["check_out_date"]);
                         int nights = (checkOut - checkIn).Days;
+                        if (nights <= 0) nights = 1;
                         decimal rate = Convert.ToDecimal(reader["price_per_night"]);
-                        decimal bill = rate * nights;
+                        decimal subtotal = rate * nights;
+                        decimal tax = Math.Round(subtotal * 0.12m, 2);
+                        decimal bill = subtotal + tax;
                         string status = reader["status"].ToString();
 
                         int rowIdx = rrGrid.Rows.Add(
