@@ -174,6 +174,7 @@
             this.roomDesc.SelectedText = "";
             this.roomDesc.Size = new System.Drawing.Size(466, 87);
             this.roomDesc.TabIndex = 86;
+            this.roomDesc.TextChanged += new System.EventHandler(this.roomDesc_TextChanged);
             // 
             // layoutFname
             // 
@@ -285,6 +286,7 @@
             this.comboRoomType.Size = new System.Drawing.Size(460, 48);
             this.comboRoomType.StartIndex = 0;
             this.comboRoomType.TabIndex = 37;
+            this.comboRoomType.SelectedIndexChanged += new System.EventHandler(this.comboRoomType_SelectedIndexChanged);
             // 
             // createRoombtn
             // 
@@ -373,6 +375,7 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(226, 70);
             this.tableLayoutPanel2.TabIndex = 78;
+            this.tableLayoutPanel2.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel2_Paint);
             // 
             // txtRoomPrice
             // 
@@ -427,6 +430,7 @@
             this.layoutChildren.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.layoutChildren.Size = new System.Drawing.Size(226, 70);
             this.layoutChildren.TabIndex = 79;
+            this.layoutChildren.Paint += new System.Windows.Forms.PaintEventHandler(this.layoutChildren_Paint);
             // 
             // lblChildren
             // 
@@ -439,6 +443,7 @@
             this.lblChildren.Size = new System.Drawing.Size(220, 19);
             this.lblChildren.TabIndex = 11;
             this.lblChildren.Text = "Occupancy";
+            this.lblChildren.Click += new System.EventHandler(this.lblChildren_Click);
             // 
             // occupancyNum
             // 
@@ -476,6 +481,7 @@
             this.label4.Size = new System.Drawing.Size(199, 20);
             this.label4.TabIndex = 85;
             this.label4.Text = "Room Description";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // tableLayoutPanel3
             // 
@@ -493,6 +499,7 @@
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel3.Size = new System.Drawing.Size(226, 80);
             this.tableLayoutPanel3.TabIndex = 87;
+            this.tableLayoutPanel3.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel3_Paint);
             // 
             // label3
             // 
@@ -547,6 +554,7 @@
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel4.Size = new System.Drawing.Size(226, 80);
             this.tableLayoutPanel4.TabIndex = 89;
+            this.tableLayoutPanel4.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel4_Paint);
             // 
             // label7
             // 

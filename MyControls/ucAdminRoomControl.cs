@@ -24,6 +24,7 @@ namespace HotelManagementSystem.MyControls
             "SslMode=require;" +
             "Trust Server Certificate=true;";
 
+        private string _roomId;
         public ucAdminRoomControl()
         {
             InitializeComponent();
@@ -186,11 +187,30 @@ namespace HotelManagementSystem.MyControls
             DeleteRoom form = new DeleteRoom();
             form.Show();
         }
-        private void dataGridView2_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        private void btnEdit_Click(object sender, EventArgs e)
         {
+            int rowIndex = dataGridView2.SelectedCells.Count > 0
+                ? dataGridView2.SelectedCells[0].RowIndex : -1;
 
+            if (rowIndex == -1)
+            {
+                MessageBox.Show("Please select a room to edit.",
+                    "No Selection", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (Application.OpenForms["EditRoom"] != null)
+            {
+                Application.OpenForms["EditRoom"].BringToFront();
+                return;
+            }
+
+            string roomId = dataGridView2.Rows[rowIndex].Cells[0].Value.ToString();
+
+            EditRoom form = new EditRoom(roomId);
+            form.FormClosed += (s, args) => { LoadStats(); LoadRooms(); };
+            form.Show();
         }
-
 
 
 
@@ -210,5 +230,10 @@ namespace HotelManagementSystem.MyControls
         {
 
         }
+        private void dataGridView2_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+
+        }
+
     }
 }

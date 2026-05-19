@@ -211,8 +211,19 @@ namespace HotelManagementSystem.MyControls
                 return;
             }
 
+
+            DialogResult earlyOut = MessageBox.Show(
+                "Would you like to check out early?\n\n" + "• Yes — settle your bill now and check out.\n" + "• No  — your bill will be settled at the end of your booking. Enjoy your stay!",
+                "Early Check-Out?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (earlyOut == DialogResult.No)
+            {
+                MessageBox.Show(
+                    "No problem! Your bill will be settled at the end of your booking.\n\nEnjoy your stay!", "Enjoy Your Stay", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
             DialogResult confirm = MessageBox.Show(
-                "Confirm payment of your outstanding balance?","Confirm Payment", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                "Are you sure you want to check out early and settle your bill now?", "Confirm Early Check-Out", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
             if (confirm != DialogResult.Yes) return;
 
@@ -223,7 +234,7 @@ namespace HotelManagementSystem.MyControls
                     conn.Open();
 
                     string calcSql =
-                        "SELECT GREATEST((b.check_out_date::date - b.check_in_date::date), 1) * r.price_per_night " +
+                        "SELECT GREATEST((CURRENT_DATE - b.check_in_date::date), 1) * r.price_per_night " +
                         "FROM hotel.bookings b " +
                         "JOIN hotel.rooms r ON b.room_id = r.room_id " +
                         "WHERE b.user_id = @userId AND b.status = 'Approved';";
@@ -238,7 +249,8 @@ namespace HotelManagementSystem.MyControls
                             "SELECT COALESCE(SUM(total_amount), 0) " +
                             "FROM hotel.room_service_orders " +
                             "WHERE user_id = @userId " +
-                            "AND room_id = (SELECT room_id FROM hotel.bookings WHERE user_id = @userId AND status = 'Approved' LIMIT 1);";
+                            "AND room_id = (SELECT room_id FROM hotel.bookings " +
+                            "              WHERE user_id = @userId AND status = 'Approved' LIMIT 1);";
                         NpgsqlCommand rsCmd = new NpgsqlCommand(rsSql, conn);
                         rsCmd.Parameters.AddWithValue("@userId", UserSession.UserId1);
                         rsAmount = Convert.ToDecimal(rsCmd.ExecuteScalar() ?? 0);
@@ -251,22 +263,23 @@ namespace HotelManagementSystem.MyControls
 
                     string sql =
                         "UPDATE hotel.bookings " +
-                        "SET status = 'Completed', paid_at = NOW(), total_paid = @totalPaid " +
+                        "SET check_out_date = @today, status = 'Completed', " +
+                        "paid_at = NOW(), total_paid = @totalPaid " +
                         "WHERE user_id = @userId AND status = 'Approved';";
                     NpgsqlCommand cmd = new NpgsqlCommand(sql, conn);
+                    cmd.Parameters.AddWithValue("@today", DateTime.Today);
                     cmd.Parameters.AddWithValue("@userId", UserSession.UserId1);
                     cmd.Parameters.AddWithValue("@totalPaid", totalPaid);
                     cmd.ExecuteNonQuery();
                 }
 
-                MessageBox.Show("Payment successful! Thank you for your stay.",
-                    "Payment Complete", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                LoadBillingData();
+                MessageBox.Show(
+                    "You have been checked out and your bill has been settled.\n\nThank you for your stay!", "Checked Out Successfully",MessageBoxButtons.OK, MessageBoxIcon.Information);
+                LoadBillingData(); 
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Payment failed: " + ex.Message);
+                MessageBox.Show("Error during early check-out: " + ex.Message);
             }
         }
 

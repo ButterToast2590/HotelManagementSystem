@@ -279,8 +279,8 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.guna2Panel4.BackColor = System.Drawing.Color.Transparent;
             this.guna2Panel4.BorderRadius = 15;
-            this.guna2Panel4.Controls.Add(this.lblTotalNumOrder);
-            this.guna2Panel4.Controls.Add(this.pendingOrders);
+            this.guna2Panel4.Controls.Add(this.lblTotalRevenue);
+            this.guna2Panel4.Controls.Add(this.todaysRevenue);
             this.guna2Panel4.FillColor = System.Drawing.Color.White;
             this.guna2Panel4.Location = new System.Drawing.Point(810, 3);
             this.guna2Panel4.Name = "guna2Panel4";
@@ -292,7 +292,7 @@
             this.lblTotalNumOrder.AutoSize = true;
             this.lblTotalNumOrder.Font = new System.Drawing.Font("Segoe UI Symbol", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTotalNumOrder.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblTotalNumOrder.Location = new System.Drawing.Point(18, 48);
+            this.lblTotalNumOrder.Location = new System.Drawing.Point(28, 48);
             this.lblTotalNumOrder.Name = "lblTotalNumOrder";
             this.lblTotalNumOrder.Size = new System.Drawing.Size(36, 32);
             this.lblTotalNumOrder.TabIndex = 1;
@@ -303,7 +303,7 @@
             this.pendingOrders.AutoSize = true;
             this.pendingOrders.Font = new System.Drawing.Font("Segoe UI Symbol", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pendingOrders.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.pendingOrders.Location = new System.Drawing.Point(10, 18);
+            this.pendingOrders.Location = new System.Drawing.Point(20, 18);
             this.pendingOrders.Name = "pendingOrders";
             this.pendingOrders.Size = new System.Drawing.Size(171, 30);
             this.pendingOrders.TabIndex = 0;
@@ -315,8 +315,8 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.guna2Panel7.BackColor = System.Drawing.Color.Transparent;
             this.guna2Panel7.BorderRadius = 15;
-            this.guna2Panel7.Controls.Add(this.lblTotalRevenue);
-            this.guna2Panel7.Controls.Add(this.todaysRevenue);
+            this.guna2Panel7.Controls.Add(this.lblTotalNumOrder);
+            this.guna2Panel7.Controls.Add(this.pendingOrders);
             this.guna2Panel7.FillColor = System.Drawing.Color.White;
             this.guna2Panel7.Location = new System.Drawing.Point(541, 3);
             this.guna2Panel7.Name = "guna2Panel7";
@@ -328,7 +328,7 @@
             this.lblTotalRevenue.AutoSize = true;
             this.lblTotalRevenue.Font = new System.Drawing.Font("Segoe UI Symbol", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTotalRevenue.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblTotalRevenue.Location = new System.Drawing.Point(18, 48);
+            this.lblTotalRevenue.Location = new System.Drawing.Point(22, 48);
             this.lblTotalRevenue.Name = "lblTotalRevenue";
             this.lblTotalRevenue.Size = new System.Drawing.Size(36, 32);
             this.lblTotalRevenue.TabIndex = 1;
@@ -340,7 +340,7 @@
             this.todaysRevenue.AutoSize = true;
             this.todaysRevenue.Font = new System.Drawing.Font("Segoe UI Symbol", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.todaysRevenue.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.todaysRevenue.Location = new System.Drawing.Point(10, 18);
+            this.todaysRevenue.Location = new System.Drawing.Point(14, 18);
             this.todaysRevenue.Name = "todaysRevenue";
             this.todaysRevenue.Size = new System.Drawing.Size(158, 30);
             this.todaysRevenue.TabIndex = 0;

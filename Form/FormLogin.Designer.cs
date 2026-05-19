@@ -130,7 +130,7 @@
             this.logInHeader_lbl.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.logInHeader_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.logInHeader_lbl.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.logInHeader_lbl.Location = new System.Drawing.Point(83, 122);
+            this.logInHeader_lbl.Location = new System.Drawing.Point(114, 122);
             this.logInHeader_lbl.Name = "logInHeader_lbl";
             this.logInHeader_lbl.Size = new System.Drawing.Size(308, 39);
             this.logInHeader_lbl.TabIndex = 0;
@@ -358,7 +358,7 @@
             this.Controls.Add(this.panel2);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("₱this.Icon")));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.Name = "logInForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

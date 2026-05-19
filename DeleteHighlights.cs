@@ -22,6 +22,7 @@ namespace HotelManagementSystem
                         "SslMode=require;" +
                         "Trust Server Certificate=true;";
 
+        private bool _isLoading = false;
         public DeleteHighlights()
         {
             InitializeComponent();
@@ -36,8 +37,10 @@ namespace HotelManagementSystem
             };
             LoadHighlights();
         }
+
         private void LoadHighlights()
         {
+            _isLoading = true;
             try
             {
                 dataGridViewHighlights.Rows.Clear();
@@ -65,9 +68,14 @@ namespace HotelManagementSystem
             {
                 MessageBox.Show("Error loading highlights:\n" + ex.Message, "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            finally
+            {
+                _isLoading = false;
+            }
         }
         private void dataGridViewHighlights_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
+            if (_isLoading) return;
             if (e.RowIndex < 0 || e.ColumnIndex != colStatus.Index) return;
 
             string newStatus = dataGridViewHighlights.Rows[e.RowIndex].Cells[colStatus.Index].Value?.ToString();

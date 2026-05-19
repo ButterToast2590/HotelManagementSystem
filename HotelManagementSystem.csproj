@@ -171,6 +171,12 @@
     <Compile Include="EditProfile.Designer.cs">
       <DependentUpon>EditProfile.cs</DependentUpon>
     </Compile>
+    <Compile Include="EditRoom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditRoom.Designer.cs">
+      <DependentUpon>EditRoom.cs</DependentUpon>
+    </Compile>
     <Compile Include="ExtendStay.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -356,6 +362,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="EditProfile.resx">
       <DependentUpon>EditProfile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditRoom.resx">
+      <DependentUpon>EditRoom.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ExtendStay.resx">
       <DependentUpon>ExtendStay.cs</DependentUpon>

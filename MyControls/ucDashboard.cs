@@ -260,7 +260,7 @@ namespace HotelManagementSystem.MyControl
             }
             catch
             {
-                // Room service table may not exist yet — silently skip
+                // If ever na di mabasa yung table skip lang 
             }
         }
 
