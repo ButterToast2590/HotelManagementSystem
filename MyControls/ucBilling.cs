@@ -35,6 +35,7 @@ namespace HotelManagementSystem.MyControls
                 using (NpgsqlConnection conn = new NpgsqlConnection(connString))
                 {
                     conn.Open();
+
                     string bookingSql =
                         "SELECT b.booking_id, b.check_in_date, b.check_out_date, " +
                         "r.price_per_night, b.status, " +
@@ -42,8 +43,8 @@ namespace HotelManagementSystem.MyControls
                         "FROM hotel.bookings b " +
                         "JOIN hotel.rooms r ON b.room_id = r.room_id " +
                         "WHERE b.user_id = @userId " +
-                        "AND b.status IN ('Approved', 'Completed') " +
-                        "ORDER BY CASE WHEN b.status = 'Approved' THEN 0 ELSE 1 END, b.booking_id DESC LIMIT 1;";
+                        "AND b.status = 'Approved' " +
+                        "ORDER BY b.booking_id DESC LIMIT 1;";
 
                     NpgsqlCommand cmd = new NpgsqlCommand(bookingSql, conn);
                     cmd.Parameters.AddWithValue("@userId", UserSession.UserId1);
@@ -60,6 +61,7 @@ namespace HotelManagementSystem.MyControls
                         lblStatus.Text = "No Active Booking";
                         lblStatus.ForeColor = Color.Gray;
                         btnPay.Enabled = false;
+                        dgvCharges.Rows.Clear();
                         return;
                     }
 
@@ -76,6 +78,7 @@ namespace HotelManagementSystem.MyControls
                     decimal fnbTotal = 0;
                     decimal servicesTotal = 0;
 
+                    dgvCharges.Rows.Clear();
 
                     try
                     {
@@ -87,43 +90,44 @@ namespace HotelManagementSystem.MyControls
 
                         NpgsqlCommand chargesCmd = new NpgsqlCommand(chargesSql, conn);
                         chargesCmd.Parameters.AddWithValue("@bookingId", bookingId);
-                        NpgsqlDataReader chargesReader = chargesCmd.ExecuteReader();
 
-                        dgvCharges.Rows.Clear();
-
-                        while (chargesReader.Read())
+                        using (NpgsqlDataReader chargesReader = chargesCmd.ExecuteReader())
                         {
-                            string category = chargesReader["category"].ToString();
-                            decimal amount = Convert.ToDecimal(chargesReader["amount"]);
+                            while (chargesReader.Read())
+                            {
+                                string category = chargesReader["category"].ToString();
+                                decimal amount = Convert.ToDecimal(chargesReader["amount"]);
 
-                            dgvCharges.Rows.Add(
-                                Convert.ToDateTime(chargesReader["charge_date"]).ToString("MMM dd, yyyy"),
-                                chargesReader["description"].ToString(),
-                                category,
-                                "₱" + amount.ToString("N2")
-                            );
+                                dgvCharges.Rows.Add(
+                                    Convert.ToDateTime(chargesReader["charge_date"]).ToString("MMM dd, yyyy"),
+                                    chargesReader["description"].ToString(),
+                                    category,
+                                    "₱" + amount.ToString("N2")
+                                );
 
-                            if (category == "Food & Beverage") fnbTotal += amount;
-                            else if (category == "Services") servicesTotal += amount;
+                                if (category == "Food & Beverage") fnbTotal += amount;
+                                else if (category == "Services") servicesTotal += amount;
+                            }
                         }
-
-                        chargesReader.Close();
                     }
                     catch { dgvCharges.Rows.Clear(); }
 
-
                     try
                     {
+                        // Fixed: filter room service orders by booking date range
                         string rsSql =
-                            "SELECT COALESCE(SUM(total_amount), 0) " +
-                            "FROM hotel.room_service_orders " +
-                            "WHERE user_id = @userId " +
-                            "AND room_id = (SELECT room_id FROM hotel.bookings WHERE booking_id = @bookingId);";
+                            "SELECT COALESCE(SUM(rso.total_amount), 0) " +
+                            "FROM hotel.room_service_orders rso " +
+                            "JOIN hotel.bookings b ON b.booking_id = @bookingId " +
+                            "WHERE rso.user_id = @userId " +
+                            "AND rso.room_id = b.room_id " +
+                            "AND rso.created_at::date >= b.check_in_date::date " +
+                            "AND rso.created_at::date <= b.check_out_date::date;";
 
                         NpgsqlCommand rsCmd = new NpgsqlCommand(rsSql, conn);
                         rsCmd.Parameters.AddWithValue("@userId", UserSession.UserId1);
                         rsCmd.Parameters.AddWithValue("@bookingId", bookingId);
-                        decimal rsTotal = Convert.ToDecimal(rsCmd.ExecuteScalar());
+                        decimal rsTotal = Convert.ToDecimal(rsCmd.ExecuteScalar() ?? 0);
                         fnbTotal += rsTotal;
 
                         if (rsTotal > 0)
@@ -136,7 +140,7 @@ namespace HotelManagementSystem.MyControls
                             );
                         }
                     }
-                    catch {  }
+                    catch { }
 
                     dgvCharges.Rows.Insert(0,
                         checkIn.ToString("MMM dd, yyyy"),
@@ -145,9 +149,9 @@ namespace HotelManagementSystem.MyControls
                         "₱" + roomCharges.ToString("N2")
                     );
 
-                    decimal subtotal = roomCharges + fnbTotal + servicesTotal; 
-                    decimal tax = Math.Round(subtotal * 0.12m, 2);            
-                    decimal total = subtotal + tax;                          
+                    decimal subtotal = roomCharges + fnbTotal + servicesTotal;
+                    decimal tax = Math.Round(subtotal * 0.12m, 2);
+                    decimal total = subtotal + tax;
 
                     lblRoomValue.Text = "₱" + roomCharges.ToString("N2");
                     lblFnBValue.Text = "₱" + fnbTotal.ToString("N2");
@@ -156,18 +160,9 @@ namespace HotelManagementSystem.MyControls
                     lblTaxValue.Text = "₱" + tax.ToString("N2");
                     lblTotalValue.Text = "₱" + total.ToString("N2");
 
-                    if (status == "Completed")
-                    {
-                        lblStatus.Text = "Paid";
-                        lblStatus.ForeColor = Color.SeaGreen;
-                        btnPay.Enabled = false;
-                    }
-                    else
-                    {
-                        lblStatus.Text = "Unpaid";
-                        lblStatus.ForeColor = Color.Red;
-                        btnPay.Enabled = true;
-                    }
+                    lblStatus.Text = "Unpaid";
+                    lblStatus.ForeColor = Color.Red;
+                    btnPay.Enabled = true;
                 }
             }
             catch (Exception ex)
@@ -183,11 +178,12 @@ namespace HotelManagementSystem.MyControls
                 using (NpgsqlConnection conn = new NpgsqlConnection(connString))
                 {
                     conn.Open();
+
                     string checkSql =
                         "SELECT status FROM hotel.bookings " +
                         "WHERE user_id = @userId " +
-                        "AND status IN ('Approved', 'Completed') " +
-                        "ORDER BY CASE WHEN status = 'Approved' THEN 0 ELSE 1 END, check_in_date DESC LIMIT 1;";
+                        "AND status = 'Approved' " +
+                        "ORDER BY check_in_date DESC LIMIT 1;";
 
                     NpgsqlCommand checkCmd = new NpgsqlCommand(checkSql, conn);
                     checkCmd.Parameters.AddWithValue("@userId", UserSession.UserId1);
@@ -195,12 +191,8 @@ namespace HotelManagementSystem.MyControls
 
                     if (string.IsNullOrEmpty(currentStatus))
                     {
-                        MessageBox.Show("You have no outstanding balance to pay.", "No Balance", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        return;
-                    }
-                    if (currentStatus == "Completed")
-                    {
-                        MessageBox.Show("Your balance has already been paid. Thank you!", "Already Paid", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("You have no outstanding balance to pay.", "No Balance",
+                            MessageBoxButtons.OK, MessageBoxIcon.Information);
                         return;
                     }
                 }
@@ -211,19 +203,23 @@ namespace HotelManagementSystem.MyControls
                 return;
             }
 
-
             DialogResult earlyOut = MessageBox.Show(
-                "Would you like to check out early?\n\n" + "• Yes — settle your bill now and check out.\n" + "• No  — your bill will be settled at the end of your booking. Enjoy your stay!",
+                "Would you like to check out early?\n\n" +
+                "• Yes — settle your bill now and check out.\n" +
+                "• No  — your bill will be settled at the end of your booking. Enjoy your stay!",
                 "Early Check-Out?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
             if (earlyOut == DialogResult.No)
             {
                 MessageBox.Show(
-                    "No problem! Your bill will be settled at the end of your booking.\n\nEnjoy your stay!", "Enjoy Your Stay", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    "No problem! Your bill will be settled at the end of your booking.\n\nEnjoy your stay!",
+                    "Enjoy Your Stay", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
+
             DialogResult confirm = MessageBox.Show(
-                "Are you sure you want to check out early and settle your bill now?", "Confirm Early Check-Out", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                "Are you sure you want to check out early and settle your bill now?",
+                "Confirm Early Check-Out", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
             if (confirm != DialogResult.Yes) return;
 
@@ -233,11 +229,22 @@ namespace HotelManagementSystem.MyControls
                 {
                     conn.Open();
 
+                    // Get booking_id first for the date range filter
+                    string getBookingIdSql =
+                        "SELECT booking_id FROM hotel.bookings " +
+                        "WHERE user_id = @userId AND status = 'Approved' " +
+                        "ORDER BY booking_id DESC LIMIT 1;";
+
+                    NpgsqlCommand getBookingCmd = new NpgsqlCommand(getBookingIdSql, conn);
+                    getBookingCmd.Parameters.AddWithValue("@userId", UserSession.UserId1);
+                    long bookingId = Convert.ToInt64(getBookingCmd.ExecuteScalar() ?? 0);
+
                     string calcSql =
                         "SELECT GREATEST((CURRENT_DATE - b.check_in_date::date), 1) * r.price_per_night " +
                         "FROM hotel.bookings b " +
                         "JOIN hotel.rooms r ON b.room_id = r.room_id " +
                         "WHERE b.user_id = @userId AND b.status = 'Approved';";
+
                     NpgsqlCommand calcCmd = new NpgsqlCommand(calcSql, conn);
                     calcCmd.Parameters.AddWithValue("@userId", UserSession.UserId1);
                     decimal roomAmount = Convert.ToDecimal(calcCmd.ExecuteScalar() ?? 0);
@@ -246,13 +253,17 @@ namespace HotelManagementSystem.MyControls
                     try
                     {
                         string rsSql =
-                            "SELECT COALESCE(SUM(total_amount), 0) " +
-                            "FROM hotel.room_service_orders " +
-                            "WHERE user_id = @userId " +
-                            "AND room_id = (SELECT room_id FROM hotel.bookings " +
-                            "              WHERE user_id = @userId AND status = 'Approved' LIMIT 1);";
+                            "SELECT COALESCE(SUM(rso.total_amount), 0) " +
+                            "FROM hotel.room_service_orders rso " +
+                            "JOIN hotel.bookings b ON b.booking_id = @bookingId " +
+                            "WHERE rso.user_id = @userId " +
+                            "AND rso.room_id = b.room_id " +
+                            "AND rso.created_at::date >= b.check_in_date::date " +
+                            "AND rso.created_at::date <= b.check_out_date::date;";
+
                         NpgsqlCommand rsCmd = new NpgsqlCommand(rsSql, conn);
                         rsCmd.Parameters.AddWithValue("@userId", UserSession.UserId1);
+                        rsCmd.Parameters.AddWithValue("@bookingId", bookingId);
                         rsAmount = Convert.ToDecimal(rsCmd.ExecuteScalar() ?? 0);
                     }
                     catch { rsAmount = 0; }
@@ -266,6 +277,7 @@ namespace HotelManagementSystem.MyControls
                         "SET check_out_date = @today, status = 'Completed', " +
                         "paid_at = NOW(), total_paid = @totalPaid " +
                         "WHERE user_id = @userId AND status = 'Approved';";
+
                     NpgsqlCommand cmd = new NpgsqlCommand(sql, conn);
                     cmd.Parameters.AddWithValue("@today", DateTime.Today);
                     cmd.Parameters.AddWithValue("@userId", UserSession.UserId1);
@@ -274,8 +286,10 @@ namespace HotelManagementSystem.MyControls
                 }
 
                 MessageBox.Show(
-                    "You have been checked out and your bill has been settled.\n\nThank you for your stay!", "Checked Out Successfully",MessageBoxButtons.OK, MessageBoxIcon.Information);
-                LoadBillingData(); 
+                    "You have been checked out and your bill has been settled.\n\nThank you for your stay!",
+                    "Checked Out Successfully", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                LoadBillingData();
             }
             catch (Exception ex)
             {
