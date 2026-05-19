@@ -122,19 +122,31 @@ namespace HotelManagementSystem.MyControl
         {
             try
             {
+                long roomId = 0;
+                using (NpgsqlConnection conn = new NpgsqlConnection(connString))
+                {
+                    conn.Open();
+                    NpgsqlCommand roomCmd = new NpgsqlCommand(
+                        "SELECT room_id FROM hotel.bookings WHERE booking_id = @bookingId;", conn);
+                    roomCmd.Parameters.AddWithValue("@bookingId", bookingId);
+                    roomId = Convert.ToInt64(roomCmd.ExecuteScalar());
+                }
                 string sql =
                     "SELECT COALESCE(SUM(total_amount), 0) " +
                     "FROM hotel.room_service_orders " +
                     "WHERE user_id = @userId " +
-                    "AND booking_id = @bookingId " +
-                    "AND payment_status != 'Paid';";
+                    "AND room_id = @roomId " +
+                    "AND created_at::date >= @checkIn " +
+                    "AND created_at::date <= @checkOut;";
 
                 using (NpgsqlConnection conn = new NpgsqlConnection(connString))
                 {
                     conn.Open();
                     NpgsqlCommand cmd = new NpgsqlCommand(sql, conn);
                     cmd.Parameters.AddWithValue("@userId", _loggedInUserId);
-                    cmd.Parameters.AddWithValue("@bookingId", bookingId);
+                    cmd.Parameters.AddWithValue("@roomId", roomId);
+                    cmd.Parameters.AddWithValue("@checkIn", checkIn);
+                    cmd.Parameters.AddWithValue("@checkOut", checkOut);
                     decimal rsTotal = Convert.ToDecimal(cmd.ExecuteScalar());
 
                     decimal subtotal = roomBill + rsTotal;
@@ -161,11 +173,11 @@ namespace HotelManagementSystem.MyControl
 
                 string sql =
                     "SELECT b.first_name || ' ' || b.last_name AS guest_name, " +
-                    "       r.room_number, " +
-                    "       b.check_in_date, " +
-                    "       b.check_out_date, " +
-                    "       b.status, " +
-                    "       r.price_per_night " +
+                    "r.room_number, " +
+                    "b.check_in_date, " +
+                    "b.check_out_date, " +
+                    "b.status, " +
+                    "r.price_per_night " +
                     "FROM hotel.bookings b " +
                     "JOIN hotel.rooms r ON b.room_id = r.room_id " +
                     "WHERE b.user_id = @userId " +
@@ -218,7 +230,8 @@ namespace HotelManagementSystem.MyControl
                     "SELECT rso.floor_number, " +
                     "       r.room_number, " +
                     "       rso.status      AS rs_status, " +
-                    "       rso.total_amount " +
+                    "       rso.total_amount, " +
+                    "       rso.created_at " +        
                     "FROM hotel.room_service_orders rso " +
                     "JOIN hotel.rooms r ON rso.room_id = r.room_id " +
                     "WHERE rso.user_id = @userId " +
@@ -233,7 +246,10 @@ namespace HotelManagementSystem.MyControl
 
                     while (reader.Read())
                     {
+                        DateTime orderedAt = Convert.ToDateTime(reader["created_at"]);
+
                         rsGrid.Rows.Add(
+                            orderedAt.ToString("MMM dd, yyyy hh:mm tt"),
                             reader["floor_number"].ToString(),
                             "Room " + reader["room_number"].ToString(),
                             reader["rs_status"].ToString(),

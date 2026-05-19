@@ -28,15 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.colFloorNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColFloorTotalNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colRoomNumAvailble = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label2 = new System.Windows.Forms.Label();
             this.guna2Panel10 = new Guna.UI2.WinForms.Guna2Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.colclientsName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colroomNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colroomType = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label23 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
@@ -53,13 +60,6 @@
             this.lblTotalGuest = new System.Windows.Forms.Label();
             this.totalGuest = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
-            this.colFloorNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColFloorTotalNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colRoomNumAvailble = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colclientsName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colroomNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colroomType = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.guna2Panel1.SuspendLayout();
@@ -120,14 +120,14 @@
             // dataGridView2
             // 
             this.dataGridView2.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI Symbol", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Symbol", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colFloorNum,
@@ -138,6 +138,25 @@
             this.dataGridView2.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dataGridView2.Size = new System.Drawing.Size(502, 582);
             this.dataGridView2.TabIndex = 2;
+            // 
+            // colFloorNum
+            // 
+            this.colFloorNum.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colFloorNum.HeaderText = "Floor Number";
+            this.colFloorNum.Name = "colFloorNum";
+            // 
+            // ColFloorTotalNum
+            // 
+            this.ColFloorTotalNum.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ColFloorTotalNum.HeaderText = "Total Number of Room";
+            this.ColFloorTotalNum.Name = "ColFloorTotalNum";
+            this.ColFloorTotalNum.ReadOnly = true;
+            // 
+            // colRoomNumAvailble
+            // 
+            this.colRoomNumAvailble.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colRoomNumAvailble.HeaderText = "Number of Room Avialable";
+            this.colRoomNumAvailble.Name = "colRoomNumAvailble";
             // 
             // label2
             // 
@@ -169,14 +188,14 @@
             // dataGridView1
             // 
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI Symbol", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Symbol", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colclientsName,
@@ -188,6 +207,29 @@
             this.dataGridView1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dataGridView1.Size = new System.Drawing.Size(502, 582);
             this.dataGridView1.TabIndex = 1;
+            // 
+            // colclientsName
+            // 
+            this.colclientsName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colclientsName.HeaderText = "Clients Name";
+            this.colclientsName.Name = "colclientsName";
+            this.colclientsName.ReadOnly = true;
+            // 
+            // colroomNum
+            // 
+            this.colroomNum.HeaderText = "Room Number";
+            this.colroomNum.Name = "colroomNum";
+            this.colroomNum.ReadOnly = true;
+            // 
+            // colroomType
+            // 
+            this.colroomType.HeaderText = "RoomType";
+            this.colroomType.Name = "colroomType";
+            // 
+            // colStatus
+            // 
+            this.colStatus.HeaderText = "Status";
+            this.colStatus.Name = "colStatus";
             // 
             // label23
             // 
@@ -291,6 +333,7 @@
             this.lblTotalRevenue.Size = new System.Drawing.Size(36, 32);
             this.lblTotalRevenue.TabIndex = 1;
             this.lblTotalRevenue.Text = "__";
+            this.lblTotalRevenue.Click += new System.EventHandler(this.lblTotalRevenue_Click);
             // 
             // todaysRevenue
             // 
@@ -387,48 +430,6 @@
             this.label21.Size = new System.Drawing.Size(184, 45);
             this.label21.TabIndex = 27;
             this.label21.Text = "Dashboard";
-            // 
-            // colFloorNum
-            // 
-            this.colFloorNum.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colFloorNum.HeaderText = "Floor Number";
-            this.colFloorNum.Name = "colFloorNum";
-            // 
-            // ColFloorTotalNum
-            // 
-            this.ColFloorTotalNum.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.ColFloorTotalNum.HeaderText = "Total Number of Room";
-            this.ColFloorTotalNum.Name = "ColFloorTotalNum";
-            this.ColFloorTotalNum.ReadOnly = true;
-            // 
-            // colRoomNumAvailble
-            // 
-            this.colRoomNumAvailble.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colRoomNumAvailble.HeaderText = "Number of Room Avialable";
-            this.colRoomNumAvailble.Name = "colRoomNumAvailble";
-            // 
-            // colclientsName
-            // 
-            this.colclientsName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colclientsName.HeaderText = "Clients Name";
-            this.colclientsName.Name = "colclientsName";
-            this.colclientsName.ReadOnly = true;
-            // 
-            // colroomNum
-            // 
-            this.colroomNum.HeaderText = "Room Number";
-            this.colroomNum.Name = "colroomNum";
-            this.colroomNum.ReadOnly = true;
-            // 
-            // colroomType
-            // 
-            this.colroomType.HeaderText = "RoomType";
-            this.colroomType.Name = "colroomType";
-            // 
-            // colStatus
-            // 
-            this.colStatus.HeaderText = "Status";
-            this.colStatus.Name = "colStatus";
             // 
             // ucAdminDash
             // 

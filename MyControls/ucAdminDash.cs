@@ -199,5 +199,10 @@ namespace HotelManagementSystem.MyControls
         {
 
         }
+
+        private void lblTotalRevenue_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

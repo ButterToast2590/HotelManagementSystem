@@ -22,15 +22,18 @@ namespace HotelManagementSystem.MyControls
                     "SearchPath=public,hotel;" +
                     "SslMode=require;" +
                     "Trust Server Certificate=true;";
+
         public ucAdminGuest()
         {
             InitializeComponent();
         }
+
         private void ucAdminGuest_Load(object sender, EventArgs e)
         {
             LoadCounters();
             LoadGuestList();
         }
+
         private void LoadCounters()
         {
             try
@@ -65,6 +68,7 @@ namespace HotelManagementSystem.MyControls
                 MessageBox.Show("Error loading counters: " + ex.Message);
             }
         }
+
         private void LoadGuestList()
         {
             try
@@ -78,7 +82,11 @@ namespace HotelManagementSystem.MyControls
                     "       b.check_out_date, " +
                     "       b.status, " +
                     "       r.price_per_night, " +
-                    "       (b.check_out_date::date - b.check_in_date::date) AS nights " +
+                    "       (b.check_out_date::date - b.check_in_date::date) AS nights, " +
+                    "       COALESCE((SELECT SUM(rso.total_amount) " +
+                    "                 FROM hotel.room_service_orders rso " +
+                    "                 WHERE rso.user_id = b.user_id " +
+                    "                 AND rso.room_id = b.room_id), 0) AS service_total " +
                     "FROM hotel.bookings b " +
                     "JOIN hotel.rooms r ON b.room_id = r.room_id " +
                     "ORDER BY b.check_in_date DESC;";
@@ -94,9 +102,11 @@ namespace HotelManagementSystem.MyControls
                         int nights = Convert.ToInt32(reader["nights"]);
                         if (nights <= 0) nights = 1;
                         decimal rate = Convert.ToDecimal(reader["price_per_night"]);
-                        decimal subtotal = rate * nights;
+                        decimal serviceTotal = Convert.ToDecimal(reader["service_total"]);
+
+                        decimal subtotal = (rate * nights) + serviceTotal;
                         decimal tax = Math.Round(subtotal * 0.12m, 2);
-                        decimal bill = subtotal + tax;                
+                        decimal bill = subtotal + tax;
 
                         int rowIdx = guestList.Rows.Add(
                             reader["guest_name"].ToString(),
@@ -123,9 +133,6 @@ namespace HotelManagementSystem.MyControls
             }
         }
 
-        private void lblNumOfGuest_Click(object sender, EventArgs e)
-        {
-
-        }
+        private void lblNumOfGuest_Click(object sender, EventArgs e) { }
     }
 }

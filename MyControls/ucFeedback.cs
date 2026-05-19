@@ -34,6 +34,7 @@ namespace HotelManagementSystem.MyControls
 
         private void ucFeedback_Load(object sender, EventArgs e)
         {
+            LoadGuestSatisfaction();
             LoadPreviousReviews();
         }
 
@@ -101,7 +102,75 @@ namespace HotelManagementSystem.MyControls
                                 MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+        private void LoadGuestSatisfaction()
+        {
+            try
+            {
+                using (var conn = new NpgsqlConnection(connString))
+                {
+                    conn.Open();
 
+                    string sql = @"SELECT 
+                            COUNT(*) AS total_reviews,
+                            ROUND(AVG(room_cleanliness), 1) AS cleanliness,
+                            ROUND(AVG(staff_service), 1)    AS staff,
+                            ROUND(AVG(food_beverage), 1)    AS food,
+                            ROUND(AVG(room_service), 1)     AS room_service,
+                            ROUND(AVG(facilities_amenities),1) AS facilities,
+                            ROUND(AVG(overall_experience),  1) AS experience
+                           FROM hotel.feedback";
+
+                    using (var cmd = new NpgsqlCommand(sql, conn))
+                    using (var reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            long totalReviews = Convert.ToInt64(reader["total_reviews"]);
+                            double cleanliness = reader.IsDBNull(1) ? 0 : Convert.ToDouble(reader["cleanliness"]);
+                            double staff = reader.IsDBNull(2) ? 0 : Convert.ToDouble(reader["staff"]);
+                            double food = reader.IsDBNull(3) ? 0 : Convert.ToDouble(reader["food"]);
+                            double roomService = reader.IsDBNull(4) ? 0 : Convert.ToDouble(reader["room_service"]);
+                            double facilities = reader.IsDBNull(5) ? 0 : Convert.ToDouble(reader["facilities"]);
+                            double experience = reader.IsDBNull(6) ? 0 : Convert.ToDouble(reader["experience"]);
+
+                            double overall = (cleanliness + staff + food + roomService + facilities + experience) / 6.0;
+                            overall = Math.Round(overall, 1);
+
+  
+                            lblNumOverall.Text = overall.ToString("0.0") + " / 5.0";
+                            lblNumberOfRev.Text = totalReviews + " review" + (totalReviews != 1 ? "s" : "");
+                            starShowcase.Value = (int)Math.Round(overall);
+
+
+                            lblCleanRate.Text = cleanliness.ToString("0.0") + " / 5.0";
+                            lblStaffRate.Text = staff.ToString("0.0") + " / 5.0";
+                            lblFoodRate.Text = food.ToString("0.0") + " / 5.0";
+                            lblRoomRate.Text = roomService.ToString("0.0") + " / 5.0";
+                            lblFacilitiesRate.Text = facilities.ToString("0.0") + " / 5.0";
+                            lblExperienceRate.Text = experience.ToString("0.0") + " / 5.0";
+
+                            pbCleanliness.Maximum = 5;
+                            pbStaff.Maximum = 5;
+                            pbFood.Maximum = 5;
+                            pbRoom.Maximum = 5;
+                            pbFacilities.Maximum = 5;
+                            pbExperience.Maximum = 5;
+
+                            pbCleanliness.Value = (int)Math.Round(cleanliness);
+                            pbStaff.Value = (int)Math.Round(staff);
+                            pbFood.Value = (int)Math.Round(food);
+                            pbRoom.Value = (int)Math.Round(roomService);
+                            pbFacilities.Value = (int)Math.Round(facilities);
+                            pbExperience.Value = (int)Math.Round(experience);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error loading satisfaction: " + ex.Message);
+            }
+        }
         private void LoadPreviousReviews()
         {
             try
@@ -147,5 +216,10 @@ namespace HotelManagementSystem.MyControls
 
         private void lblOrderTitle_Click(object sender, EventArgs e) { }
         private void lblRateTitle_Click(object sender, EventArgs e) { }
+
+        private void tableLayoutPanel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

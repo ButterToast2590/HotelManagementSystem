@@ -28,16 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
-            this.reviewsDataGridView = new System.Windows.Forms.DataGridView();
-            this.colReview = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colRating = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label13 = new System.Windows.Forms.Label();
-            this.lblReviewsTitle = new System.Windows.Forms.Label();
             this.panelLeft = new Guna.UI2.WinForms.Guna2Panel();
             this.btnPlaceOrder = new Guna.UI2.WinForms.Guna2Button();
             this.commentBox = new Guna.UI2.WinForms.Guna2TextBox();
@@ -63,10 +56,40 @@
             this.lblRateTitle = new System.Windows.Forms.Label();
             this.lblSubtitle = new System.Windows.Forms.Label();
             this.lblTitle = new System.Windows.Forms.Label();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
+            this.reviewsDataGridView = new System.Windows.Forms.DataGridView();
+            this.colReview = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colRating = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label13 = new System.Windows.Forms.Label();
+            this.lblReviewsTitle = new System.Windows.Forms.Label();
+            this.guna2Panel8 = new Guna.UI2.WinForms.Guna2Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.starShowcase = new Guna.UI2.WinForms.Guna2RatingStar();
+            this.lblNumOverall = new System.Windows.Forms.Label();
+            this.lblNumberOfRev = new System.Windows.Forms.Label();
+            this.guna2Panel9 = new Guna.UI2.WinForms.Guna2Panel();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.pbCleanliness = new Guna.UI2.WinForms.Guna2ProgressBar();
+            this.pbStaff = new Guna.UI2.WinForms.Guna2ProgressBar();
+            this.pbFood = new Guna.UI2.WinForms.Guna2ProgressBar();
+            this.pbRoom = new Guna.UI2.WinForms.Guna2ProgressBar();
+            this.pbFacilities = new Guna.UI2.WinForms.Guna2ProgressBar();
+            this.pbExperience = new Guna.UI2.WinForms.Guna2ProgressBar();
+            this.lblCleanRate = new System.Windows.Forms.Label();
+            this.lblStaffRate = new System.Windows.Forms.Label();
+            this.lblFoodRate = new System.Windows.Forms.Label();
+            this.lblRoomRate = new System.Windows.Forms.Label();
+            this.lblFacilitiesRate = new System.Windows.Forms.Label();
+            this.lblExperienceRate = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
-            this.guna2Panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.reviewsDataGridView)).BeginInit();
             this.panelLeft.SuspendLayout();
             this.guna2Panel7.SuspendLayout();
             this.guna2Panel6.SuspendLayout();
@@ -74,6 +97,11 @@
             this.guna2Panel4.SuspendLayout();
             this.guna2Panel3.SuspendLayout();
             this.guna2Panel1.SuspendLayout();
+            this.tableLayoutPanel2.SuspendLayout();
+            this.guna2Panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.reviewsDataGridView)).BeginInit();
+            this.guna2Panel8.SuspendLayout();
+            this.guna2Panel9.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -96,92 +124,14 @@
             this.tableLayoutPanel1.ColumnCount = 2;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Controls.Add(this.guna2Panel2, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.panelLeft, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 1, 0);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(19, 83);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1072, 775);
             this.tableLayoutPanel1.TabIndex = 33;
-            // 
-            // guna2Panel2
-            // 
-            this.guna2Panel2.BackColor = System.Drawing.Color.Transparent;
-            this.guna2Panel2.BorderRadius = 15;
-            this.guna2Panel2.Controls.Add(this.reviewsDataGridView);
-            this.guna2Panel2.Controls.Add(this.label13);
-            this.guna2Panel2.Controls.Add(this.lblReviewsTitle);
-            this.guna2Panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.guna2Panel2.FillColor = System.Drawing.Color.White;
-            this.guna2Panel2.Location = new System.Drawing.Point(539, 3);
-            this.guna2Panel2.Name = "guna2Panel2";
-            this.guna2Panel2.Size = new System.Drawing.Size(530, 769);
-            this.guna2Panel2.TabIndex = 29;
-            // 
-            // reviewsDataGridView
-            // 
-            this.reviewsDataGridView.BackgroundColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Symbol", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.reviewsDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.reviewsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.reviewsDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.colReview,
-            this.colRating,
-            this.colDate});
-            this.reviewsDataGridView.Location = new System.Drawing.Point(18, 72);
-            this.reviewsDataGridView.Name = "reviewsDataGridView";
-            this.reviewsDataGridView.Size = new System.Drawing.Size(496, 597);
-            this.reviewsDataGridView.TabIndex = 62;
-            // 
-            // colReview
-            // 
-            this.colReview.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colReview.HeaderText = "Review";
-            this.colReview.Name = "colReview";
-            this.colReview.ReadOnly = true;
-            // 
-            // colRating
-            // 
-            this.colRating.HeaderText = "Rating";
-            this.colRating.Name = "colRating";
-            this.colRating.ReadOnly = true;
-            // 
-            // colDate
-            // 
-            this.colDate.HeaderText = "Date";
-            this.colDate.Name = "colDate";
-            this.colDate.ReadOnly = true;
-            // 
-            // label13
-            // 
-            this.label13.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.label13.AutoSize = true;
-            this.label13.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.ForeColor = System.Drawing.Color.DimGray;
-            this.label13.Location = new System.Drawing.Point(25, 352);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(0, 18);
-            this.label13.TabIndex = 57;
-            // 
-            // lblReviewsTitle
-            // 
-            this.lblReviewsTitle.AutoSize = true;
-            this.lblReviewsTitle.Font = new System.Drawing.Font("Segoe UI Symbol", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblReviewsTitle.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.lblReviewsTitle.Location = new System.Drawing.Point(13, 14);
-            this.lblReviewsTitle.Name = "lblReviewsTitle";
-            this.lblReviewsTitle.Size = new System.Drawing.Size(216, 30);
-            this.lblReviewsTitle.TabIndex = 0;
-            this.lblReviewsTitle.Text = "PREVIOUS REVIEWS";
-            this.lblReviewsTitle.Click += new System.EventHandler(this.lblOrderTitle_Click);
             // 
             // panelLeft
             // 
@@ -473,6 +423,377 @@
             this.lblTitle.TabIndex = 29;
             this.lblTitle.Text = "Feedback";
             // 
+            // tableLayoutPanel2
+            // 
+            this.tableLayoutPanel2.ColumnCount = 1;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.Controls.Add(this.guna2Panel8, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.guna2Panel2, 0, 1);
+            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(539, 3);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 2;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 44.3433F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 55.6567F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(530, 769);
+            this.tableLayoutPanel2.TabIndex = 29;
+            this.tableLayoutPanel2.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel2_Paint);
+            // 
+            // guna2Panel2
+            // 
+            this.guna2Panel2.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Panel2.BorderRadius = 15;
+            this.guna2Panel2.Controls.Add(this.reviewsDataGridView);
+            this.guna2Panel2.Controls.Add(this.label13);
+            this.guna2Panel2.Controls.Add(this.lblReviewsTitle);
+            this.guna2Panel2.FillColor = System.Drawing.Color.White;
+            this.guna2Panel2.Location = new System.Drawing.Point(3, 344);
+            this.guna2Panel2.Name = "guna2Panel2";
+            this.guna2Panel2.Size = new System.Drawing.Size(524, 422);
+            this.guna2Panel2.TabIndex = 38;
+            // 
+            // reviewsDataGridView
+            // 
+            this.reviewsDataGridView.BackgroundColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Symbol", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.reviewsDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.reviewsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.reviewsDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colReview,
+            this.colRating,
+            this.colDate});
+            this.reviewsDataGridView.Location = new System.Drawing.Point(15, 47);
+            this.reviewsDataGridView.Name = "reviewsDataGridView";
+            this.reviewsDataGridView.Size = new System.Drawing.Size(496, 362);
+            this.reviewsDataGridView.TabIndex = 62;
+            // 
+            // colReview
+            // 
+            this.colReview.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colReview.HeaderText = "Review";
+            this.colReview.Name = "colReview";
+            this.colReview.ReadOnly = true;
+            // 
+            // colRating
+            // 
+            this.colRating.HeaderText = "Rating";
+            this.colRating.Name = "colRating";
+            this.colRating.ReadOnly = true;
+            // 
+            // colDate
+            // 
+            this.colDate.HeaderText = "Date";
+            this.colDate.Name = "colDate";
+            this.colDate.ReadOnly = true;
+            // 
+            // label13
+            // 
+            this.label13.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.label13.AutoSize = true;
+            this.label13.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.Color.DimGray;
+            this.label13.Location = new System.Drawing.Point(25, 179);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(0, 18);
+            this.label13.TabIndex = 57;
+            // 
+            // lblReviewsTitle
+            // 
+            this.lblReviewsTitle.AutoSize = true;
+            this.lblReviewsTitle.Font = new System.Drawing.Font("Segoe UI Symbol", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblReviewsTitle.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.lblReviewsTitle.Location = new System.Drawing.Point(13, 14);
+            this.lblReviewsTitle.Name = "lblReviewsTitle";
+            this.lblReviewsTitle.Size = new System.Drawing.Size(216, 30);
+            this.lblReviewsTitle.TabIndex = 0;
+            this.lblReviewsTitle.Text = "PREVIOUS REVIEWS";
+            // 
+            // guna2Panel8
+            // 
+            this.guna2Panel8.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Panel8.BorderRadius = 15;
+            this.guna2Panel8.Controls.Add(this.guna2Panel9);
+            this.guna2Panel8.Controls.Add(this.lblNumberOfRev);
+            this.guna2Panel8.Controls.Add(this.lblNumOverall);
+            this.guna2Panel8.Controls.Add(this.starShowcase);
+            this.guna2Panel8.Controls.Add(this.label3);
+            this.guna2Panel8.FillColor = System.Drawing.Color.White;
+            this.guna2Panel8.Location = new System.Drawing.Point(3, 3);
+            this.guna2Panel8.Name = "guna2Panel8";
+            this.guna2Panel8.Size = new System.Drawing.Size(524, 335);
+            this.guna2Panel8.TabIndex = 39;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI Symbol", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.label3.Location = new System.Drawing.Point(13, 14);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(237, 30);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "GUEST SATISFACTION";
+            // 
+            // starShowcase
+            // 
+            this.starShowcase.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.starShowcase.Location = new System.Drawing.Point(18, 47);
+            this.starShowcase.Name = "starShowcase";
+            this.starShowcase.ReadOnly = true;
+            this.starShowcase.Size = new System.Drawing.Size(105, 26);
+            this.starShowcase.TabIndex = 62;
+            // 
+            // lblNumOverall
+            // 
+            this.lblNumOverall.AutoSize = true;
+            this.lblNumOverall.Font = new System.Drawing.Font("Segoe UI Symbol", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNumOverall.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.lblNumOverall.Location = new System.Drawing.Point(140, 49);
+            this.lblNumOverall.Name = "lblNumOverall";
+            this.lblNumOverall.Size = new System.Drawing.Size(61, 20);
+            this.lblNumOverall.TabIndex = 63;
+            this.lblNumOverall.Text = "0.0 / 5.0";
+            // 
+            // lblNumberOfRev
+            // 
+            this.lblNumberOfRev.AutoSize = true;
+            this.lblNumberOfRev.Font = new System.Drawing.Font("Segoe UI Symbol", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNumberOfRev.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.lblNumberOfRev.Location = new System.Drawing.Point(431, 49);
+            this.lblNumberOfRev.Name = "lblNumberOfRev";
+            this.lblNumberOfRev.Size = new System.Drawing.Size(62, 20);
+            this.lblNumberOfRev.TabIndex = 64;
+            this.lblNumberOfRev.Text = "- review";
+            // 
+            // guna2Panel9
+            // 
+            this.guna2Panel9.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Panel9.BorderRadius = 10;
+            this.guna2Panel9.BorderThickness = 1;
+            this.guna2Panel9.Controls.Add(this.lblExperienceRate);
+            this.guna2Panel9.Controls.Add(this.lblFacilitiesRate);
+            this.guna2Panel9.Controls.Add(this.lblRoomRate);
+            this.guna2Panel9.Controls.Add(this.lblFoodRate);
+            this.guna2Panel9.Controls.Add(this.lblStaffRate);
+            this.guna2Panel9.Controls.Add(this.lblCleanRate);
+            this.guna2Panel9.Controls.Add(this.pbExperience);
+            this.guna2Panel9.Controls.Add(this.pbFacilities);
+            this.guna2Panel9.Controls.Add(this.pbRoom);
+            this.guna2Panel9.Controls.Add(this.pbFood);
+            this.guna2Panel9.Controls.Add(this.pbStaff);
+            this.guna2Panel9.Controls.Add(this.pbCleanliness);
+            this.guna2Panel9.Controls.Add(this.label7);
+            this.guna2Panel9.Controls.Add(this.label8);
+            this.guna2Panel9.Controls.Add(this.label9);
+            this.guna2Panel9.Controls.Add(this.label6);
+            this.guna2Panel9.Controls.Add(this.label5);
+            this.guna2Panel9.Controls.Add(this.label4);
+            this.guna2Panel9.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(249)))), ((int)(((byte)(250)))));
+            this.guna2Panel9.Location = new System.Drawing.Point(18, 82);
+            this.guna2Panel9.Name = "guna2Panel9";
+            this.guna2Panel9.Size = new System.Drawing.Size(493, 241);
+            this.guna2Panel9.TabIndex = 65;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI Symbol", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label4.Location = new System.Drawing.Point(18, 20);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(82, 20);
+            this.label4.TabIndex = 65;
+            this.label4.Text = "Cleanliness";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Segoe UI Symbol", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label5.Location = new System.Drawing.Point(18, 55);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(40, 20);
+            this.label5.TabIndex = 66;
+            this.label5.Text = "Staff";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Segoe UI Symbol", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label6.Location = new System.Drawing.Point(18, 92);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(79, 20);
+            this.label6.TabIndex = 67;
+            this.label6.Text = "Food & Bev ";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Segoe UI Symbol", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label7.Location = new System.Drawing.Point(18, 202);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(81, 20);
+            this.label7.TabIndex = 70;
+            this.label7.Text = "Experience";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Segoe UI Symbol", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label8.Location = new System.Drawing.Point(18, 165);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(66, 20);
+            this.label8.TabIndex = 69;
+            this.label8.Text = "Facilities";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Segoe UI Symbol", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label9.Location = new System.Drawing.Point(18, 130);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(100, 20);
+            this.label9.TabIndex = 68;
+            this.label9.Text = "Room Service";
+            // 
+            // pbCleanliness
+            // 
+            this.pbCleanliness.BorderRadius = 3;
+            this.pbCleanliness.Location = new System.Drawing.Point(142, 25);
+            this.pbCleanliness.Name = "pbCleanliness";
+            this.pbCleanliness.Size = new System.Drawing.Size(267, 13);
+            this.pbCleanliness.TabIndex = 71;
+            this.pbCleanliness.Text = "guna2ProgressBar3";
+            this.pbCleanliness.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
+            // 
+            // pbStaff
+            // 
+            this.pbStaff.BorderRadius = 3;
+            this.pbStaff.Location = new System.Drawing.Point(142, 60);
+            this.pbStaff.Name = "pbStaff";
+            this.pbStaff.Size = new System.Drawing.Size(267, 13);
+            this.pbStaff.TabIndex = 72;
+            this.pbStaff.Text = "guna2ProgressBar3";
+            this.pbStaff.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
+            // 
+            // pbFood
+            // 
+            this.pbFood.BorderRadius = 3;
+            this.pbFood.Location = new System.Drawing.Point(142, 99);
+            this.pbFood.Name = "pbFood";
+            this.pbFood.Size = new System.Drawing.Size(267, 13);
+            this.pbFood.TabIndex = 73;
+            this.pbFood.Text = "guna2ProgressBar3";
+            this.pbFood.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
+            // 
+            // pbRoom
+            // 
+            this.pbRoom.BorderRadius = 3;
+            this.pbRoom.Location = new System.Drawing.Point(142, 137);
+            this.pbRoom.Name = "pbRoom";
+            this.pbRoom.Size = new System.Drawing.Size(267, 13);
+            this.pbRoom.TabIndex = 74;
+            this.pbRoom.Text = "guna2ProgressBar3";
+            this.pbRoom.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
+            // 
+            // pbFacilities
+            // 
+            this.pbFacilities.BorderRadius = 3;
+            this.pbFacilities.Location = new System.Drawing.Point(142, 172);
+            this.pbFacilities.Name = "pbFacilities";
+            this.pbFacilities.Size = new System.Drawing.Size(267, 13);
+            this.pbFacilities.TabIndex = 75;
+            this.pbFacilities.Text = "guna2ProgressBar4";
+            this.pbFacilities.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
+            // 
+            // pbExperience
+            // 
+            this.pbExperience.BorderRadius = 3;
+            this.pbExperience.Location = new System.Drawing.Point(142, 209);
+            this.pbExperience.Name = "pbExperience";
+            this.pbExperience.Size = new System.Drawing.Size(267, 13);
+            this.pbExperience.TabIndex = 76;
+            this.pbExperience.Text = "guna2ProgressBar5";
+            this.pbExperience.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
+            // 
+            // lblCleanRate
+            // 
+            this.lblCleanRate.AutoSize = true;
+            this.lblCleanRate.Font = new System.Drawing.Font("Segoe UI Symbol", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCleanRate.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.lblCleanRate.Location = new System.Drawing.Point(420, 21);
+            this.lblCleanRate.Name = "lblCleanRate";
+            this.lblCleanRate.Size = new System.Drawing.Size(61, 20);
+            this.lblCleanRate.TabIndex = 77;
+            this.lblCleanRate.Text = "0.0 / 5.0";
+            // 
+            // lblStaffRate
+            // 
+            this.lblStaffRate.AutoSize = true;
+            this.lblStaffRate.Font = new System.Drawing.Font("Segoe UI Symbol", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStaffRate.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.lblStaffRate.Location = new System.Drawing.Point(420, 54);
+            this.lblStaffRate.Name = "lblStaffRate";
+            this.lblStaffRate.Size = new System.Drawing.Size(61, 20);
+            this.lblStaffRate.TabIndex = 78;
+            this.lblStaffRate.Text = "0.0 / 5.0";
+            // 
+            // lblFoodRate
+            // 
+            this.lblFoodRate.AutoSize = true;
+            this.lblFoodRate.Font = new System.Drawing.Font("Segoe UI Symbol", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFoodRate.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.lblFoodRate.Location = new System.Drawing.Point(420, 93);
+            this.lblFoodRate.Name = "lblFoodRate";
+            this.lblFoodRate.Size = new System.Drawing.Size(61, 20);
+            this.lblFoodRate.TabIndex = 79;
+            this.lblFoodRate.Text = "0.0 / 5.0";
+            // 
+            // lblRoomRate
+            // 
+            this.lblRoomRate.AutoSize = true;
+            this.lblRoomRate.Font = new System.Drawing.Font("Segoe UI Symbol", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRoomRate.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.lblRoomRate.Location = new System.Drawing.Point(420, 131);
+            this.lblRoomRate.Name = "lblRoomRate";
+            this.lblRoomRate.Size = new System.Drawing.Size(61, 20);
+            this.lblRoomRate.TabIndex = 80;
+            this.lblRoomRate.Text = "0.0 / 5.0";
+            // 
+            // lblFacilitiesRate
+            // 
+            this.lblFacilitiesRate.AutoSize = true;
+            this.lblFacilitiesRate.Font = new System.Drawing.Font("Segoe UI Symbol", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFacilitiesRate.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.lblFacilitiesRate.Location = new System.Drawing.Point(420, 166);
+            this.lblFacilitiesRate.Name = "lblFacilitiesRate";
+            this.lblFacilitiesRate.Size = new System.Drawing.Size(61, 20);
+            this.lblFacilitiesRate.TabIndex = 81;
+            this.lblFacilitiesRate.Text = "0.0 / 5.0";
+            // 
+            // lblExperienceRate
+            // 
+            this.lblExperienceRate.AutoSize = true;
+            this.lblExperienceRate.Font = new System.Drawing.Font("Segoe UI Symbol", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblExperienceRate.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.lblExperienceRate.Location = new System.Drawing.Point(420, 205);
+            this.lblExperienceRate.Name = "lblExperienceRate";
+            this.lblExperienceRate.Size = new System.Drawing.Size(61, 20);
+            this.lblExperienceRate.TabIndex = 82;
+            this.lblExperienceRate.Text = "0.0 / 5.0";
+            // 
             // ucFeedback
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -484,9 +805,6 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
-            this.guna2Panel2.ResumeLayout(false);
-            this.guna2Panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.reviewsDataGridView)).EndInit();
             this.panelLeft.ResumeLayout(false);
             this.panelLeft.PerformLayout();
             this.guna2Panel7.ResumeLayout(false);
@@ -501,6 +819,14 @@
             this.guna2Panel3.PerformLayout();
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel1.PerformLayout();
+            this.tableLayoutPanel2.ResumeLayout(false);
+            this.guna2Panel2.ResumeLayout(false);
+            this.guna2Panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.reviewsDataGridView)).EndInit();
+            this.guna2Panel8.ResumeLayout(false);
+            this.guna2Panel8.PerformLayout();
+            this.guna2Panel9.ResumeLayout(false);
+            this.guna2Panel9.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -509,9 +835,6 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label lblReviewsTitle;
         private Guna.UI2.WinForms.Guna2Panel panelLeft;
         private System.Windows.Forms.Label lblRateTitle;
         private System.Windows.Forms.Label lblSubtitle;
@@ -537,9 +860,37 @@
         private Guna.UI2.WinForms.Guna2TextBox commentBox;
         private System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2Button btnPlaceOrder;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
         private System.Windows.Forms.DataGridView reviewsDataGridView;
         private System.Windows.Forms.DataGridViewTextBoxColumn colReview;
         private System.Windows.Forms.DataGridViewTextBoxColumn colRating;
         private System.Windows.Forms.DataGridViewTextBoxColumn colDate;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label lblReviewsTitle;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel8;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblNumberOfRev;
+        private System.Windows.Forms.Label lblNumOverall;
+        private Guna.UI2.WinForms.Guna2RatingStar starShowcase;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel9;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lblExperienceRate;
+        private System.Windows.Forms.Label lblFacilitiesRate;
+        private System.Windows.Forms.Label lblRoomRate;
+        private System.Windows.Forms.Label lblFoodRate;
+        private System.Windows.Forms.Label lblStaffRate;
+        private System.Windows.Forms.Label lblCleanRate;
+        private Guna.UI2.WinForms.Guna2ProgressBar pbExperience;
+        private Guna.UI2.WinForms.Guna2ProgressBar pbFacilities;
+        private Guna.UI2.WinForms.Guna2ProgressBar pbRoom;
+        private Guna.UI2.WinForms.Guna2ProgressBar pbFood;
+        private Guna.UI2.WinForms.Guna2ProgressBar pbStaff;
+        private Guna.UI2.WinForms.Guna2ProgressBar pbCleanliness;
     }
 }

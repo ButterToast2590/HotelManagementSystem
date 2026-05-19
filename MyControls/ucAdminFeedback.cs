@@ -84,14 +84,14 @@ namespace HotelManagementSystem.MyControls
                                 double overall = reader.IsDBNull(5) ? 0 : Convert.ToDouble(reader[5]);
 
                                 double avgAll = (roomClean + roomService + staff + food + amenities + overall) / 6.0;
-                                lblAvgRating.Text = Math.Round(avgAll, 1).ToString("0.0");
+                                lblAvgRating.Text = Math.Round(avgAll, 1).ToString("0.0") + " / 5.0";
 
-                                lblRoomNumRate.Text = roomClean.ToString("0.0");
-                                lblRoomService.Text = roomService.ToString("0.0");
-                                lblStaff.Text = staff.ToString("0.0");
-                                lblFood.Text = food.ToString("0.0");
-                                lblAmenities.Text = amenities.ToString("0.0");
-                                lblOverall.Text = overall.ToString("0.0");
+                                lblRoomNumRate.Text = roomClean.ToString("0.0") + " / 5.0";
+                                lblRoomService.Text = roomService.ToString("0.0") + " / 5.0";
+                                lblStaff.Text = staff.ToString("0.0") + " / 5.0";
+                                lblFood.Text = food.ToString("0.0") + " / 5.0";
+                                lblAmenities.Text = amenities.ToString("0.0") + " / 5.0";
+                                lblOverall.Text = overall.ToString("0.0") + " / 5.0";
 
                                 pbRoomRate.Maximum = 5;
                                 pbRoomService.Maximum = 5;

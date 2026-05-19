@@ -111,6 +111,12 @@
     <Compile Include="addHighlights.Designer.cs">
       <DependentUpon>addHighlights.cs</DependentUpon>
     </Compile>
+    <Compile Include="addMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="addMenu.Designer.cs">
+      <DependentUpon>addMenu.cs</DependentUpon>
+    </Compile>
     <Compile Include="AdminDashboard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -135,6 +141,12 @@
     <Compile Include="DeleteHighlights.Designer.cs">
       <DependentUpon>DeleteHighlights.cs</DependentUpon>
     </Compile>
+    <Compile Include="DeleteMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DeleteMenu.Designer.cs">
+      <DependentUpon>DeleteMenu.cs</DependentUpon>
+    </Compile>
     <Compile Include="DeleteRoom.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -146,6 +158,12 @@
     </Compile>
     <Compile Include="editHighlights.Designer.cs">
       <DependentUpon>editHighlights.cs</DependentUpon>
+    </Compile>
+    <Compile Include="editMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="editMenu.Designer.cs">
+      <DependentUpon>editMenu.cs</DependentUpon>
     </Compile>
     <Compile Include="EditProfile.cs">
       <SubType>Form</SubType>
@@ -308,6 +326,9 @@
     <EmbeddedResource Include="addHighlights.resx">
       <DependentUpon>addHighlights.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="addMenu.resx">
+      <DependentUpon>addMenu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AdminDashboard.resx">
       <DependentUpon>AdminDashboard.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -321,11 +342,17 @@
     <EmbeddedResource Include="DeleteHighlights.resx">
       <DependentUpon>DeleteHighlights.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DeleteMenu.resx">
+      <DependentUpon>DeleteMenu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DeleteRoom.resx">
       <DependentUpon>DeleteRoom.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="editHighlights.resx">
       <DependentUpon>editHighlights.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="editMenu.resx">
+      <DependentUpon>editMenu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EditProfile.resx">
       <DependentUpon>EditProfile.cs</DependentUpon>

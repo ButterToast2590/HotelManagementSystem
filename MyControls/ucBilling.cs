@@ -76,6 +76,7 @@ namespace HotelManagementSystem.MyControls
                     decimal fnbTotal = 0;
                     decimal servicesTotal = 0;
 
+
                     try
                     {
                         string chargesSql =
@@ -110,6 +111,33 @@ namespace HotelManagementSystem.MyControls
                     }
                     catch { dgvCharges.Rows.Clear(); }
 
+
+                    try
+                    {
+                        string rsSql =
+                            "SELECT COALESCE(SUM(total_amount), 0) " +
+                            "FROM hotel.room_service_orders " +
+                            "WHERE user_id = @userId " +
+                            "AND room_id = (SELECT room_id FROM hotel.bookings WHERE booking_id = @bookingId);";
+
+                        NpgsqlCommand rsCmd = new NpgsqlCommand(rsSql, conn);
+                        rsCmd.Parameters.AddWithValue("@userId", UserSession.UserId1);
+                        rsCmd.Parameters.AddWithValue("@bookingId", bookingId);
+                        decimal rsTotal = Convert.ToDecimal(rsCmd.ExecuteScalar());
+                        fnbTotal += rsTotal;
+
+                        if (rsTotal > 0)
+                        {
+                            dgvCharges.Rows.Add(
+                                DateTime.Today.ToString("MMM dd, yyyy"),
+                                "Room Service Orders",
+                                "Food & Beverage",
+                                "₱" + rsTotal.ToString("N2")
+                            );
+                        }
+                    }
+                    catch {  }
+
                     dgvCharges.Rows.Insert(0,
                         checkIn.ToString("MMM dd, yyyy"),
                         "Room Stay (" + nights + " nights @ ₱" + pricePerNight.ToString("N2") + ")",
@@ -117,9 +145,9 @@ namespace HotelManagementSystem.MyControls
                         "₱" + roomCharges.ToString("N2")
                     );
 
-                    decimal subtotal = roomCharges + fnbTotal + servicesTotal;
-                    decimal tax = Math.Round(subtotal * 0.12m, 2);
-                    decimal total = subtotal + tax;
+                    decimal subtotal = roomCharges + fnbTotal + servicesTotal; 
+                    decimal tax = Math.Round(subtotal * 0.12m, 2);            
+                    decimal total = subtotal + tax;                          
 
                     lblRoomValue.Text = "₱" + roomCharges.ToString("N2");
                     lblFnBValue.Text = "₱" + fnbTotal.ToString("N2");
@@ -167,14 +195,12 @@ namespace HotelManagementSystem.MyControls
 
                     if (string.IsNullOrEmpty(currentStatus))
                     {
-                        MessageBox.Show("You have no outstanding balance to pay.",
-                            "No Balance", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("You have no outstanding balance to pay.", "No Balance", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         return;
                     }
                     if (currentStatus == "Completed")
                     {
-                        MessageBox.Show("Your balance has already been paid. Thank you!",
-                            "Already Paid", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Your balance has already been paid. Thank you!", "Already Paid", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         return;
                     }
                 }
@@ -186,10 +212,7 @@ namespace HotelManagementSystem.MyControls
             }
 
             DialogResult confirm = MessageBox.Show(
-                "Confirm payment of your outstanding balance?",
-                "Confirm Payment",
-                MessageBoxButtons.YesNo,
-                MessageBoxIcon.Question);
+                "Confirm payment of your outstanding balance?","Confirm Payment", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
             if (confirm != DialogResult.Yes) return;
 
@@ -207,8 +230,24 @@ namespace HotelManagementSystem.MyControls
                     NpgsqlCommand calcCmd = new NpgsqlCommand(calcSql, conn);
                     calcCmd.Parameters.AddWithValue("@userId", UserSession.UserId1);
                     decimal roomAmount = Convert.ToDecimal(calcCmd.ExecuteScalar() ?? 0);
-                    decimal tax = Math.Round(roomAmount * 0.12m, 2);
-                    decimal totalPaid = roomAmount + tax;
+
+                    decimal rsAmount = 0;
+                    try
+                    {
+                        string rsSql =
+                            "SELECT COALESCE(SUM(total_amount), 0) " +
+                            "FROM hotel.room_service_orders " +
+                            "WHERE user_id = @userId " +
+                            "AND room_id = (SELECT room_id FROM hotel.bookings WHERE user_id = @userId AND status = 'Approved' LIMIT 1);";
+                        NpgsqlCommand rsCmd = new NpgsqlCommand(rsSql, conn);
+                        rsCmd.Parameters.AddWithValue("@userId", UserSession.UserId1);
+                        rsAmount = Convert.ToDecimal(rsCmd.ExecuteScalar() ?? 0);
+                    }
+                    catch { rsAmount = 0; }
+
+                    decimal subtotal = roomAmount + rsAmount;
+                    decimal tax = Math.Round(subtotal * 0.12m, 2);
+                    decimal totalPaid = subtotal + tax;
 
                     string sql =
                         "UPDATE hotel.bookings " +

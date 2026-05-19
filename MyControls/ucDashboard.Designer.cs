@@ -36,10 +36,6 @@
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.guna2Panel11 = new Guna.UI2.WinForms.Guna2Panel();
             this.rsGrid = new System.Windows.Forms.DataGridView();
-            this.colRSFloor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colRSRoomNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colRSStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colRSBill = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label22 = new System.Windows.Forms.Label();
             this.guna2Panel10 = new Guna.UI2.WinForms.Guna2Panel();
             this.rrGrid = new System.Windows.Forms.DataGridView();
@@ -65,6 +61,11 @@
             this.lblCheckIn = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
+            this.colRsDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colRSFloor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colRSRoomNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colRSStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colRSBill = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.guna2Panel11.SuspendLayout();
@@ -160,6 +161,7 @@
             this.rsGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.rsGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.rsGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colRsDate,
             this.colRSFloor,
             this.colRSRoomNum,
             this.colRSStatus,
@@ -169,37 +171,6 @@
             this.rsGrid.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.rsGrid.Size = new System.Drawing.Size(1045, 264);
             this.rsGrid.TabIndex = 2;
-            // 
-            // colRSFloor
-            // 
-            this.colRSFloor.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colRSFloor.HeaderText = "Floor";
-            this.colRSFloor.Name = "colRSFloor";
-            this.colRSFloor.ReadOnly = true;
-            // 
-            // colRSRoomNum
-            // 
-            this.colRSRoomNum.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colRSRoomNum.HeaderText = "Room";
-            this.colRSRoomNum.Name = "colRSRoomNum";
-            this.colRSRoomNum.ReadOnly = true;
-            this.colRSRoomNum.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // colRSStatus
-            // 
-            this.colRSStatus.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colRSStatus.HeaderText = "Status";
-            this.colRSStatus.Name = "colRSStatus";
-            this.colRSStatus.ReadOnly = true;
-            this.colRSStatus.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // colRSBill
-            // 
-            this.colRSBill.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colRSBill.HeaderText = "Bill";
-            this.colRSBill.Name = "colRSBill";
-            this.colRSBill.ReadOnly = true;
-            this.colRSBill.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
             // label22
             // 
@@ -500,6 +471,44 @@
             this.label21.TabIndex = 27;
             this.label21.Text = "Dashboard";
             // 
+            // colRsDate
+            // 
+            this.colRsDate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colRsDate.HeaderText = "Date Ordered";
+            this.colRsDate.Name = "colRsDate";
+            this.colRsDate.ReadOnly = true;
+            // 
+            // colRSFloor
+            // 
+            this.colRSFloor.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colRSFloor.HeaderText = "Floor";
+            this.colRSFloor.Name = "colRSFloor";
+            this.colRSFloor.ReadOnly = true;
+            // 
+            // colRSRoomNum
+            // 
+            this.colRSRoomNum.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colRSRoomNum.HeaderText = "Room";
+            this.colRSRoomNum.Name = "colRSRoomNum";
+            this.colRSRoomNum.ReadOnly = true;
+            this.colRSRoomNum.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // colRSStatus
+            // 
+            this.colRSStatus.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colRSStatus.HeaderText = "Status";
+            this.colRSStatus.Name = "colRSStatus";
+            this.colRSStatus.ReadOnly = true;
+            this.colRSStatus.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // colRSBill
+            // 
+            this.colRSBill.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colRSBill.HeaderText = "Bill";
+            this.colRSBill.Name = "colRSBill";
+            this.colRSBill.ReadOnly = true;
+            this.colRSBill.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
             // ucDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -543,10 +552,6 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel11;
         private System.Windows.Forms.DataGridView rsGrid;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colRSFloor;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colRSRoomNum;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colRSStatus;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colRSBill;
         private System.Windows.Forms.Label label22;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel10;
         private System.Windows.Forms.DataGridView rrGrid;
@@ -572,5 +577,10 @@
         private System.Windows.Forms.Label lblCheckIn;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colRsDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colRSFloor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colRSRoomNum;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colRSStatus;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colRSBill;
     }
 }

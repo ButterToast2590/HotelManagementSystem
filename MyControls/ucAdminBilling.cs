@@ -88,17 +88,17 @@ namespace HotelManagementSystem.MyControls
                 else if (filter == "Unpaid") statusFilter = "AND b.status = 'Approved'";
 
                 string sql =
-                    "SELECT b.first_name || ' ' || b.last_name AS guest_name, " +
-                    "r.room_number, " +
-                    "GREATEST((b.check_out_date::date - b.check_in_date::date), 1) * r.price_per_night AS room_charge, " +
-                    "0 AS service_charge, " +
-                    "COALESCE(b.total_paid, 0) AS total_paid, " +
-                    "b.status " +
-                    "FROM hotel.bookings b " +
-                    "JOIN hotel.rooms r ON b.room_id = r.room_id " +
-                    "WHERE b.status IN ('Approved', 'Completed') " +
-                    statusFilter +
-                    " ORDER BY b.check_in_date DESC;";
+                  "SELECT b.first_name || ' ' || b.last_name AS guest_name, " +
+                  "r.room_number, " +
+                  "GREATEST((b.check_out_date::date - b.check_in_date::date), 1) * r.price_per_night AS room_charge, " +
+                  "COALESCE((SELECT SUM(rso.total_amount) FROM hotel.room_service_orders rso WHERE rso.room_id = b.room_id AND rso.user_id = b.user_id), 0) AS service_charge, " +
+                  "COALESCE(b.total_paid, 0) AS total_paid, " +
+                  "b.status " +
+                  "FROM hotel.bookings b " +
+                  "JOIN hotel.rooms r ON b.room_id = r.room_id " +
+                  "WHERE b.status IN ('Approved', 'Completed') " +
+                  statusFilter +
+                  " ORDER BY b.check_in_date DESC;";
 
                 using (NpgsqlConnection conn = new NpgsqlConnection(connString))
                 {
@@ -110,16 +110,18 @@ namespace HotelManagementSystem.MyControls
                     {
                         decimal roomCharge = Convert.ToDecimal(reader["room_charge"]);
                         decimal serviceCharge = Convert.ToDecimal(reader["service_charge"]);
-                        decimal total = roomCharge + serviceCharge;
+                        decimal subtotal = roomCharge + serviceCharge;         
+                        decimal tax = Math.Round(subtotal * 0.12m, 2);         
+                        decimal total = subtotal + tax;                         
                         string status = reader["status"].ToString();
                         string displayStatus = status == "Completed" ? "Paid" : "Unpaid";
 
                         int rowIdx = guestListGrid.Rows.Add(
                             reader["guest_name"].ToString(),
                             "Room " + reader["room_number"].ToString(),
-                            "₱" + Convert.ToDecimal(reader["room_charge"]).ToString("N2"),
-                            "₱" + Convert.ToDecimal(reader["service_charge"]).ToString("N2"),
-                            "₱" + Convert.ToDecimal(reader["total_paid"]).ToString("N2"),
+                            "₱" + roomCharge.ToString("N2"),
+                            "₱" + serviceCharge.ToString("N2"),
+                            "₱" + total.ToString("N2"),      
                             displayStatus
                         );
 

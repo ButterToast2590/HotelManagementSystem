@@ -80,9 +80,7 @@ namespace HotelManagementSystem
 
                             TimeSpan remaining = checkOut - DateTime.Now;
                             if (remaining.TotalSeconds > 0)
-                            {
                                 lblTime.Text = remaining.Days + " days, " + remaining.Hours + " hrs";
-                            }
                             else
                             {
                                 lblTime.Text = "Check-out overdue";
@@ -96,7 +94,6 @@ namespace HotelManagementSystem
                             lblChangeBookingStats.ForeColor = Color.White;
                             btnExtendStay.Enabled = false;
                             btnEarlyOut.Enabled = false;
-
                             lblCheckInSched.Text = "—";
                             lblCheckoutSched.Text = "—";
                             lblAssignedRoom.Text = "—";
@@ -136,9 +133,13 @@ namespace HotelManagementSystem
 
                 string sql =
                     "SELECT b.first_name || ' ' || b.last_name AS guest_name, " +
-                    "       r.room_number, b.check_in_date, b.check_out_date, " +
-                    "       b.status, r.price_per_night, " +
-                    "       (b.check_out_date::date - b.check_in_date::date) AS nights " +
+                    "r.room_number, b.check_in_date, b.check_out_date, " +
+                    "b.status, r.price_per_night, " +
+                    "(b.check_out_date::date - b.check_in_date::date) AS nights, " +
+                    "COALESCE((SELECT SUM(rso.total_amount) " +
+                    "FROM hotel.room_service_orders rso " +
+                    "WHERE rso.user_id = b.user_id " +
+                    "AND rso.room_id = b.room_id), 0) AS service_total " +
                     "FROM hotel.bookings b " +
                     "JOIN hotel.rooms r ON b.room_id = r.room_id " +
                     "WHERE b.user_id = @userId " +
@@ -153,12 +154,14 @@ namespace HotelManagementSystem
                     int nights = Convert.ToInt32(reader["nights"]);
                     if (nights <= 0) nights = 1;
                     decimal rate = Convert.ToDecimal(reader["price_per_night"]);
-                    decimal subtotal = rate * nights;
+                    decimal serviceTotal = Convert.ToDecimal(reader["service_total"]);
+
+                    decimal subtotal = (rate * nights) + serviceTotal;
                     decimal tax = Math.Round(subtotal * 0.12m, 2);
                     decimal bill = subtotal + tax;
                     string status = reader["status"].ToString();
 
-                    int rowIdx = chechINOutGrid.Rows.Add(
+                    chechINOutGrid.Rows.Add(
                         reader["guest_name"].ToString(),
                         "Room " + reader["room_number"].ToString(),
                         Convert.ToDateTime(reader["check_in_date"]).ToString("MMM dd, yyyy"),
@@ -205,8 +208,25 @@ namespace HotelManagementSystem
                     NpgsqlCommand calcCmd = new NpgsqlCommand(calcSql, conn);
                     calcCmd.Parameters.AddWithValue("@userId", UserSession.UserId1);
                     decimal roomAmount = Convert.ToDecimal(calcCmd.ExecuteScalar() ?? 0);
-                    decimal tax = Math.Round(roomAmount * 0.12m, 2);
-                    decimal totalPaid = roomAmount + tax;
+
+                    decimal rsAmount = 0;
+                    try
+                    {
+                        string rsSql =
+                            "SELECT COALESCE(SUM(total_amount), 0) " +
+                            "FROM hotel.room_service_orders " +
+                            "WHERE user_id = @userId " +
+                            "AND room_id = (SELECT room_id FROM hotel.bookings " +
+                            "              WHERE user_id = @userId AND status = 'Approved' LIMIT 1);";
+                        NpgsqlCommand rsCmd = new NpgsqlCommand(rsSql, conn);
+                        rsCmd.Parameters.AddWithValue("@userId", UserSession.UserId1);
+                        rsAmount = Convert.ToDecimal(rsCmd.ExecuteScalar() ?? 0);
+                    }
+                    catch { rsAmount = 0; }
+
+                    decimal subtotal = roomAmount + rsAmount; 
+                    decimal tax = Math.Round(subtotal * 0.12m, 2);
+                    decimal totalPaid = subtotal + tax;
 
                     string sql =
                         "UPDATE hotel.bookings " +
@@ -238,12 +258,11 @@ namespace HotelManagementSystem
                 MessageBox.Show("Error during early check-out: " + ex.Message);
             }
         }
+
         private void ShowOverduePaymentReminder()
         {
-            MessageBox.Show(
-                "Your stay has ended and you have an outstanding balance.\n\n" + "Please proceed to settle your bill before leaving.\n\n" +
-                "Thank you for staying with us!", "Payment Required", MessageBoxButtons.OK, MessageBoxIcon.Warning
-            );
+            MessageBox.Show("Your stay has ended and you have an outstanding balance.\n\n" + "Please proceed to settle your bill before leaving.\n\n" + "Thank you for staying with us!",
+                "Payment Required", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
             lblUserNameDisplay parentForm = this.FindForm() as lblUserNameDisplay;
             if (parentForm != null)

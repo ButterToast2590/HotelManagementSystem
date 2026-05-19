@@ -32,17 +32,13 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(lblUserNameDisplay));
             this.slideMenuPanel = new Guna.UI2.WinForms.Guna2Panel();
             this.lblServices = new System.Windows.Forms.Label();
+            this.btnRoomServices = new Guna.UI2.WinForms.Guna2Button();
             this.lblExplore = new System.Windows.Forms.Label();
             this.lblMain = new System.Windows.Forms.Label();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.statusDot = new System.Windows.Forms.PictureBox();
             this.lblbottomusername = new System.Windows.Forms.Label();
             this.lblStatusInfo = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
-            this.userTitlepanel = new System.Windows.Forms.Panel();
-            this.panelMain = new Guna.UI2.WinForms.Guna2Panel();
-            this.btnRoomServices = new Guna.UI2.WinForms.Guna2Button();
-            this.statusDot = new System.Windows.Forms.PictureBox();
             this.btnLogOut = new Guna.UI2.WinForms.Guna2Button();
             this.btnFeedBack = new Guna.UI2.WinForms.Guna2Button();
             this.btnProfile = new Guna.UI2.WinForms.Guna2Button();
@@ -51,15 +47,19 @@
             this.btnMyBill = new Guna.UI2.WinForms.Guna2Button();
             this.btnRoomInfo = new Guna.UI2.WinForms.Guna2Button();
             this.btnHighlights = new Guna.UI2.WinForms.Guna2Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.btnHome = new Guna.UI2.WinForms.Guna2Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
+            this.userTitlepanel = new System.Windows.Forms.Panel();
             this.btnMinimize = new Guna.UI2.WinForms.Guna2Button();
             this.btnClose = new Guna.UI2.WinForms.Guna2Button();
+            this.panelMain = new Guna.UI2.WinForms.Guna2Panel();
             this.slideMenuPanel.SuspendLayout();
             this.guna2Panel1.SuspendLayout();
-            this.userTitlepanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.statusDot)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.userTitlepanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // slideMenuPanel
@@ -101,6 +101,28 @@
             this.lblServices.TabIndex = 20;
             this.lblServices.Text = "Services";
             // 
+            // btnRoomServices
+            // 
+            this.btnRoomServices.BorderRadius = 15;
+            this.btnRoomServices.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnRoomServices.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnRoomServices.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnRoomServices.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnRoomServices.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnRoomServices.FillColor = System.Drawing.Color.Transparent;
+            this.btnRoomServices.FocusedColor = System.Drawing.Color.White;
+            this.btnRoomServices.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRoomServices.ForeColor = System.Drawing.Color.Black;
+            this.btnRoomServices.Image = global::HotelManagementSystem.Properties.Resources.room_service;
+            this.btnRoomServices.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnRoomServices.ImageSize = new System.Drawing.Size(25, 25);
+            this.btnRoomServices.Location = new System.Drawing.Point(11, 413);
+            this.btnRoomServices.Name = "btnRoomServices";
+            this.btnRoomServices.Size = new System.Drawing.Size(226, 47);
+            this.btnRoomServices.TabIndex = 19;
+            this.btnRoomServices.Text = "Room Service";
+            this.btnRoomServices.Click += new System.EventHandler(this.btnRoomServices_Click);
+            // 
             // lblExplore
             // 
             this.lblExplore.AutoSize = true;
@@ -137,6 +159,16 @@
             this.guna2Panel1.Size = new System.Drawing.Size(226, 100);
             this.guna2Panel1.TabIndex = 17;
             // 
+            // statusDot
+            // 
+            this.statusDot.Image = global::HotelManagementSystem.Properties.Resources.gray;
+            this.statusDot.Location = new System.Drawing.Point(165, 6);
+            this.statusDot.Name = "statusDot";
+            this.statusDot.Size = new System.Drawing.Size(28, 24);
+            this.statusDot.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.statusDot.TabIndex = 0;
+            this.statusDot.TabStop = false;
+            // 
             // lblbottomusername
             // 
             this.lblbottomusername.AutoSize = true;
@@ -159,76 +191,6 @@
             this.lblStatusInfo.Size = new System.Drawing.Size(184, 13);
             this.lblStatusInfo.TabIndex = 2;
             this.lblStatusInfo.Text = "Check if the user is check in or not";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label1.Location = new System.Drawing.Point(78, 29);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(159, 30);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Zedlink United";
-            this.label1.Click += new System.EventHandler(this.label1_Click_1);
-            // 
-            // guna2DragControl1
-            // 
-            this.guna2DragControl1.DockIndicatorTransparencyValue = 0.6D;
-            this.guna2DragControl1.DragStartTransparencyValue = 1D;
-            this.guna2DragControl1.TargetControl = this.userTitlepanel;
-            this.guna2DragControl1.UseTransparentDrag = true;
-            // 
-            // userTitlepanel
-            // 
-            this.userTitlepanel.Controls.Add(this.btnMinimize);
-            this.userTitlepanel.Controls.Add(this.btnClose);
-            this.userTitlepanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.userTitlepanel.Location = new System.Drawing.Point(0, 0);
-            this.userTitlepanel.Name = "userTitlepanel";
-            this.userTitlepanel.Size = new System.Drawing.Size(1387, 31);
-            this.userTitlepanel.TabIndex = 20;
-            // 
-            // panelMain
-            // 
-            this.panelMain.Location = new System.Drawing.Point(265, 37);
-            this.panelMain.Name = "panelMain";
-            this.panelMain.Size = new System.Drawing.Size(1110, 854);
-            this.panelMain.TabIndex = 21;
-            this.panelMain.Paint += new System.Windows.Forms.PaintEventHandler(this.panelMain_Paint);
-            // 
-            // btnRoomServices
-            // 
-            this.btnRoomServices.BorderRadius = 15;
-            this.btnRoomServices.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnRoomServices.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnRoomServices.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnRoomServices.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnRoomServices.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnRoomServices.FillColor = System.Drawing.Color.Transparent;
-            this.btnRoomServices.FocusedColor = System.Drawing.Color.White;
-            this.btnRoomServices.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRoomServices.ForeColor = System.Drawing.Color.Black;
-            this.btnRoomServices.Image = global::HotelManagementSystem.Properties.Resources.room_service;
-            this.btnRoomServices.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnRoomServices.ImageSize = new System.Drawing.Size(25, 25);
-            this.btnRoomServices.Location = new System.Drawing.Point(11, 413);
-            this.btnRoomServices.Name = "btnRoomServices";
-            this.btnRoomServices.Size = new System.Drawing.Size(226, 47);
-            this.btnRoomServices.TabIndex = 19;
-            this.btnRoomServices.Text = "Room Service";
-            this.btnRoomServices.Click += new System.EventHandler(this.btnRoomServices_Click);
-            // 
-            // statusDot
-            // 
-            this.statusDot.Image = global::HotelManagementSystem.Properties.Resources.gray;
-            this.statusDot.Location = new System.Drawing.Point(165, 6);
-            this.statusDot.Name = "statusDot";
-            this.statusDot.Size = new System.Drawing.Size(28, 24);
-            this.statusDot.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.statusDot.TabIndex = 0;
-            this.statusDot.TabStop = false;
             // 
             // btnLogOut
             // 
@@ -408,6 +370,19 @@
             this.btnHighlights.Text = "Highlights";
             this.btnHighlights.Click += new System.EventHandler(this.guna2Button1_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.label1.Location = new System.Drawing.Point(78, 29);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(159, 30);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Zedlink United";
+            this.label1.Click += new System.EventHandler(this.label1_Click_1);
+            // 
             // btnHome
             // 
             this.btnHome.BorderRadius = 15;
@@ -441,6 +416,23 @@
             this.pictureBox1.TabIndex = 8;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
+            // guna2DragControl1
+            // 
+            this.guna2DragControl1.DockIndicatorTransparencyValue = 0.6D;
+            this.guna2DragControl1.DragStartTransparencyValue = 1D;
+            this.guna2DragControl1.TargetControl = this.userTitlepanel;
+            this.guna2DragControl1.UseTransparentDrag = true;
+            // 
+            // userTitlepanel
+            // 
+            this.userTitlepanel.Controls.Add(this.btnMinimize);
+            this.userTitlepanel.Controls.Add(this.btnClose);
+            this.userTitlepanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.userTitlepanel.Location = new System.Drawing.Point(0, 0);
+            this.userTitlepanel.Name = "userTitlepanel";
+            this.userTitlepanel.Size = new System.Drawing.Size(1387, 31);
+            this.userTitlepanel.TabIndex = 20;
             // 
             // btnMinimize
             // 
@@ -490,6 +482,14 @@
             this.btnClose.TabIndex = 0;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
+            // panelMain
+            // 
+            this.panelMain.Location = new System.Drawing.Point(265, 37);
+            this.panelMain.Name = "panelMain";
+            this.panelMain.Size = new System.Drawing.Size(1110, 854);
+            this.panelMain.TabIndex = 21;
+            this.panelMain.Paint += new System.Windows.Forms.PaintEventHandler(this.panelMain_Paint);
+            // 
             // lblUserNameDisplay
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -502,7 +502,7 @@
             this.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("₱this.Icon")));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "lblUserNameDisplay";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -511,16 +511,15 @@
             this.slideMenuPanel.PerformLayout();
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel1.PerformLayout();
-            this.userTitlepanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.statusDot)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.userTitlepanel.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
         private Guna.UI2.WinForms.Guna2Panel slideMenuPanel;
-        private Guna.UI2.WinForms.Guna2Button btnHome;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private Guna.UI2.WinForms.Guna2Button btnInOut;
@@ -544,5 +543,6 @@
         public Guna.UI2.WinForms.Guna2Button btnReservation;
         public Guna.UI2.WinForms.Guna2Button btnRoomInfo;
         public Guna.UI2.WinForms.Guna2Button btnMyBill;
+        public Guna.UI2.WinForms.Guna2Button btnHome;
     }
 }
