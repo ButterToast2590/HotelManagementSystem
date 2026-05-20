@@ -80,9 +80,9 @@
             groupBox1.Controls.Add(this.guna2PictureBox2);
             groupBox1.Controls.Add(this.guna2PictureBox1);
             groupBox1.Controls.Add(this.comboboxAvailabeRoom);
-            groupBox1.Location = new System.Drawing.Point(22, 97);
+            groupBox1.Location = new System.Drawing.Point(22, 68);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new System.Drawing.Size(514, 754);
+            groupBox1.Size = new System.Drawing.Size(514, 683);
             groupBox1.TabIndex = 34;
             groupBox1.TabStop = false;
             // 
@@ -91,7 +91,7 @@
             this.lblRoomFloor.AutoSize = true;
             this.lblRoomFloor.Font = new System.Drawing.Font("Segoe UI Symbol", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRoomFloor.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.lblRoomFloor.Location = new System.Drawing.Point(8, 721);
+            this.lblRoomFloor.Location = new System.Drawing.Point(17, 634);
             this.lblRoomFloor.Name = "lblRoomFloor";
             this.lblRoomFloor.Size = new System.Drawing.Size(53, 20);
             this.lblRoomFloor.TabIndex = 42;
@@ -103,7 +103,7 @@
             this.lblRoomNumTypeChange.AutoSize = true;
             this.lblRoomNumTypeChange.Font = new System.Drawing.Font("Segoe UI Symbol", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRoomNumTypeChange.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.lblRoomNumTypeChange.Location = new System.Drawing.Point(6, 691);
+            this.lblRoomNumTypeChange.Location = new System.Drawing.Point(15, 604);
             this.lblRoomNumTypeChange.Name = "lblRoomNumTypeChange";
             this.lblRoomNumTypeChange.Size = new System.Drawing.Size(301, 30);
             this.lblRoomNumTypeChange.TabIndex = 41;
@@ -118,7 +118,7 @@
             this.guna2PictureBox2.ImageRotate = 0F;
             this.guna2PictureBox2.Location = new System.Drawing.Point(6, 67);
             this.guna2PictureBox2.Name = "guna2PictureBox2";
-            this.guna2PictureBox2.Size = new System.Drawing.Size(502, 617);
+            this.guna2PictureBox2.Size = new System.Drawing.Size(502, 502);
             this.guna2PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.guna2PictureBox2.TabIndex = 40;
             this.guna2PictureBox2.TabStop = false;
@@ -164,7 +164,7 @@
             this.label21.BackColor = System.Drawing.Color.Transparent;
             this.label21.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label21.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.label21.Location = new System.Drawing.Point(14, 12);
+            this.label21.Location = new System.Drawing.Point(14, 0);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(179, 45);
             this.label21.TabIndex = 33;
@@ -175,7 +175,7 @@
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Segoe UI Symbol", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label12.Location = new System.Drawing.Point(18, 57);
+            this.label12.Location = new System.Drawing.Point(18, 45);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(221, 20);
             this.label12.TabIndex = 32;
@@ -187,12 +187,12 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.Controls.Add(this.guna2Panel2, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.guna2Panel1, 0, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(542, 97);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(542, 68);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(548, 757);
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.21962F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 49.78038F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(548, 683);
             this.tableLayoutPanel1.TabIndex = 35;
             // 
             // guna2Panel2
@@ -203,9 +203,9 @@
             this.guna2Panel2.Controls.Add(this.guna2TextBox1);
             this.guna2Panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.guna2Panel2.FillColor = System.Drawing.Color.White;
-            this.guna2Panel2.Location = new System.Drawing.Point(3, 381);
+            this.guna2Panel2.Location = new System.Drawing.Point(3, 346);
             this.guna2Panel2.Name = "guna2Panel2";
-            this.guna2Panel2.Size = new System.Drawing.Size(542, 373);
+            this.guna2Panel2.Size = new System.Drawing.Size(542, 334);
             this.guna2Panel2.TabIndex = 1;
             // 
             // label1
@@ -241,7 +241,7 @@
             this.guna2TextBox1.PlaceholderText = "";
             this.guna2TextBox1.ReadOnly = true;
             this.guna2TextBox1.SelectedText = "";
-            this.guna2TextBox1.Size = new System.Drawing.Size(491, 295);
+            this.guna2TextBox1.Size = new System.Drawing.Size(491, 260);
             this.guna2TextBox1.TabIndex = 0;
             // 
             // guna2Panel1
@@ -254,7 +254,7 @@
             this.guna2Panel1.FillColor = System.Drawing.Color.White;
             this.guna2Panel1.Location = new System.Drawing.Point(3, 3);
             this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(542, 372);
+            this.guna2Panel1.Size = new System.Drawing.Size(542, 337);
             this.guna2Panel1.TabIndex = 0;
             // 
             // tableLayoutPanel2
@@ -266,7 +266,7 @@
             this.tableLayoutPanel2.Controls.Add(this.guna2Panel4, 0, 1);
             this.tableLayoutPanel2.Controls.Add(this.guna2Panel3, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.guna2Panel8, 0, 0);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(44, 79);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(44, 73);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 2;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -436,7 +436,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1110, 854);
+            this.panel1.Size = new System.Drawing.Size(1110, 754);
             this.panel1.TabIndex = 0;
             // 
             // ucRoomInfo
@@ -445,7 +445,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.panel1);
             this.Name = "ucRoomInfo";
-            this.Size = new System.Drawing.Size(1110, 854);
+            this.Size = new System.Drawing.Size(1110, 754);
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).EndInit();

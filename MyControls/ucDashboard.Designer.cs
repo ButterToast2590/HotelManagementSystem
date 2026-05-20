@@ -36,6 +36,11 @@
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.guna2Panel11 = new Guna.UI2.WinForms.Guna2Panel();
             this.rsGrid = new System.Windows.Forms.DataGridView();
+            this.colRsDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colRSFloor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colRSRoomNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colRSStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colRSBill = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label22 = new System.Windows.Forms.Label();
             this.guna2Panel10 = new Guna.UI2.WinForms.Guna2Panel();
             this.rrGrid = new System.Windows.Forms.DataGridView();
@@ -61,11 +66,6 @@
             this.lblCheckIn = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
-            this.colRsDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colRSFloor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colRSRoomNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colRSStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colRSBill = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.guna2Panel11.SuspendLayout();
@@ -115,7 +115,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1110, 854);
+            this.panel1.Size = new System.Drawing.Size(1110, 745);
             this.panel1.TabIndex = 33;
             // 
             // tableLayoutPanel3
@@ -124,12 +124,12 @@
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel3.Controls.Add(this.guna2Panel11, 0, 1);
             this.tableLayoutPanel3.Controls.Add(this.guna2Panel10, 0, 0);
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(16, 188);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(16, 161);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 2;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(1076, 660);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(1076, 581);
             this.tableLayoutPanel3.TabIndex = 32;
             // 
             // guna2Panel11
@@ -143,9 +143,9 @@
             this.guna2Panel11.Controls.Add(this.rsGrid);
             this.guna2Panel11.Controls.Add(this.label22);
             this.guna2Panel11.FillColor = System.Drawing.Color.White;
-            this.guna2Panel11.Location = new System.Drawing.Point(3, 333);
+            this.guna2Panel11.Location = new System.Drawing.Point(3, 293);
             this.guna2Panel11.Name = "guna2Panel11";
-            this.guna2Panel11.Size = new System.Drawing.Size(1070, 324);
+            this.guna2Panel11.Size = new System.Drawing.Size(1070, 285);
             this.guna2Panel11.TabIndex = 32;
             // 
             // rsGrid
@@ -166,11 +166,49 @@
             this.colRSRoomNum,
             this.colRSStatus,
             this.colRSBill});
-            this.rsGrid.Location = new System.Drawing.Point(15, 50);
+            this.rsGrid.Location = new System.Drawing.Point(15, 45);
             this.rsGrid.Name = "rsGrid";
             this.rsGrid.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.rsGrid.Size = new System.Drawing.Size(1045, 264);
+            this.rsGrid.Size = new System.Drawing.Size(1045, 229);
             this.rsGrid.TabIndex = 2;
+            // 
+            // colRsDate
+            // 
+            this.colRsDate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colRsDate.HeaderText = "Date Ordered";
+            this.colRsDate.Name = "colRsDate";
+            this.colRsDate.ReadOnly = true;
+            // 
+            // colRSFloor
+            // 
+            this.colRSFloor.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colRSFloor.HeaderText = "Floor";
+            this.colRSFloor.Name = "colRSFloor";
+            this.colRSFloor.ReadOnly = true;
+            // 
+            // colRSRoomNum
+            // 
+            this.colRSRoomNum.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colRSRoomNum.HeaderText = "Room";
+            this.colRSRoomNum.Name = "colRSRoomNum";
+            this.colRSRoomNum.ReadOnly = true;
+            this.colRSRoomNum.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // colRSStatus
+            // 
+            this.colRSStatus.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colRSStatus.HeaderText = "Status";
+            this.colRSStatus.Name = "colRSStatus";
+            this.colRSStatus.ReadOnly = true;
+            this.colRSStatus.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // colRSBill
+            // 
+            this.colRSBill.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colRSBill.HeaderText = "Bill";
+            this.colRSBill.Name = "colRSBill";
+            this.colRSBill.ReadOnly = true;
+            this.colRSBill.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
             // label22
             // 
@@ -196,7 +234,7 @@
             this.guna2Panel10.FillColor = System.Drawing.Color.White;
             this.guna2Panel10.Location = new System.Drawing.Point(3, 3);
             this.guna2Panel10.Name = "guna2Panel10";
-            this.guna2Panel10.Size = new System.Drawing.Size(1070, 324);
+            this.guna2Panel10.Size = new System.Drawing.Size(1070, 284);
             this.guna2Panel10.TabIndex = 31;
             // 
             // rrGrid
@@ -221,7 +259,7 @@
             this.rrGrid.Location = new System.Drawing.Point(15, 50);
             this.rrGrid.Name = "rrGrid";
             this.rrGrid.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.rrGrid.Size = new System.Drawing.Size(1045, 264);
+            this.rrGrid.Size = new System.Drawing.Size(1045, 222);
             this.rrGrid.TabIndex = 2;
             // 
             // colName
@@ -307,11 +345,11 @@
             this.tableLayoutPanel2.Controls.Add(this.guna2Panel7, 2, 0);
             this.tableLayoutPanel2.Controls.Add(this.guna2Panel8, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.guna2Panel9, 0, 0);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(16, 79);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(16, 68);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(1076, 103);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(1076, 90);
             this.tableLayoutPanel2.TabIndex = 31;
             // 
             // guna2Panel4
@@ -325,7 +363,7 @@
             this.guna2Panel4.FillColor = System.Drawing.Color.White;
             this.guna2Panel4.Location = new System.Drawing.Point(810, 3);
             this.guna2Panel4.Name = "guna2Panel4";
-            this.guna2Panel4.Size = new System.Drawing.Size(263, 97);
+            this.guna2Panel4.Size = new System.Drawing.Size(263, 84);
             this.guna2Panel4.TabIndex = 30;
             // 
             // lblCurrentBill
@@ -361,7 +399,7 @@
             this.guna2Panel7.FillColor = System.Drawing.Color.White;
             this.guna2Panel7.Location = new System.Drawing.Point(541, 3);
             this.guna2Panel7.Name = "guna2Panel7";
-            this.guna2Panel7.Size = new System.Drawing.Size(263, 97);
+            this.guna2Panel7.Size = new System.Drawing.Size(263, 84);
             this.guna2Panel7.TabIndex = 29;
             // 
             // lblRoomNum
@@ -397,7 +435,7 @@
             this.guna2Panel8.FillColor = System.Drawing.Color.White;
             this.guna2Panel8.Location = new System.Drawing.Point(272, 3);
             this.guna2Panel8.Name = "guna2Panel8";
-            this.guna2Panel8.Size = new System.Drawing.Size(263, 97);
+            this.guna2Panel8.Size = new System.Drawing.Size(263, 84);
             this.guna2Panel8.TabIndex = 28;
             // 
             // lblCheckOut
@@ -433,7 +471,7 @@
             this.guna2Panel9.FillColor = System.Drawing.Color.White;
             this.guna2Panel9.Location = new System.Drawing.Point(3, 3);
             this.guna2Panel9.Name = "guna2Panel9";
-            this.guna2Panel9.Size = new System.Drawing.Size(263, 97);
+            this.guna2Panel9.Size = new System.Drawing.Size(263, 84);
             this.guna2Panel9.TabIndex = 27;
             // 
             // lblCheckIn
@@ -471,44 +509,6 @@
             this.label21.TabIndex = 27;
             this.label21.Text = "Dashboard";
             // 
-            // colRsDate
-            // 
-            this.colRsDate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colRsDate.HeaderText = "Date Ordered";
-            this.colRsDate.Name = "colRsDate";
-            this.colRsDate.ReadOnly = true;
-            // 
-            // colRSFloor
-            // 
-            this.colRSFloor.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colRSFloor.HeaderText = "Floor";
-            this.colRSFloor.Name = "colRSFloor";
-            this.colRSFloor.ReadOnly = true;
-            // 
-            // colRSRoomNum
-            // 
-            this.colRSRoomNum.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colRSRoomNum.HeaderText = "Room";
-            this.colRSRoomNum.Name = "colRSRoomNum";
-            this.colRSRoomNum.ReadOnly = true;
-            this.colRSRoomNum.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // colRSStatus
-            // 
-            this.colRSStatus.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colRSStatus.HeaderText = "Status";
-            this.colRSStatus.Name = "colRSStatus";
-            this.colRSStatus.ReadOnly = true;
-            this.colRSStatus.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // colRSBill
-            // 
-            this.colRSBill.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colRSBill.HeaderText = "Bill";
-            this.colRSBill.Name = "colRSBill";
-            this.colRSBill.ReadOnly = true;
-            this.colRSBill.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
             // ucDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -518,7 +518,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lblTitle);
             this.Name = "ucDashboard";
-            this.Size = new System.Drawing.Size(1110, 854);
+            this.Size = new System.Drawing.Size(1110, 745);
             this.Load += new System.EventHandler(this.ucDashboard_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

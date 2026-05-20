@@ -82,7 +82,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1110, 854);
+            this.panel1.Size = new System.Drawing.Size(1110, 756);
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -92,12 +92,12 @@
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel2.Controls.Add(this.guna2Panel1, 0, 0);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(20, 348);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(20, 345);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 506F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(1072, 506);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(1072, 408);
             this.tableLayoutPanel2.TabIndex = 34;
             // 
             // guna2Panel1
@@ -110,7 +110,7 @@
             this.guna2Panel1.FillColor = System.Drawing.SystemColors.ButtonHighlight;
             this.guna2Panel1.Location = new System.Drawing.Point(3, 3);
             this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(1066, 500);
+            this.guna2Panel1.Size = new System.Drawing.Size(1066, 402);
             this.guna2Panel1.TabIndex = 0;
             // 
             // chechINOutGrid
@@ -135,7 +135,7 @@
             this.chechINOutGrid.Location = new System.Drawing.Point(19, 46);
             this.chechINOutGrid.Name = "chechINOutGrid";
             this.chechINOutGrid.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.chechINOutGrid.Size = new System.Drawing.Size(1031, 443);
+            this.chechINOutGrid.Size = new System.Drawing.Size(1031, 341);
             this.chechINOutGrid.TabIndex = 33;
             // 
             // colName
@@ -208,11 +208,11 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.Controls.Add(this.guna2Panel2, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.guna2Panel9, 0, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(20, 80);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(20, 66);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1072, 265);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1072, 276);
             this.tableLayoutPanel1.TabIndex = 33;
             // 
             // guna2Panel2
@@ -232,7 +232,7 @@
             this.guna2Panel2.FillColor = System.Drawing.Color.White;
             this.guna2Panel2.Location = new System.Drawing.Point(539, 3);
             this.guna2Panel2.Name = "guna2Panel2";
-            this.guna2Panel2.Size = new System.Drawing.Size(530, 259);
+            this.guna2Panel2.Size = new System.Drawing.Size(530, 270);
             this.guna2Panel2.TabIndex = 29;
             // 
             // btnEarlyOut
@@ -328,7 +328,7 @@
             this.label11.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.DimGray;
-            this.label11.Location = new System.Drawing.Point(270, 97);
+            this.label11.Location = new System.Drawing.Point(270, 103);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(0, 18);
             this.label11.TabIndex = 58;
@@ -340,7 +340,7 @@
             this.label13.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.ForeColor = System.Drawing.Color.DimGray;
-            this.label13.Location = new System.Drawing.Point(25, 97);
+            this.label13.Location = new System.Drawing.Point(25, 103);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(0, 18);
             this.label13.TabIndex = 57;
@@ -368,10 +368,11 @@
             this.guna2Panel9.Controls.Add(this.label3);
             this.guna2Panel9.Controls.Add(this.bookingStatsContainer);
             this.guna2Panel9.Controls.Add(this.label1);
+            this.guna2Panel9.Dock = System.Windows.Forms.DockStyle.Fill;
             this.guna2Panel9.FillColor = System.Drawing.Color.White;
             this.guna2Panel9.Location = new System.Drawing.Point(3, 3);
             this.guna2Panel9.Name = "guna2Panel9";
-            this.guna2Panel9.Size = new System.Drawing.Size(530, 259);
+            this.guna2Panel9.Size = new System.Drawing.Size(530, 270);
             this.guna2Panel9.TabIndex = 28;
             // 
             // lblAssignedRoom
@@ -478,7 +479,7 @@
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Segoe UI Symbol", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label12.Location = new System.Drawing.Point(16, 57);
+            this.label12.Location = new System.Drawing.Point(16, 45);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(331, 20);
             this.label12.TabIndex = 30;
@@ -490,7 +491,7 @@
             this.label21.BackColor = System.Drawing.Color.Transparent;
             this.label21.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label21.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.label21.Location = new System.Drawing.Point(12, 12);
+            this.label21.Location = new System.Drawing.Point(12, 0);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(236, 45);
             this.label21.TabIndex = 31;
@@ -504,7 +505,7 @@
             this.Controls.Add(this.panel1);
             this.MaximumSize = new System.Drawing.Size(1110, 854);
             this.Name = "ucCheckInOut";
-            this.Size = new System.Drawing.Size(1110, 854);
+            this.Size = new System.Drawing.Size(1110, 756);
             this.Load += new System.EventHandler(this.ucCheckInOut_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

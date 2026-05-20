@@ -81,7 +81,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1110, 854);
+            this.panel1.Size = new System.Drawing.Size(1110, 754);
             this.panel1.TabIndex = 0;
             // 
             // tlpMain
@@ -91,12 +91,12 @@
             this.tlpMain.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tlpMain.Controls.Add(this.panelRight, 1, 0);
             this.tlpMain.Controls.Add(this.panelLeft, 0, 0);
-            this.tlpMain.Location = new System.Drawing.Point(24, 83);
+            this.tlpMain.Location = new System.Drawing.Point(24, 68);
             this.tlpMain.Name = "tlpMain";
             this.tlpMain.RowCount = 1;
             this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 771F));
-            this.tlpMain.Size = new System.Drawing.Size(1058, 771);
+            this.tlpMain.Size = new System.Drawing.Size(1058, 683);
             this.tlpMain.TabIndex = 32;
             // 
             // panelRight
@@ -113,7 +113,7 @@
             this.panelRight.FillColor = System.Drawing.Color.White;
             this.panelRight.Location = new System.Drawing.Point(532, 3);
             this.panelRight.Name = "panelRight";
-            this.panelRight.Size = new System.Drawing.Size(523, 765);
+            this.panelRight.Size = new System.Drawing.Size(523, 677);
             this.panelRight.TabIndex = 1;
             // 
             // btnPay
@@ -125,7 +125,7 @@
             this.btnPay.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnPay.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPay.ForeColor = System.Drawing.Color.White;
-            this.btnPay.Location = new System.Drawing.Point(20, 626);
+            this.btnPay.Location = new System.Drawing.Point(20, 604);
             this.btnPay.Name = "btnPay";
             this.btnPay.Size = new System.Drawing.Size(486, 58);
             this.btnPay.TabIndex = 37;
@@ -144,7 +144,7 @@
             this.btnDownload.FillColor = System.Drawing.Color.Transparent;
             this.btnDownload.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDownload.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(31)))), ((int)(((byte)(46)))));
-            this.btnDownload.Location = new System.Drawing.Point(20, 545);
+            this.btnDownload.Location = new System.Drawing.Point(20, 540);
             this.btnDownload.Name = "btnDownload";
             this.btnDownload.Size = new System.Drawing.Size(486, 58);
             this.btnDownload.TabIndex = 36;
@@ -162,7 +162,7 @@
             this.guna2Panel2.CustomBorderThickness = new System.Windows.Forms.Padding(0, 0, 0, 2);
             this.guna2Panel2.CustomizableEdges.TopLeft = false;
             this.guna2Panel2.CustomizableEdges.TopRight = false;
-            this.guna2Panel2.Location = new System.Drawing.Point(20, 411);
+            this.guna2Panel2.Location = new System.Drawing.Point(20, 368);
             this.guna2Panel2.Name = "guna2Panel2";
             this.guna2Panel2.Size = new System.Drawing.Size(486, 103);
             this.guna2Panel2.TabIndex = 35;
@@ -222,7 +222,7 @@
             this.guna2Panel1.CustomBorderThickness = new System.Windows.Forms.Padding(0, 0, 0, 2);
             this.guna2Panel1.CustomizableEdges.TopLeft = false;
             this.guna2Panel1.CustomizableEdges.TopRight = false;
-            this.guna2Panel1.Location = new System.Drawing.Point(20, 251);
+            this.guna2Panel1.Location = new System.Drawing.Point(20, 220);
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.Size = new System.Drawing.Size(486, 142);
             this.guna2Panel1.TabIndex = 34;
@@ -297,7 +297,7 @@
             this.panelRow1.CustomizableEdges.TopRight = false;
             this.panelRow1.Location = new System.Drawing.Point(20, 61);
             this.panelRow1.Name = "panelRow1";
-            this.panelRow1.Size = new System.Drawing.Size(486, 171);
+            this.panelRow1.Size = new System.Drawing.Size(486, 153);
             this.panelRow1.TabIndex = 33;
             // 
             // lblServicesValue
@@ -307,7 +307,7 @@
             this.lblServicesValue.AutoSize = true;
             this.lblServicesValue.Font = new System.Drawing.Font("Segoe UI Symbol", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblServicesValue.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblServicesValue.Location = new System.Drawing.Point(390, 114);
+            this.lblServicesValue.Location = new System.Drawing.Point(390, 104);
             this.lblServicesValue.Name = "lblServicesValue";
             this.lblServicesValue.Size = new System.Drawing.Size(20, 25);
             this.lblServicesValue.TabIndex = 39;
@@ -321,7 +321,7 @@
             this.lblServicesText.AutoSize = true;
             this.lblServicesText.Font = new System.Drawing.Font("Segoe UI Symbol", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblServicesText.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.lblServicesText.Location = new System.Drawing.Point(13, 114);
+            this.lblServicesText.Location = new System.Drawing.Point(13, 104);
             this.lblServicesText.Name = "lblServicesText";
             this.lblServicesText.Size = new System.Drawing.Size(80, 25);
             this.lblServicesText.TabIndex = 38;
@@ -334,7 +334,7 @@
             this.lblFnBValue.AutoSize = true;
             this.lblFnBValue.Font = new System.Drawing.Font("Segoe UI Symbol", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFnBValue.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblFnBValue.Location = new System.Drawing.Point(391, 71);
+            this.lblFnBValue.Location = new System.Drawing.Point(391, 61);
             this.lblFnBValue.Name = "lblFnBValue";
             this.lblFnBValue.Size = new System.Drawing.Size(20, 25);
             this.lblFnBValue.TabIndex = 37;
@@ -349,7 +349,7 @@
             this.lblFnBText.AutoSize = true;
             this.lblFnBText.Font = new System.Drawing.Font("Segoe UI Symbol", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFnBText.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.lblFnBText.Location = new System.Drawing.Point(13, 71);
+            this.lblFnBText.Location = new System.Drawing.Point(13, 61);
             this.lblFnBText.Name = "lblFnBText";
             this.lblFnBText.Size = new System.Drawing.Size(157, 25);
             this.lblFnBText.TabIndex = 36;
@@ -362,7 +362,7 @@
             this.lblRoomValue.AutoSize = true;
             this.lblRoomValue.Font = new System.Drawing.Font("Segoe UI Symbol", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRoomValue.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblRoomValue.Location = new System.Drawing.Point(390, 30);
+            this.lblRoomValue.Location = new System.Drawing.Point(390, 20);
             this.lblRoomValue.Name = "lblRoomValue";
             this.lblRoomValue.Size = new System.Drawing.Size(20, 25);
             this.lblRoomValue.TabIndex = 35;
@@ -376,7 +376,7 @@
             this.lblRoomText.AutoSize = true;
             this.lblRoomText.Font = new System.Drawing.Font("Segoe UI Symbol", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRoomText.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.lblRoomText.Location = new System.Drawing.Point(13, 30);
+            this.lblRoomText.Location = new System.Drawing.Point(13, 20);
             this.lblRoomText.Name = "lblRoomText";
             this.lblRoomText.Size = new System.Drawing.Size(135, 25);
             this.lblRoomText.TabIndex = 34;
@@ -405,7 +405,7 @@
             this.panelLeft.FillColor = System.Drawing.Color.White;
             this.panelLeft.Location = new System.Drawing.Point(3, 3);
             this.panelLeft.Name = "panelLeft";
-            this.panelLeft.Size = new System.Drawing.Size(523, 765);
+            this.panelLeft.Size = new System.Drawing.Size(523, 677);
             this.panelLeft.TabIndex = 0;
             // 
             // label0
@@ -446,7 +446,7 @@
             this.dgvCharges.ReadOnly = true;
             this.dgvCharges.RowHeadersVisible = false;
             this.dgvCharges.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvCharges.Size = new System.Drawing.Size(491, 678);
+            this.dgvCharges.Size = new System.Drawing.Size(491, 598);
             this.dgvCharges.TabIndex = 32;
             // 
             // colDate
@@ -504,7 +504,7 @@
             this.lblTitle.BackColor = System.Drawing.Color.Transparent;
             this.lblTitle.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitle.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.lblTitle.Location = new System.Drawing.Point(16, 15);
+            this.lblTitle.Location = new System.Drawing.Point(16, 0);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(125, 45);
             this.lblTitle.TabIndex = 31;
@@ -515,7 +515,7 @@
             this.lblSubtitle.AutoSize = true;
             this.lblSubtitle.Font = new System.Drawing.Font("Segoe UI Symbol", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSubtitle.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.lblSubtitle.Location = new System.Drawing.Point(20, 60);
+            this.lblSubtitle.Location = new System.Drawing.Point(20, 45);
             this.lblSubtitle.Name = "lblSubtitle";
             this.lblSubtitle.Size = new System.Drawing.Size(270, 20);
             this.lblSubtitle.TabIndex = 30;
@@ -527,7 +527,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.panel1);
             this.Name = "ucBilling";
-            this.Size = new System.Drawing.Size(1110, 854);
+            this.Size = new System.Drawing.Size(1110, 754);
             this.Load += new System.EventHandler(this.ucBilling_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

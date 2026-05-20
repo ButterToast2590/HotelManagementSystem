@@ -87,7 +87,7 @@
             this.slideMenuPanel.ForeColor = System.Drawing.Color.Black;
             this.slideMenuPanel.Location = new System.Drawing.Point(12, 12);
             this.slideMenuPanel.Name = "slideMenuPanel";
-            this.slideMenuPanel.Size = new System.Drawing.Size(247, 876);
+            this.slideMenuPanel.Size = new System.Drawing.Size(247, 770);
             this.slideMenuPanel.TabIndex = 1;
             // 
             // lblServices
@@ -154,7 +154,7 @@
             this.guna2Panel1.Controls.Add(this.lblbottomusername);
             this.guna2Panel1.Controls.Add(this.lblStatusInfo);
             this.guna2Panel1.Controls.Add(this.btnLogOut);
-            this.guna2Panel1.Location = new System.Drawing.Point(11, 764);
+            this.guna2Panel1.Location = new System.Drawing.Point(11, 658);
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.Size = new System.Drawing.Size(226, 100);
             this.guna2Panel1.TabIndex = 17;
@@ -486,7 +486,7 @@
             // 
             this.panelMain.Location = new System.Drawing.Point(265, 37);
             this.panelMain.Name = "panelMain";
-            this.panelMain.Size = new System.Drawing.Size(1110, 854);
+            this.panelMain.Size = new System.Drawing.Size(1110, 745);
             this.panelMain.TabIndex = 21;
             this.panelMain.Paint += new System.Windows.Forms.PaintEventHandler(this.panelMain_Paint);
             // 
@@ -495,7 +495,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.ClientSize = new System.Drawing.Size(1387, 900);
+            this.ClientSize = new System.Drawing.Size(1387, 790);
             this.Controls.Add(this.panelMain);
             this.Controls.Add(this.slideMenuPanel);
             this.Controls.Add(this.userTitlepanel);
