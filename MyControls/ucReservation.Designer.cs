@@ -35,6 +35,7 @@
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.label4 = new System.Windows.Forms.Label();
             this.comboRoom = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.submitRegistrationbtn = new Guna.UI2.WinForms.Guna2Button();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.label3 = new System.Windows.Forms.Label();
             this.comboFloor = new Guna.UI2.WinForms.Guna2ComboBox();
@@ -50,22 +51,15 @@
             this.dateIn = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.label7 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
-            this.layoutLastname = new System.Windows.Forms.TableLayoutPanel();
-            this.txtLastname = new Guna.UI2.WinForms.Guna2TextBox();
-            this.lblLastname = new System.Windows.Forms.Label();
             this.layoutChildren = new System.Windows.Forms.TableLayoutPanel();
             this.lblChildren = new System.Windows.Forms.Label();
             this.numberChildren = new Guna.UI2.WinForms.Guna2NumericUpDown();
             this.layoutAdults = new System.Windows.Forms.TableLayoutPanel();
             this.lblAdults = new System.Windows.Forms.Label();
             this.numberAdults = new Guna.UI2.WinForms.Guna2NumericUpDown();
-            this.layoutFname = new System.Windows.Forms.TableLayoutPanel();
-            this.txtFirstname = new Guna.UI2.WinForms.Guna2TextBox();
-            this.lblUsername = new System.Windows.Forms.Label();
             this.layoutRequests = new System.Windows.Forms.TableLayoutPanel();
             this.txtContactNum = new Guna.UI2.WinForms.Guna2TextBox();
             this.lblRequests = new System.Windows.Forms.Label();
-            this.submitRegistrationbtn = new Guna.UI2.WinForms.Guna2Button();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             this.dataGridViewHistory = new System.Windows.Forms.DataGridView();
@@ -95,12 +89,10 @@
             this.layoutRoomType.SuspendLayout();
             this.tableLayoutPanel14.SuspendLayout();
             this.layoutCheckIn.SuspendLayout();
-            this.layoutLastname.SuspendLayout();
             this.layoutChildren.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numberChildren)).BeginInit();
             this.layoutAdults.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numberAdults)).BeginInit();
-            this.layoutFname.SuspendLayout();
             this.layoutRequests.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
@@ -149,10 +141,8 @@
             this.guna2GroupBox1.Controls.Add(this.tableLayoutPanel14);
             this.guna2GroupBox1.Controls.Add(this.layoutCheckIn);
             this.guna2GroupBox1.Controls.Add(this.label20);
-            this.guna2GroupBox1.Controls.Add(this.layoutLastname);
             this.guna2GroupBox1.Controls.Add(this.layoutChildren);
             this.guna2GroupBox1.Controls.Add(this.layoutAdults);
-            this.guna2GroupBox1.Controls.Add(this.layoutFname);
             this.guna2GroupBox1.Controls.Add(this.layoutRequests);
             this.guna2GroupBox1.CustomBorderColor = System.Drawing.Color.White;
             this.guna2GroupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -170,7 +160,7 @@
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel4.Controls.Add(this.label4, 0, 0);
             this.tableLayoutPanel4.Controls.Add(this.comboRoom, 0, 1);
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(271, 262);
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(271, 188);
             this.tableLayoutPanel4.MaximumSize = new System.Drawing.Size(475, 80);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 2;
@@ -213,6 +203,25 @@
             this.comboRoom.StartIndex = 0;
             this.comboRoom.TabIndex = 37;
             // 
+            // submitRegistrationbtn
+            // 
+            this.submitRegistrationbtn.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.submitRegistrationbtn.BorderRadius = 10;
+            this.submitRegistrationbtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.submitRegistrationbtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.submitRegistrationbtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.submitRegistrationbtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.submitRegistrationbtn.FillColor = System.Drawing.SystemColors.HotTrack;
+            this.submitRegistrationbtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.submitRegistrationbtn.ForeColor = System.Drawing.Color.White;
+            this.submitRegistrationbtn.Location = new System.Drawing.Point(29, 610);
+            this.submitRegistrationbtn.Name = "submitRegistrationbtn";
+            this.submitRegistrationbtn.Size = new System.Drawing.Size(478, 54);
+            this.submitRegistrationbtn.TabIndex = 31;
+            this.submitRegistrationbtn.Text = "Submit Registration";
+            this.submitRegistrationbtn.Click += new System.EventHandler(this.submitRegistrationbtn_Click);
+            // 
             // tableLayoutPanel3
             // 
             this.tableLayoutPanel3.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
@@ -220,7 +229,7 @@
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel3.Controls.Add(this.label3, 0, 0);
             this.tableLayoutPanel3.Controls.Add(this.comboFloor, 0, 1);
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(26, 263);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(26, 189);
             this.tableLayoutPanel3.MaximumSize = new System.Drawing.Size(475, 80);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 2;
@@ -266,6 +275,7 @@
             // 
             // guna2TextBox1
             // 
+            this.guna2TextBox1.BorderRadius = 10;
             this.guna2TextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.guna2TextBox1.DefaultText = "";
             this.guna2TextBox1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -276,7 +286,7 @@
             this.guna2TextBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.guna2TextBox1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2TextBox1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox1.Location = new System.Drawing.Point(26, 444);
+            this.guna2TextBox1.Location = new System.Drawing.Point(26, 397);
             this.guna2TextBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.guna2TextBox1.Multiline = true;
             this.guna2TextBox1.Name = "guna2TextBox1";
@@ -291,7 +301,7 @@
             this.label1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.DimGray;
-            this.label1.Location = new System.Drawing.Point(26, 418);
+            this.label1.Location = new System.Drawing.Point(26, 371);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(135, 28);
             this.label1.TabIndex = 12;
@@ -305,7 +315,7 @@
             this.layoutRoomType.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.layoutRoomType.Controls.Add(this.lblRoomType, 0, 0);
             this.layoutRoomType.Controls.Add(this.comboRoomType, 0, 1);
-            this.layoutRoomType.Location = new System.Drawing.Point(271, 189);
+            this.layoutRoomType.Location = new System.Drawing.Point(26, 40);
             this.layoutRoomType.MaximumSize = new System.Drawing.Size(475, 80);
             this.layoutRoomType.Name = "layoutRoomType";
             this.layoutRoomType.RowCount = 2;
@@ -457,57 +467,6 @@
             this.label20.TabIndex = 0;
             this.label20.Text = "Book a New Stay";
             // 
-            // layoutLastname
-            // 
-            this.layoutLastname.ColumnCount = 1;
-            this.layoutLastname.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.layoutLastname.Controls.Add(this.txtLastname, 0, 1);
-            this.layoutLastname.Controls.Add(this.lblLastname, 0, 0);
-            this.layoutLastname.Location = new System.Drawing.Point(271, 43);
-            this.layoutLastname.Name = "layoutLastname";
-            this.layoutLastname.RowCount = 2;
-            this.layoutLastname.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.layoutLastname.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.layoutLastname.Size = new System.Drawing.Size(230, 70);
-            this.layoutLastname.TabIndex = 53;
-            // 
-            // txtLastname
-            // 
-            this.txtLastname.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.txtLastname.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.txtLastname.BorderRadius = 10;
-            this.txtLastname.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtLastname.DefaultText = "";
-            this.txtLastname.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtLastname.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtLastname.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtLastname.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtLastname.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtLastname.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(247)))), ((int)(((byte)(250)))));
-            this.txtLastname.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtLastname.Font = new System.Drawing.Font("Arial", 12F);
-            this.txtLastname.ForeColor = System.Drawing.Color.Black;
-            this.txtLastname.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtLastname.Location = new System.Drawing.Point(4, 24);
-            this.txtLastname.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.txtLastname.Name = "txtLastname";
-            this.txtLastname.PlaceholderText = "";
-            this.txtLastname.SelectedText = "";
-            this.txtLastname.Size = new System.Drawing.Size(222, 42);
-            this.txtLastname.TabIndex = 17;
-            // 
-            // lblLastname
-            // 
-            this.lblLastname.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblLastname.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lblLastname.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLastname.ForeColor = System.Drawing.Color.DimGray;
-            this.lblLastname.Location = new System.Drawing.Point(3, 0);
-            this.lblLastname.Name = "lblLastname";
-            this.lblLastname.Size = new System.Drawing.Size(224, 20);
-            this.lblLastname.TabIndex = 11;
-            this.lblLastname.Text = "Last Name";
-            // 
             // layoutChildren
             // 
             this.layoutChildren.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
@@ -515,7 +474,7 @@
             this.layoutChildren.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.layoutChildren.Controls.Add(this.lblChildren, 0, 0);
             this.layoutChildren.Controls.Add(this.numberChildren, 0, 1);
-            this.layoutChildren.Location = new System.Drawing.Point(271, 337);
+            this.layoutChildren.Location = new System.Drawing.Point(271, 263);
             this.layoutChildren.MaximumSize = new System.Drawing.Size(230, 70);
             this.layoutChildren.Name = "layoutChildren";
             this.layoutChildren.RowCount = 2;
@@ -559,7 +518,7 @@
             this.layoutAdults.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.layoutAdults.Controls.Add(this.lblAdults, 0, 0);
             this.layoutAdults.Controls.Add(this.numberAdults, 0, 1);
-            this.layoutAdults.Location = new System.Drawing.Point(26, 337);
+            this.layoutAdults.Location = new System.Drawing.Point(26, 263);
             this.layoutAdults.MaximumSize = new System.Drawing.Size(230, 70);
             this.layoutAdults.Name = "layoutAdults";
             this.layoutAdults.RowCount = 2;
@@ -598,57 +557,6 @@
             this.numberAdults.UpDownButtonFillColor = System.Drawing.Color.Azure;
             this.numberAdults.ValueChanged += new System.EventHandler(this.numberAdults_ValueChanged);
             // 
-            // layoutFname
-            // 
-            this.layoutFname.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.layoutFname.ColumnCount = 1;
-            this.layoutFname.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.layoutFname.Controls.Add(this.txtFirstname, 0, 1);
-            this.layoutFname.Controls.Add(this.lblUsername, 0, 0);
-            this.layoutFname.Location = new System.Drawing.Point(26, 43);
-            this.layoutFname.Name = "layoutFname";
-            this.layoutFname.RowCount = 2;
-            this.layoutFname.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.layoutFname.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.layoutFname.Size = new System.Drawing.Size(230, 70);
-            this.layoutFname.TabIndex = 52;
-            // 
-            // txtFirstname
-            // 
-            this.txtFirstname.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.txtFirstname.BorderRadius = 10;
-            this.txtFirstname.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtFirstname.DefaultText = "";
-            this.txtFirstname.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtFirstname.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtFirstname.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtFirstname.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtFirstname.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtFirstname.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(247)))), ((int)(((byte)(250)))));
-            this.txtFirstname.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtFirstname.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFirstname.ForeColor = System.Drawing.Color.Black;
-            this.txtFirstname.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtFirstname.Location = new System.Drawing.Point(4, 24);
-            this.txtFirstname.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.txtFirstname.Name = "txtFirstname";
-            this.txtFirstname.PlaceholderText = "";
-            this.txtFirstname.SelectedText = "";
-            this.txtFirstname.Size = new System.Drawing.Size(222, 42);
-            this.txtFirstname.TabIndex = 17;
-            // 
-            // lblUsername
-            // 
-            this.lblUsername.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblUsername.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lblUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUsername.ForeColor = System.Drawing.Color.DimGray;
-            this.lblUsername.Location = new System.Drawing.Point(3, 0);
-            this.lblUsername.Name = "lblUsername";
-            this.lblUsername.Size = new System.Drawing.Size(224, 20);
-            this.lblUsername.TabIndex = 11;
-            this.lblUsername.Text = "First Name";
-            // 
             // layoutRequests
             // 
             this.layoutRequests.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
@@ -656,7 +564,7 @@
             this.layoutRequests.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.layoutRequests.Controls.Add(this.txtContactNum, 0, 1);
             this.layoutRequests.Controls.Add(this.lblRequests, 0, 0);
-            this.layoutRequests.Location = new System.Drawing.Point(26, 189);
+            this.layoutRequests.Location = new System.Drawing.Point(271, 39);
             this.layoutRequests.MaximumSize = new System.Drawing.Size(230, 70);
             this.layoutRequests.Name = "layoutRequests";
             this.layoutRequests.RowCount = 2;
@@ -702,25 +610,6 @@
             this.lblRequests.TabIndex = 11;
             this.lblRequests.Text = "Contact Number";
             this.lblRequests.Click += new System.EventHandler(this.lblRequests_Click);
-            // 
-            // submitRegistrationbtn
-            // 
-            this.submitRegistrationbtn.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.submitRegistrationbtn.BorderRadius = 10;
-            this.submitRegistrationbtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.submitRegistrationbtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.submitRegistrationbtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.submitRegistrationbtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.submitRegistrationbtn.FillColor = System.Drawing.SystemColors.HotTrack;
-            this.submitRegistrationbtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.submitRegistrationbtn.ForeColor = System.Drawing.Color.White;
-            this.submitRegistrationbtn.Location = new System.Drawing.Point(29, 610);
-            this.submitRegistrationbtn.Name = "submitRegistrationbtn";
-            this.submitRegistrationbtn.Size = new System.Drawing.Size(478, 54);
-            this.submitRegistrationbtn.TabIndex = 31;
-            this.submitRegistrationbtn.Text = "Submit Registration";
-            this.submitRegistrationbtn.Click += new System.EventHandler(this.submitRegistrationbtn_Click);
             // 
             // tableLayoutPanel2
             // 
@@ -954,12 +843,10 @@
             this.layoutRoomType.ResumeLayout(false);
             this.tableLayoutPanel14.ResumeLayout(false);
             this.layoutCheckIn.ResumeLayout(false);
-            this.layoutLastname.ResumeLayout(false);
             this.layoutChildren.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.numberChildren)).EndInit();
             this.layoutAdults.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.numberAdults)).EndInit();
-            this.layoutFname.ResumeLayout(false);
             this.layoutRequests.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.guna2Panel2.ResumeLayout(false);
@@ -988,18 +875,12 @@
         private Guna.UI2.WinForms.Guna2DateTimePicker dateIn;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.TableLayoutPanel layoutLastname;
-        private Guna.UI2.WinForms.Guna2TextBox txtLastname;
-        private System.Windows.Forms.Label lblLastname;
         private System.Windows.Forms.TableLayoutPanel layoutChildren;
         private System.Windows.Forms.Label lblChildren;
         private Guna.UI2.WinForms.Guna2NumericUpDown numberChildren;
         private System.Windows.Forms.TableLayoutPanel layoutAdults;
         private System.Windows.Forms.Label lblAdults;
         private Guna.UI2.WinForms.Guna2NumericUpDown numberAdults;
-        private System.Windows.Forms.TableLayoutPanel layoutFname;
-        private Guna.UI2.WinForms.Guna2TextBox txtFirstname;
-        private System.Windows.Forms.Label lblUsername;
         private System.Windows.Forms.TableLayoutPanel layoutRequests;
         private Guna.UI2.WinForms.Guna2TextBox txtContactNum;
         private System.Windows.Forms.Label lblRequests;

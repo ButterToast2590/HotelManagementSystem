@@ -21,6 +21,7 @@ namespace HotelManagementSystem.MyControls
         public ucAdminHighlights()
         {
             InitializeComponent();
+            this.AutoScaleMode = AutoScaleMode.None;
         }
         private void ucAdminHighlights_Load(object sender, EventArgs e)
         {

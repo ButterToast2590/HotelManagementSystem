@@ -9,7 +9,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-
 namespace HotelManagementSystem.MyControl
 {
     public partial class ucReservation : System.Windows.Forms.UserControl
@@ -40,12 +39,14 @@ namespace HotelManagementSystem.MyControl
             InitializeComponent();
             this.AutoScaleMode = AutoScaleMode.None;
         }
+
         private void ucReservation_Load(object sender, EventArgs e)
         {
             dateIn.MinDate = DateTime.Today;
             dateCheckOut.MinDate = DateTime.Today.AddDays(1);
             dateCheckOut.Value = DateTime.Today.AddDays(1);
         }
+
         private void comboRoomType_SelectedIndexChanged(object sender, EventArgs e)
         {
             comboFloor.Items.Clear();
@@ -53,6 +54,7 @@ namespace HotelManagementSystem.MyControl
 
             if (comboRoomType.Text == "Select Room Type" || comboRoomType.Text == "")
                 return;
+
             try
             {
                 string sql =
@@ -61,10 +63,10 @@ namespace HotelManagementSystem.MyControl
                     "WHERE room_type = @roomType " +
                     "AND status = 'Available' " +
                     "AND room_id NOT IN ( " +
-                    "    SELECT b.room_id FROM hotel.bookings b " +
-                    "    WHERE b.status != 'Cancelled' " +
-                    "    AND b.check_in_date < @checkOut " +
-                    "    AND b.check_out_date > @checkIn " +
+                    "SELECT b.room_id FROM hotel.bookings b " +
+                    "WHERE b.status != 'Cancelled' " +
+                    "AND b.check_in_date < @checkOut " +
+                    "AND b.check_out_date > @checkIn " +
                     ") " +
                     "ORDER BY floor_number;";
 
@@ -78,9 +80,7 @@ namespace HotelManagementSystem.MyControl
 
                     NpgsqlDataReader reader = cmd.ExecuteReader();
                     while (reader.Read())
-                    {
                         comboFloor.Items.Add(reader["floor_number"].ToString());
-                    }
                 }
 
                 if (comboFloor.Items.Count > 0)
@@ -90,6 +90,7 @@ namespace HotelManagementSystem.MyControl
             {
                 MessageBox.Show("Error loading floors: " + ex.Message);
             }
+
             LoadAvailableRooms();
         }
 
@@ -105,14 +106,14 @@ namespace HotelManagementSystem.MyControl
                 string sql =
                     "SELECT room_number " +
                     "FROM rooms " +
-                    "WHERE room_type    = @roomType " +
-                    "AND floor_number   = @floor " +
-                    "AND status         = 'Available' " +
+                    "WHERE room_type = @roomType " +
+                    "AND floor_number = @floor " +
+                    "AND status = 'Available' " +
                     "AND room_id NOT IN ( " +
-                    "    SELECT b.room_id FROM hotel.bookings b " +
-                    "    WHERE b.status != 'Cancelled' " +
-                    "    AND b.check_in_date < @checkOut " +
-                    "    AND b.check_out_date > @checkIn " +
+                    "SELECT b.room_id FROM hotel.bookings b " +
+                    "WHERE b.status != 'Cancelled' " +
+                    "AND b.check_in_date < @checkOut " +
+                    "AND b.check_out_date > @checkIn " +
                     ") " +
                     "ORDER BY room_number;";
 
@@ -127,9 +128,7 @@ namespace HotelManagementSystem.MyControl
 
                     NpgsqlDataReader reader = cmd.ExecuteReader();
                     while (reader.Read())
-                    {
                         comboRoom.Items.Add(reader["room_number"].ToString());
-                    }
                 }
 
                 if (comboRoom.Items.Count > 0)
@@ -145,7 +144,6 @@ namespace HotelManagementSystem.MyControl
         {
             dateCheckOut.MinDate = dateIn.Value.AddDays(1);
             dateCheckOut.Value = dateIn.Value.AddDays(1);
-
             comboRoomType_SelectedIndexChanged(sender, e);
         }
 
@@ -170,10 +168,10 @@ namespace HotelManagementSystem.MyControl
                     "WHERE r.room_type = @roomType " +
                     "AND r.status = 'Available' " +
                     "AND r.room_id NOT IN ( " +
-                    "    SELECT b.room_id FROM hotel.bookings b " +
-                    "    WHERE b.status != 'Cancelled' " +
-                    "    AND b.check_in_date < @checkOut " +
-                    "    AND b.check_out_date > @checkIn " +
+                    "SELECT b.room_id FROM hotel.bookings b " +
+                    "WHERE b.status != 'Cancelled' " +
+                    "AND b.check_in_date < @checkOut " +
+                    "AND b.check_out_date > @checkIn " +
                     ") " +
                     "ORDER BY r.floor_number, r.room_number;";
 
@@ -193,11 +191,11 @@ namespace HotelManagementSystem.MyControl
                         decimal totalPrice = pricePerNight * nights;
 
                         dataGridViewRoomAvail.Rows.Add(
-                            reader["room_id"].ToString(),         
-                            reader["floor_number"].ToString(),     
+                            reader["room_id"].ToString(),
+                            reader["floor_number"].ToString(),
                             "Room " + reader["room_number"].ToString(),
-                            "₱" + totalPrice.ToString("N2"),              
-                            reader["max_occupancy"].ToString()      
+                            "₱" + totalPrice.ToString("N2"),
+                            reader["max_occupancy"].ToString()
                         );
                     }
                 }
@@ -215,10 +213,10 @@ namespace HotelManagementSystem.MyControl
             {
                 dataGridViewHistory.Rows.Clear();
                 string sql =
-                    "SELECT u.first_name, u.last_name, " +
+                    "SELECT u.first_name || ' ' || u.last_name AS guest_name, " +
                     "res.check_in_date, res.check_out_date, r.room_type, res.status " +
                     "FROM hotel.bookings res " +
-                    "JOIN hotel.rooms r ON res.room_id = r.room_id " + 
+                    "JOIN hotel.rooms r ON res.room_id = r.room_id " +
                     "JOIN hotel.users u ON res.user_id = u.user_id " +
                     "WHERE res.user_id = @userId " +
                     "ORDER BY res.check_in_date DESC;";
@@ -235,7 +233,7 @@ namespace HotelManagementSystem.MyControl
                         string status = reader["status"].ToString();
 
                         int rowIdx = dataGridViewHistory.Rows.Add(
-                            reader["first_name"] + " " + reader["last_name"],
+                            reader["guest_name"].ToString(),
                             Convert.ToDateTime(reader["check_in_date"]).ToString("MMM dd, yyyy"),
                             Convert.ToDateTime(reader["check_out_date"]).ToString("MMM dd, yyyy"),
                             reader["room_type"].ToString(),
@@ -272,9 +270,9 @@ namespace HotelManagementSystem.MyControl
             try
             {
                 string checkSql =
-                            "SELECT COUNT(*) FROM hotel.bookings " +
-                            "WHERE user_id = @userId " +
-                            "AND status IN ('Pending', 'Approved');";
+                    "SELECT COUNT(*) FROM hotel.bookings " +
+                    "WHERE user_id = @userId " +
+                    "AND status IN ('Pending', 'Approved');";
 
                 using (NpgsqlConnection conn = new NpgsqlConnection(connString))
                 {
@@ -286,8 +284,8 @@ namespace HotelManagementSystem.MyControl
                     if (activeCount > 0)
                     {
                         MessageBox.Show(
-                            "You already have an active reservation.\n" +"Please wait for it to be cancelled before making a new one.",
-                            "Active Reservation Found",MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            "You already have an active reservation.\n" + "Please wait for it to be completed or cancelled before making a new one.",
+                            "Active Reservation Found", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         return;
                     }
                 }
@@ -297,12 +295,6 @@ namespace HotelManagementSystem.MyControl
                 MessageBox.Show("Error checking reservation status: " + ex.Message);
                 return;
             }
-
-            if (txtFirstname.Text.Trim() == "")
-            { MessageBox.Show("Please enter your First Name."); return; }
-
-            if (txtLastname.Text.Trim() == "")
-            { MessageBox.Show("Please enter your Last Name."); return; }
 
             if (txtContactNum.Text.Trim() == "")
             { MessageBox.Show("Please enter your Contact Number."); return; }
@@ -353,17 +345,18 @@ namespace HotelManagementSystem.MyControl
                 {
                     MessageBox.Show(
                         "Total guests (" + totalGuests + ") exceeds the max occupancy of this room (" + maxOccupancy + ").\n" +
-                        "Please reduce guests or choose a different room.", "Occupancy Exceeded", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        "Please reduce guests or choose a different room.",
+                        "Occupancy Exceeded", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
 
                 string insertSql =
                     "INSERT INTO hotel.bookings " +
-                    "  (user_id, room_id, first_name, last_name, contact_number, " +
-                    "   check_in_date, check_out_date, adults, children, special_request, status) " +
-                    "VALUES " +
-                    "  (@userId, @roomId, @firstName, @lastName, @contact, " +
-                    "   @checkIn, @checkOut, @adults, @children, @request, 'Pending');";
+                    "(user_id, room_id, first_name, last_name, contact_number, " +
+                    "check_in_date, check_out_date, adults, children, special_request, status) " +
+                    "SELECT @userId, @roomId, u.first_name, u.last_name, @contact, " +
+                    "@checkIn, @checkOut, @adults, @children, @request, 'Pending' " +
+                    "FROM hotel.users u WHERE u.user_id = @userId;";
 
                 using (NpgsqlConnection conn = new NpgsqlConnection(connString))
                 {
@@ -371,23 +364,19 @@ namespace HotelManagementSystem.MyControl
                     NpgsqlCommand cmd = new NpgsqlCommand(insertSql, conn);
                     cmd.Parameters.AddWithValue("@userId", LoggedInUserId);
                     cmd.Parameters.AddWithValue("@roomId", roomId);
-                    cmd.Parameters.AddWithValue("@firstName", txtFirstname.Text.Trim());
-                    cmd.Parameters.AddWithValue("@lastName", txtLastname.Text.Trim());
                     cmd.Parameters.AddWithValue("@contact", txtContactNum.Text.Trim());
                     cmd.Parameters.AddWithValue("@checkIn", dateIn.Value.Date);
                     cmd.Parameters.AddWithValue("@checkOut", dateCheckOut.Value.Date);
                     cmd.Parameters.AddWithValue("@adults", (int)numberAdults.Value);
                     cmd.Parameters.AddWithValue("@children", (int)numberChildren.Value);
                     cmd.Parameters.AddWithValue("@request",
-                    guna2TextBox1.Text.Trim() == "" ? (object)DBNull.Value : guna2TextBox1.Text.Trim());
+                        guna2TextBox1.Text.Trim() == "" ? (object)DBNull.Value : guna2TextBox1.Text.Trim());
 
                     cmd.ExecuteNonQuery();
                 }
 
-                MessageBox.Show("Reservation submitted successfully!", "Success",MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Reservation submitted successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                txtFirstname.Text = "";
-                txtLastname.Text = "";
                 txtContactNum.Text = "";
                 guna2TextBox1.Text = "";
                 numberAdults.Value = 0;
@@ -407,8 +396,8 @@ namespace HotelManagementSystem.MyControl
             lblUserNameDisplay parentForm = this.FindForm() as lblUserNameDisplay;
             if (parentForm != null)
             {
-                parentForm.btnOff();                    
-                parentForm.btnRoomInfo.FillColor = Color.LightSkyBlue; 
+                parentForm.btnOff();
+                parentForm.btnRoomInfo.FillColor = Color.LightSkyBlue;
                 parentForm.LoadContent(new ucRoomInfo());
             }
         }

@@ -175,125 +175,124 @@ namespace HotelManagementSystem.MyControls
         {
             try
             {
+                DateTime checkOutDate;
+                long bookingId;
+
                 using (NpgsqlConnection conn = new NpgsqlConnection(connString))
                 {
                     conn.Open();
 
                     string checkSql =
-                        "SELECT status FROM hotel.bookings " +
+                        "SELECT booking_id, check_out_date FROM hotel.bookings " +
                         "WHERE user_id = @userId " +
                         "AND status = 'Approved' " +
                         "ORDER BY check_in_date DESC LIMIT 1;";
 
                     NpgsqlCommand checkCmd = new NpgsqlCommand(checkSql, conn);
                     checkCmd.Parameters.AddWithValue("@userId", UserSession.UserId1);
-                    string currentStatus = checkCmd.ExecuteScalar()?.ToString();
+                    NpgsqlDataReader reader = checkCmd.ExecuteReader();
 
-                    if (string.IsNullOrEmpty(currentStatus))
+                    if (!reader.Read())
                     {
-                        MessageBox.Show("You have no outstanding balance to pay.", "No Balance",
-                            MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("You have no outstanding balance to pay.", "No Balance", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         return;
                     }
+
+                    bookingId = Convert.ToInt64(reader["booking_id"]);
+                    checkOutDate = Convert.ToDateTime(reader["check_out_date"]);
+                }
+
+                bool isEarlyCheckOut = DateTime.Today < checkOutDate.Date;
+
+                if (isEarlyCheckOut)
+                {
+                    DialogResult earlyOut = MessageBox.Show("Would you like to check out early?\n\n" +
+                        "Yes — settle your bill now and check out.\n" +
+                        "No  — your bill will be settled at the end of your booking. Enjoy your stay!",
+                        "Early Check-Out?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                    if (earlyOut == DialogResult.No)
+                    {
+                        MessageBox.Show(
+                            "No problem! Your bill will be settled at the end of your booking.\n\nEnjoy your stay!","Enjoy Your Stay", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        return;
+                    }
+
+                    DialogResult confirm = MessageBox.Show(
+                        "Are you sure you want to check out early and settle your bill now?","Confirm Early Check-Out", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+                    if (confirm != DialogResult.Yes) return;
+                }
+                else
+                {
+                    MessageBox.Show("Your stay has ended. We will now process your bill.", "Bill Settlement", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+
+                try
+                {
+                    using (NpgsqlConnection conn = new NpgsqlConnection(connString))
+                    {
+                        conn.Open();
+
+                        string calcSql =
+                            "SELECT GREATEST((LEAST(CURRENT_DATE, b.check_out_date::date) - b.check_in_date::date), 1) * r.price_per_night " +
+                            "FROM hotel.bookings b " +
+                            "JOIN hotel.rooms r ON b.room_id = r.room_id " +
+                            "WHERE b.user_id = @userId AND b.status = 'Approved';";
+
+                        NpgsqlCommand calcCmd = new NpgsqlCommand(calcSql, conn);
+                        calcCmd.Parameters.AddWithValue("@userId", UserSession.UserId1);
+                        decimal roomAmount = Convert.ToDecimal(calcCmd.ExecuteScalar() ?? 0);
+
+                        decimal rsAmount = 0;
+                        try
+                        {
+                            string rsSql =
+                                "SELECT COALESCE(SUM(rso.total_amount), 0) " +
+                                "FROM hotel.room_service_orders rso " +
+                                "JOIN hotel.bookings b ON b.booking_id = @bookingId " +
+                                "WHERE rso.user_id = @userId " +
+                                "AND rso.room_id = b.room_id " +
+                                "AND rso.created_at::date >= b.check_in_date::date " +
+                                "AND rso.created_at::date <= b.check_out_date::date;";
+
+                            NpgsqlCommand rsCmd = new NpgsqlCommand(rsSql, conn);
+                            rsCmd.Parameters.AddWithValue("@userId", UserSession.UserId1);
+                            rsCmd.Parameters.AddWithValue("@bookingId", bookingId);
+                            rsAmount = Convert.ToDecimal(rsCmd.ExecuteScalar() ?? 0);
+                        }
+                        catch { rsAmount = 0; }
+
+                        decimal subtotal = roomAmount + rsAmount;
+                        decimal tax = Math.Round(subtotal * 0.12m, 2);
+                        decimal totalPaid = subtotal + tax;
+
+                        string updateSql = isEarlyCheckOut
+                            ? "UPDATE hotel.bookings SET check_out_date = @today, status = 'Completed', paid_at = NOW(), total_paid = @totalPaid WHERE user_id = @userId AND status = 'Approved';"
+                            : "UPDATE hotel.bookings SET status = 'Completed', paid_at = NOW(), total_paid = @totalPaid WHERE user_id = @userId AND status = 'Approved';";
+
+                        NpgsqlCommand cmd = new NpgsqlCommand(updateSql, conn);
+                        cmd.Parameters.AddWithValue("@today", DateTime.Today);
+                        cmd.Parameters.AddWithValue("@userId", UserSession.UserId1);
+                        cmd.Parameters.AddWithValue("@totalPaid", totalPaid);
+                        cmd.ExecuteNonQuery();
+                    }
+
+                    string successMsg = isEarlyCheckOut
+                        ? "You have been checked out early and your bill has been settled.\n\nThank you for your stay!"
+                        : "Your bill has been settled successfully.\n\nThank you for your stay!";
+
+                    MessageBox.Show(successMsg, "Payment Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    LoadBillingData();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error during payment: " + ex.Message);
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error checking payment status: " + ex.Message);
-                return;
-            }
-
-            DialogResult earlyOut = MessageBox.Show(
-                "Would you like to check out early?\n\n" +
-                "• Yes — settle your bill now and check out.\n" +
-                "• No  — your bill will be settled at the end of your booking. Enjoy your stay!",
-                "Early Check-Out?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-            if (earlyOut == DialogResult.No)
-            {
-                MessageBox.Show(
-                    "No problem! Your bill will be settled at the end of your booking.\n\nEnjoy your stay!",
-                    "Enjoy Your Stay", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
-            }
-
-            DialogResult confirm = MessageBox.Show(
-                "Are you sure you want to check out early and settle your bill now?",
-                "Confirm Early Check-Out", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-
-            if (confirm != DialogResult.Yes) return;
-
-            try
-            {
-                using (NpgsqlConnection conn = new NpgsqlConnection(connString))
-                {
-                    conn.Open();
-
-                    // Get booking_id first for the date range filter
-                    string getBookingIdSql =
-                        "SELECT booking_id FROM hotel.bookings " +
-                        "WHERE user_id = @userId AND status = 'Approved' " +
-                        "ORDER BY booking_id DESC LIMIT 1;";
-
-                    NpgsqlCommand getBookingCmd = new NpgsqlCommand(getBookingIdSql, conn);
-                    getBookingCmd.Parameters.AddWithValue("@userId", UserSession.UserId1);
-                    long bookingId = Convert.ToInt64(getBookingCmd.ExecuteScalar() ?? 0);
-
-                    string calcSql =
-                        "SELECT GREATEST((CURRENT_DATE - b.check_in_date::date), 1) * r.price_per_night " +
-                        "FROM hotel.bookings b " +
-                        "JOIN hotel.rooms r ON b.room_id = r.room_id " +
-                        "WHERE b.user_id = @userId AND b.status = 'Approved';";
-
-                    NpgsqlCommand calcCmd = new NpgsqlCommand(calcSql, conn);
-                    calcCmd.Parameters.AddWithValue("@userId", UserSession.UserId1);
-                    decimal roomAmount = Convert.ToDecimal(calcCmd.ExecuteScalar() ?? 0);
-
-                    decimal rsAmount = 0;
-                    try
-                    {
-                        string rsSql =
-                            "SELECT COALESCE(SUM(rso.total_amount), 0) " +
-                            "FROM hotel.room_service_orders rso " +
-                            "JOIN hotel.bookings b ON b.booking_id = @bookingId " +
-                            "WHERE rso.user_id = @userId " +
-                            "AND rso.room_id = b.room_id " +
-                            "AND rso.created_at::date >= b.check_in_date::date " +
-                            "AND rso.created_at::date <= b.check_out_date::date;";
-
-                        NpgsqlCommand rsCmd = new NpgsqlCommand(rsSql, conn);
-                        rsCmd.Parameters.AddWithValue("@userId", UserSession.UserId1);
-                        rsCmd.Parameters.AddWithValue("@bookingId", bookingId);
-                        rsAmount = Convert.ToDecimal(rsCmd.ExecuteScalar() ?? 0);
-                    }
-                    catch { rsAmount = 0; }
-
-                    decimal subtotal = roomAmount + rsAmount;
-                    decimal tax = Math.Round(subtotal * 0.12m, 2);
-                    decimal totalPaid = subtotal + tax;
-
-                    string sql =
-                        "UPDATE hotel.bookings " +
-                        "SET check_out_date = @today, status = 'Completed', " +
-                        "paid_at = NOW(), total_paid = @totalPaid " +
-                        "WHERE user_id = @userId AND status = 'Approved';";
-
-                    NpgsqlCommand cmd = new NpgsqlCommand(sql, conn);
-                    cmd.Parameters.AddWithValue("@today", DateTime.Today);
-                    cmd.Parameters.AddWithValue("@userId", UserSession.UserId1);
-                    cmd.Parameters.AddWithValue("@totalPaid", totalPaid);
-                    cmd.ExecuteNonQuery();
-                }
-
-                MessageBox.Show(
-                    "You have been checked out and your bill has been settled.\n\nThank you for your stay!",
-                    "Checked Out Successfully", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                LoadBillingData();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error during early check-out: " + ex.Message);
             }
         }
 

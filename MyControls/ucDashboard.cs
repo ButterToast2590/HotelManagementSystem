@@ -172,7 +172,8 @@ namespace HotelManagementSystem.MyControl
                 rrGrid.Rows.Clear();
 
                 string sql =
-                    "SELECT b.first_name || ' ' || b.last_name AS guest_name, " +
+                    "SELECT r.floor_number, " +
+                    "r.room_type, " +
                     "r.room_number, " +
                     "b.check_in_date, " +
                     "b.check_out_date, " +
@@ -200,14 +201,14 @@ namespace HotelManagementSystem.MyControl
                         decimal subtotal = rate * nights;
                         decimal tax = Math.Round(subtotal * 0.12m, 2);
                         decimal bill = subtotal + tax;
-                        string status = reader["status"].ToString();
 
-                        int rowIdx = rrGrid.Rows.Add(
-                            reader["guest_name"].ToString(),
+                        rrGrid.Rows.Add(
+                            "Floor " + reader["floor_number"].ToString(),
+                            reader["room_type"].ToString(),
                             "Room " + reader["room_number"].ToString(),
                             checkIn.ToString("MMM dd, yyyy"),
                             checkOut.ToString("MMM dd, yyyy"),
-                            status,
+                            reader["status"].ToString(),
                             "₱" + bill.ToString("N2")
                         );
                     }

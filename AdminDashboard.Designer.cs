@@ -145,7 +145,7 @@
             this.slideMenuPanel.ForeColor = System.Drawing.Color.Black;
             this.slideMenuPanel.Location = new System.Drawing.Point(12, 13);
             this.slideMenuPanel.Name = "slideMenuPanel";
-            this.slideMenuPanel.Size = new System.Drawing.Size(247, 876);
+            this.slideMenuPanel.Size = new System.Drawing.Size(247, 769);
             this.slideMenuPanel.TabIndex = 22;
             // 
             // btnHighlights
@@ -253,7 +253,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.guna2Panel1.BackColor = System.Drawing.Color.AliceBlue;
             this.guna2Panel1.Controls.Add(this.btnLogOut);
-            this.guna2Panel1.Location = new System.Drawing.Point(11, 819);
+            this.guna2Panel1.Location = new System.Drawing.Point(11, 712);
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.Size = new System.Drawing.Size(226, 45);
             this.guna2Panel1.TabIndex = 17;
@@ -464,7 +464,7 @@
             // 
             this.adminPanelMain.Location = new System.Drawing.Point(265, 37);
             this.adminPanelMain.Name = "adminPanelMain";
-            this.adminPanelMain.Size = new System.Drawing.Size(1110, 851);
+            this.adminPanelMain.Size = new System.Drawing.Size(1110, 745);
             this.adminPanelMain.TabIndex = 23;
             this.adminPanelMain.Paint += new System.Windows.Forms.PaintEventHandler(this.panelMain_Paint);
             // 
@@ -479,7 +479,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.ClientSize = new System.Drawing.Size(1387, 900);
+            this.ClientSize = new System.Drawing.Size(1387, 790);
             this.Controls.Add(this.adminPanelMain);
             this.Controls.Add(this.slideMenuPanel);
             this.Controls.Add(this.userTitlepanel);

@@ -19,6 +19,7 @@ namespace HotelManagementSystem.MyControls
         public ucAdminChechINOUT()
         {
             InitializeComponent();
+            this.AutoScaleMode = AutoScaleMode.None;
         }
 
         private void ucAdminChechINOUT_Load(object sender, EventArgs e)

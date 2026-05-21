@@ -95,7 +95,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1110, 854);
+            this.panel1.Size = new System.Drawing.Size(1110, 754);
             this.panel1.TabIndex = 35;
             // 
             // tableLayoutPanel2
@@ -111,7 +111,7 @@
             this.tableLayoutPanel2.Controls.Add(this.guna2Panel7, 2, 0);
             this.tableLayoutPanel2.Controls.Add(this.guna2Panel8, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.guna2Panel9, 0, 0);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(16, 79);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(16, 68);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -269,12 +269,12 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Controls.Add(this.guna2Panel1, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.guna2Panel10, 0, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(16, 188);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(17, 174);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 32.73001F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 67.26998F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1076, 663);
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 34.38596F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 65.61404F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1076, 580);
             this.tableLayoutPanel1.TabIndex = 32;
             // 
             // guna2Panel1
@@ -288,9 +288,9 @@
             this.guna2Panel1.Controls.Add(this.adminReviewsGrid);
             this.guna2Panel1.Controls.Add(this.label1);
             this.guna2Panel1.FillColor = System.Drawing.Color.White;
-            this.guna2Panel1.Location = new System.Drawing.Point(3, 220);
+            this.guna2Panel1.Location = new System.Drawing.Point(3, 202);
             this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(1070, 440);
+            this.guna2Panel1.Size = new System.Drawing.Size(1070, 375);
             this.guna2Panel1.TabIndex = 32;
             // 
             // adminReviewsGrid
@@ -310,10 +310,10 @@
             this.colRomNum,
             this.colFeedback,
             this.colDate});
-            this.adminReviewsGrid.Location = new System.Drawing.Point(15, 44);
+            this.adminReviewsGrid.Location = new System.Drawing.Point(13, 42);
             this.adminReviewsGrid.Name = "adminReviewsGrid";
             this.adminReviewsGrid.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.adminReviewsGrid.Size = new System.Drawing.Size(1045, 390);
+            this.adminReviewsGrid.Size = new System.Drawing.Size(1045, 325);
             this.adminReviewsGrid.TabIndex = 1;
             // 
             // colGuestName
@@ -384,7 +384,7 @@
             this.guna2Panel10.FillColor = System.Drawing.Color.White;
             this.guna2Panel10.Location = new System.Drawing.Point(3, 3);
             this.guna2Panel10.Name = "guna2Panel10";
-            this.guna2Panel10.Size = new System.Drawing.Size(1070, 211);
+            this.guna2Panel10.Size = new System.Drawing.Size(1070, 193);
             this.guna2Panel10.TabIndex = 31;
             // 
             // lblOverall
@@ -392,7 +392,7 @@
             this.lblOverall.AutoSize = true;
             this.lblOverall.Font = new System.Drawing.Font("Segoe UI Symbol", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblOverall.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.lblOverall.Location = new System.Drawing.Point(728, 148);
+            this.lblOverall.Location = new System.Drawing.Point(728, 138);
             this.lblOverall.Name = "lblOverall";
             this.lblOverall.Size = new System.Drawing.Size(28, 20);
             this.lblOverall.TabIndex = 42;
@@ -403,7 +403,7 @@
             this.lblAmenities.AutoSize = true;
             this.lblAmenities.Font = new System.Drawing.Font("Segoe UI Symbol", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAmenities.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.lblAmenities.Location = new System.Drawing.Point(377, 148);
+            this.lblAmenities.Location = new System.Drawing.Point(377, 138);
             this.lblAmenities.Name = "lblAmenities";
             this.lblAmenities.Size = new System.Drawing.Size(28, 20);
             this.lblAmenities.TabIndex = 41;
@@ -414,7 +414,7 @@
             this.lblRoomService.AutoSize = true;
             this.lblRoomService.Font = new System.Drawing.Font("Segoe UI Symbol", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRoomService.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.lblRoomService.Location = new System.Drawing.Point(25, 148);
+            this.lblRoomService.Location = new System.Drawing.Point(25, 138);
             this.lblRoomService.Name = "lblRoomService";
             this.lblRoomService.Size = new System.Drawing.Size(28, 20);
             this.lblRoomService.TabIndex = 40;
@@ -423,7 +423,7 @@
             // pbOverall
             // 
             this.pbOverall.BorderRadius = 10;
-            this.pbOverall.Location = new System.Drawing.Point(722, 171);
+            this.pbOverall.Location = new System.Drawing.Point(722, 161);
             this.pbOverall.Name = "pbOverall";
             this.pbOverall.Size = new System.Drawing.Size(329, 16);
             this.pbOverall.TabIndex = 39;
@@ -435,7 +435,7 @@
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Segoe UI Symbol", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label11.Location = new System.Drawing.Point(728, 124);
+            this.label11.Location = new System.Drawing.Point(728, 114);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(132, 20);
             this.label11.TabIndex = 38;
@@ -444,7 +444,7 @@
             // pbAmenities
             // 
             this.pbAmenities.BorderRadius = 10;
-            this.pbAmenities.Location = new System.Drawing.Point(371, 171);
+            this.pbAmenities.Location = new System.Drawing.Point(371, 161);
             this.pbAmenities.Name = "pbAmenities";
             this.pbAmenities.Size = new System.Drawing.Size(329, 16);
             this.pbAmenities.TabIndex = 37;
@@ -456,7 +456,7 @@
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Segoe UI Symbol", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label13.Location = new System.Drawing.Point(377, 124);
+            this.label13.Location = new System.Drawing.Point(377, 114);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(140, 20);
             this.label13.TabIndex = 36;
@@ -465,7 +465,7 @@
             // pbRoomService
             // 
             this.pbRoomService.BorderRadius = 10;
-            this.pbRoomService.Location = new System.Drawing.Point(19, 171);
+            this.pbRoomService.Location = new System.Drawing.Point(19, 161);
             this.pbRoomService.Name = "pbRoomService";
             this.pbRoomService.Size = new System.Drawing.Size(329, 16);
             this.pbRoomService.TabIndex = 35;
@@ -477,7 +477,7 @@
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Segoe UI Symbol", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label14.Location = new System.Drawing.Point(25, 124);
+            this.label14.Location = new System.Drawing.Point(25, 114);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(100, 20);
             this.label14.TabIndex = 34;
@@ -488,7 +488,7 @@
             this.lblFood.AutoSize = true;
             this.lblFood.Font = new System.Drawing.Font("Segoe UI Symbol", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFood.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.lblFood.Location = new System.Drawing.Point(728, 71);
+            this.lblFood.Location = new System.Drawing.Point(728, 61);
             this.lblFood.Name = "lblFood";
             this.lblFood.Size = new System.Drawing.Size(28, 20);
             this.lblFood.TabIndex = 33;
@@ -499,7 +499,7 @@
             this.lblStaff.AutoSize = true;
             this.lblStaff.Font = new System.Drawing.Font("Segoe UI Symbol", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblStaff.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.lblStaff.Location = new System.Drawing.Point(377, 71);
+            this.lblStaff.Location = new System.Drawing.Point(377, 61);
             this.lblStaff.Name = "lblStaff";
             this.lblStaff.Size = new System.Drawing.Size(28, 20);
             this.lblStaff.TabIndex = 32;
@@ -510,7 +510,7 @@
             this.lblRoomNumRate.AutoSize = true;
             this.lblRoomNumRate.Font = new System.Drawing.Font("Segoe UI Symbol", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRoomNumRate.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.lblRoomNumRate.Location = new System.Drawing.Point(25, 71);
+            this.lblRoomNumRate.Location = new System.Drawing.Point(25, 61);
             this.lblRoomNumRate.Name = "lblRoomNumRate";
             this.lblRoomNumRate.Size = new System.Drawing.Size(28, 20);
             this.lblRoomNumRate.TabIndex = 31;
@@ -519,7 +519,7 @@
             // pbFood
             // 
             this.pbFood.BorderRadius = 10;
-            this.pbFood.Location = new System.Drawing.Point(722, 94);
+            this.pbFood.Location = new System.Drawing.Point(722, 84);
             this.pbFood.Name = "pbFood";
             this.pbFood.Size = new System.Drawing.Size(329, 16);
             this.pbFood.TabIndex = 30;
@@ -531,7 +531,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI Symbol", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label4.Location = new System.Drawing.Point(728, 47);
+            this.label4.Location = new System.Drawing.Point(728, 37);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(113, 20);
             this.label4.TabIndex = 29;
@@ -540,7 +540,7 @@
             // pbStaff
             // 
             this.pbStaff.BorderRadius = 10;
-            this.pbStaff.Location = new System.Drawing.Point(371, 94);
+            this.pbStaff.Location = new System.Drawing.Point(371, 84);
             this.pbStaff.Name = "pbStaff";
             this.pbStaff.Size = new System.Drawing.Size(329, 16);
             this.pbStaff.TabIndex = 28;
@@ -552,7 +552,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI Symbol", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label3.Location = new System.Drawing.Point(377, 47);
+            this.label3.Location = new System.Drawing.Point(377, 37);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(91, 20);
             this.label3.TabIndex = 27;
@@ -561,7 +561,7 @@
             // pbRoomRate
             // 
             this.pbRoomRate.BorderRadius = 10;
-            this.pbRoomRate.Location = new System.Drawing.Point(19, 94);
+            this.pbRoomRate.Location = new System.Drawing.Point(19, 84);
             this.pbRoomRate.Name = "pbRoomRate";
             this.pbRoomRate.Size = new System.Drawing.Size(329, 16);
             this.pbRoomRate.TabIndex = 26;
@@ -573,7 +573,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI Symbol", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label2.Location = new System.Drawing.Point(25, 47);
+            this.label2.Location = new System.Drawing.Point(25, 37);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(126, 20);
             this.label2.TabIndex = 25;
@@ -620,7 +620,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.panel1);
             this.Name = "ucAdminFeedback";
-            this.Size = new System.Drawing.Size(1110, 854);
+            this.Size = new System.Drawing.Size(1110, 754);
             this.Load += new System.EventHandler(this.ucAdminFeedback_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

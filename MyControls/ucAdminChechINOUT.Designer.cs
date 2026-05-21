@@ -28,11 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.guna2Panel4 = new Guna.UI2.WinForms.Guna2Panel();
+            this.lblNumofUserOverDue = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
             this.guna2Panel8 = new Guna.UI2.WinForms.Guna2Panel();
             this.lblCheckOut = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
@@ -52,6 +55,9 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             this.upcomingGrid = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label2 = new System.Windows.Forms.Label();
             this.guna2Panel9 = new Guna.UI2.WinForms.Guna2Panel();
             this.activeguestGrid = new System.Windows.Forms.DataGridView();
@@ -62,14 +68,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.lblNumofUserOverDue = new System.Windows.Forms.Label();
-            this.guna2Panel4 = new Guna.UI2.WinForms.Guna2Panel();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
+            this.guna2Panel4.SuspendLayout();
             this.guna2Panel8.SuspendLayout();
             this.guna2Panel3.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -80,7 +81,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.upcomingGrid)).BeginInit();
             this.guna2Panel9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.activeguestGrid)).BeginInit();
-            this.guna2Panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -94,7 +94,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1110, 854);
+            this.panel1.Size = new System.Drawing.Size(1110, 754);
             this.panel1.TabIndex = 1;
             // 
             // tableLayoutPanel3
@@ -109,12 +109,48 @@
             this.tableLayoutPanel3.Controls.Add(this.guna2Panel4, 2, 0);
             this.tableLayoutPanel3.Controls.Add(this.guna2Panel8, 1, 0);
             this.tableLayoutPanel3.Controls.Add(this.guna2Panel3, 0, 0);
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(20, 88);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(20, 71);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel3.Size = new System.Drawing.Size(1076, 103);
             this.tableLayoutPanel3.TabIndex = 35;
+            // 
+            // guna2Panel4
+            // 
+            this.guna2Panel4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.guna2Panel4.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Panel4.BorderRadius = 15;
+            this.guna2Panel4.Controls.Add(this.lblNumofUserOverDue);
+            this.guna2Panel4.Controls.Add(this.label14);
+            this.guna2Panel4.FillColor = System.Drawing.Color.White;
+            this.guna2Panel4.Location = new System.Drawing.Point(719, 3);
+            this.guna2Panel4.Name = "guna2Panel4";
+            this.guna2Panel4.Size = new System.Drawing.Size(354, 97);
+            this.guna2Panel4.TabIndex = 30;
+            // 
+            // lblNumofUserOverDue
+            // 
+            this.lblNumofUserOverDue.AutoSize = true;
+            this.lblNumofUserOverDue.Font = new System.Drawing.Font("Segoe UI Symbol", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNumofUserOverDue.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.lblNumofUserOverDue.Location = new System.Drawing.Point(18, 48);
+            this.lblNumofUserOverDue.Name = "lblNumofUserOverDue";
+            this.lblNumofUserOverDue.Size = new System.Drawing.Size(36, 32);
+            this.lblNumofUserOverDue.TabIndex = 1;
+            this.lblNumofUserOverDue.Text = "__";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Segoe UI Symbol", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.label14.Location = new System.Drawing.Point(10, 18);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(211, 30);
+            this.label14.TabIndex = 0;
+            this.label14.Text = "Overdue Checkouts";
             // 
             // guna2Panel8
             // 
@@ -195,7 +231,7 @@
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel2.Controls.Add(this.guna2Panel1, 0, 0);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(20, 530);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(20, 425);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -246,14 +282,14 @@
             // overallLogGrid
             // 
             this.overallLogGrid.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.overallLogGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.overallLogGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.overallLogGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.overallLogGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colTimeStamp,
@@ -318,11 +354,11 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.Controls.Add(this.guna2Panel2, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.guna2Panel9, 0, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(20, 194);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(20, 177);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1072, 333);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1072, 245);
             this.tableLayoutPanel1.TabIndex = 33;
             // 
             // guna2Panel2
@@ -335,20 +371,20 @@
             this.guna2Panel2.FillColor = System.Drawing.Color.White;
             this.guna2Panel2.Location = new System.Drawing.Point(539, 3);
             this.guna2Panel2.Name = "guna2Panel2";
-            this.guna2Panel2.Size = new System.Drawing.Size(530, 327);
+            this.guna2Panel2.Size = new System.Drawing.Size(530, 239);
             this.guna2Panel2.TabIndex = 29;
             // 
             // upcomingGrid
             // 
             this.upcomingGrid.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.upcomingGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.upcomingGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.upcomingGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.upcomingGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
@@ -356,8 +392,24 @@
             this.colStatus});
             this.upcomingGrid.Location = new System.Drawing.Point(7, 40);
             this.upcomingGrid.Name = "upcomingGrid";
-            this.upcomingGrid.Size = new System.Drawing.Size(516, 271);
+            this.upcomingGrid.Size = new System.Drawing.Size(516, 188);
             this.upcomingGrid.TabIndex = 35;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn1.HeaderText = "Guest";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.HeaderText = "Room Number";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            // 
+            // colStatus
+            // 
+            this.colStatus.HeaderText = "Status";
+            this.colStatus.Name = "colStatus";
             // 
             // label2
             // 
@@ -377,23 +429,24 @@
             this.guna2Panel9.BorderRadius = 10;
             this.guna2Panel9.Controls.Add(this.activeguestGrid);
             this.guna2Panel9.Controls.Add(this.label1);
+            this.guna2Panel9.Dock = System.Windows.Forms.DockStyle.Fill;
             this.guna2Panel9.FillColor = System.Drawing.Color.White;
             this.guna2Panel9.Location = new System.Drawing.Point(3, 3);
             this.guna2Panel9.Name = "guna2Panel9";
-            this.guna2Panel9.Size = new System.Drawing.Size(530, 327);
+            this.guna2Panel9.Size = new System.Drawing.Size(530, 239);
             this.guna2Panel9.TabIndex = 28;
             // 
             // activeguestGrid
             // 
             this.activeguestGrid.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.activeguestGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.activeguestGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.activeguestGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.activeguestGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colActiveGuest,
@@ -402,7 +455,7 @@
             this.colAction});
             this.activeguestGrid.Location = new System.Drawing.Point(7, 40);
             this.activeguestGrid.Name = "activeguestGrid";
-            this.activeguestGrid.Size = new System.Drawing.Size(516, 271);
+            this.activeguestGrid.Size = new System.Drawing.Size(516, 188);
             this.activeguestGrid.TabIndex = 34;
             this.activeguestGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -447,7 +500,7 @@
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Segoe UI Symbol", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label12.Location = new System.Drawing.Point(16, 57);
+            this.label12.Location = new System.Drawing.Point(16, 48);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(258, 20);
             this.label12.TabIndex = 30;
@@ -459,63 +512,11 @@
             this.label21.BackColor = System.Drawing.Color.Transparent;
             this.label21.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label21.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.label21.Location = new System.Drawing.Point(12, 12);
+            this.label21.Location = new System.Drawing.Point(12, 3);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(236, 45);
             this.label21.TabIndex = 31;
             this.label21.Text = "Check-In / Out";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Segoe UI Symbol", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label14.Location = new System.Drawing.Point(10, 18);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(211, 30);
-            this.label14.TabIndex = 0;
-            this.label14.Text = "Overdue Checkouts";
-            // 
-            // lblNumofUserOverDue
-            // 
-            this.lblNumofUserOverDue.AutoSize = true;
-            this.lblNumofUserOverDue.Font = new System.Drawing.Font("Segoe UI Symbol", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNumofUserOverDue.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblNumofUserOverDue.Location = new System.Drawing.Point(18, 48);
-            this.lblNumofUserOverDue.Name = "lblNumofUserOverDue";
-            this.lblNumofUserOverDue.Size = new System.Drawing.Size(36, 32);
-            this.lblNumofUserOverDue.TabIndex = 1;
-            this.lblNumofUserOverDue.Text = "__";
-            // 
-            // guna2Panel4
-            // 
-            this.guna2Panel4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.guna2Panel4.BackColor = System.Drawing.Color.Transparent;
-            this.guna2Panel4.BorderRadius = 15;
-            this.guna2Panel4.Controls.Add(this.lblNumofUserOverDue);
-            this.guna2Panel4.Controls.Add(this.label14);
-            this.guna2Panel4.FillColor = System.Drawing.Color.White;
-            this.guna2Panel4.Location = new System.Drawing.Point(719, 3);
-            this.guna2Panel4.Name = "guna2Panel4";
-            this.guna2Panel4.Size = new System.Drawing.Size(354, 97);
-            this.guna2Panel4.TabIndex = 30;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn1.HeaderText = "Guest";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.HeaderText = "Room Number";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            // 
-            // colStatus
-            // 
-            this.colStatus.HeaderText = "Status";
-            this.colStatus.Name = "colStatus";
             // 
             // ucAdminChechINOUT
             // 
@@ -523,11 +524,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.panel1);
             this.Name = "ucAdminChechINOUT";
-            this.Size = new System.Drawing.Size(1110, 854);
+            this.Size = new System.Drawing.Size(1110, 754);
             this.Load += new System.EventHandler(this.ucAdminChechINOUT_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.tableLayoutPanel3.ResumeLayout(false);
+            this.guna2Panel4.ResumeLayout(false);
+            this.guna2Panel4.PerformLayout();
             this.guna2Panel8.ResumeLayout(false);
             this.guna2Panel8.PerformLayout();
             this.guna2Panel3.ResumeLayout(false);
@@ -543,8 +546,6 @@
             this.guna2Panel9.ResumeLayout(false);
             this.guna2Panel9.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.activeguestGrid)).EndInit();
-            this.guna2Panel4.ResumeLayout(false);
-            this.guna2Panel4.PerformLayout();
             this.ResumeLayout(false);
 
         }

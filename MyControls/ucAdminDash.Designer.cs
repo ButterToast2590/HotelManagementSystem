@@ -48,11 +48,11 @@
             this.label12 = new System.Windows.Forms.Label();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.guna2Panel4 = new Guna.UI2.WinForms.Guna2Panel();
-            this.lblTotalNumOrder = new System.Windows.Forms.Label();
-            this.pendingOrders = new System.Windows.Forms.Label();
-            this.guna2Panel7 = new Guna.UI2.WinForms.Guna2Panel();
             this.lblTotalRevenue = new System.Windows.Forms.Label();
             this.todaysRevenue = new System.Windows.Forms.Label();
+            this.guna2Panel7 = new Guna.UI2.WinForms.Guna2Panel();
+            this.lblTotalNumOrder = new System.Windows.Forms.Label();
+            this.pendingOrders = new System.Windows.Forms.Label();
             this.guna2Panel8 = new Guna.UI2.WinForms.Guna2Panel();
             this.lbltotalRoomOccupied = new System.Windows.Forms.Label();
             this.roomOccupied = new System.Windows.Forms.Label();
@@ -83,7 +83,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1110, 854);
+            this.panel1.Size = new System.Drawing.Size(1110, 754);
             this.panel1.TabIndex = 33;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -94,11 +94,11 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.Controls.Add(this.guna2Panel1, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.guna2Panel10, 0, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(16, 190);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(16, 174);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1076, 661);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1076, 579);
             this.tableLayoutPanel1.TabIndex = 32;
             // 
             // guna2Panel1
@@ -114,7 +114,7 @@
             this.guna2Panel1.FillColor = System.Drawing.Color.White;
             this.guna2Panel1.Location = new System.Drawing.Point(541, 3);
             this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(532, 655);
+            this.guna2Panel1.Size = new System.Drawing.Size(532, 573);
             this.guna2Panel1.TabIndex = 32;
             // 
             // dataGridView2
@@ -136,7 +136,7 @@
             this.dataGridView2.Location = new System.Drawing.Point(15, 61);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dataGridView2.Size = new System.Drawing.Size(502, 582);
+            this.dataGridView2.Size = new System.Drawing.Size(502, 497);
             this.dataGridView2.TabIndex = 2;
             // 
             // colFloorNum
@@ -182,7 +182,7 @@
             this.guna2Panel10.FillColor = System.Drawing.Color.White;
             this.guna2Panel10.Location = new System.Drawing.Point(3, 3);
             this.guna2Panel10.Name = "guna2Panel10";
-            this.guna2Panel10.Size = new System.Drawing.Size(532, 655);
+            this.guna2Panel10.Size = new System.Drawing.Size(532, 573);
             this.guna2Panel10.TabIndex = 31;
             // 
             // dataGridView1
@@ -205,7 +205,7 @@
             this.dataGridView1.Location = new System.Drawing.Point(15, 61);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dataGridView1.Size = new System.Drawing.Size(502, 582);
+            this.dataGridView1.Size = new System.Drawing.Size(502, 497);
             this.dataGridView1.TabIndex = 1;
             // 
             // colclientsName
@@ -266,7 +266,7 @@
             this.tableLayoutPanel2.Controls.Add(this.guna2Panel7, 2, 0);
             this.tableLayoutPanel2.Controls.Add(this.guna2Panel8, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.guna2Panel9, 0, 0);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(16, 79);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(16, 68);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -286,42 +286,6 @@
             this.guna2Panel4.Name = "guna2Panel4";
             this.guna2Panel4.Size = new System.Drawing.Size(263, 97);
             this.guna2Panel4.TabIndex = 30;
-            // 
-            // lblTotalNumOrder
-            // 
-            this.lblTotalNumOrder.AutoSize = true;
-            this.lblTotalNumOrder.Font = new System.Drawing.Font("Segoe UI Symbol", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalNumOrder.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblTotalNumOrder.Location = new System.Drawing.Point(28, 48);
-            this.lblTotalNumOrder.Name = "lblTotalNumOrder";
-            this.lblTotalNumOrder.Size = new System.Drawing.Size(36, 32);
-            this.lblTotalNumOrder.TabIndex = 1;
-            this.lblTotalNumOrder.Text = "__";
-            // 
-            // pendingOrders
-            // 
-            this.pendingOrders.AutoSize = true;
-            this.pendingOrders.Font = new System.Drawing.Font("Segoe UI Symbol", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pendingOrders.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.pendingOrders.Location = new System.Drawing.Point(20, 18);
-            this.pendingOrders.Name = "pendingOrders";
-            this.pendingOrders.Size = new System.Drawing.Size(171, 30);
-            this.pendingOrders.TabIndex = 0;
-            this.pendingOrders.Text = "Pending Orders";
-            // 
-            // guna2Panel7
-            // 
-            this.guna2Panel7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.guna2Panel7.BackColor = System.Drawing.Color.Transparent;
-            this.guna2Panel7.BorderRadius = 15;
-            this.guna2Panel7.Controls.Add(this.lblTotalNumOrder);
-            this.guna2Panel7.Controls.Add(this.pendingOrders);
-            this.guna2Panel7.FillColor = System.Drawing.Color.White;
-            this.guna2Panel7.Location = new System.Drawing.Point(541, 3);
-            this.guna2Panel7.Name = "guna2Panel7";
-            this.guna2Panel7.Size = new System.Drawing.Size(263, 97);
-            this.guna2Panel7.TabIndex = 29;
             // 
             // lblTotalRevenue
             // 
@@ -345,6 +309,42 @@
             this.todaysRevenue.Size = new System.Drawing.Size(158, 30);
             this.todaysRevenue.TabIndex = 0;
             this.todaysRevenue.Text = "Total Revenue";
+            // 
+            // guna2Panel7
+            // 
+            this.guna2Panel7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.guna2Panel7.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Panel7.BorderRadius = 15;
+            this.guna2Panel7.Controls.Add(this.lblTotalNumOrder);
+            this.guna2Panel7.Controls.Add(this.pendingOrders);
+            this.guna2Panel7.FillColor = System.Drawing.Color.White;
+            this.guna2Panel7.Location = new System.Drawing.Point(541, 3);
+            this.guna2Panel7.Name = "guna2Panel7";
+            this.guna2Panel7.Size = new System.Drawing.Size(263, 97);
+            this.guna2Panel7.TabIndex = 29;
+            // 
+            // lblTotalNumOrder
+            // 
+            this.lblTotalNumOrder.AutoSize = true;
+            this.lblTotalNumOrder.Font = new System.Drawing.Font("Segoe UI Symbol", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalNumOrder.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.lblTotalNumOrder.Location = new System.Drawing.Point(28, 48);
+            this.lblTotalNumOrder.Name = "lblTotalNumOrder";
+            this.lblTotalNumOrder.Size = new System.Drawing.Size(36, 32);
+            this.lblTotalNumOrder.TabIndex = 1;
+            this.lblTotalNumOrder.Text = "__";
+            // 
+            // pendingOrders
+            // 
+            this.pendingOrders.AutoSize = true;
+            this.pendingOrders.Font = new System.Drawing.Font("Segoe UI Symbol", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pendingOrders.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.pendingOrders.Location = new System.Drawing.Point(20, 18);
+            this.pendingOrders.Name = "pendingOrders";
+            this.pendingOrders.Size = new System.Drawing.Size(171, 30);
+            this.pendingOrders.TabIndex = 0;
+            this.pendingOrders.Text = "Pending Orders";
             // 
             // guna2Panel8
             // 
@@ -437,7 +437,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.panel1);
             this.Name = "ucAdminDash";
-            this.Size = new System.Drawing.Size(1110, 854);
+            this.Size = new System.Drawing.Size(1110, 754);
             this.Load += new System.EventHandler(this.ucAdminDash_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

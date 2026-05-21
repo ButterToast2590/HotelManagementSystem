@@ -44,12 +44,6 @@
             this.label22 = new System.Windows.Forms.Label();
             this.guna2Panel10 = new Guna.UI2.WinForms.Guna2Panel();
             this.rrGrid = new System.Windows.Forms.DataGridView();
-            this.colName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colRoom = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colCheckIn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colCheckOut = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colBill = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label23 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
@@ -66,6 +60,13 @@
             this.lblCheckIn = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
+            this.colFloorNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colRoomType = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colRoom = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCheckIn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCheckOut = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colBill = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.guna2Panel11.SuspendLayout();
@@ -250,7 +251,8 @@
             this.rrGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.rrGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.rrGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.colName,
+            this.colFloorNum,
+            this.colRoomType,
             this.colRoom,
             this.colCheckIn,
             this.colCheckOut,
@@ -261,54 +263,6 @@
             this.rrGrid.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.rrGrid.Size = new System.Drawing.Size(1045, 222);
             this.rrGrid.TabIndex = 2;
-            // 
-            // colName
-            // 
-            this.colName.HeaderText = "Name";
-            this.colName.Name = "colName";
-            this.colName.ReadOnly = true;
-            this.colName.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.colName.Width = 300;
-            // 
-            // colRoom
-            // 
-            this.colRoom.HeaderText = "Room";
-            this.colRoom.Name = "colRoom";
-            this.colRoom.ReadOnly = true;
-            this.colRoom.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.colRoom.Width = 140;
-            // 
-            // colCheckIn
-            // 
-            this.colCheckIn.HeaderText = "Check-In";
-            this.colCheckIn.Name = "colCheckIn";
-            this.colCheckIn.ReadOnly = true;
-            this.colCheckIn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.colCheckIn.Width = 140;
-            // 
-            // colCheckOut
-            // 
-            this.colCheckOut.HeaderText = "Check-Out";
-            this.colCheckOut.Name = "colCheckOut";
-            this.colCheckOut.ReadOnly = true;
-            this.colCheckOut.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.colCheckOut.Width = 140;
-            // 
-            // colStatus
-            // 
-            this.colStatus.HeaderText = "Status";
-            this.colStatus.Name = "colStatus";
-            this.colStatus.ReadOnly = true;
-            this.colStatus.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.colStatus.Width = 140;
-            // 
-            // colBill
-            // 
-            this.colBill.HeaderText = "Bill";
-            this.colBill.Name = "colBill";
-            this.colBill.ReadOnly = true;
-            this.colBill.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.colBill.Width = 140;
             // 
             // label23
             // 
@@ -509,6 +463,61 @@
             this.label21.TabIndex = 27;
             this.label21.Text = "Dashboard";
             // 
+            // colFloorNum
+            // 
+            this.colFloorNum.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colFloorNum.HeaderText = "Floor Number";
+            this.colFloorNum.Name = "colFloorNum";
+            this.colFloorNum.ReadOnly = true;
+            this.colFloorNum.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // colRoomType
+            // 
+            this.colRoomType.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colRoomType.HeaderText = "Room Type";
+            this.colRoomType.Name = "colRoomType";
+            this.colRoomType.ReadOnly = true;
+            // 
+            // colRoom
+            // 
+            this.colRoom.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colRoom.HeaderText = "Room";
+            this.colRoom.Name = "colRoom";
+            this.colRoom.ReadOnly = true;
+            this.colRoom.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // colCheckIn
+            // 
+            this.colCheckIn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colCheckIn.HeaderText = "Check-In";
+            this.colCheckIn.Name = "colCheckIn";
+            this.colCheckIn.ReadOnly = true;
+            this.colCheckIn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // colCheckOut
+            // 
+            this.colCheckOut.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colCheckOut.HeaderText = "Check-Out";
+            this.colCheckOut.Name = "colCheckOut";
+            this.colCheckOut.ReadOnly = true;
+            this.colCheckOut.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // colStatus
+            // 
+            this.colStatus.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colStatus.HeaderText = "Status";
+            this.colStatus.Name = "colStatus";
+            this.colStatus.ReadOnly = true;
+            this.colStatus.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // colBill
+            // 
+            this.colBill.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colBill.HeaderText = "Bill";
+            this.colBill.Name = "colBill";
+            this.colBill.ReadOnly = true;
+            this.colBill.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
             // ucDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -555,12 +564,6 @@
         private System.Windows.Forms.Label label22;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel10;
         private System.Windows.Forms.DataGridView rrGrid;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colRoom;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colCheckIn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colCheckOut;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colStatus;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colBill;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
@@ -582,5 +585,12 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colRSRoomNum;
         private System.Windows.Forms.DataGridViewTextBoxColumn colRSStatus;
         private System.Windows.Forms.DataGridViewTextBoxColumn colRSBill;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colFloorNum;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colRoomType;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colRoom;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colCheckIn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colCheckOut;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colStatus;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colBill;
     }
 }

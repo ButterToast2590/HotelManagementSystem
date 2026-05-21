@@ -28,10 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.btnEdit = new Guna.UI2.WinForms.Guna2Button();
             this.btnDeleteRoom = new Guna.UI2.WinForms.Guna2Button();
             this.createRoombtn = new Guna.UI2.WinForms.Guna2Button();
             this.guna2ComboBox1 = new Guna.UI2.WinForms.Guna2ComboBox();
@@ -62,7 +63,6 @@
             this.lblTotalRooms = new System.Windows.Forms.Label();
             this.totalRoom = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
-            this.btnEdit = new Guna.UI2.WinForms.Guna2Button();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.guna2Panel1.SuspendLayout();
@@ -84,7 +84,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1110, 854);
+            this.panel1.Size = new System.Drawing.Size(1110, 754);
             this.panel1.TabIndex = 34;
             // 
             // tableLayoutPanel1
@@ -93,11 +93,11 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Controls.Add(this.guna2Panel1, 0, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(16, 190);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(16, 174);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1076, 661);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1076, 580);
             this.tableLayoutPanel1.TabIndex = 32;
             // 
             // guna2Panel1
@@ -117,8 +117,27 @@
             this.guna2Panel1.FillColor = System.Drawing.Color.White;
             this.guna2Panel1.Location = new System.Drawing.Point(3, 3);
             this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(1070, 655);
+            this.guna2Panel1.Size = new System.Drawing.Size(1070, 574);
             this.guna2Panel1.TabIndex = 32;
+            // 
+            // btnEdit
+            // 
+            this.btnEdit.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnEdit.BorderRadius = 10;
+            this.btnEdit.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnEdit.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnEdit.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnEdit.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnEdit.FillColor = System.Drawing.Color.DarkGreen;
+            this.btnEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEdit.ForeColor = System.Drawing.Color.White;
+            this.btnEdit.Location = new System.Drawing.Point(788, -71);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(130, 41);
+            this.btnEdit.TabIndex = 104;
+            this.btnEdit.Text = "Edit Room";
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // btnDeleteRoom
             // 
@@ -132,7 +151,7 @@
             this.btnDeleteRoom.FillColor = System.Drawing.Color.IndianRed;
             this.btnDeleteRoom.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDeleteRoom.ForeColor = System.Drawing.Color.White;
-            this.btnDeleteRoom.Location = new System.Drawing.Point(924, 10);
+            this.btnDeleteRoom.Location = new System.Drawing.Point(924, -71);
             this.btnDeleteRoom.Name = "btnDeleteRoom";
             this.btnDeleteRoom.Size = new System.Drawing.Size(130, 41);
             this.btnDeleteRoom.TabIndex = 78;
@@ -151,7 +170,7 @@
             this.createRoombtn.FillColor = System.Drawing.SystemColors.HotTrack;
             this.createRoombtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.createRoombtn.ForeColor = System.Drawing.Color.White;
-            this.createRoombtn.Location = new System.Drawing.Point(652, 10);
+            this.createRoombtn.Location = new System.Drawing.Point(652, -71);
             this.createRoombtn.Name = "createRoombtn";
             this.createRoombtn.Size = new System.Drawing.Size(130, 41);
             this.createRoombtn.TabIndex = 77;
@@ -193,14 +212,14 @@
             // dataGridView2
             // 
             this.dataGridView2.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI Symbol", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Symbol", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colRoomId,
@@ -213,10 +232,10 @@
             this.colRoomImage,
             this.colRoomDesc,
             this.colStatus});
-            this.dataGridView2.Location = new System.Drawing.Point(15, 61);
+            this.dataGridView2.Location = new System.Drawing.Point(15, 63);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dataGridView2.Size = new System.Drawing.Size(1039, 582);
+            this.dataGridView2.Size = new System.Drawing.Size(1039, 501);
             this.dataGridView2.TabIndex = 2;
             this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
             this.dataGridView2.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridView2_CellFormatting);
@@ -320,7 +339,7 @@
             this.tableLayoutPanel2.Controls.Add(this.guna2Panel7, 2, 0);
             this.tableLayoutPanel2.Controls.Add(this.guna2Panel8, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.guna2Panel9, 0, 0);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(16, 79);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(16, 68);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -484,32 +503,13 @@
             this.label21.TabIndex = 27;
             this.label21.Text = "Rooms";
             // 
-            // btnEdit
-            // 
-            this.btnEdit.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnEdit.BorderRadius = 10;
-            this.btnEdit.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnEdit.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnEdit.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnEdit.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnEdit.FillColor = System.Drawing.Color.DarkGreen;
-            this.btnEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEdit.ForeColor = System.Drawing.Color.White;
-            this.btnEdit.Location = new System.Drawing.Point(788, 10);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(130, 41);
-            this.btnEdit.TabIndex = 104;
-            this.btnEdit.Text = "Edit Room";
-            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
-            // 
             // ucAdminRoomControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.panel1);
             this.Name = "ucAdminRoomControl";
-            this.Size = new System.Drawing.Size(1110, 854);
+            this.Size = new System.Drawing.Size(1110, 754);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);

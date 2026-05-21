@@ -21,6 +21,7 @@ namespace HotelManagementSystem.MyControls
         public ucAdminRoomService()
         {
             InitializeComponent();
+            this.AutoScaleMode = AutoScaleMode.None;
         }
 
         private void ucAdminRoomService_Load(object sender, EventArgs e)
@@ -281,6 +282,11 @@ namespace HotelManagementSystem.MyControls
         }
 
         private void s(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblTotalRoomsService_Click(object sender, EventArgs e)
         {
 
         }

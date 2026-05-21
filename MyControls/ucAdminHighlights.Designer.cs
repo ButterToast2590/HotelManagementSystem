@@ -74,7 +74,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1110, 854);
+            this.panel1.Size = new System.Drawing.Size(1110, 754);
             this.panel1.TabIndex = 36;
             // 
             // tableLayoutPanel2
@@ -89,7 +89,7 @@
             this.tableLayoutPanel2.Controls.Add(this.lblNumOfCheckoutToday, 2, 0);
             this.tableLayoutPanel2.Controls.Add(this.guna2Panel8, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.guna2Panel9, 0, 0);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(16, 82);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(16, 68);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -199,11 +199,11 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 48.9777F));
             this.tableLayoutPanel1.Controls.Add(this.guna2Panel2, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.guna2Panel1, 0, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(16, 188);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(16, 174);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1076, 654);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1076, 577);
             this.tableLayoutPanel1.TabIndex = 32;
             // 
             // guna2Panel2
@@ -218,7 +218,7 @@
             this.guna2Panel2.FillColor = System.Drawing.Color.White;
             this.guna2Panel2.Location = new System.Drawing.Point(551, 3);
             this.guna2Panel2.Name = "guna2Panel2";
-            this.guna2Panel2.Size = new System.Drawing.Size(522, 648);
+            this.guna2Panel2.Size = new System.Drawing.Size(522, 571);
             this.guna2Panel2.TabIndex = 30;
             // 
             // tbDescription
@@ -236,15 +236,16 @@
             this.tbDescription.Font = new System.Drawing.Font("Segoe UI Symbol", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbDescription.ForeColor = System.Drawing.Color.DimGray;
             this.tbDescription.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbDescription.Location = new System.Drawing.Point(24, 465);
+            this.tbDescription.Location = new System.Drawing.Point(32, 429);
             this.tbDescription.Margin = new System.Windows.Forms.Padding(8, 9, 8, 9);
             this.tbDescription.Multiline = true;
             this.tbDescription.Name = "tbDescription";
             this.tbDescription.Padding = new System.Windows.Forms.Padding(15);
             this.tbDescription.PlaceholderText = "";
             this.tbDescription.ReadOnly = true;
+            this.tbDescription.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.tbDescription.SelectedText = "";
-            this.tbDescription.Size = new System.Drawing.Size(466, 167);
+            this.tbDescription.Size = new System.Drawing.Size(458, 129);
             this.tbDescription.TabIndex = 99;
             // 
             // guna2Panel3
@@ -255,7 +256,7 @@
             this.guna2Panel3.BorderThickness = 1;
             this.guna2Panel3.Controls.Add(this.lblName);
             this.guna2Panel3.FillColor = System.Drawing.Color.Azure;
-            this.guna2Panel3.Location = new System.Drawing.Point(24, 404);
+            this.guna2Panel3.Location = new System.Drawing.Point(32, 373);
             this.guna2Panel3.Name = "guna2Panel3";
             this.guna2Panel3.Size = new System.Drawing.Size(458, 49);
             this.guna2Panel3.TabIndex = 98;
@@ -278,7 +279,7 @@
             this.guna2PictureBox1.ImageRotate = 0F;
             this.guna2PictureBox1.Location = new System.Drawing.Point(71, 58);
             this.guna2PictureBox1.Name = "guna2PictureBox1";
-            this.guna2PictureBox1.Size = new System.Drawing.Size(373, 319);
+            this.guna2PictureBox1.Size = new System.Drawing.Size(373, 255);
             this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.guna2PictureBox1.TabIndex = 35;
             this.guna2PictureBox1.TabStop = false;
@@ -304,7 +305,7 @@
             this.guna2Panel1.FillColor = System.Drawing.Color.White;
             this.guna2Panel1.Location = new System.Drawing.Point(3, 3);
             this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(542, 648);
+            this.guna2Panel1.Size = new System.Drawing.Size(542, 571);
             this.guna2Panel1.TabIndex = 29;
             // 
             // dataGridView1
@@ -324,7 +325,7 @@
             this.colDescription});
             this.dataGridView1.Location = new System.Drawing.Point(8, 58);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(525, 574);
+            this.dataGridView1.Size = new System.Drawing.Size(525, 500);
             this.dataGridView1.TabIndex = 34;
             this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
             // 
@@ -383,7 +384,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.panel1);
             this.Name = "ucAdminHighlights";
-            this.Size = new System.Drawing.Size(1110, 854);
+            this.Size = new System.Drawing.Size(1110, 754);
             this.Load += new System.EventHandler(this.ucAdminHighlights_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

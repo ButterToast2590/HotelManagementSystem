@@ -26,6 +26,7 @@ namespace HotelManagementSystem.MyControls
         public ucAdminGuest()
         {
             InitializeComponent();
+            this.AutoScaleMode = AutoScaleMode.None;
         }
 
         private void ucAdminGuest_Load(object sender, EventArgs e)
