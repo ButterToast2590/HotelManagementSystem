@@ -83,6 +83,7 @@ namespace HotelManagementSystem.MyControls
                     "SELECT b.booking_id, " +
                     "       b.first_name || ' ' || b.last_name AS guest_name, " +
                     "       r.room_number, " +
+                    "       b.check_in_date, " +
                     "       b.check_out_date " +
                     "FROM hotel.bookings b " +
                     "JOIN hotel.rooms r ON b.room_id = r.room_id " +
@@ -97,19 +98,24 @@ namespace HotelManagementSystem.MyControls
 
                     while (reader.Read())
                     {
+                        DateTime checkInDate = Convert.ToDateTime(reader["check_in_date"]);
                         DateTime checkOutDate = Convert.ToDateTime(reader["check_out_date"]);
-                        bool isOverdue = checkOutDate < DateTime.Now;
+
+                        int nightsRemaining = (checkOutDate.Date - DateTime.Today).Days;
+                        if (nightsRemaining < 0) nightsRemaining = 0;
+
+                        string nightsLabel = nightsRemaining == 0  ? "Due today" : nightsRemaining + " night(s) left";
 
                         int rowIndex = activeguestGrid.Rows.Add(
-                            reader["guest_name"].ToString(),            
-                            "Room " + reader["room_number"].ToString(),  
-                            checkOutDate.ToString("MMM dd, yyyy"),
-                            "Check-Out"
+                            reader["guest_name"].ToString(),
+                            "Room " + reader["room_number"].ToString(),
+                            nightsLabel,
+                            checkOutDate.ToString("MMM dd, yyyy")
                         );
 
-                        if (isOverdue)
+                        if (nightsRemaining == 0 || checkOutDate < DateTime.Now)
                         {
-                            activeguestGrid.Rows[rowIndex].DefaultCellStyle.BackColor = Color.FromArgb(255, 200, 200); 
+                            activeguestGrid.Rows[rowIndex].DefaultCellStyle.BackColor = Color.FromArgb(255, 200, 200);
                         }
 
                         activeguestGrid.Rows[rowIndex].Tag = reader["booking_id"];
@@ -123,6 +129,7 @@ namespace HotelManagementSystem.MyControls
                 MessageBox.Show("Error loading active guests: " + ex.Message);
             }
         }
+
         private void LoadUpcomingGuests()
         {
             try
@@ -239,49 +246,12 @@ namespace HotelManagementSystem.MyControls
         }
         private void activeguestGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex < 0) return;
 
-            if (e.ColumnIndex != activeguestGrid.Columns["colAction"].Index) return;
-
-            string guestName = activeguestGrid.Rows[e.RowIndex].Cells["colActiveGuest"].Value?.ToString();
-            int bookingId = Convert.ToInt32(activeguestGrid.Rows[e.RowIndex].Tag);
-
-            DialogResult answer = MessageBox.Show("Are you sure you want to check out " + guestName + "?", "Confirm Check-Out", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-            if (answer != DialogResult.Yes) return;
-
-            try
-            {
-                string sql =
-                    "UPDATE hotel.bookings " +
-                    "SET check_out_date = @today, status = 'Completed' " +
-                    "WHERE booking_id = @bookingId AND status = 'Approved';";
-
-                using (NpgsqlConnection conn = new NpgsqlConnection(connString))
-                {
-                    conn.Open();
-                    NpgsqlCommand cmd = new NpgsqlCommand(sql, conn);
-                    cmd.Parameters.AddWithValue("@today", DateTime.Now);
-                    cmd.Parameters.AddWithValue("@bookingId", bookingId);
-                    cmd.ExecuteNonQuery();
-                }
-
-                MessageBox.Show(guestName + " has been checked out successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                LoadCounters();
-                LoadActiveGuests();
-                LoadLog(filterCB.SelectedItem?.ToString() ?? "All");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Check-out failed: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
         }
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
-
         private void lblCheckIn_Click(object sender, EventArgs e)
         {
 

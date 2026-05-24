@@ -61,13 +61,13 @@
             this.label2 = new System.Windows.Forms.Label();
             this.guna2Panel9 = new Guna.UI2.WinForms.Guna2Panel();
             this.activeguestGrid = new System.Windows.Forms.DataGridView();
-            this.colActiveGuest = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colRoomNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colCheckOut = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colAction = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
+            this.colActiveGuest = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colRoomNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colNightsLeft = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCheckOut = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.guna2Panel4.SuspendLayout();
@@ -451,37 +451,13 @@
             this.activeguestGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colActiveGuest,
             this.colRoomNum,
-            this.colCheckOut,
-            this.colAction});
+            this.colNightsLeft,
+            this.colCheckOut});
             this.activeguestGrid.Location = new System.Drawing.Point(7, 40);
             this.activeguestGrid.Name = "activeguestGrid";
             this.activeguestGrid.Size = new System.Drawing.Size(516, 188);
             this.activeguestGrid.TabIndex = 34;
             this.activeguestGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // colActiveGuest
-            // 
-            this.colActiveGuest.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colActiveGuest.HeaderText = "Guest";
-            this.colActiveGuest.Name = "colActiveGuest";
-            // 
-            // colRoomNum
-            // 
-            this.colRoomNum.HeaderText = "Room Number";
-            this.colRoomNum.Name = "colRoomNum";
-            // 
-            // colCheckOut
-            // 
-            this.colCheckOut.HeaderText = "Check-Out Date";
-            this.colCheckOut.Name = "colCheckOut";
-            // 
-            // colAction
-            // 
-            this.colAction.HeaderText = "Action";
-            this.colAction.Items.AddRange(new object[] {
-            "Extend",
-            "Check-Out"});
-            this.colAction.Name = "colAction";
             // 
             // label1
             // 
@@ -517,6 +493,28 @@
             this.label21.Size = new System.Drawing.Size(236, 45);
             this.label21.TabIndex = 31;
             this.label21.Text = "Check-In / Out";
+            // 
+            // colActiveGuest
+            // 
+            this.colActiveGuest.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colActiveGuest.HeaderText = "Guest";
+            this.colActiveGuest.Name = "colActiveGuest";
+            // 
+            // colRoomNum
+            // 
+            this.colRoomNum.HeaderText = "Room Number";
+            this.colRoomNum.Name = "colRoomNum";
+            // 
+            // colNightsLeft
+            // 
+            this.colNightsLeft.HeaderText = "Nights Remaining";
+            this.colNightsLeft.Name = "colNightsLeft";
+            this.colNightsLeft.ReadOnly = true;
+            // 
+            // colCheckOut
+            // 
+            this.colCheckOut.HeaderText = "Check-Out Date";
+            this.colCheckOut.Name = "colCheckOut";
             // 
             // ucAdminChechINOUT
             // 
@@ -571,10 +569,6 @@
         private System.Windows.Forms.Label lblCheckIn;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.DataGridView activeguestGrid;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colActiveGuest;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colRoomNum;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colCheckOut;
-        private System.Windows.Forms.DataGridViewComboBoxColumn colAction;
         private System.Windows.Forms.DataGridView upcomingGrid;
         private System.Windows.Forms.DataGridView overallLogGrid;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTimeStamp;
@@ -589,5 +583,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn colStatus;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colActiveGuest;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colRoomNum;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colNightsLeft;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colCheckOut;
     }
 }

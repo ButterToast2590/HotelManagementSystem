@@ -299,6 +299,12 @@ namespace HotelManagementSystem.MyControl
             if (txtContactNum.Text.Trim() == "")
             { MessageBox.Show("Please enter your Contact Number."); return; }
 
+            if (txtContactNum.Text.Trim().Length < 11)
+            { MessageBox.Show("Contact number must be at least 11 digits.", "Invalid Contact Number", MessageBoxButtons.OK, MessageBoxIcon.Warning); return; }
+
+            if (!txtContactNum.Text.Trim().All(char.IsDigit))
+            { MessageBox.Show("Contact number must contain numbers only.", "Invalid Contact Number", MessageBoxButtons.OK, MessageBoxIcon.Warning); return; }
+
             if (comboRoomType.Text == "Select Room Type" || comboRoomType.Text == "")
             { MessageBox.Show("Please select a Room Type."); return; }
 

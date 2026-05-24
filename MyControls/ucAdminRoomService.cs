@@ -72,8 +72,7 @@ namespace HotelManagementSystem.MyControls
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error loading stats:\n" + ex.Message, "Database Error",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Error loading stats:\n" + ex.Message, "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

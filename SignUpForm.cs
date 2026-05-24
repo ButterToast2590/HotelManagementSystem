@@ -33,6 +33,8 @@ namespace HotelManagementSystem
 
             InitializePasswordfield(passwordtxt);
             InitializePasswordfield(confirmPasswordtxt);
+
+            contactNumtxt.KeyPress += contactNumtxt_KeyPress;
         }
 
         private void InitializePasswordfield(Guna.UI2.WinForms.Guna2TextBox txt)
@@ -59,6 +61,10 @@ namespace HotelManagementSystem
         private void submitRegistrationbtn_Click(object sender, EventArgs e)
         {
             if (!IsValidInput()) return;
+            DialogResult confirm = MessageBox.Show( "Your username cannot be changed after registration.\n\n" + "Username: " + usernametxt.Text.Trim() + "\n\n" +
+                "Do you want to continue with this username?", "Confirm Username", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (confirm == DialogResult.No) return;
 
             string gender = maleRbtn.Checked ? "Male" : femaleRbtn.Checked ? "Female" : "Other";
             string fullAddress = $"{streettxt.Text.Trim()}, {barangaytxt.Text.Trim()}, {citytxt.Text.Trim()}";
@@ -82,6 +88,7 @@ namespace HotelManagementSystem
             login.Show();
             this.Close();
         }
+
         private bool DoesUsernameExist(string username)
         {
             using (var conn = new Npgsql.NpgsqlConnection(connString))
@@ -143,9 +150,9 @@ namespace HotelManagementSystem
                 return false;
             }
 
-            if (IsAnyFieldEmpty())
+            if (contactNumtxt.Text.Trim().Length < 11)
             {
-                MessageBox.Show("Please fill in all fields.", "Missing Info", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Contact number must be at least 11 digits.", "Invalid Contact Number", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
 
@@ -164,6 +171,14 @@ namespace HotelManagementSystem
             }
 
             return true;
+        }
+        private void contactNumtxt_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != (char)Keys.Back)
+                e.Handled = true;
+
+            if (contactNumtxt.Text.Length >= 11 && e.KeyChar != (char)Keys.Back)
+                e.Handled = true;
         }
 
         private bool IsAnyFieldEmpty()
