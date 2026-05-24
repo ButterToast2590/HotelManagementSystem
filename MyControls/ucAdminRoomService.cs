@@ -249,18 +249,7 @@ namespace HotelManagementSystem.MyControls
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
-        private void createRoombtn_Click(object sender, EventArgs e)
-        {
-            if (Application.OpenForms["addMenu"] != null || Application.OpenForms["editMenu"] != null || Application.OpenForms["DeleteMenu"] != null)
-            {
-                MessageBox.Show("Please close the currently open Menu window first.", "Window Already Open", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-            new addMenu().ShowDialog();
-        }
-
-        private void btnEdit_Click(object sender, EventArgs e)
+        private void btnEditHigh_Click(object sender, EventArgs e)
         {
             if (Application.OpenForms["addMenu"] != null || Application.OpenForms["editMenu"] != null || Application.OpenForms["DeleteMenu"] != null)
             {
@@ -270,7 +259,7 @@ namespace HotelManagementSystem.MyControls
             new editMenu().ShowDialog();
         }
 
-        private void btnDelete_Click(object sender, EventArgs e)
+        private void btnDeleteHigh_Click(object sender, EventArgs e)
         {
             if (Application.OpenForms["addMenu"] != null || Application.OpenForms["editMenu"] != null || Application.OpenForms["DeleteMenu"] != null)
             {
@@ -280,6 +269,42 @@ namespace HotelManagementSystem.MyControls
             new DeleteMenu().ShowDialog();
         }
 
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+            if (Application.OpenForms["addMenu"] != null || Application.OpenForms["editMenu"] != null || Application.OpenForms["DeleteMenu"] != null)
+            {
+                MessageBox.Show("Please close the currently open Menu window first.", "Window Already Open", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            new addMenu().ShowDialog();
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        private void createRoombtn_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+        }
         private void s(object sender, EventArgs e)
         {
 

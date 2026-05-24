@@ -145,7 +145,7 @@ namespace HotelManagementSystem.MyControls
                 LoadRooms();
             }
         }
-        private void createRoombtn_Click(object sender, EventArgs e)
+        private void btnAdd_Click(object sender, EventArgs e)
         {
             if (Application.OpenForms["CreateRoom"] != null)
             {
@@ -169,7 +169,7 @@ namespace HotelManagementSystem.MyControls
             form.Show();
         }
 
-        private void btnDeleteRoom_Click(object sender, EventArgs e)
+        private void btnDeleteHigh_Click(object sender, EventArgs e)
         {
             if (Application.OpenForms["DeleteRoom"] != null)
             {
@@ -187,10 +187,10 @@ namespace HotelManagementSystem.MyControls
             DeleteRoom form = new DeleteRoom();
             form.Show();
         }
-        private void btnEdit_Click(object sender, EventArgs e)
+
+        private void btnEditHigh_Click(object sender, EventArgs e)
         {
-            int rowIndex = dataGridView2.SelectedCells.Count > 0
-                ? dataGridView2.SelectedCells[0].RowIndex : -1;
+            int rowIndex = dataGridView2.SelectedCells.Count > 0 ? dataGridView2.SelectedCells[0].RowIndex : -1;
 
             if (rowIndex == -1)
             {
@@ -216,6 +216,21 @@ namespace HotelManagementSystem.MyControls
 
 
 
+
+
+
+
+
+        private void createRoombtn_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void btnDeleteRoom_Click(object sender, EventArgs e)
+        {
+        }
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+        }
         private void label23_Click(object sender, EventArgs e)
         {
 
@@ -234,6 +249,5 @@ namespace HotelManagementSystem.MyControls
         {
 
         }
-
     }
 }

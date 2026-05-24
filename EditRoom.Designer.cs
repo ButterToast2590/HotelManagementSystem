@@ -589,6 +589,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "EditRoom";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EditRoom";
             this.Load += new System.EventHandler(this.EditRoom_Load);
             this.userTitlepanel.ResumeLayout(false);

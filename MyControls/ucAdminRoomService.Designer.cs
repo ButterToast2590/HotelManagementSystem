@@ -64,6 +64,9 @@
             this.lblTotalRoomsService = new System.Windows.Forms.Label();
             this.totalRoom = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
+            this.btnDeleteHigh = new Guna.UI2.WinForms.Guna2Button();
+            this.btnEditHigh = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
@@ -109,6 +112,8 @@
             // 
             this.guna2Panel2.BackColor = System.Drawing.Color.Transparent;
             this.guna2Panel2.BorderRadius = 15;
+            this.guna2Panel2.Controls.Add(this.btnDeleteHigh);
+            this.guna2Panel2.Controls.Add(this.btnEditHigh);
             this.guna2Panel2.Controls.Add(this.btnEdit);
             this.guna2Panel2.Controls.Add(this.btnDelete);
             this.guna2Panel2.Controls.Add(this.guna2ComboBox1);
@@ -278,6 +283,7 @@
             // 
             this.guna2Panel1.BackColor = System.Drawing.Color.Transparent;
             this.guna2Panel1.BorderRadius = 10;
+            this.guna2Panel1.Controls.Add(this.guna2Button1);
             this.guna2Panel1.Controls.Add(this.dataGridView1);
             this.guna2Panel1.Controls.Add(this.label1);
             this.guna2Panel1.Controls.Add(this.btnAdd);
@@ -565,6 +571,63 @@
             this.label21.TabIndex = 27;
             this.label21.Text = "Room Service Orders";
             // 
+            // btnDeleteHigh
+            // 
+            this.btnDeleteHigh.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnDeleteHigh.BorderRadius = 10;
+            this.btnDeleteHigh.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnDeleteHigh.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnDeleteHigh.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnDeleteHigh.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnDeleteHigh.FillColor = System.Drawing.Color.IndianRed;
+            this.btnDeleteHigh.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDeleteHigh.ForeColor = System.Drawing.Color.White;
+            this.btnDeleteHigh.Location = new System.Drawing.Point(381, 11);
+            this.btnDeleteHigh.Name = "btnDeleteHigh";
+            this.btnDeleteHigh.Size = new System.Drawing.Size(110, 41);
+            this.btnDeleteHigh.TabIndex = 109;
+            this.btnDeleteHigh.Text = "Delete";
+            this.btnDeleteHigh.Click += new System.EventHandler(this.btnDeleteHigh_Click);
+            // 
+            // btnEditHigh
+            // 
+            this.btnEditHigh.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnEditHigh.BorderRadius = 10;
+            this.btnEditHigh.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnEditHigh.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnEditHigh.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnEditHigh.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnEditHigh.FillColor = System.Drawing.Color.DarkGreen;
+            this.btnEditHigh.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditHigh.ForeColor = System.Drawing.Color.White;
+            this.btnEditHigh.Location = new System.Drawing.Point(259, 11);
+            this.btnEditHigh.Name = "btnEditHigh";
+            this.btnEditHigh.Size = new System.Drawing.Size(110, 41);
+            this.btnEditHigh.TabIndex = 108;
+            this.btnEditHigh.Text = "Edit";
+            this.btnEditHigh.Click += new System.EventHandler(this.btnEditHigh_Click);
+            // 
+            // guna2Button1
+            // 
+            this.guna2Button1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.guna2Button1.BorderRadius = 10;
+            this.guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button1.FillColor = System.Drawing.SystemColors.HotTrack;
+            this.guna2Button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2Button1.ForeColor = System.Drawing.Color.White;
+            this.guna2Button1.Location = new System.Drawing.Point(411, 11);
+            this.guna2Button1.Name = "guna2Button1";
+            this.guna2Button1.Size = new System.Drawing.Size(110, 41);
+            this.guna2Button1.TabIndex = 106;
+            this.guna2Button1.Text = "Add ";
+            this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
+            // 
             // ucAdminRoomService
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -635,5 +698,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colItemFood;
         private System.Windows.Forms.DataGridViewTextBoxColumn colAmount;
         private System.Windows.Forms.DataGridViewComboBoxColumn colStatusOrder;
+        private Guna.UI2.WinForms.Guna2Button btnDeleteHigh;
+        private Guna.UI2.WinForms.Guna2Button btnEditHigh;
+        private Guna.UI2.WinForms.Guna2Button guna2Button1;
     }
 }
