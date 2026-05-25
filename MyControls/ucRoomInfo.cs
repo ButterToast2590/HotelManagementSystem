@@ -22,17 +22,22 @@ namespace HotelManagementSystem.MyControl
             "Database=hotelmanagement;" +
             "Search Path=public,hotel;" +
             "SslMode=require;" +
-            "Trust Server Certificate=true;";
+            "Trust Server Certificate=true;" +
+            "Timeout=60;" +
+            "Command Timeout=120;";
+
         public ucRoomInfo()
         {
             InitializeComponent();
             this.AutoScaleMode = AutoScaleMode.None;
             this.Load += ucRoomInfo_Load;
         }
+
         private void ucRoomInfo_Load(object sender, EventArgs e)
         {
             LoadAvailableRooms();
         }
+
         private void LoadAvailableRooms()
         {
             try
@@ -41,10 +46,10 @@ namespace HotelManagementSystem.MyControl
                 comboboxAvailabeRoom.Items.Add("Show Available room only");
 
                 string sql = @"
-            SELECT room_id, room_number, room_type, floor_number 
-            FROM rooms 
-            WHERE status = 'Available' 
-            ORDER BY floor_number, room_number;";
+                    SELECT room_id, room_number, room_type, floor_number 
+                    FROM rooms 
+                    WHERE status = 'Available' 
+                    ORDER BY floor_number, room_number;";
 
                 using (NpgsqlConnection conn = new NpgsqlConnection(connString))
                 {
@@ -63,14 +68,10 @@ namespace HotelManagementSystem.MyControl
                     }
                 }
 
-                if (comboboxAvailabeRoom.Items.Count > 1) 
-                {
+                if (comboboxAvailabeRoom.Items.Count > 1)
                     comboboxAvailabeRoom.SelectedIndex = 1;
-                }
                 else
-                {
-                    comboboxAvailabeRoom.SelectedIndex = 0; 
-                }
+                    comboboxAvailabeRoom.SelectedIndex = 0;
             }
             catch (Exception ex)
             {
@@ -92,7 +93,7 @@ namespace HotelManagementSystem.MyControl
             {
                 string sql = @"
                     SELECT room_number, room_type, floor_number, max_occupancy,
-                           smoking_policy, description, room_image_url
+                           smoking_policy, description, room_image_data
                     FROM rooms 
                     WHERE room_id = @id;";
 
@@ -104,27 +105,31 @@ namespace HotelManagementSystem.MyControl
                     NpgsqlDataReader reader = cmd.ExecuteReader();
 
                     if (reader.Read())
-                    { 
+                    {
                         string roomNum = reader["room_number"].ToString();
                         string roomType = reader["room_type"].ToString();
                         string floor = reader["floor_number"].ToString();
 
                         lblRoomNumTypeChange.Text = $"Room {roomNum}  —  {roomType}";
                         lblRoomFloor.Text = $"Floor {floor}";
-
                         lblBedType.Text = roomType;
                         lblOccupancy.Text = reader["max_occupancy"].ToString() + " Guests";
                         lblFloorCard.Text = "Floor " + floor;
                         lblPolicy.Text = reader["smoking_policy"].ToString();
 
-                        guna2TextBox1.Text = reader["description"] == DBNull.Value ? "No description available." : reader["description"].ToString();
+                        guna2TextBox1.Text = reader["description"] == DBNull.Value
+                            ? "No description available."
+                            : reader["description"].ToString();
 
-                        string imgPath = reader["room_image_url"] == DBNull.Value ? "" : reader["room_image_url"].ToString();
-
-                        if (!string.IsNullOrEmpty(imgPath) && File.Exists(imgPath))
+                        int imgOrdinal = reader.GetOrdinal("room_image_data");
+                        if (!reader.IsDBNull(imgOrdinal))
                         {
-                            guna2PictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
-                            guna2PictureBox2.Image = Image.FromFile(imgPath);
+                            byte[] imageBytes = (byte[])reader[imgOrdinal];
+                            using (var ms = new MemoryStream(imageBytes))
+                            {
+                                guna2PictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
+                                guna2PictureBox2.Image = Image.FromStream(ms);
+                            }
                         }
                         else
                         {
@@ -138,6 +143,7 @@ namespace HotelManagementSystem.MyControl
                 MessageBox.Show("Error loading room details: " + ex.Message);
             }
         }
+
         private class RoomItem
         {
             public string RoomId { get; set; }
@@ -145,29 +151,9 @@ namespace HotelManagementSystem.MyControl
             public override string ToString() => Display;
         }
 
-
-
-
-
-
-        private void guna2PictureBox2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label9_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblBedType_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblRoomFloor_Click(object sender, EventArgs e)
-        {
-
-        }
+        private void guna2PictureBox2_Click(object sender, EventArgs e) { }
+        private void label9_Click(object sender, EventArgs e) { }
+        private void lblBedType_Click(object sender, EventArgs e) { }
+        private void lblRoomFloor_Click(object sender, EventArgs e) { }
     }
 }

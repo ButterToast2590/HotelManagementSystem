@@ -15,7 +15,9 @@ namespace HotelManagementSystem
             "Password=fdqYxIcKcPtSZV90PyNTNg;" +
             "Database=hotelmanagement;" +
             "SslMode=require;" +
-            "Trust Server Certificate=true;";
+            "Trust Server Certificate=true;" +
+            "Timeout=60;" +
+            "Command Timeout=120;";
 
         public logInForm()
         {
