@@ -38,20 +38,48 @@ namespace HotelManagementSystem.MyControls
             LoadPreviousReviews();
         }
 
-        private void btnPlaceOrder_Click(object sender, EventArgs e) 
+        private void btnPlaceOrder_Click(object sender, EventArgs e)
         {
-            if (starCat1.Value == 0 || starCat2.Value == 0 || starCat3.Value == 0 ||
-        starCat4.Value == 0 || starCat5.Value == 0 || starCat6.Value == 0)
+            try
             {
-                MessageBox.Show("Please rate all categories before submitting.", "Zedlink United",
-                                MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                using (var conn = new NpgsqlConnection(connString))
+                {
+                    conn.Open();
+
+                    string checkSql = @"SELECT COUNT(*) 
+                                 FROM hotel.bookings 
+                                 WHERE user_id = @userId 
+                                 AND status = 'Completed'";
+
+                    using (var cmd = new NpgsqlCommand(checkSql, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@userId", UserSession.UserId1);
+                        long completedBookings = (long)cmd.ExecuteScalar();
+
+                        if (completedBookings == 0)
+                        {
+                            MessageBox.Show("You must have at least one completed stay before leaving a review.", "Zedlink United", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            return;
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error verifying booking history: " + ex.Message, "Error",
+                                MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
+            if (starCat1.Value == 0 || starCat2.Value == 0 || starCat3.Value == 0 ||
+                starCat4.Value == 0 || starCat5.Value == 0 || starCat6.Value == 0)
+            {
+                MessageBox.Show("Please rate all categories before submitting.", "Zedlink United", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             if (string.IsNullOrWhiteSpace(commentBox.Text))
             {
-                MessageBox.Show("Please write a comment before submitting.", "Zedlink United",
-                                MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Please write a comment before submitting.", "Zedlink United", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
@@ -62,10 +90,10 @@ namespace HotelManagementSystem.MyControls
                     conn.Open();
 
                     string sql = @"INSERT INTO hotel.feedback 
-                                  (user_id, room_cleanliness, room_service, staff_service, 
-                                   food_beverage, facilities_amenities, overall_experience, comments)
-                                  VALUES 
-                                  (@userId, @cat1, @cat2, @cat3, @cat4, @cat5, @cat6, @comments)";
+                          (user_id, room_cleanliness, room_service, staff_service, 
+                           food_beverage, facilities_amenities, overall_experience, comments)
+                          VALUES 
+                          (@userId, @cat1, @cat2, @cat3, @cat4, @cat5, @cat6, @comments)";
 
                     using (var cmd = new NpgsqlCommand(sql, conn))
                     {
@@ -82,8 +110,7 @@ namespace HotelManagementSystem.MyControls
                     }
                 }
 
-                MessageBox.Show("Thank you for your feedback!", "Zedlink United",
-                                MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Thank you for your feedback!", "Zedlink United", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 starCat1.Value = 0;
                 starCat2.Value = 0;
@@ -95,11 +122,11 @@ namespace HotelManagementSystem.MyControls
 
                 currentPage = 1;
                 LoadPreviousReviews();
+                LoadGuestSatisfaction();
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error saving feedback: " + ex.Message, "Error",
-                                MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Error saving feedback: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         private void LoadGuestSatisfaction()

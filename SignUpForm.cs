@@ -201,6 +201,15 @@ namespace HotelManagementSystem
             if (
                 string.IsNullOrWhiteSpace(confirmPasswordtxt.Text)
                 ) return true;
+            if (
+                string.IsNullOrWhiteSpace(citytxt.Text)
+                ) return true;
+            if (
+                string.IsNullOrWhiteSpace(barangaytxt.Text)
+                ) return true;
+            if (
+                string.IsNullOrWhiteSpace(streettxt.Text)
+                ) return true;
 
             return false;
         }

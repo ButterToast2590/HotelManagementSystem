@@ -78,8 +78,9 @@
             this.userTitlepanel.Controls.Add(this.label23);
             this.userTitlepanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.userTitlepanel.Location = new System.Drawing.Point(0, 0);
+            this.userTitlepanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.userTitlepanel.Name = "userTitlepanel";
-            this.userTitlepanel.Size = new System.Drawing.Size(504, 35);
+            this.userTitlepanel.Size = new System.Drawing.Size(672, 43);
             this.userTitlepanel.TabIndex = 89;
             // 
             // btnMinimize
@@ -99,10 +100,11 @@
             this.btnMinimize.HoverState.FillColor = System.Drawing.Color.IndianRed;
             this.btnMinimize.Image = global::HotelManagementSystem.Properties.Resources.minus;
             this.btnMinimize.ImageSize = new System.Drawing.Size(15, 15);
-            this.btnMinimize.Location = new System.Drawing.Point(434, 5);
+            this.btnMinimize.Location = new System.Drawing.Point(580, 6);
+            this.btnMinimize.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnMinimize.Name = "btnMinimize";
             this.btnMinimize.PressedColor = System.Drawing.Color.IndianRed;
-            this.btnMinimize.Size = new System.Drawing.Size(18, 22);
+            this.btnMinimize.Size = new System.Drawing.Size(24, 27);
             this.btnMinimize.TabIndex = 1;
             this.btnMinimize.Click += new System.EventHandler(this.btnMinimize_Click);
             // 
@@ -123,10 +125,11 @@
             this.btnClose.HoverState.FillColor = System.Drawing.Color.IndianRed;
             this.btnClose.Image = global::HotelManagementSystem.Properties.Resources.cross;
             this.btnClose.ImageSize = new System.Drawing.Size(15, 15);
-            this.btnClose.Location = new System.Drawing.Point(465, 5);
+            this.btnClose.Location = new System.Drawing.Point(621, 6);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnClose.Name = "btnClose";
             this.btnClose.PressedColor = System.Drawing.Color.IndianRed;
-            this.btnClose.Size = new System.Drawing.Size(25, 22);
+            this.btnClose.Size = new System.Drawing.Size(33, 27);
             this.btnClose.TabIndex = 0;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
@@ -135,9 +138,10 @@
             this.label23.AutoSize = true;
             this.label23.Font = new System.Drawing.Font("Segoe UI Symbol", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label23.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label23.Location = new System.Drawing.Point(3, 1);
+            this.label23.Location = new System.Drawing.Point(4, 1);
+            this.label23.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(118, 30);
+            this.label23.Size = new System.Drawing.Size(150, 37);
             this.label23.TabIndex = 0;
             this.label23.Text = "Edit Room";
             // 
@@ -148,14 +152,15 @@
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel4.Controls.Add(this.label7, 0, 0);
             this.tableLayoutPanel4.Controls.Add(this.smokingPolicy, 0, 1);
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(258, 343);
-            this.tableLayoutPanel4.MaximumSize = new System.Drawing.Size(475, 80);
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(344, 422);
+            this.tableLayoutPanel4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tableLayoutPanel4.MaximumSize = new System.Drawing.Size(633, 98);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 2;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 26.25F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 73.75F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(226, 80);
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(301, 98);
             this.tableLayoutPanel4.TabIndex = 100;
             // 
             // label7
@@ -164,9 +169,10 @@
             this.label7.Dock = System.Windows.Forms.DockStyle.Top;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.DimGray;
-            this.label7.Location = new System.Drawing.Point(3, 0);
+            this.label7.Location = new System.Drawing.Point(4, 0);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(220, 18);
+            this.label7.Size = new System.Drawing.Size(293, 22);
             this.label7.TabIndex = 6;
             this.label7.Text = "Smoking Policy";
             // 
@@ -187,9 +193,10 @@
             this.smokingPolicy.Items.AddRange(new object[] {
             "Smoking",
             "Non-Smoking"});
-            this.smokingPolicy.Location = new System.Drawing.Point(3, 24);
+            this.smokingPolicy.Location = new System.Drawing.Point(4, 29);
+            this.smokingPolicy.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.smokingPolicy.Name = "smokingPolicy";
-            this.smokingPolicy.Size = new System.Drawing.Size(220, 48);
+            this.smokingPolicy.Size = new System.Drawing.Size(293, 48);
             this.smokingPolicy.StartIndex = 1;
             this.smokingPolicy.TabIndex = 37;
             // 
@@ -200,14 +207,15 @@
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel3.Controls.Add(this.label3, 0, 0);
             this.tableLayoutPanel3.Controls.Add(this.roomStatus, 0, 1);
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(258, 424);
-            this.tableLayoutPanel3.MaximumSize = new System.Drawing.Size(475, 80);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(344, 522);
+            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tableLayoutPanel3.MaximumSize = new System.Drawing.Size(633, 98);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 2;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 26.25F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 73.75F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(226, 80);
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(301, 98);
             this.tableLayoutPanel3.TabIndex = 99;
             // 
             // label3
@@ -216,9 +224,10 @@
             this.label3.Dock = System.Windows.Forms.DockStyle.Top;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.DimGray;
-            this.label3.Location = new System.Drawing.Point(3, 0);
+            this.label3.Location = new System.Drawing.Point(4, 0);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(220, 18);
+            this.label3.Size = new System.Drawing.Size(293, 22);
             this.label3.TabIndex = 6;
             this.label3.Text = "Room Status";
             // 
@@ -241,9 +250,10 @@
             "Maintenance",
             "Available",
             "Unavailable"});
-            this.roomStatus.Location = new System.Drawing.Point(3, 24);
+            this.roomStatus.Location = new System.Drawing.Point(4, 29);
+            this.roomStatus.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.roomStatus.Name = "roomStatus";
-            this.roomStatus.Size = new System.Drawing.Size(220, 48);
+            this.roomStatus.Size = new System.Drawing.Size(293, 48);
             this.roomStatus.StartIndex = 0;
             this.roomStatus.TabIndex = 37;
             // 
@@ -252,9 +262,10 @@
             this.label4.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.DimGray;
-            this.label4.Location = new System.Drawing.Point(21, 514);
+            this.label4.Location = new System.Drawing.Point(28, 633);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(199, 20);
+            this.label4.Size = new System.Drawing.Size(265, 25);
             this.label4.TabIndex = 97;
             this.label4.Text = "Room Description";
             // 
@@ -266,9 +277,10 @@
             this.guna2PictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.guna2PictureBox1.Image = global::HotelManagementSystem.Properties.Resources.picture__2_;
             this.guna2PictureBox1.ImageRotate = 0F;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(18, 343);
+            this.guna2PictureBox1.Location = new System.Drawing.Point(24, 422);
+            this.guna2PictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.guna2PictureBox1.Name = "guna2PictureBox1";
-            this.guna2PictureBox1.Size = new System.Drawing.Size(226, 161);
+            this.guna2PictureBox1.Size = new System.Drawing.Size(301, 198);
             this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.guna2PictureBox1.TabIndex = 96;
             this.guna2PictureBox1.TabStop = false;
@@ -285,9 +297,10 @@
             this.editRoombtn.FillColor = System.Drawing.SystemColors.HotTrack;
             this.editRoombtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.editRoombtn.ForeColor = System.Drawing.Color.White;
-            this.editRoombtn.Location = new System.Drawing.Point(18, 641);
+            this.editRoombtn.Location = new System.Drawing.Point(24, 789);
+            this.editRoombtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.editRoombtn.Name = "editRoombtn";
-            this.editRoombtn.Size = new System.Drawing.Size(459, 54);
+            this.editRoombtn.Size = new System.Drawing.Size(612, 66);
             this.editRoombtn.TabIndex = 92;
             this.editRoombtn.Text = "Edit Room";
             this.editRoombtn.Click += new System.EventHandler(this.editRoombtn_Click);
@@ -306,14 +319,14 @@
             this.roomDesc.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.roomDesc.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.roomDesc.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.roomDesc.Location = new System.Drawing.Point(18, 538);
-            this.roomDesc.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.roomDesc.Location = new System.Drawing.Point(24, 662);
+            this.roomDesc.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.roomDesc.Multiline = true;
             this.roomDesc.Name = "roomDesc";
             this.roomDesc.PlaceholderText = "";
             this.roomDesc.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.roomDesc.SelectedText = "";
-            this.roomDesc.Size = new System.Drawing.Size(466, 87);
+            this.roomDesc.Size = new System.Drawing.Size(621, 107);
             this.roomDesc.TabIndex = 98;
             // 
             // lblChildren
@@ -322,9 +335,10 @@
             this.lblChildren.Dock = System.Windows.Forms.DockStyle.Top;
             this.lblChildren.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblChildren.ForeColor = System.Drawing.Color.DimGray;
-            this.lblChildren.Location = new System.Drawing.Point(3, 0);
+            this.lblChildren.Location = new System.Drawing.Point(4, 0);
+            this.lblChildren.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblChildren.Name = "lblChildren";
-            this.lblChildren.Size = new System.Drawing.Size(220, 19);
+            this.lblChildren.Size = new System.Drawing.Size(293, 23);
             this.lblChildren.TabIndex = 11;
             this.lblChildren.Text = "Occupancy";
             // 
@@ -335,14 +349,15 @@
             this.layoutChildren.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.layoutChildren.Controls.Add(this.lblChildren, 0, 0);
             this.layoutChildren.Controls.Add(this.occupancyNum, 0, 1);
-            this.layoutChildren.Location = new System.Drawing.Point(258, 232);
-            this.layoutChildren.MaximumSize = new System.Drawing.Size(230, 70);
+            this.layoutChildren.Location = new System.Drawing.Point(344, 286);
+            this.layoutChildren.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.layoutChildren.MaximumSize = new System.Drawing.Size(307, 86);
             this.layoutChildren.Name = "layoutChildren";
             this.layoutChildren.RowCount = 2;
             this.layoutChildren.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 32F));
             this.layoutChildren.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 68F));
-            this.layoutChildren.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.layoutChildren.Size = new System.Drawing.Size(226, 70);
+            this.layoutChildren.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.layoutChildren.Size = new System.Drawing.Size(301, 86);
             this.layoutChildren.TabIndex = 95;
             // 
             // occupancyNum
@@ -354,9 +369,10 @@
             this.occupancyNum.Dock = System.Windows.Forms.DockStyle.Fill;
             this.occupancyNum.FillColor = System.Drawing.SystemColors.ButtonHighlight;
             this.occupancyNum.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.occupancyNum.Location = new System.Drawing.Point(3, 25);
+            this.occupancyNum.Location = new System.Drawing.Point(4, 32);
+            this.occupancyNum.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.occupancyNum.Name = "occupancyNum";
-            this.occupancyNum.Size = new System.Drawing.Size(220, 42);
+            this.occupancyNum.Size = new System.Drawing.Size(293, 49);
             this.occupancyNum.TabIndex = 45;
             this.occupancyNum.UpDownButtonFillColor = System.Drawing.SystemColors.ButtonHighlight;
             // 
@@ -367,13 +383,14 @@
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel2.Controls.Add(this.txtRoomPrice, 0, 1);
             this.tableLayoutPanel2.Controls.Add(this.label2, 0, 0);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(18, 232);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(24, 286);
+            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 2;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(226, 70);
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(301, 86);
             this.tableLayoutPanel2.TabIndex = 94;
             // 
             // txtRoomPrice
@@ -393,12 +410,12 @@
             this.txtRoomPrice.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtRoomPrice.ForeColor = System.Drawing.Color.Black;
             this.txtRoomPrice.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtRoomPrice.Location = new System.Drawing.Point(4, 24);
-            this.txtRoomPrice.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtRoomPrice.Location = new System.Drawing.Point(5, 30);
+            this.txtRoomPrice.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.txtRoomPrice.Name = "txtRoomPrice";
             this.txtRoomPrice.PlaceholderText = "";
             this.txtRoomPrice.SelectedText = "";
-            this.txtRoomPrice.Size = new System.Drawing.Size(218, 42);
+            this.txtRoomPrice.Size = new System.Drawing.Size(291, 51);
             this.txtRoomPrice.TabIndex = 17;
             // 
             // label2
@@ -407,9 +424,10 @@
             this.label2.Dock = System.Windows.Forms.DockStyle.Top;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.DimGray;
-            this.label2.Location = new System.Drawing.Point(3, 0);
+            this.label2.Location = new System.Drawing.Point(4, 0);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(220, 20);
+            this.label2.Size = new System.Drawing.Size(293, 25);
             this.label2.TabIndex = 11;
             this.label2.Text = "Room Price";
             // 
@@ -436,9 +454,10 @@
             "Suite",
             "Deluxe",
             "Executive"});
-            this.comboRoomType.Location = new System.Drawing.Point(3, 21);
+            this.comboRoomType.Location = new System.Drawing.Point(4, 26);
+            this.comboRoomType.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.comboRoomType.Name = "comboRoomType";
-            this.comboRoomType.Size = new System.Drawing.Size(460, 48);
+            this.comboRoomType.Size = new System.Drawing.Size(613, 48);
             this.comboRoomType.StartIndex = 0;
             this.comboRoomType.TabIndex = 37;
             // 
@@ -449,13 +468,14 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Controls.Add(this.txtFloorNum, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.label1, 0, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(258, 50);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(344, 62);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(226, 70);
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(301, 86);
             this.tableLayoutPanel1.TabIndex = 93;
             // 
             // txtFloorNum
@@ -474,12 +494,12 @@
             this.txtFloorNum.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtFloorNum.ForeColor = System.Drawing.Color.Black;
             this.txtFloorNum.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtFloorNum.Location = new System.Drawing.Point(4, 24);
-            this.txtFloorNum.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtFloorNum.Location = new System.Drawing.Point(5, 30);
+            this.txtFloorNum.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.txtFloorNum.Name = "txtFloorNum";
             this.txtFloorNum.PlaceholderText = "";
             this.txtFloorNum.SelectedText = "";
-            this.txtFloorNum.Size = new System.Drawing.Size(218, 42);
+            this.txtFloorNum.Size = new System.Drawing.Size(291, 51);
             this.txtFloorNum.TabIndex = 18;
             // 
             // label1
@@ -488,9 +508,10 @@
             this.label1.Dock = System.Windows.Forms.DockStyle.Top;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.DimGray;
-            this.label1.Location = new System.Drawing.Point(3, 0);
+            this.label1.Location = new System.Drawing.Point(4, 0);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(220, 20);
+            this.label1.Size = new System.Drawing.Size(293, 25);
             this.label1.TabIndex = 11;
             this.label1.Text = "Floor Number";
             // 
@@ -501,14 +522,15 @@
             this.layoutRoomType.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.layoutRoomType.Controls.Add(this.lblRoomType, 0, 0);
             this.layoutRoomType.Controls.Add(this.comboRoomType, 0, 1);
-            this.layoutRoomType.Location = new System.Drawing.Point(18, 140);
-            this.layoutRoomType.MaximumSize = new System.Drawing.Size(475, 80);
+            this.layoutRoomType.Location = new System.Drawing.Point(24, 172);
+            this.layoutRoomType.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.layoutRoomType.MaximumSize = new System.Drawing.Size(633, 98);
             this.layoutRoomType.Name = "layoutRoomType";
             this.layoutRoomType.RowCount = 2;
             this.layoutRoomType.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 26.25F));
             this.layoutRoomType.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 73.75F));
-            this.layoutRoomType.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.layoutRoomType.Size = new System.Drawing.Size(466, 70);
+            this.layoutRoomType.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.layoutRoomType.Size = new System.Drawing.Size(621, 86);
             this.layoutRoomType.TabIndex = 91;
             // 
             // lblRoomType
@@ -517,9 +539,10 @@
             this.lblRoomType.Dock = System.Windows.Forms.DockStyle.Top;
             this.lblRoomType.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRoomType.ForeColor = System.Drawing.Color.DimGray;
-            this.lblRoomType.Location = new System.Drawing.Point(3, 0);
+            this.lblRoomType.Location = new System.Drawing.Point(4, 0);
+            this.lblRoomType.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblRoomType.Name = "lblRoomType";
-            this.lblRoomType.Size = new System.Drawing.Size(460, 18);
+            this.lblRoomType.Size = new System.Drawing.Size(613, 22);
             this.lblRoomType.TabIndex = 6;
             this.lblRoomType.Text = "Room Type";
             // 
@@ -530,13 +553,14 @@
             this.layoutFname.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.layoutFname.Controls.Add(this.lblFloorNum, 0, 0);
             this.layoutFname.Controls.Add(this.availableRoomNum, 0, 1);
-            this.layoutFname.Location = new System.Drawing.Point(18, 50);
+            this.layoutFname.Location = new System.Drawing.Point(24, 62);
+            this.layoutFname.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.layoutFname.Name = "layoutFname";
             this.layoutFname.RowCount = 2;
-            this.layoutFname.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.layoutFname.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.layoutFname.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.layoutFname.Size = new System.Drawing.Size(226, 70);
+            this.layoutFname.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.layoutFname.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.layoutFname.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.layoutFname.Size = new System.Drawing.Size(301, 86);
             this.layoutFname.TabIndex = 90;
             // 
             // lblFloorNum
@@ -545,9 +569,10 @@
             this.lblFloorNum.Dock = System.Windows.Forms.DockStyle.Top;
             this.lblFloorNum.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFloorNum.ForeColor = System.Drawing.Color.DimGray;
-            this.lblFloorNum.Location = new System.Drawing.Point(3, 0);
+            this.lblFloorNum.Location = new System.Drawing.Point(4, 0);
+            this.lblFloorNum.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblFloorNum.Name = "lblFloorNum";
-            this.lblFloorNum.Size = new System.Drawing.Size(220, 20);
+            this.lblFloorNum.Size = new System.Drawing.Size(293, 25);
             this.lblFloorNum.TabIndex = 11;
             this.lblFloorNum.Text = "Room Number";
             // 
@@ -563,17 +588,18 @@
             this.availableRoomNum.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.availableRoomNum.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.availableRoomNum.ItemHeight = 35;
-            this.availableRoomNum.Location = new System.Drawing.Point(3, 23);
+            this.availableRoomNum.Location = new System.Drawing.Point(4, 29);
+            this.availableRoomNum.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.availableRoomNum.Name = "availableRoomNum";
-            this.availableRoomNum.Size = new System.Drawing.Size(220, 41);
+            this.availableRoomNum.Size = new System.Drawing.Size(293, 41);
             this.availableRoomNum.TabIndex = 12;
             // 
             // EditRoom
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.ClientSize = new System.Drawing.Size(504, 702);
+            this.ClientSize = new System.Drawing.Size(672, 864);
             this.Controls.Add(this.tableLayoutPanel4);
             this.Controls.Add(this.tableLayoutPanel3);
             this.Controls.Add(this.label4);
@@ -588,6 +614,7 @@
             this.Controls.Add(this.userTitlepanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "EditRoom";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EditRoom";
